@@ -1,0 +1,11 @@
+# ignore ./Hardware/.Xil/*
+Hardware/.Xil/
+
+# ignore ./Hardware/*.log
+Hardware/*.log
+
+# ignore ./Hardware/build/*
+Hardware/build/
+
+# ignore ./vitis_analyzer*
+vitis_analyzer*
