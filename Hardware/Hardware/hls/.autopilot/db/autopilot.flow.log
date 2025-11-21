@@ -1,0 +1,122 @@
+Execute     source -notrace -encoding utf-8 /tools/Xilinx/Vitis/2024.2/tps/tcl/tcl8.6/clock.tcl 
+Execute       source -encoding utf-8 /tools/Xilinx/Vitis/2024.2/tps/tcl/tcl8/8.5/msgcat-1.6.1.tm 
+INFO-FLOW: Workspace /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/Hardware/hls opened at Fri Nov 21 19:43:43 GMT 2025
+Execute     send_msg_by_id INFO @200-1505@%s%s default  vivado 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Execute   apply_ini /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg 
+Execute     send_msg_by_id WARNING @200-2059@%s%s%s syn.output.format package.output.format /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(17) 
+WARNING: [HLS 200-2059] The 'syn.output.format' name is deprecated, use 'package.output.format' instead /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(17)
+Execute     send_msg_by_id WARNING @200-2001@%s%s ./src/IDCT2.cpp see [hls] from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(18) 
+WARNING: [HLS 200-2001] file not found './src/IDCT2.cpp' see [hls] from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(18)
+Execute     send_msg_by_id WARNING @200-2001@%s%s ./src/transform_coeffs.h see [hls] from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(19) 
+WARNING: [HLS 200-2001] file not found './src/transform_coeffs.h' see [hls] from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(19)
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.file=./src/IDCT2.cpp' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(18) 
+INFO: [HLS 200-1465] Applying ini 'syn.file=./src/IDCT2.cpp' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(18)
+Execute     add_files ./src/IDCT2.cpp 
+WARNING: [HLS 200-40] Cannot find design file './src/IDCT2.cpp'
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.file=./src/transform_coeffs.h' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(19) 
+INFO: [HLS 200-1465] Applying ini 'syn.file=./src/transform_coeffs.h' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(19)
+Execute     add_files ./src/transform_coeffs.h 
+WARNING: [HLS 200-40] Cannot find design file './src/transform_coeffs.h'
+Execute     send_msg_by_id INFO @200-1465@%s 'syn.top=IDCT2' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(20) 
+INFO: [HLS 200-1465] Applying ini 'syn.top=IDCT2' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(20)
+Execute     set_top IDCT2 
+Execute     send_msg_by_id INFO @200-1465@%s 'flow_target=vitis' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(16) 
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(16)
+Execute     send_msg_by_id INFO @200-1505@%s%s  vitis 
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Execute     send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vitis' config_interface -m_axi_latency=64 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+Execute     config_interface -m_axi_latency=64 
+Execute     send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vitis' config_interface -m_axi_alignment_byte_size=64 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+Execute     config_interface -m_axi_alignment_byte_size=64 
+Execute     send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vitis' config_interface -m_axi_max_widen_bitwidth=512 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+Execute     config_interface -m_axi_max_widen_bitwidth=512 
+INFO-FLOW: Setting macro_cmd open_solution -flow_target vitis configuration: config_interface -default_interface=kernel
+Execute     config_interface -default_interface=kernel 
+Execute     send_msg_by_id INFO @200-435@%s%s 'open_solution -flow_target vitis' config_rtl -register_reset_num=3 
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+Execute     config_rtl -register_reset_num=3 
+Execute     send_msg_by_id INFO @200-1465@%s 'freqhz=200MHz' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(14) 
+INFO: [HLS 200-1465] Applying ini 'freqhz=200MHz' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(14)
+Execute     create_clock -period 200mhz 
+Execute       ap_set_clock -name default -period 5 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 5ns.
+Execute     send_msg_by_id INFO @200-1465@%s 'clock_uncertainty=12%' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(15) 
+INFO: [HLS 200-1465] Applying ini 'clock_uncertainty=12%' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(15)
+Execute     set_clock_uncertainty 12% 
+Execute       ap_set_clock -name default -uncertainty 0.6 -unit % 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.6ns.
+Execute     send_msg_by_id INFO @200-1465@%s 'package.output.format=rtl' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(17) 
+INFO: [HLS 200-1465] Applying ini 'package.output.format=rtl' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(17)
+Execute     config_export -format=rtl 
+Execute   apply_ini /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/Hardware/hls/config.cmdline 
+Execute     send_msg_by_id INFO @200-1465@%s 'part=xczu9eg-ffvb1156-2-e' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/Hardware/hls/config.cmdline(2) 
+INFO: [HLS 200-1465] Applying ini 'part=xczu9eg-ffvb1156-2-e' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/Hardware/hls/config.cmdline(2)
+Execute     set_part xczu9eg-ffvb1156-2-e 
+Execute       create_platform xczu9eg-ffvb1156-2-e -board  
+DBG:HLSDevice: Trying to load device library: /tools/Xilinx/Vitis/2024.2/lib/lnx64.o/libxv_hlsvwrap.so
+DBG:HLSDevice: first parts/arch.xml in RDI_DATADIR: /tools/Xilinx/Vivado/2024.2/data/parts/arch.xml
+DBG:HLSDevice: init success
+INFO: [HLS 200-1611] Setting target device to 'xczu9eg-ffvb1156-2-e'
+Command       create_platform done; 0.88 sec.
+Execute       source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/common/xilinx.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/plb46.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/axi4.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/saxilite.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfft.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/util.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/ip/xfir.gen 
+Execute         source /tools/Xilinx/Vitis/2024.2/common/technology/xilinx/DSP48/dsp48.gen 
+Execute       ap_part_info -name xczu9eg-ffvb1156-2-e -data info 
+Execute       config_compile -quiet -complex-mul-dsp=0 
+Command     set_part done; 0.94 sec.
+Execute     send_msg_by_id INFO @200-1465@%s 'clock=150.000000Mhz' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/Hardware/hls/config.cmdline(7) 
+INFO: [HLS 200-1465] Applying ini 'clock=150.000000Mhz' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/Hardware/hls/config.cmdline(7)
+Execute     create_clock -period 150.000000Mhz 
+Execute       ap_set_clock -name default -period 6.667 -unit ns -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 6.667ns.
+Command   apply_ini done; 0.95 sec.
+Execute   ::AP::init_summary_file csynth 
+Execute     AP::app_get_file_relativeroot [AP::app_get_root] {}
+Execute   csynth_design 
+INFO-FLOW: Running SLX 'csynth' proc: ::SLX::run_csynth
+Execute     elaborate -effort=medium -skip_syncheck=0 -keep_printf=0 -skip_cdt=0 -skip_transform=0 -ng=0 -g=0 -opt_fp=0 -from_csynth_design=1 
+WARNING: [HLS 200-40] Cannot find source file src/transform_coeffs.h; skipping it.
+WARNING: [HLS 200-40] Cannot find source file src/IDCT2.cpp; skipping it.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.97 seconds. CPU system time: 0.24 seconds. Elapsed time: 2.08 seconds; current allocated memory: 909.488 MB.
+Execute       set_directive_top IDCT2 -name=IDCT2 
+Execute       source /tools/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
+Execute       source /tools/Xilinx/Vitis/2024.2/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
+Execute       send_msg_by_id WARNING @200-1986@%s%s TOP :0 
+WARNING: [HLS 200-1986] Could not apply TOP directive, invalid function, label, or variable (:0)
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 909.488 MB.
+INFO-FLOW: Linking Debug ...
+ERROR: [HLS 200-70] Cannot find any design unit to elaborate.
+INFO-FLOW: Caught error in elaborate: Error in linking the design.
+    while executing
+"AP::ap_link_39 [::AP::get_bc_list  $dbgInfo] $skip_transform $LLVMFlags $dbgInfo"
+    (procedure "AP::compile_dut_files_39" line 60)
+    invoked from within
+"AP::compile_dut_files_39 $dut_files $dbgInfo $skip_cdt $skip_transform"
+    (procedure "AP::compile" line 108)
+    invoked from within
+"AP::compile 1 $skip_cdt $skip_transform"
+    (procedure "ap_internal_elaborate" line 83)
+    invoked from within
+"ap_internal_elaborate "
+Command     elaborate done; error code: 2; 
+INFO-FLOW: Caught error in csynth_design: Error in linking the design.
+    while executing
+"ap_internal_csynth_design "
+Command   csynth_design done; error code: 2; 
+Execute   close_project 
+Execute     close_solution 
+Execute       cleanup_all 
+Execute       cleanup_all 

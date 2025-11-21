@@ -1,0 +1,100 @@
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:30833:5: warning: Added loop label VITIS_LOOP_676_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_676_1: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:30833:5: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:30847:5: warning: Added loop label VITIS_LOOP_690_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_690_1: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:30847:5: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:30861:5: warning: Added loop label VITIS_LOOP_704_1:   [xilinx-label-all-loops]
+    for (unsigned i = low; i != high+1; ++i) {
+    ^~~
+    VITIS_LOOP_704_1: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:30861:5: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:32495:7: warning: Added loop label VITIS_LOOP_1248_1:   [xilinx-label-all-loops]
+      for (i = 0; i < __N - 1; ++i) {
+      ^~~
+      VITIS_LOOP_1248_1: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:32495:7: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34515:5: warning: Added loop label VITIS_LOOP_101_1:   [xilinx-label-all-loops]
+    for(int i=0; i<8; i++){
+    ^~~
+    VITIS_LOOP_101_1: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34515:5: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34568:5: warning: Added loop label VITIS_LOOP_154_1:   [xilinx-label-all-loops]
+    for(int i=0; i<16; i++){
+    ^~~
+    VITIS_LOOP_154_1: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34568:5: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34655:5: warning: Added loop label VITIS_LOOP_241_1:   [xilinx-label-all-loops]
+    for(int i=0; i<32; i++){
+    ^~~
+    VITIS_LOOP_241_1: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34655:5: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34742:2: warning: Added loop label VITIS_LOOP_324_1:   [xilinx-label-all-loops]
+ for(int i=0; i<size; i++){
+ ^~~
+ VITIS_LOOP_324_1: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34742:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34755:2: warning: Added loop label VITIS_LOOP_337_2:   [xilinx-label-all-loops]
+ for(int j=0; j<64; j++){
+ ^~~
+ VITIS_LOOP_337_2: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34755:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34762:13: warning: Added loop label VITIS_LOOP_344_3:   [xilinx-label-all-loops]
+            for(int j=0; j<64; j++){
+            ^~~
+            VITIS_LOOP_344_3: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34762:13: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34774:2: warning: Added loop label VITIS_LOOP_356_4:   [xilinx-label-all-loops]
+ for(int j=0; j<32; j++){
+ ^~~
+ VITIS_LOOP_356_4: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34774:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34781:13: warning: Added loop label VITIS_LOOP_363_5:   [xilinx-label-all-loops]
+            for(int j=0; j<32; j++){
+            ^~~
+            VITIS_LOOP_363_5: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34781:13: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34793:2: warning: Added loop label VITIS_LOOP_375_6:   [xilinx-label-all-loops]
+ for(int j=0; j<16; j++){
+ ^~~
+ VITIS_LOOP_375_6: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34793:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34800:13: warning: Added loop label VITIS_LOOP_382_7:   [xilinx-label-all-loops]
+            for(int j=0; j<16; j++){
+            ^~~
+            VITIS_LOOP_382_7: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34800:13: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34812:2: warning: Added loop label VITIS_LOOP_394_8:   [xilinx-label-all-loops]
+ for(int j=0; j<8; j++){
+ ^~~
+ VITIS_LOOP_394_8: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34812:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34819:13: warning: Added loop label VITIS_LOOP_401_9:   [xilinx-label-all-loops]
+            for(int j=0; j<8; j++){
+            ^~~
+            VITIS_LOOP_401_9: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34819:13: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34831:2: warning: Added loop label VITIS_LOOP_413_10:   [xilinx-label-all-loops]
+ for(int j=0; j<4; j++){
+ ^~~
+ VITIS_LOOP_413_10: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34831:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34838:13: warning: Added loop label VITIS_LOOP_420_11:   [xilinx-label-all-loops]
+            for(int j=0; j<4; j++){
+            ^~~
+            VITIS_LOOP_420_11: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34838:13: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34850:2: warning: Added loop label VITIS_LOOP_432_12:   [xilinx-label-all-loops]
+ for(int j=0; j<2; j++){
+ ^~~
+ VITIS_LOOP_432_12: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34850:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34857:13: warning: Added loop label VITIS_LOOP_439_13:   [xilinx-label-all-loops]
+            for(int j=0; j<2; j++){
+            ^~~
+            VITIS_LOOP_439_13: 
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp:34857:13: note: FIX-IT applied suggested code changes

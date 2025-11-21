@@ -1,0 +1,339 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="CLIP3" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B2" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B4" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:31:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=evens complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:32:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=odds complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:35:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=inputs complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:50:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B8" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:54:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B8" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=evens complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:55:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B8" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=odds complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:58:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B8" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=inputs complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:81:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B16" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:85:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B16" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=evens complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:86:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B16" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=odds complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:89:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B16" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=inputs complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:102:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B16" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:125:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B32" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:129:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B32" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=evens complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:130:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B32" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=odds complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:133:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B32" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=inputs complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:155:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B32" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:195:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B64" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:199:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B64" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=evens complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:200:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B64" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=odds complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:203:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B64" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=inputs complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:242:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B64" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=IDCT2" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:316:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in offset=slave bundle=gmem0" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:317:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=out offset=slave bundle=gmem1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:318:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=in bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:319:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=out bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:320:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=block_size bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:321:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=size bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:322:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return bundle=control" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:325:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=1024" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:326:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:334:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:335:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:338:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:345:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:353:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:354:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:357:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:364:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:372:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:373:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:376:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:383:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:391:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:392:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:395:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:402:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:410:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:411:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:414:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:421:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:429:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:430:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:433:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="src/IDCT2.cpp:440:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:432:21" msg_body="Loop 'VITIS_LOOP_432_12' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_432_12"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:439:32" msg_body="Loop 'VITIS_LOOP_439_13' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_439_13"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:413:21" msg_body="Loop 'VITIS_LOOP_413_10' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_413_10"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:420:32" msg_body="Loop 'VITIS_LOOP_420_11' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_420_11"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:394:20" msg_body="Loop 'VITIS_LOOP_394_8' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_394_8"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:401:31" msg_body="Loop 'VITIS_LOOP_401_9' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_401_9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:375:20" msg_body="Loop 'VITIS_LOOP_375_6' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_375_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:382:31" msg_body="Loop 'VITIS_LOOP_382_7' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_382_7"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:356:20" msg_body="Loop 'VITIS_LOOP_356_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_356_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:363:31" msg_body="Loop 'VITIS_LOOP_363_5' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_363_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:337:20" msg_body="Loop 'VITIS_LOOP_337_2' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_337_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:344:31" msg_body="Loop 'VITIS_LOOP_344_3' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_344_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:241:23" msg_body="Loop 'VITIS_LOOP_241_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_241_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:154:23" msg_body="Loop 'VITIS_LOOP_154_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_154_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="src/IDCT2.cpp:101:23" msg_body="Loop 'VITIS_LOOP_101_1' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_101_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_432_12' (src/IDCT2.cpp:432:21) in function 'IDCT2' completely with a factor of 2">
+        <args Factor="2" LoopLoc="src/IDCT2.cpp:432:21" LoopName="VITIS_LOOP_432_12"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_439_13' (src/IDCT2.cpp:439:32) in function 'IDCT2' completely with a factor of 2">
+        <args Factor="2" LoopLoc="src/IDCT2.cpp:439:32" LoopName="VITIS_LOOP_439_13"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_413_10' (src/IDCT2.cpp:413:21) in function 'IDCT2' completely with a factor of 4">
+        <args Factor="4" LoopLoc="src/IDCT2.cpp:413:21" LoopName="VITIS_LOOP_413_10"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_420_11' (src/IDCT2.cpp:420:32) in function 'IDCT2' completely with a factor of 4">
+        <args Factor="4" LoopLoc="src/IDCT2.cpp:420:32" LoopName="VITIS_LOOP_420_11"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_394_8' (src/IDCT2.cpp:394:20) in function 'IDCT2' completely with a factor of 8">
+        <args Factor="8" LoopLoc="src/IDCT2.cpp:394:20" LoopName="VITIS_LOOP_394_8"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_401_9' (src/IDCT2.cpp:401:31) in function 'IDCT2' completely with a factor of 8">
+        <args Factor="8" LoopLoc="src/IDCT2.cpp:401:31" LoopName="VITIS_LOOP_401_9"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_375_6' (src/IDCT2.cpp:375:20) in function 'IDCT2' completely with a factor of 16">
+        <args Factor="16" LoopLoc="src/IDCT2.cpp:375:20" LoopName="VITIS_LOOP_375_6"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_382_7' (src/IDCT2.cpp:382:31) in function 'IDCT2' completely with a factor of 16">
+        <args Factor="16" LoopLoc="src/IDCT2.cpp:382:31" LoopName="VITIS_LOOP_382_7"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_356_4' (src/IDCT2.cpp:356:20) in function 'IDCT2' completely with a factor of 32">
+        <args Factor="32" LoopLoc="src/IDCT2.cpp:356:20" LoopName="VITIS_LOOP_356_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_363_5' (src/IDCT2.cpp:363:31) in function 'IDCT2' completely with a factor of 32">
+        <args Factor="32" LoopLoc="src/IDCT2.cpp:363:31" LoopName="VITIS_LOOP_363_5"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_337_2' (src/IDCT2.cpp:337:20) in function 'IDCT2' completely with a factor of 64">
+        <args Factor="64" LoopLoc="src/IDCT2.cpp:337:20" LoopName="VITIS_LOOP_337_2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'VITIS_LOOP_344_3' (src/IDCT2.cpp:344:31) in function 'IDCT2' completely with a factor of 64">
+        <args Factor="64" LoopLoc="src/IDCT2.cpp:344:31" LoopName="VITIS_LOOP_344_3"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:194:0" msg_body="Unrolling loop 'VITIS_LOOP_241_1' (src/IDCT2.cpp:241:23) in function 'IDCT2B64' completely with a factor of 32">
+        <args Factor="32" LoopLoc="src/IDCT2.cpp:241:23" LoopName="VITIS_LOOP_241_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:124:0" msg_body="Unrolling loop 'VITIS_LOOP_154_1' (src/IDCT2.cpp:154:23) in function 'IDCT2B32' completely with a factor of 16">
+        <args Factor="16" LoopLoc="src/IDCT2.cpp:154:23" LoopName="VITIS_LOOP_154_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="src/IDCT2.cpp:80:0" msg_body="Unrolling loop 'VITIS_LOOP_101_1' (src/IDCT2.cpp:101:23) in function 'IDCT2B16' completely with a factor of 8">
+        <args Factor="8" LoopLoc="src/IDCT2.cpp:101:23" LoopName="VITIS_LOOP_101_1"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:29:13" msg_body="Applying array_partition to 'evens': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="evens"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:34:13" msg_body="Applying array_partition to 'inputs': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="inputs"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:52:13" msg_body="Applying array_partition to 'evens': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="evens"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:57:13" msg_body="Applying array_partition to 'inputs': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="inputs"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:83:13" msg_body="Applying array_partition to 'evens': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="evens"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:88:13" msg_body="Applying array_partition to 'inputs': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="inputs"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:127:13" msg_body="Applying array_partition to 'evens': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="evens"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:132:13" msg_body="Applying array_partition to 'inputs': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="inputs"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:197:13" msg_body="Applying array_partition to 'evens': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="evens"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:198:16" msg_body="Applying array_partition to 'odds': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="odds"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:202:13" msg_body="Applying array_partition to 'inputs': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="inputs"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:332:24" msg_body="Applying array_partition to 'in_data': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="in_data"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:333:24" msg_body="Applying array_partition to 'out_data': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="out_data"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:351:24" msg_body="Applying array_partition to 'in_data27': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="in_data27"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:352:24" msg_body="Applying array_partition to 'out_data28': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="out_data28"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:370:24" msg_body="Applying array_partition to 'in_data66': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="in_data66"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:371:24" msg_body="Applying array_partition to 'out_data67': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="out_data67"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:389:24" msg_body="Applying array_partition to 'in_data105': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="in_data105"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:390:24" msg_body="Applying array_partition to 'out_data106': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="out_data106"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:408:24" msg_body="Applying array_partition to 'in_data144': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="in_data144"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:409:24" msg_body="Applying array_partition to 'out_data145': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="out_data145"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:427:24" msg_body="Applying array_partition to 'in_data181': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="in_data181"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="src/IDCT2.cpp:428:24" msg_body="Applying array_partition to 'out_data182': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="out_data182"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

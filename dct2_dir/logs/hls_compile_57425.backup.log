@@ -1,0 +1,291 @@
+INFO: [v++ 82-10520] No user clocking directives found, hence PL frequency is being inferred from the platform. 150.000000Mhz will be used as PL frequency
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir 
+INFO: [HLS 200-2006] Changing directory to /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=../src/IDCT2.cpp' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(19)
+INFO: [HLS 200-10] Adding design file '/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=../src/transform_coeffs.h' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(20)
+INFO: [HLS 200-10] Adding design file '/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/transform_coeffs.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=IDCT2' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(21)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(16)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(17)
+INFO: [HLS 200-1465] Applying ini 'part=xczu9eg-ffvb1156-2-e' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/config.cmdline(2)
+INFO: [HLS 200-1611] Setting target device to 'xczu9eg-ffvb1156-2-e'
+INFO: [HLS 200-1465] Applying ini 'clock=150.000000Mhz' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/config.cmdline(7)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 6.667ns.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.91 seconds. CPU system time: 0.23 seconds. Elapsed time: 2.02 seconds; current allocated memory: 909.520 MB.
+INFO: [HLS 200-10] Analyzing design file 'src/IDCT2.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3.06 seconds. CPU system time: 0.44 seconds. Elapsed time: 3.51 seconds; current allocated memory: 912.473 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 200-1995] There were 65,659 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 7,265 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,143 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,102 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,102 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,269 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,188 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,188 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,188 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 6,191 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,093 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,093 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,093 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,093 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 5,103 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 4,750 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_432_12' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:432:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_439_13' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:439:32)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_413_10' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:413:21)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_420_11' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:420:32)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_394_8' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:394:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_401_9' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:401:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_375_6' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:375:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_382_7' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:382:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_356_4' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:356:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_363_5' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:363:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_337_2' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:337:20)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_344_3' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:344:31)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_241_1' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:241:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_154_1' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:154:23)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_101_1' is marked as complete unroll implied by the pipeline pragma (src/IDCT2.cpp:101:23)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_432_12' (src/IDCT2.cpp:432:21) in function 'IDCT2' completely with a factor of 2 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_439_13' (src/IDCT2.cpp:439:32) in function 'IDCT2' completely with a factor of 2 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_413_10' (src/IDCT2.cpp:413:21) in function 'IDCT2' completely with a factor of 4 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_420_11' (src/IDCT2.cpp:420:32) in function 'IDCT2' completely with a factor of 4 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_394_8' (src/IDCT2.cpp:394:20) in function 'IDCT2' completely with a factor of 8 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_401_9' (src/IDCT2.cpp:401:31) in function 'IDCT2' completely with a factor of 8 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_375_6' (src/IDCT2.cpp:375:20) in function 'IDCT2' completely with a factor of 16 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_382_7' (src/IDCT2.cpp:382:31) in function 'IDCT2' completely with a factor of 16 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_356_4' (src/IDCT2.cpp:356:20) in function 'IDCT2' completely with a factor of 32 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_363_5' (src/IDCT2.cpp:363:31) in function 'IDCT2' completely with a factor of 32 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_337_2' (src/IDCT2.cpp:337:20) in function 'IDCT2' completely with a factor of 64 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_344_3' (src/IDCT2.cpp:344:31) in function 'IDCT2' completely with a factor of 64 (src/IDCT2.cpp:315:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_241_1' (src/IDCT2.cpp:241:23) in function 'IDCT2B64' completely with a factor of 32 (src/IDCT2.cpp:194:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_154_1' (src/IDCT2.cpp:154:23) in function 'IDCT2B32' completely with a factor of 16 (src/IDCT2.cpp:124:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_101_1' (src/IDCT2.cpp:101:23) in function 'IDCT2B16' completely with a factor of 8 (src/IDCT2.cpp:80:0)
+INFO: [HLS 214-248] Applying array_partition to 'evens': Complete partitioning on dimension 1. (src/IDCT2.cpp:29:13)
+INFO: [HLS 214-248] Applying array_partition to 'inputs': Complete partitioning on dimension 1. (src/IDCT2.cpp:34:13)
+INFO: [HLS 214-248] Applying array_partition to 'evens': Complete partitioning on dimension 1. (src/IDCT2.cpp:52:13)
+INFO: [HLS 214-248] Applying array_partition to 'inputs': Complete partitioning on dimension 1. (src/IDCT2.cpp:57:13)
+INFO: [HLS 214-248] Applying array_partition to 'evens': Complete partitioning on dimension 1. (src/IDCT2.cpp:83:13)
+INFO: [HLS 214-248] Applying array_partition to 'inputs': Complete partitioning on dimension 1. (src/IDCT2.cpp:88:13)
+INFO: [HLS 214-248] Applying array_partition to 'evens': Complete partitioning on dimension 1. (src/IDCT2.cpp:127:13)
+INFO: [HLS 214-248] Applying array_partition to 'inputs': Complete partitioning on dimension 1. (src/IDCT2.cpp:132:13)
+INFO: [HLS 214-248] Applying array_partition to 'evens': Complete partitioning on dimension 1. (src/IDCT2.cpp:197:13)
+INFO: [HLS 214-248] Applying array_partition to 'odds': Complete partitioning on dimension 1. (src/IDCT2.cpp:198:16)
+INFO: [HLS 214-248] Applying array_partition to 'inputs': Complete partitioning on dimension 1. (src/IDCT2.cpp:202:13)
+INFO: [HLS 214-248] Applying array_partition to 'in_data': Complete partitioning on dimension 1. (src/IDCT2.cpp:332:24)
+INFO: [HLS 214-248] Applying array_partition to 'out_data': Complete partitioning on dimension 1. (src/IDCT2.cpp:333:24)
+INFO: [HLS 214-248] Applying array_partition to 'in_data27': Complete partitioning on dimension 1. (src/IDCT2.cpp:351:24)
+INFO: [HLS 214-248] Applying array_partition to 'out_data28': Complete partitioning on dimension 1. (src/IDCT2.cpp:352:24)
+INFO: [HLS 214-248] Applying array_partition to 'in_data66': Complete partitioning on dimension 1. (src/IDCT2.cpp:370:24)
+INFO: [HLS 214-248] Applying array_partition to 'out_data67': Complete partitioning on dimension 1. (src/IDCT2.cpp:371:24)
+INFO: [HLS 214-248] Applying array_partition to 'in_data105': Complete partitioning on dimension 1. (src/IDCT2.cpp:389:24)
+INFO: [HLS 214-248] Applying array_partition to 'out_data106': Complete partitioning on dimension 1. (src/IDCT2.cpp:390:24)
+INFO: [HLS 214-248] Applying array_partition to 'in_data144': Complete partitioning on dimension 1. (src/IDCT2.cpp:408:24)
+INFO: [HLS 214-248] Applying array_partition to 'out_data145': Complete partitioning on dimension 1. (src/IDCT2.cpp:409:24)
+INFO: [HLS 214-248] Applying array_partition to 'in_data181': Complete partitioning on dimension 1. (src/IDCT2.cpp:427:24)
+INFO: [HLS 214-248] Applying array_partition to 'out_data182': Complete partitioning on dimension 1. (src/IDCT2.cpp:428:24)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 512 in loop 'VITIS_LOOP_324_1'(src/IDCT2.cpp:324:20) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (src/IDCT2.cpp:324:20)
+INFO: [HLS 214-115] Multiple burst writes of variable length and bit width 512 in loop 'VITIS_LOOP_324_1'(src/IDCT2.cpp:324:20) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (src/IDCT2.cpp:324:20)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.93 seconds. CPU system time: 0.4 seconds. Elapsed time: 7.11 seconds; current allocated memory: 915.141 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 915.141 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.08 seconds; current allocated memory: 920.711 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+WARNING: [SYNCHK 200-24] src/IDCT2.cpp:339: Index for bit vector operation is out of bound.
+INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 922.152 MB.
+INFO: [XFORM 203-11] Balancing expressions in function 'IDCT2B8' (src/IDCT2.cpp:64:1)...12 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'IDCT2B64' (src/IDCT2.cpp:239:149)...1914 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'IDCT2B32' (src/IDCT2.cpp:152:172)...446 expression(s) balanced.
+INFO: [XFORM 203-11] Balancing expressions in function 'IDCT2B16' (src/IDCT2.cpp:99:1)...104 expression(s) balanced.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.17 seconds; current allocated memory: 947.242 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.16 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 1003.723 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'IDCT2' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT2B2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'IDCT2B2'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'IDCT2B2'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0.04 seconds. Elapsed time: 0.06 seconds; current allocated memory: 1004.266 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1004.293 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT2B4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'IDCT2B4'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'IDCT2B4'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1005.465 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1005.465 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT2B8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'IDCT2B8'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'IDCT2B8'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 1006.039 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.01 seconds; current allocated memory: 1006.039 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT2B16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'IDCT2B16'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'IDCT2B16'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 1008.344 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 1008.344 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT2B32' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'IDCT2B32'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, function 'IDCT2B32'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.38 seconds. CPU system time: 0 seconds. Elapsed time: 0.38 seconds; current allocated memory: 1017.156 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.1 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 1017.156 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT2B64' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining function 'IDCT2B64'.
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 3, function 'IDCT2B64'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.61 seconds. CPU system time: 0 seconds. Elapsed time: 0.62 seconds; current allocated memory: 1.003 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 1.003 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_324_1'.
+INFO: [HLS 200-876] Unable to schedule the whole 71 cycles bus request operation ('empty_173', src/IDCT2.cpp:324) on port 'gmem0' (src/IDCT2.cpp:324) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
+Resolution: For help on HLS 200-876 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-876.html
+INFO: [HLS 200-1470] Pipelining result : Target II = 1, Final II = 1, Depth = 146, loop 'VITIS_LOOP_324_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.16 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 1.003 GB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 1.003 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT2B2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT2B2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 1.003 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT2B4' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDCT2B4' pipeline 'IDCT2B4' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_8s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT2B4'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1.003 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT2B8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDCT2B8' pipeline 'IDCT2B8' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_7s_32_1_1': 2 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_8s_32_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT2B8'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 1.003 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT2B16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDCT2B16' pipeline 'IDCT2B16' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_6s_32_1_1': 4 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_7s_32_1_1': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_8s_32_1_1': 10 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT2B16'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 1.006 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT2B32' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDCT2B32' pipeline 'IDCT2B32' pipeline type 'function pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_5s_32_1_1': 8 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_6s_32_1_1': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_7s_32_1_1': 30 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_8s_32_1_1': 48 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT2B32'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0 seconds. Elapsed time: 0.16 seconds; current allocated memory: 1.021 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT2B64' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDCT2B64' pipeline 'IDCT2B64' pipeline type 'function pipeline'
+INFO: [RTGEN 206-104] Estimated max fanout for 'IDCT2B64' is 7092 from HDL expression: ((1'b0 == ap_block_pp0_stage0_11001_ignoreCallOp22) & (1'b1 == ap_ce) & (1'b1 == ap_CS_fsm_pp0_stage0))
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_12s_32_1_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_5s_32_1_1': 5 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_6s_32_1_1': 3 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_7s_32_1_1': 29 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_8s_32_1_1': 70 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_9s_32_1_1': 7 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT2B64'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.36 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.38 seconds; current allocated memory: 1.060 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT2' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT2/gmem0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT2/gmem1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT2/in_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT2/out_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT2/block_size' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT2/size' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'IDCT2' to 's_axilite & ap_ctrl_chain'.
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDCT2' pipeline 'VITIS_LOOP_324_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Bundling port 'in_r', 'out_r', 'block_size', 'size' and 'return' to AXI-Lite port control.
+INFO: [RTGEN 206-104] Estimated max fanout for 'IDCT2' is 14580 from HDL expression: (1'b0 == ap_block_pp0_stage0_11001_ignoreCallOp288_grp1)
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT2'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.45 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.49 seconds; current allocated memory: 1.092 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.28 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.29 seconds; current allocated memory: 1.098 GB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.42 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.43 seconds; current allocated memory: 1.116 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for IDCT2.
+INFO: [VLOG 209-307] Generating Verilog RTL for IDCT2.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 205.47 MHz
+INFO: [HLS 200-112] Total CPU user time: 12.02 seconds. Total CPU system time: 1.22 seconds. Total elapsed time: 16.95 seconds; peak allocated memory: 1.116 GB.
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 20s
