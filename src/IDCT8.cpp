@@ -103,115 +103,75 @@ void INV_MATMUL_32(const ap_int<32> src[32], ap_int<32> dst[32], int shift, int 
     }
 }
 
-void IDCT2B2(ap_int<32> in[2], ap_int<32> out[2]){
-    #pragma HLS inline off
 
-    ap_int<32> sum = in[0] + in[1];
-    ap_int<32> diff = in[0] - in[1];
+void IDCT8B4(ap_int<32> src[4], ap_int<32> dst[4], ap_int<32> shift, ap_int<32> line, ap_int<32> skipLine, ap_int<32> skipLine2, const ap_int<32> oMin, const ap_int<32> oMax) {
+    ap_int<32> i;
+    ap_int<32> rnd_factor = ap_int<32>(1) << (shift - 1);
 
-    ap_int<32> even = sum << 6;
-    ap_int<32> odd = diff << 6;
+    ap_int<32> c[4];
+    const ap_int<32>* reducedLine = line - skipLine;
 
-    out[0] = even;
-    out[1] = odd;
-}
-
-void IDCT2B4(ap_int<32> in[4], ap_int<32> out[4]){
-    #pragma HLS inline off
-
-    ap_int<32> evens[2];
-    ap_int<32> odds[2];
-    #pragma HLS ARRAY_PARTITION variable=evens complete dim=0
-    #pragma HLS ARRAY_PARTITION variable=odds complete dim=0
-
-    ap_int<32> inputs[2];
-    #pragma HLS ARRAY_PARTITION variable=inputs complete dim=0
-    inputs[0] = in[0];
-    inputs[1] = in[2];
-
-    IDCT2B2(inputs, evens);
-    odds[0] = 83*in[1] + 36*in[3];
-    odds[1] = 36*in[1] - 83*in[3];
-
-    out[0] = evens[0] + odds[0];
-    out[1] = evens[1] + odds[1];
-    out[2] = evens[1] - odds[1];
-    out[3] = evens[0] - odds[0];
-}
-
-void IDCT2B8(ap_int<32> in[8], ap_int<32> out[8]){
-    #pragma HLS inline off
-
-    ap_int<32> evens[4];
-    ap_int<32> odds[4];
-    #pragma HLS ARRAY_PARTITION variable=evens complete dim=0
-    #pragma HLS ARRAY_PARTITION variable=odds complete dim=0
-
-    ap_int<32> inputs[4];
-    #pragma HLS ARRAY_PARTITION variable=inputs complete dim=0
-    inputs[0] = in[0];
-    inputs[2] = in[4];
-    inputs[1] = in[2];
-    inputs[3] = in[6];
-
-    IDCT2B4(inputs, evens);
-    odds[0] = 89*in[1] + 75*in[3] + 50*in[5] + 18*in[7];
-    odds[1] = 75*in[1] - 18*in[3] - 89*in[5] - 50*in[7];
-    odds[2] = 50*in[1] - 89*in[3] + 18*in[5] + 75*in[7];
-    odds[3] = 18*in[1] - 50*in[3] + 75*in[5] - 89*in[7];
-
-    out[0] = evens[0] + odds[0];
-    out[1] = evens[1] + odds[1];
-    out[2] = evens[2] + odds[2];
-    out[3] = evens[3] + odds[3];
-    out[4] = evens[3] - odds[3];
-    out[5] = evens[2] - odds[2];
-    out[6] = evens[1] - odds[1];
-    out[7] = evens[0] - odds[0];
-}
-
-void IDCT2B16(ap_int<32> in[16], ap_int<32> out[16]){
-    #pragma HLS inline off
-
-    ap_int<32> evens[8];
-    ap_int<32> odds[8];
-    #pragma HLS ARRAY_PARTITION variable=evens complete dim=0
-    #pragma HLS ARRAY_PARTITION variable=odds complete dim=0
-
-    ap_int<32> inputs[8];
-    #pragma HLS ARRAY_PARTITION variable=inputs complete dim=0
-    inputs[0] = in[0];
-    inputs[4] = in[8];
-    inputs[2] = in[4];
-    inputs[6] = in[12];
-    inputs[1] = in[2];
-    inputs[3] = in[6];
-    inputs[5] = in[10];
-    inputs[7] = in[14];
-
-    IDCT2B8(inputs, evens);
-
-    for(int i=0; i<8; i++){
+    for (i = 0; i < reducedLine; i++) {
         #pragma HLS UNROLL
-        odds[i] = idct16[1][i]*in[1] + idct16[3][i]*in[3] + idct16[5][i]*in[5] + idct16[7][i]*in[7] + idct16[9][i]*in[9] + idct16[11][i]*in[11] + idct16[13][i]*in[13] + idct16[15][i]*in[15];
+        c[0] = src[0*line] + src[3*line];
+        c[1] = src[2*line] + src[0*line];
+        c[2] = src[3*line] - src[2*line];
+        c[3] = 74 * src[1*line];
+
+        dst[0] = CLIP3(oMin, oMax, (29*c[0] + 55*c[1] + c[3] + rnd_factor) >> shift);
+        dst[1] = CLIP3(oMin, oMax, (74*c[3] + (src[0*line] - src[2*line] - src[3*line]) + rnd_factor) >> shift);
+        dst[2] = CLIP3(oMin, oMax, (29*c[0] - 55*c[1] - c[3] + rnd_factor) >> shift);
+        dst[3] = CLIP3(oMin, oMax, (29*c[3] - 55*c[2] - c[3] + rnd_factor) >> shift);
+    }
+}
+
+void IDCT8B8(ap_int<32> src[8], ap_int<32> dst[8], ap_int<32> shift, ap_int<32> line, ap_int<32> skipLine, ap_int<32> skipLine2, const ap_int<32> oMin, const ap_int<32> oMax) {
+    INV_MATMUL_8(src, dst, shift, line, skipLine, skipLine2, oMin, oMax, icdt_8_8_coeffs);
+}
+
+void IDCT8B16(ap_int<32> in[16], ap_int<32> out[16]){
+    ap_int<32> j;
+    ap_int<32> k;
+    ap_int<32> t;
+    ap_int<32> a[5];
+    ap_int<32> b[5];
+    ap_int<32> c[5];
+    ap_int<32> d[5];
+
+    ap_int<32> add = (shift>0) ? ap_int<32>(1) << (shift-1) : 0;
+    const ap_int<32> reducedLine = line - skipLine;
+
+    for (j = 0; j< reducedLine ; j ++) {
+        for (k = 0; k < 5; k++) {
+            #pragma HLS UNROLL
+            a[k] = src[(15-k)*line] + src[(4-k)*line] ;
+            b[k] = src[(6-k)*line] + src[(4-k)*line] ;
+            c[k] = src[(15-k)*line] - src[(6-k)*line] ;
+            d[k] = src[(15-k)*line] + src[(6-k)*line] - src[(4-k)*line] ;
+        }
+        t =  ap_int<32>( 48 * src[ 5*line ] ) ;
+
+        dst[ 1 ] = CLIP3( oMin, oMax, ( -87*d[0] -77*d[1] -62*d[2] -40*d[3] -17*d[4] +add ) >> shift ) ;
+        dst[ 4 ] = CLIP3( oMin, oMax, ( 62*d[0] +17*d[1] + 77*d[2] -87*d[3] -40*d[4] +add  ) >> shift ) ;
+        dst[ 7 ] = CLIP3( oMin, oMax, ( -17*d[0] -87*d[1] +40*d[2] + 77*d[3] -62*d[4] +add  ) >> shift ) ;
+        dst[ 10 ] = CLIP3( oMin, oMax, ( 40*d[0] -62*d[1] -87*d[2] +17*d[3] -77*d[4] +add  ) >> shift ) ;
+        dst[ 13 ] = CLIP3( oMin, oMax, ( -77*d[0] +40*d[1] -17*d[2] +62*d[3] -87*d[4] +add  ) >> shift ) ;
+        //todo for rest of dst
+        dst[ 5 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
+
+        dst[ 0 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
+        dst[ 2 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
+        dst[ 3 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
+        dst[ 6 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
+        dst[ 8 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
+        dst[ 9 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
+        dst[ 11 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
+        dst[ 12 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
+        dst[ 14 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
+        dst[ 15 ] = CLIP3( oMin, oMax, ( ap_int<32>( 29 * a[0] ) + ap_int<32>( 55 * b[0] ) + t + add ) >> shift ) ;
     }
 
-    out[0] = evens[0] + odds[0];
-    out[1] = evens[1] + odds[1];
-    out[2] = evens[2] + odds[2];
-    out[3] = evens[3] + odds[3];
-    out[4] = evens[4] + odds[4];
-    out[5] = evens[5] + odds[5];
-    out[6] = evens[6] + odds[6];
-    out[7] = evens[7] + odds[7];
-    out[8] = evens[7] - odds[7];
-    out[9] = evens[6] - odds[6];
-    out[10] = evens[5] - odds[5];
-    out[11] = evens[4] - odds[4];
-    out[12] = evens[3] - odds[3];
-    out[13] = evens[2] - odds[2];
-    out[14] = evens[1] - odds[1];
-    out[15] = evens[0] - odds[0];
+
 }
 
 void IDCT2B32(ap_int<32> in[32], ap_int<32> out[32]){
