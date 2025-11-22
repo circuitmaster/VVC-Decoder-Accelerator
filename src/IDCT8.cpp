@@ -10,6 +10,99 @@ int CLIP3(ap_int<32> outputMinimum, ap_int<32> outputMaximum, ap_int<32> x){
     return x;
 }
 
+void INV_MATMUL_8(const ap_int<32> src[8], ap_int<32> dst[8], int shift, int numOutLines, int skipOutLines,
+                int skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const int m[8]) {
+    #pragma HLS inline
+
+    const ap_int<32> rndFactor = ap_int<32>(1) << (shift - 1);
+
+    const ap_int<32> reducedLine = numOutLines - skipOutLines;
+    const ap_int<32> cutoff      = 8 - skipInLines;
+
+    for (ap_int<32> i = 0; i < reducedLine; i++) {
+        for (ap_int<32> j = 0; j < 8; j++) {
+            #pragma HLS UNROLL
+            ap_int<32> sum = 0;
+            for (ap_int<32> k = 0; k < cutoff; k++) {
+                #pragma HLS UNROLL
+                sum += ap_int<32>(src[k * numOutLines + i]) * ap_int<32>(m[k * 8 + j]);
+            }
+            ap_int<32> scaled = (ap_int<32>)((sum + rndFactor) >> shift);
+            dst[i * 8 + j] = CLIP3(outputMinimum, outputMaximum, scaled);
+        }
+    }
+
+    if (skipOutLines > 0) {
+        const ap_int<32> start = reducedLine * 8;
+        const ap_int<32> count = skipOutLines * 8;
+        for (ap_int<32> idx = 0; idx < count; idx++) {
+            dst[start + idx] = 0;
+        }
+    }
+}
+
+void INV_MATMUL_16(const ap_int<32> src[16], ap_int<32> dst[16], int shift, int numOutLines, int skipOutLines,
+                int skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const int m[16]) {
+    #pragma HLS inline
+
+    const ap_int<32> rndFactor = ap_int<32>(1) << (shift - 1);
+
+    const ap_int<32> reducedLine = numOutLines - skipOutLines;
+    const ap_int<32> cutoff      = 16 - skipInLines;
+
+    for (ap_int<32> i = 0; i < reducedLine; i++) {
+        for (ap_int<32> j = 0; j < 16; j++) {
+            #pragma HLS UNROLL
+            ap_int<32> sum = 0;
+            for (ap_int<32> k = 0; k < cutoff; k++) {
+                #pragma HLS UNROLL
+                sum += ap_int<32>(src[k * numOutLines + i]) * ap_int<32>(m[k * 16 + j]);
+            }
+            ap_int<32> scaled = (ap_int<32>)((sum + rndFactor) >> shift);
+            dst[i * 16 + j] = CLIP3(outputMinimum, outputMaximum, scaled);
+        }
+    }
+
+    if (skipOutLines > 0) {
+        const ap_int<32> start = reducedLine * 16;
+        const ap_int<32> count = skipOutLines * 16;
+        for (ap_int<32> idx = 0; idx < count; idx++) {
+            dst[start + idx] = 0;
+        }
+    }
+}
+
+void INV_MATMUL_32(const ap_int<32> src[32], ap_int<32> dst[32], int shift, int numOutLines, int skipOutLines,
+                int skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const int m[32]) {
+    #pragma HLS inline
+
+    const ap_int<32> rndFactor = ap_int<32>(1) << (shift - 1);
+
+    const ap_int<32> reducedLine = numOutLines - skipOutLines;
+    const ap_int<32> cutoff      = 32 - skipInLines;
+
+    for (ap_int<32> i = 0; i < reducedLine; i++) {
+        for (ap_int<32> j = 0; j < 32; j++) {
+            #pragma HLS UNROLL
+            ap_int<32> sum = 0;
+            for (ap_int<32> k = 0; k < cutoff; k++) {
+                #pragma HLS UNROLL
+                sum += ap_int<32>(src[k * numOutLines + i]) * ap_int<32>(m[k * 32 + j]);
+            }
+            ap_int<32> scaled = (ap_int<32>)((sum + rndFactor) >> shift);
+            dst[i * 32 + j] = CLIP3(outputMinimum, outputMaximum, scaled);
+        }
+    }
+
+    if (skipOutLines > 0) {
+        const ap_int<32> start = reducedLine * 32;
+        const ap_int<32> count = skipOutLines * 32;
+        for (ap_int<32> idx = 0; idx < count; idx++) {
+            dst[start + idx] = 0;
+        }
+    }
+}
+
 void IDCT2B2(ap_int<32> in[2], ap_int<32> out[2]){
     #pragma HLS inline off
 
@@ -191,126 +284,6 @@ void IDCT2B32(ap_int<32> in[32], ap_int<32> out[32]){
     out[31] = evens[0] - odds[0];
 }
 
-void IDCT2B64(ap_int<32> in[64], ap_int<32> out[64]){
-    #pragma HLS inline off
-
-    ap_int<32> evens[32];
-    ap_int<32> odds[32];
-    #pragma HLS ARRAY_PARTITION variable=evens complete dim=0
-    #pragma HLS ARRAY_PARTITION variable=odds complete dim=0
-
-    ap_int<32> inputs[32];
-    #pragma HLS ARRAY_PARTITION variable=inputs complete dim=0
-
-    inputs[0] = in[0];
-    inputs[16] = in[32];
-    inputs[8] = in[16];
-    inputs[24] = in[48];
-    inputs[4] = in[8];
-    inputs[12] = in[24];
-    inputs[20] = in[40];
-    inputs[28] = in[56];
-    inputs[2] = in[4];
-    inputs[6] = in[12];
-    inputs[10] = in[20];
-    inputs[14] = in[28];
-    inputs[18] = in[36];
-    inputs[22] = in[44];
-    inputs[26] = in[52];
-    inputs[30] = in[60];
-
-    inputs[1] = in[2];
-    inputs[3] = in[6];
-    inputs[5] = in[10];
-    inputs[7] = in[14];
-    inputs[9] = in[18];
-    inputs[11] = in[22];
-    inputs[13] = in[26];
-    inputs[15] = in[30];
-    inputs[17] = in[34];
-    inputs[19] = in[38];
-    inputs[21] = in[42];
-    inputs[23] = in[46];
-    inputs[25] = in[50];
-    inputs[27] = in[54];
-    inputs[29] = in[58];
-    inputs[31] = in[62];
-
-    IDCT2B32(inputs, evens);
-
-    for(int i=0; i<32; i++){
-        #pragma HLS UNROLL
-        odds[i] = idct64[1][i]*in[1] + idct64[3][i]*in[3] + idct64[5][i]*in[5] + idct64[7][i]*in[7] + idct64[9][i]*in[9] + idct64[11][i]*in[11] + idct64[13][i]*in[13] + idct64[15][i]*in[15] +
-            idct64[17][i]*in[17] + idct64[19][i]*in[19] + idct64[21][i]*in[21] + idct64[23][i]*in[23] + idct64[25][i]*in[25] + idct64[27][i]*in[27] + idct64[29][i]*in[29] + idct64[31][i]*in[31] +
-            idct64[33][i]*in[33] + idct64[35][i]*in[35] + idct64[37][i]*in[37] + idct64[39][i]*in[39] + idct64[41][i]*in[41] + idct64[43][i]*in[43] + idct64[45][i]*in[45] + idct64[47][i]*in[47] +
-            idct64[49][i]*in[49] + idct64[51][i]*in[51] + idct64[53][i]*in[53] + idct64[55][i]*in[55] + idct64[57][i]*in[57] + idct64[59][i]*in[59] + idct64[61][i]*in[61] + idct64[63][i]*in[63];
-    }
-    
-    out[0] = evens[0] + odds[0];
-    out[1] = evens[1] + odds[1];
-    out[2] = evens[2] + odds[2];
-    out[3] = evens[3] + odds[3];
-    out[4] = evens[4] + odds[4];
-    out[5] = evens[5] + odds[5];
-    out[6] = evens[6] + odds[6];
-    out[7] = evens[7] + odds[7];
-    out[8] = evens[8] + odds[8];
-    out[9] = evens[9] + odds[9];
-    out[10] = evens[10] + odds[10];
-    out[11] = evens[11] + odds[11];
-    out[12] = evens[12] + odds[12];
-    out[13] = evens[13] + odds[13];
-    out[14] = evens[14] + odds[14];
-    out[15] = evens[15] + odds[15];
-    out[16] = evens[16] + odds[16];
-    out[17] = evens[17] + odds[17];
-    out[18] = evens[18] + odds[18];
-    out[19] = evens[19] + odds[19];
-    out[20] = evens[20] + odds[20];
-    out[21] = evens[21] + odds[21];
-    out[22] = evens[22] + odds[22];
-    out[23] = evens[23] + odds[23];
-    out[24] = evens[24] + odds[24];
-    out[25] = evens[25] + odds[25];
-    out[26] = evens[26] + odds[26];
-    out[27] = evens[27] + odds[27];
-    out[28] = evens[28] + odds[28];
-    out[29] = evens[29] + odds[29];
-    out[30] = evens[30] + odds[30];
-    out[31] = evens[31] + odds[31];
-    out[32] = evens[31] - odds[31];
-    out[33] = evens[30] - odds[30];
-    out[34] = evens[29] - odds[29];
-    out[35] = evens[28] - odds[28];
-    out[36] = evens[27] - odds[27];
-    out[37] = evens[26] - odds[26];
-    out[38] = evens[25] - odds[25];
-    out[39] = evens[24] - odds[24];
-    out[40] = evens[23] - odds[23];
-    out[41] = evens[22] - odds[22];
-    out[42] = evens[21] - odds[21];
-    out[43] = evens[20] - odds[20];
-    out[44] = evens[19] - odds[19];
-    out[45] = evens[18] - odds[18];
-    out[46] = evens[17] - odds[17];
-    out[47] = evens[16] - odds[16];
-    out[48] = evens[15] - odds[15];
-    out[49] = evens[14] - odds[14];
-    out[50] = evens[13] - odds[13];
-    out[51] = evens[12] - odds[12];
-    out[52] = evens[11] - odds[11];
-    out[53] = evens[10] - odds[10];
-    out[54] = evens[9] - odds[9];
-    out[55] = evens[8] - odds[8];
-    out[56] = evens[7] - odds[7];
-    out[57] = evens[6] - odds[6];
-    out[58] = evens[5] - odds[5];
-    out[59] = evens[4] - odds[4];
-    out[60] = evens[3] - odds[3];
-    out[61] = evens[2] - odds[2];
-    out[62] = evens[1] - odds[1];
-    out[63] = evens[0] - odds[0];
-}
 
 extern "C" void IDCT2(ap_int<512>* in, ap_int<512>* out, int block_size, int size){
     #pragma HLS INTERFACE m_axi port=in offset=slave bundle=gmem0
@@ -328,26 +301,7 @@ extern "C" void IDCT2(ap_int<512>* in, ap_int<512>* out, int block_size, int siz
         ap_int<512> in_block = in[i];
         ap_int<512> out_block = 0;
 
-        if(block_size == 64){
-            ap_int<32> in_data[64];
-            ap_int<32> out_data[64];
-            #pragma HLS ARRAY_PARTITION variable=in_data complete dim=0
-            #pragma HLS ARRAY_PARTITION variable=out_data complete dim=0
-
-            for(int j=0; j<64; j++){
-                #pragma HLS UNROLL
-                in_data[j] = in_block.range((j+1)*32-1, j*32);
-            }
-
-            IDCT2B64(in_data, out_data);
-
-            for(int j=0; j<64; j++){
-                #pragma HLS UNROLL
-                out_block.range((j+1)*32-1, j*32) = out_data[j];
-            }
-
-            //out[i] = out_block;
-        }else if(block_size == 32){
+        if(block_size == 32){
             ap_int<32> in_data[32];
             ap_int<32> out_data[32];
             #pragma HLS ARRAY_PARTITION variable=in_data complete dim=0
