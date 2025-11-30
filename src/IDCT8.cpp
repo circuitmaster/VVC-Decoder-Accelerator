@@ -19,10 +19,13 @@ void INV_MATMUL_8(const ap_int<32> src[8], ap_int<32> dst[8], ap_int<32> shift,
 
     //for (ap_int<32> i = 0; i < reducedLine; i++) {
     for (ap_int<32> j = 0; j < 8; j++) {
-        #pragma HLS UNROLL
+        //#pragma HLS UNROLL
+        #pragma HLS PIPELINE 
         ap_int<32> sum = 0;
         for (ap_int<32> k = 0; k < 8; k++) {
-            #pragma HLS UNROLL
+            //#pragma HLS UNROLL
+            #pragma HLS PIPELINE 
+
             if(k< cutoff){
                 sum += src[k] * m[k][j];
             }
@@ -31,15 +34,59 @@ void INV_MATMUL_8(const ap_int<32> src[8], ap_int<32> dst[8], ap_int<32> shift,
         ap_int<32> scaled = (ap_int<32>)((sum + rndFactor) >> shift);
         dst[j] = CLIP3(outputMinimum, outputMaximum, scaled);
     }
-    //}
+}
 
-    /* if (skipOutLines > 0) {
-        const ap_int<32> start = reducedLine * 8;
-        const ap_int<32> count = skipOutLines * 8;
-        for (ap_int<32> idx = 0; idx < count; idx++) {
-            dst[start + idx] = 0;
+void INV_MATMUL_16(const ap_int<32> src[16], ap_int<32> dst[16], ap_int<32> shift,
+                ap_int<32> skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const ap_int<32> m[16][16]) {
+    #pragma HLS inline
+
+    const ap_int<32> rndFactor = ap_int<32>(1) << (shift - 1);
+    const ap_int<32> cutoff      = 16 - skipInLines;
+
+    //for (ap_int<32> i = 0; i < reducedLine; i++) {
+    for (ap_int<32> j = 0; j < 16; j++) {
+        //#pragma HLS UNROLL
+        #pragma HLS PIPELINE 
+
+        ap_int<32> sum = 0;
+        for (ap_int<32> k = 0; k < 16; k++) {
+            //#pragma HLS UNROLL
+            //#pragma HLS PIPELINE 
+
+            if(k< cutoff){
+                sum += src[k] * m[k][j];
+            }
+            //sum += ap_int<32>(src[k * numOutLines]) * ap_int<32>(m[k * 8 + j]);
         }
-    } */
+        ap_int<32> scaled = (ap_int<32>)((sum + rndFactor) >> shift);
+        dst[j] = CLIP3(outputMinimum, outputMaximum, scaled);
+    }
+}
+
+void INV_MATMUL_32(const ap_int<32> src[32], ap_int<32> dst[32], ap_int<32> shift,
+                ap_int<32> skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const ap_int<32> m[32][32]) {
+    #pragma HLS inline
+
+    const ap_int<32> rndFactor = ap_int<32>(1) << (shift - 1);
+    const ap_int<32> cutoff      = 32 - skipInLines;
+    //for (ap_int<32> i = 0; i < reducedLine; i++) {
+    for (ap_int<32> j = 0; j < 32; j++) {
+        //#pragma HLS UNROLL
+        #pragma HLS PIPELINE 
+
+        ap_int<32> sum = 0;
+        for (ap_int<32> k = 0; k < 32; k++) {
+            //#pragma HLS UNROLL
+            #pragma HLS PIPELINE 
+
+            if(k< cutoff){
+                sum += src[k] * m[k][j];
+            }
+            //sum += ap_int<32>(src[k * numOutLines]) * ap_int<32>(m[k * 8 + j]);
+        }
+        ap_int<32> scaled = (ap_int<32>)((sum + rndFactor) >> shift);
+        dst[j] = CLIP3(outputMinimum, outputMaximum, scaled);
+    }
 }
 
 void IDCT8B4(ap_int<32> src[4], ap_int<32> dst[4], ap_int<32> shift, const ap_int<32> oMin, const ap_int<32> oMax) {
@@ -67,8 +114,12 @@ void IDCT8B8(ap_int<32> src[8], ap_int<32> dst[8], ap_int<32> shift,  ap_int<32>
     INV_MATMUL_8(src, dst, shift, skipLine2, oMin, oMax, idct8_8);
 }
 
-void IDCT8B16(ap_int<32> src[16], ap_int<32> dst[16], ap_int<32> shift , const ap_int<32> oMin, const ap_int<32> oMax){
-    ap_int<32> j;
+void IDCT8B16(ap_int<32> src[16], ap_int<32> dst[16], ap_int<32> shift , ap_int<32> skipLine2, const ap_int<32> oMin, const ap_int<32> oMax){
+    INV_MATMUL_16(src, dst, shift, skipLine2, oMin, oMax, idct8_16);
+
+
+    
+    /* ap_int<32> j;
     ap_int<32> k;
     ap_int<32> t;
     ap_int<32> a[5];
@@ -105,11 +156,14 @@ void IDCT8B16(ap_int<32> src[16], ap_int<32> dst[16], ap_int<32> shift , const a
     dst[ 11 ] = CLIP3( oMin, oMax, ( - 55*a[0] - 88*b[0] + 62*c[1] + 88*a[1] - 87*c[2] + 68*b[2] - 73*a[3] - 85*b[3] + 77*c[4] + 81*a[4] + t + add) >> shift ) ;
     dst[ 12 ] = CLIP3( oMin, oMax, ( 68*c[0] - 87*b[0] - 77*c[1] - 81*a[1] + 62*a[2] + 88*b[2] - 88*a[3] - 55*b[3] - 73*c[4] + 85*b[4] + t + add ) >> shift ) ;
     dst[ 14 ] = CLIP3( oMin, oMax, ( 85*a[0] + 73*b[0] - 68*a[1] - 87*b[1] + 88*c[2] + 55*a[2] - 81*c[3] - 77*a[3] + 62*c[4] + 88*a[4] - t + add ) >> shift ) ;
-    dst[ 15 ] = CLIP3( oMin, oMax, ( - 88*c[0] + 62*b[0] + 85*c[1] - 73*b[1] - 77*c[2] + 81*b[2] + 68*c[3] - 87*b[3] - 55*c[4] + 88*b[4] - t + add) >> shift ) ;
+    dst[ 15 ] = CLIP3( oMin, oMax, ( - 88*c[0] + 62*b[0] + 85*c[1] - 73*b[1] - 77*c[2] + 81*b[2] + 68*c[3] - 87*b[3] - 55*c[4] + 88*b[4] - t + add) >> shift ) ; */
    //}
 }
 
-void IDCT8B32(ap_int<32> src[32], ap_int<32> dst[32], ap_int<32> shift, const ap_int<32> oMin, const ap_int<32> oMax){
+void IDCT8B32(ap_int<32> src[32], ap_int<32> dst[32], ap_int<32> shift, ap_int<32> skipLine2, const ap_int<32> oMin, const ap_int<32> oMax){
+   // #pragma HLS allocation function instances=mul limit=0 operation
+    INV_MATMUL_32(src, dst, shift, skipLine2, oMin, oMax, idct8_32);
+/* 
     ap_int<32> j;
     ap_int<32> k;
 
@@ -146,6 +200,10 @@ void IDCT8B32(ap_int<32> src[32], ap_int<32> dst[32], ap_int<32> shift, const ap
     t[0] = 74 * src[19] + 30 * src[ 6];
     t[1] = 74 * src[ 6] - 30 * src[19];
 
+
+
+
+
     dst[ 0] = CLIP3(oMin, oMax, (   90 * a[3][0] + 77 * a[6][5] + 72 * a[8][0] + 34 * a[9][5] + 90 * a[3][1] + 78 * a[6][4] + 68 * a[8][1] + 38 * a[9][4] + 89 * a[3][2] + 80 * a[6][3] + 66 * a[8][2] + 42 * a[9][3] + 88 * a[3][3] + 82 * a[6][2] + 63 * a[8][3] + 46 * a[9][2] + 87 * a[3][4] + 84 * a[6][1] + 60 * a[8][4] + 50 * a[9][1] + 86 * a[3][5] + 85 * a[6][0] + 56 * a[8][5] + 53 * a[9][0] + t[0] + add) >> shift);
     dst[ 1] = CLIP3(oMin, oMax, (   90 * a[5][2] - 77 * a[0][3] - 72 * a[4][2] - 34 * a[6][2] - 90 * a[9][1] - 78 * a[8][4] - 68 * a[3][4] - 38 * a[6][1] - 89 * a[0][0] + 80 * a[5][5] - 66 * a[6][5] - 42 * a[4][5] + 88 * a[5][3] - 82 * a[0][2] - 63 * a[4][3] - 46 * a[6][3] - 87 * a[9][0] - 84 * a[8][5] - 60 * a[3][5] - 50 * a[6][0] - 86 * a[0][1] + 85 * a[5][4] - 56 * a[6][4] - 53 * a[4][4] + t[1] + add) >> shift);
     dst[ 3] = CLIP3(oMin, oMax, (   90 * a[9][4] + 77 * a[5][4] - 72 * a[2][1] + 34 * a[7][1] + 90 * a[0][3] + 78 * a[1][3] - 68 * a[3][3] - 38 * a[2][3] - 89 * a[8][5] - 80 * a[9][0] - 66 * a[6][0] - 42 * a[3][5] + 88 * a[1][4] + 82 * a[0][4] - 63 * a[2][4] - 46 * a[3][4] + 87 * a[5][3] + 84 * a[9][3] + 60 * a[7][2] - 50 * a[2][2] - 86 * a[8][0] - 85 * a[1][0] + 56 * a[4][5] + 53 * a[7][0] - t[1] + add) >> shift);
@@ -179,7 +237,7 @@ void IDCT8B32(ap_int<32> src[32], ap_int<32> dst[32], ap_int<32> shift, const ap
     dst[27] = CLIP3(oMin, oMax, ( - 80 * b[0] + 53 * b[1] - 13 * b[2] + 34 * b[3] - 68 * b[4] + 87 * b[5] + add) >> shift);
 
     dst[ 6] = CLIP3(oMin, oMax, (   74 * c[0] + 30 * c[1] + add) >> shift);
-    dst[19] = CLIP3(oMin, oMax, ( - 30 * c[0] + 74 * c[1] + add) >> shift);
+    dst[19] = CLIP3(oMin, oMax, ( - 30 * c[0] + 74 * c[1] + add) >> shift); */
 
 }
 
@@ -201,7 +259,7 @@ extern "C" void IDCT8(ap_int<512>* in, ap_int<512>* out, ap_int<32> block_size, 
 
     for(int i=0; i<size; i++){
         #pragma HLS LOOP_TRIPCOUNT min=1 max=1024
-        #pragma HLS PIPELINE II=1
+        #pragma HLS PIPELINE OFF
 
         ap_int<512> in_block = in[i];
         ap_int<512> out_block = 0;
@@ -217,7 +275,7 @@ extern "C" void IDCT8(ap_int<512>* in, ap_int<512>* out, ap_int<32> block_size, 
                 in_data[j] = in_block.range((j+1)*32-1, j*32);
             }
 
-            IDCT8B32(in_data, out_data, shift, oMin, oMax);
+            IDCT8B32(in_data, out_data, shift, sIn, oMin, oMax);
 
             for(int j=0; j<32; j++){
                 #pragma HLS UNROLL
@@ -237,7 +295,7 @@ extern "C" void IDCT8(ap_int<512>* in, ap_int<512>* out, ap_int<32> block_size, 
                 in_data[j] = in_block.range((j+1)*32-1, j*32);
             }
 
-            IDCT8B16(in_data, out_data, shift, oMin, oMax);
+            IDCT8B16(in_data, out_data, shift, sIn, oMin, oMax);
 
             for(int j=0; j<16; j++){
                 #pragma HLS UNROLL
