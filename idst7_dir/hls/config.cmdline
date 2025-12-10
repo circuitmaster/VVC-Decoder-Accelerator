@@ -1,0 +1,3 @@
+relativeroot=/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware
+original_argv=--mode hls --package --config dst7-compile.cfg --work_dir ../idst7_dir/ 
+
