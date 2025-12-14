@@ -312,21 +312,28 @@ void IDCT2B64(ap_int<32> in[64], ap_int<32> out[64]){
     out[63] = evens[0] - odds[0];
 }
 
-extern "C" void IDCT2(ap_int<512>* in, ap_int<512>* out, int block_size, int size){
+extern "C" void IDCT2(ap_int<1024>* in, ap_int<1024>* in2, ap_int<1024>* out, ap_int<1024>* out2, int block_size, int size, int shift, int outputMinimum, int outputMaximum){
     #pragma HLS INTERFACE m_axi port=in offset=slave bundle=gmem0
-    #pragma HLS INTERFACE m_axi port=out offset=slave bundle=gmem1
-    #pragma HLS INTERFACE s_axilite port=in bundle=control
-    #pragma HLS INTERFACE s_axilite port=out bundle=control
-    #pragma HLS INTERFACE s_axilite port=block_size bundle=control
-    #pragma HLS INTERFACE s_axilite port=size bundle=control
-    #pragma HLS INTERFACE s_axilite port=return bundle=control
+    #pragma HLS INTERFACE m_axi port=in2 offset=slave bundle=gmem1
+    #pragma HLS INTERFACE m_axi port=out offset=slave bundle=gmem0
+    #pragma HLS INTERFACE m_axi port=out2 offset=slave bundle=gmem1
+    #pragma HLS INTERFACE s_axilite port=block_size
+    #pragma HLS INTERFACE s_axilite port=size
+    #pragma HLS INTERFACE s_axilite port=shift
+    #pragma HLS INTERFACE s_axilite port=outputMinimum
+    #pragma HLS INTERFACE s_axilite port=outputMaximum
+    #pragma HLS INTERFACE s_axilite port=return
+
+    int add = 1 << (shift - 1);
 
     for(int i=0; i<size; i++){
         #pragma HLS LOOP_TRIPCOUNT min=1 max=1024
         #pragma HLS PIPELINE II=1
 
-        ap_int<512> in_block = in[i];
-        ap_int<512> out_block = 0;
+        ap_int<1024> in_block = in[i];
+        ap_int<1024> in_block2 = in2[i];
+        ap_int<1024> out_block = 0;
+        ap_int<1024> out_block2 = 0;
 
         if(block_size == 64){
             ap_int<32> in_data[64];
@@ -334,16 +341,26 @@ extern "C" void IDCT2(ap_int<512>* in, ap_int<512>* out, int block_size, int siz
             #pragma HLS ARRAY_PARTITION variable=in_data complete dim=0
             #pragma HLS ARRAY_PARTITION variable=out_data complete dim=0
 
-            for(int j=0; j<64; j++){
+            for(int j=0; j<32; j++){
                 #pragma HLS UNROLL
                 in_data[j] = in_block.range((j+1)*32-1, j*32);
             }
 
+            for(int j=0; j<32; j++){
+                #pragma HLS UNROLL
+                in_data[j+32] = in_block2.range((j+1)*32-1, j*32);
+            }
+
             IDCT2B64(in_data, out_data);
 
-            for(int j=0; j<64; j++){
+            for(int j=0; j<32; j++){
                 #pragma HLS UNROLL
-                out_block.range((j+1)*32-1, j*32) = out_data[j];
+                out_block.range((j+1)*32-1, j*32) =  CLIP3(((out_data[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
+            }
+
+            for(int j=0; j<32; j++){
+                #pragma HLS UNROLL
+                out_block2.range((j+1)*32-1, j*32) =  CLIP3(((out_data[j+32]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
             }
 
             //out[i] = out_block;
@@ -362,7 +379,7 @@ extern "C" void IDCT2(ap_int<512>* in, ap_int<512>* out, int block_size, int siz
 
             for(int j=0; j<32; j++){
                 #pragma HLS UNROLL
-                out_block.range((j+1)*32-1, j*32) = out_data[j];
+                out_block.range((j+1)*32-1, j*32) = CLIP3(((out_data[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
             }
 
             //out[i] = out_block;
@@ -381,7 +398,7 @@ extern "C" void IDCT2(ap_int<512>* in, ap_int<512>* out, int block_size, int siz
 
             for(int j=0; j<16; j++){
                 #pragma HLS UNROLL
-                out_block.range((j+1)*32-1, j*32) = out_data[j];
+                out_block.range((j+1)*32-1, j*32) = CLIP3(((out_data[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
             }
 
             //out[i] = out_block;
@@ -400,7 +417,7 @@ extern "C" void IDCT2(ap_int<512>* in, ap_int<512>* out, int block_size, int siz
 
             for(int j=0; j<8; j++){
                 #pragma HLS UNROLL
-                out_block.range((j+1)*32-1, j*32) = out_data[j];
+                out_block.range((j+1)*32-1, j*32) = CLIP3(((out_data[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
             }
 
             //out[i] = out_block;
@@ -419,7 +436,7 @@ extern "C" void IDCT2(ap_int<512>* in, ap_int<512>* out, int block_size, int siz
 
             for(int j=0; j<4; j++){
                 #pragma HLS UNROLL
-                out_block.range((j+1)*32-1, j*32) = out_data[j];
+                out_block.range((j+1)*32-1, j*32) = CLIP3(((out_data[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
             }
 
             //out[i] = out_block;
@@ -438,11 +455,12 @@ extern "C" void IDCT2(ap_int<512>* in, ap_int<512>* out, int block_size, int siz
 
             for(int j=0; j<2; j++){
                 #pragma HLS UNROLL
-                out_block.range((j+1)*32-1, j*32) = out_data[j];
+                out_block.range((j+1)*32-1, j*32) = CLIP3(((out_data[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
             }
 
             //out[i] = out_block;
         }
         out[i] = out_block;
+        out2[i] = out_block2;
     }
 }
