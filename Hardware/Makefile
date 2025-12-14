@@ -66,3 +66,9 @@ build/idct8.xo: ../src/IDCT8.cpp dct-compile.cfg
 	-@$(RM) $@
 	$(VPP) $(VPP_OPTS) -c --mode hls --config dct8-compile.cfg --work_dir ../dct8_dir/
 	vitis-run --mode hls --package --config dct8-compile.cfg --work_dir ../dct8_dir/
+
+build/idst7.xo: ../src/IDST7.cpp dct-compile.cfg
+	-@mkdir -p $(@D)
+	-@$(RM) $@
+	$(VPP) $(VPP_OPTS) -c --mode hls --config dst7-compile.cfg --work_dir ../idst7_dir/
+	vitis-run --mode hls --package --config dst7-compile.cfg --work_dir ../idst7_dir/
