@@ -1,0 +1,298 @@
+
+
+================================================================
+== Vitis HLS Report for 'IDST7B32'
+================================================================
+* Date:           Tue Dec  9 15:04:46 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        idst7_dir
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  7.027 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |       43|       43|  0.430 us|  0.430 us|   43|   43|       no|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        +----------------------------------------------+-----------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
+        |                                              |                                   |  Latency (cycles) |  Latency (absolute) |  Interval |                    Pipeline                    |
+        |                   Instance                   |               Module              |   min   |   max   |    min   |    max   | min | max |                      Type                      |
+        +----------------------------------------------+-----------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
+        |grp_IDST7B32_Pipeline_VITIS_LOOP_73_1_fu_332  |IDST7B32_Pipeline_VITIS_LOOP_73_1  |       42|       42|  0.420 us|  0.420 us|   33|   33|  loop auto-rewind stp (delay=0 clock cycles(s))|
+        +----------------------------------------------+-----------------------------------+---------+---------+----------+----------+-----+-----+------------------------------------------------+
+
+        * Loop: 
+        N/A
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+------+--------+--------+-----+
+|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
++-----------------+---------+------+--------+--------+-----+
+|DSP              |        -|     -|       -|       -|    -|
+|Expression       |        -|     -|       0|     381|    -|
+|FIFO             |        -|     -|       -|       -|    -|
+|Instance         |        0|    64|    1428|    4789|    -|
+|Memory           |        -|     -|       -|       -|    -|
+|Multiplexer      |        -|     -|       0|     302|    -|
+|Register         |        -|     -|    1269|       -|    -|
++-----------------+---------+------+--------+--------+-----+
+|Total            |        0|    64|    2697|    5472|    0|
++-----------------+---------+------+--------+--------+-----+
+|Available        |     1824|  2520|  548160|  274080|    0|
++-----------------+---------+------+--------+--------+-----+
+|Utilization (%)  |        0|     2|      ~0|       1|    0|
++-----------------+---------+------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +----------------------------------------------+-----------------------------------+---------+----+------+------+-----+
+    |                   Instance                   |               Module              | BRAM_18K| DSP|  FF  |  LUT | URAM|
+    +----------------------------------------------+-----------------------------------+---------+----+------+------+-----+
+    |grp_IDST7B32_Pipeline_VITIS_LOOP_73_1_fu_332  |IDST7B32_Pipeline_VITIS_LOOP_73_1  |        0|  64|  1428|  4789|    0|
+    +----------------------------------------------+-----------------------------------+---------+----+------+------+-----+
+    |Total                                         |                                   |        0|  64|  1428|  4789|    0|
+    +----------------------------------------------+-----------------------------------+---------+----+------+------+-----+
+
+    * DSP: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+----+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |add_ln70_fu_517_p2     |         +|   0|  0|  40|          33|           2|
+    |cutoff_fu_562_p2       |         -|   0|  0|  39|           6|          32|
+    |sub_i_i_i_i_fu_578_p2  |         -|   0|  0|  39|           1|          32|
+    |sub_ln70_fu_535_p2     |         -|   0|  0|  39|           1|          32|
+    |rndFactor_fu_541_p2    |      lshr|   0|  0|  96|           1|          32|
+    |rndFactor_4_fu_553_p3  |    select|   0|  0|  32|           1|          32|
+    |rndFactor_3_fu_547_p2  |       shl|   0|  0|  96|           1|          32|
+    +-----------------------+----------+----+---+----+------------+------------+
+    |Total                  |          |   0|  0| 381|          44|         194|
+    +-----------------------+----------+----+---+----+------------+------------+
+
+    * Multiplexer: 
+    +-----------+----+-----------+-----+-----------+
+    |    Name   | LUT| Input Size| Bits| Total Bits|
+    +-----------+----+-----------+-----+-----------+
+    |ap_NS_fsm  |  14|          3|    1|          3|
+    |dst_0      |   9|          2|   32|         64|
+    |dst_1      |   9|          2|   32|         64|
+    |dst_10     |   9|          2|   32|         64|
+    |dst_11     |   9|          2|   32|         64|
+    |dst_12     |   9|          2|   32|         64|
+    |dst_13     |   9|          2|   32|         64|
+    |dst_14     |   9|          2|   32|         64|
+    |dst_15     |   9|          2|   32|         64|
+    |dst_16     |   9|          2|   32|         64|
+    |dst_17     |   9|          2|   32|         64|
+    |dst_18     |   9|          2|   32|         64|
+    |dst_19     |   9|          2|   32|         64|
+    |dst_2      |   9|          2|   32|         64|
+    |dst_20     |   9|          2|   32|         64|
+    |dst_21     |   9|          2|   32|         64|
+    |dst_22     |   9|          2|   32|         64|
+    |dst_23     |   9|          2|   32|         64|
+    |dst_24     |   9|          2|   32|         64|
+    |dst_25     |   9|          2|   32|         64|
+    |dst_26     |   9|          2|   32|         64|
+    |dst_27     |   9|          2|   32|         64|
+    |dst_28     |   9|          2|   32|         64|
+    |dst_29     |   9|          2|   32|         64|
+    |dst_3      |   9|          2|   32|         64|
+    |dst_30     |   9|          2|   32|         64|
+    |dst_31     |   9|          2|   32|         64|
+    |dst_4      |   9|          2|   32|         64|
+    |dst_5      |   9|          2|   32|         64|
+    |dst_6      |   9|          2|   32|         64|
+    |dst_7      |   9|          2|   32|         64|
+    |dst_8      |   9|          2|   32|         64|
+    |dst_9      |   9|          2|   32|         64|
+    +-----------+----+-----------+-----+-----------+
+    |Total      | 302|         67| 1025|       2051|
+    +-----------+----+-----------+-----+-----------+
+
+    * Register: 
+    +-----------------------------------------------------------+----+----+-----+-----------+
+    |                            Name                           | FF | LUT| Bits| Const Bits|
+    +-----------------------------------------------------------+----+----+-----+-----------+
+    |ap_CS_fsm                                                  |   2|   0|    2|          0|
+    |cutoff_reg_745                                             |  32|   0|   32|          0|
+    |dst_0_reg                                                  |  32|   0|   32|          0|
+    |dst_10_reg                                                 |  32|   0|   32|          0|
+    |dst_11_reg                                                 |  32|   0|   32|          0|
+    |dst_12_reg                                                 |  32|   0|   32|          0|
+    |dst_13_reg                                                 |  32|   0|   32|          0|
+    |dst_14_reg                                                 |  32|   0|   32|          0|
+    |dst_15_reg                                                 |  32|   0|   32|          0|
+    |dst_16_reg                                                 |  32|   0|   32|          0|
+    |dst_17_reg                                                 |  32|   0|   32|          0|
+    |dst_18_reg                                                 |  32|   0|   32|          0|
+    |dst_19_reg                                                 |  32|   0|   32|          0|
+    |dst_1_reg                                                  |  32|   0|   32|          0|
+    |dst_20_reg                                                 |  32|   0|   32|          0|
+    |dst_21_reg                                                 |  32|   0|   32|          0|
+    |dst_22_reg                                                 |  32|   0|   32|          0|
+    |dst_23_reg                                                 |  32|   0|   32|          0|
+    |dst_24_reg                                                 |  32|   0|   32|          0|
+    |dst_25_reg                                                 |  32|   0|   32|          0|
+    |dst_26_reg                                                 |  32|   0|   32|          0|
+    |dst_27_reg                                                 |  32|   0|   32|          0|
+    |dst_28_reg                                                 |  32|   0|   32|          0|
+    |dst_29_reg                                                 |  32|   0|   32|          0|
+    |dst_2_reg                                                  |  32|   0|   32|          0|
+    |dst_30_reg                                                 |  32|   0|   32|          0|
+    |dst_31_reg                                                 |  32|   0|   32|          0|
+    |dst_3_reg                                                  |  32|   0|   32|          0|
+    |dst_4_reg                                                  |  32|   0|   32|          0|
+    |dst_5_reg                                                  |  32|   0|   32|          0|
+    |dst_6_reg                                                  |  32|   0|   32|          0|
+    |dst_7_reg                                                  |  32|   0|   32|          0|
+    |dst_8_reg                                                  |  32|   0|   32|          0|
+    |dst_9_reg                                                  |  32|   0|   32|          0|
+    |grp_IDST7B32_Pipeline_VITIS_LOOP_73_1_fu_332_ap_start_reg  |   1|   0|    1|          0|
+    |rndFactor_4_reg_740                                        |  32|   0|   32|          0|
+    |sub_i_i_i_i_reg_755                                        |  32|   0|   32|          0|
+    |tmp_13_reg_750                                             |   1|   0|    1|          0|
+    |tmp_14_reg_760                                             |  31|   0|   31|          0|
+    |tmp_15_reg_765                                             |  30|   0|   30|          0|
+    |tmp_16_reg_770                                             |  29|   0|   29|          0|
+    |tmp_17_reg_775                                             |  28|   0|   28|          0|
+    |tmp_18_reg_780                                             |  27|   0|   27|          0|
+    +-----------------------------------------------------------+----+----+-----+-----------+
+    |Total                                                      |1269|   0| 1269|          0|
+    +-----------------------------------------------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++---------------+-----+-----+------------+--------------+--------------+
+|   RTL Ports   | Dir | Bits|  Protocol  | Source Object|    C Type    |
++---------------+-----+-----+------------+--------------+--------------+
+|ap_clk         |   in|    1|  ap_ctrl_hs|      IDST7B32|  return value|
+|ap_rst         |   in|    1|  ap_ctrl_hs|      IDST7B32|  return value|
+|ap_start       |   in|    1|  ap_ctrl_hs|      IDST7B32|  return value|
+|ap_done        |  out|    1|  ap_ctrl_hs|      IDST7B32|  return value|
+|ap_idle        |  out|    1|  ap_ctrl_hs|      IDST7B32|  return value|
+|ap_ready       |  out|    1|  ap_ctrl_hs|      IDST7B32|  return value|
+|src_0_val      |   in|   32|     ap_none|     src_0_val|        scalar|
+|src_1_val      |   in|   32|     ap_none|     src_1_val|        scalar|
+|src_2_val      |   in|   32|     ap_none|     src_2_val|        scalar|
+|src_3_val      |   in|   32|     ap_none|     src_3_val|        scalar|
+|src_4_val      |   in|   32|     ap_none|     src_4_val|        scalar|
+|src_5_val      |   in|   32|     ap_none|     src_5_val|        scalar|
+|src_6_val      |   in|   32|     ap_none|     src_6_val|        scalar|
+|src_7_val      |   in|   32|     ap_none|     src_7_val|        scalar|
+|src_8_val      |   in|   32|     ap_none|     src_8_val|        scalar|
+|src_9_val      |   in|   32|     ap_none|     src_9_val|        scalar|
+|src_10_val     |   in|   32|     ap_none|    src_10_val|        scalar|
+|src_11_val     |   in|   32|     ap_none|    src_11_val|        scalar|
+|src_12_val     |   in|   32|     ap_none|    src_12_val|        scalar|
+|src_13_val     |   in|   32|     ap_none|    src_13_val|        scalar|
+|src_14_val     |   in|   32|     ap_none|    src_14_val|        scalar|
+|src_15_val     |   in|   32|     ap_none|    src_15_val|        scalar|
+|src_16_val     |   in|   32|     ap_none|    src_16_val|        scalar|
+|dst_0          |  out|   32|      ap_vld|         dst_0|       pointer|
+|dst_0_ap_vld   |  out|    1|      ap_vld|         dst_0|       pointer|
+|dst_1          |  out|   32|      ap_vld|         dst_1|       pointer|
+|dst_1_ap_vld   |  out|    1|      ap_vld|         dst_1|       pointer|
+|dst_2          |  out|   32|      ap_vld|         dst_2|       pointer|
+|dst_2_ap_vld   |  out|    1|      ap_vld|         dst_2|       pointer|
+|dst_3          |  out|   32|      ap_vld|         dst_3|       pointer|
+|dst_3_ap_vld   |  out|    1|      ap_vld|         dst_3|       pointer|
+|dst_4          |  out|   32|      ap_vld|         dst_4|       pointer|
+|dst_4_ap_vld   |  out|    1|      ap_vld|         dst_4|       pointer|
+|dst_5          |  out|   32|      ap_vld|         dst_5|       pointer|
+|dst_5_ap_vld   |  out|    1|      ap_vld|         dst_5|       pointer|
+|dst_6          |  out|   32|      ap_vld|         dst_6|       pointer|
+|dst_6_ap_vld   |  out|    1|      ap_vld|         dst_6|       pointer|
+|dst_7          |  out|   32|      ap_vld|         dst_7|       pointer|
+|dst_7_ap_vld   |  out|    1|      ap_vld|         dst_7|       pointer|
+|dst_8          |  out|   32|      ap_vld|         dst_8|       pointer|
+|dst_8_ap_vld   |  out|    1|      ap_vld|         dst_8|       pointer|
+|dst_9          |  out|   32|      ap_vld|         dst_9|       pointer|
+|dst_9_ap_vld   |  out|    1|      ap_vld|         dst_9|       pointer|
+|dst_10         |  out|   32|      ap_vld|        dst_10|       pointer|
+|dst_10_ap_vld  |  out|    1|      ap_vld|        dst_10|       pointer|
+|dst_11         |  out|   32|      ap_vld|        dst_11|       pointer|
+|dst_11_ap_vld  |  out|    1|      ap_vld|        dst_11|       pointer|
+|dst_12         |  out|   32|      ap_vld|        dst_12|       pointer|
+|dst_12_ap_vld  |  out|    1|      ap_vld|        dst_12|       pointer|
+|dst_13         |  out|   32|      ap_vld|        dst_13|       pointer|
+|dst_13_ap_vld  |  out|    1|      ap_vld|        dst_13|       pointer|
+|dst_14         |  out|   32|      ap_vld|        dst_14|       pointer|
+|dst_14_ap_vld  |  out|    1|      ap_vld|        dst_14|       pointer|
+|dst_15         |  out|   32|      ap_vld|        dst_15|       pointer|
+|dst_15_ap_vld  |  out|    1|      ap_vld|        dst_15|       pointer|
+|dst_16         |  out|   32|      ap_vld|        dst_16|       pointer|
+|dst_16_ap_vld  |  out|    1|      ap_vld|        dst_16|       pointer|
+|dst_17         |  out|   32|      ap_vld|        dst_17|       pointer|
+|dst_17_ap_vld  |  out|    1|      ap_vld|        dst_17|       pointer|
+|dst_18         |  out|   32|      ap_vld|        dst_18|       pointer|
+|dst_18_ap_vld  |  out|    1|      ap_vld|        dst_18|       pointer|
+|dst_19         |  out|   32|      ap_vld|        dst_19|       pointer|
+|dst_19_ap_vld  |  out|    1|      ap_vld|        dst_19|       pointer|
+|dst_20         |  out|   32|      ap_vld|        dst_20|       pointer|
+|dst_20_ap_vld  |  out|    1|      ap_vld|        dst_20|       pointer|
+|dst_21         |  out|   32|      ap_vld|        dst_21|       pointer|
+|dst_21_ap_vld  |  out|    1|      ap_vld|        dst_21|       pointer|
+|dst_22         |  out|   32|      ap_vld|        dst_22|       pointer|
+|dst_22_ap_vld  |  out|    1|      ap_vld|        dst_22|       pointer|
+|dst_23         |  out|   32|      ap_vld|        dst_23|       pointer|
+|dst_23_ap_vld  |  out|    1|      ap_vld|        dst_23|       pointer|
+|dst_24         |  out|   32|      ap_vld|        dst_24|       pointer|
+|dst_24_ap_vld  |  out|    1|      ap_vld|        dst_24|       pointer|
+|dst_25         |  out|   32|      ap_vld|        dst_25|       pointer|
+|dst_25_ap_vld  |  out|    1|      ap_vld|        dst_25|       pointer|
+|dst_26         |  out|   32|      ap_vld|        dst_26|       pointer|
+|dst_26_ap_vld  |  out|    1|      ap_vld|        dst_26|       pointer|
+|dst_27         |  out|   32|      ap_vld|        dst_27|       pointer|
+|dst_27_ap_vld  |  out|    1|      ap_vld|        dst_27|       pointer|
+|dst_28         |  out|   32|      ap_vld|        dst_28|       pointer|
+|dst_28_ap_vld  |  out|    1|      ap_vld|        dst_28|       pointer|
+|dst_29         |  out|   32|      ap_vld|        dst_29|       pointer|
+|dst_29_ap_vld  |  out|    1|      ap_vld|        dst_29|       pointer|
+|dst_30         |  out|   32|      ap_vld|        dst_30|       pointer|
+|dst_30_ap_vld  |  out|    1|      ap_vld|        dst_30|       pointer|
+|dst_31         |  out|   32|      ap_vld|        dst_31|       pointer|
+|dst_31_ap_vld  |  out|    1|      ap_vld|        dst_31|       pointer|
+|shift          |   in|   32|     ap_none|         shift|        scalar|
+|skipLine2      |   in|   32|     ap_none|     skipLine2|        scalar|
+|oMin           |   in|   32|     ap_none|          oMin|        scalar|
+|oMax           |   in|   32|     ap_none|          oMax|        scalar|
++---------------+-----+-----+------------+--------------+--------------+
+

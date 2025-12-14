@@ -1,0 +1,145 @@
+{
+  "0": {
+    "basicblocks": 94,
+    "calls": "2 1 5 3 6 10",
+    "file": "IDCT2.cpp",
+    "fileloc": 315,
+    "instructions": 446,
+    "loads": {
+      "L": 7,
+      "T": 1
+    },
+    "name": "IDCT2",
+    "stores": {
+      "L": 7,
+      "T": 1
+    },
+    "total_instructions": 65659
+  },
+  "1": {
+    "basicblocks": 7,
+    "calls": "5",
+    "file": "IDCT2.cpp",
+    "fileloc": 124,
+    "instructions": 1009,
+    "loads": {
+      "L": 49
+    },
+    "name": "IDCT2B32",
+    "stores": {
+      "L": 49
+    },
+    "total_instructions": 16569
+  },
+  "10": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "IDCT2.cpp",
+    "fileloc": 13,
+    "instructions": 53,
+    "loads": {
+      "L": 2
+    },
+    "name": "IDCT2B2",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 365
+  },
+  "2": {
+    "basicblocks": 7,
+    "calls": "1",
+    "file": "IDCT2.cpp",
+    "fileloc": 194,
+    "instructions": 1985,
+    "loads": {
+      "L": 97
+    },
+    "name": "IDCT2B64",
+    "stores": {
+      "L": 97
+    },
+    "total_instructions": 31122
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "6",
+    "file": "IDCT2.cpp",
+    "fileloc": 49,
+    "instructions": 450,
+    "loads": {
+      "L": 16
+    },
+    "name": "IDCT2B8",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 5663
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "7 9 8",
+    "file": "IDCT2.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 4,
+    "name": "",
+    "total_instructions": 86023
+  },
+  "5": {
+    "basicblocks": 7,
+    "calls": "3",
+    "file": "IDCT2.cpp",
+    "fileloc": 80,
+    "instructions": 521,
+    "loads": {
+      "L": 25
+    },
+    "name": "IDCT2B16",
+    "stores": {
+      "L": 25
+    },
+    "total_instructions": 9296
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "10",
+    "file": "IDCT2.cpp",
+    "fileloc": 26,
+    "instructions": 172,
+    "loads": {
+      "L": 8
+    },
+    "name": "IDCT2B4",
+    "stores": {
+      "L": 8
+    },
+    "total_instructions": 1629
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "transform_coeffs.h",
+    "fileloc": 17,
+    "instructions": 257,
+    "name": "__cxx_global_var_init.2",
+    "total_instructions": 4097
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "transform_coeffs.h",
+    "fileloc": 75,
+    "instructions": 4097,
+    "name": "__cxx_global_var_init.4",
+    "total_instructions": 65537
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "transform_coeffs.h",
+    "fileloc": 37,
+    "instructions": 1025,
+    "name": "__cxx_global_var_init.3",
+    "total_instructions": 16385
+  }
+}

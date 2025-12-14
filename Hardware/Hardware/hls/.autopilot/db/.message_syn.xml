@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Messages>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file src/transform_coeffs.h; skipping it." resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 200-40]" key="HLS_40_1310" tag="" content="Cannot find source file src/IDCT2.cpp; skipping it." resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished File checks and directory preparation: CPU user time: 1.97 seconds. CPU system time: 0.24 seconds. Elapsed time: 2.08 seconds; current allocated memory: 909.488 MB." resolution=""/>
+	<Message severity="WARNING" prefix="[HLS 200-1986]" key="HLS 200-1986" tag="" content="Could not apply TOP directive, invalid function, label, or variable (:0)" resolution=""/>
+	<Message severity="INFO" prefix="[HLS 200-111]" key="HLS_111_966" tag="RUNTIME" content="Finished Source Code Analysis and Preprocessing: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 909.488 MB." resolution=""/>
+	<Message severity="ERROR" prefix="[HLS 200-70]" key="HLS_70_1308" tag="" content="Cannot find any design unit to elaborate." resolution=""/>
+</Messages>

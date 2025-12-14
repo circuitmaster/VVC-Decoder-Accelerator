@@ -1,0 +1,25 @@
+  **** HLS Build v2024.2 5238294
+WARNING: [HLS 200-2059] The 'syn.output.format' name is deprecated, use 'package.output.format' instead /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(17)
+INFO: [HLS 200-2005] Using work_dir /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/Hardware 
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+WARNING: [HLS 200-2059] The 'syn.output.format' name is deprecated, use 'package.output.format' instead /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(17)
+WARNING: [HLS 200-2001] file not found './src/IDCT2.cpp' see [hls] from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(18)
+WARNING: [HLS 200-2001] file not found './src/transform_coeffs.h' see [hls] from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(19)
+INFO: [HLS 200-1465] Applying ini 'syn.file=./src/IDCT2.cpp' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(18)
+WARNING: [HLS 200-40] Cannot find design file './src/IDCT2.cpp'
+INFO: [HLS 200-1465] Applying ini 'syn.file=./src/transform_coeffs.h' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(19)
+WARNING: [HLS 200-40] Cannot find design file './src/transform_coeffs.h'
+INFO: [HLS 200-1465] Applying ini 'syn.top=IDCT2' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(20)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(16)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'part=/tools/Xilinx/Vitis/2024.2/base_platforms/xilinx_zcu102_base_202420_1/xilinx_zcu102_base_202420_1.xpfm' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(1)
+ERROR: [HLS 200-1023] Part '/tools/Xilinx/Vitis/2024.2/base_platforms/xilinx_zcu102_base_202420_1/xilinx_zcu102_base_202420_1.xpfm' is not installed.
+ERROR: [HLS 200-1912] Problem with ini entry 'part=/tools/Xilinx/Vitis/2024.2/base_platforms/xilinx_zcu102_base_202420_1/xilinx_zcu102_base_202420_1.xpfm' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(1): command 'create_platform' returned error code
+ERROR: problem with 'part=/tools/Xilinx/Vitis/2024.2/base_platforms/xilinx_zcu102_base_202420_1/xilinx_zcu102_base_202420_1.xpfm' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(1): command 'create_platform' returned error code
+INFO: [HLS 200-112] Total CPU user time: 1.86 seconds. Total CPU system time: 0.19 seconds. Total elapsed time: 1.93 seconds; peak allocated memory: 874.387 MB.

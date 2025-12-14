@@ -1,0 +1,109 @@
+{
+  "0": {
+    "basicblocks": 11,
+    "calls": "3 5 4 1 2 6",
+    "file": "IDCT2.cpp",
+    "fileloc": 315,
+    "instructions": 850,
+    "loads": {
+      "L": 126,
+      "T": 1
+    },
+    "name": "IDCT2",
+    "stores": {
+      "L": 126,
+      "T": 1
+    },
+    "total_instructions": 6143
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "2",
+    "file": "IDCT2.cpp",
+    "fileloc": 49,
+    "instructions": 90,
+    "loads": {
+      "L": 12
+    },
+    "name": "IDCT2B8",
+    "stores": {
+      "L": 12
+    },
+    "total_instructions": 141
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "6",
+    "file": "IDCT2.cpp",
+    "fileloc": 26,
+    "instructions": 40,
+    "loads": {
+      "L": 6
+    },
+    "name": "IDCT2B4",
+    "stores": {
+      "L": 6
+    },
+    "total_instructions": 51
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "5",
+    "file": "IDCT2.cpp",
+    "fileloc": 194,
+    "instructions": 2511,
+    "loads": {
+      "L": 113
+    },
+    "name": "IDCT2B64",
+    "stores": {
+      "L": 128
+    },
+    "total_instructions": 3611
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "IDCT2.cpp",
+    "fileloc": 80,
+    "instructions": 238,
+    "loads": {
+      "L": 24
+    },
+    "name": "IDCT2B16",
+    "stores": {
+      "L": 24
+    },
+    "total_instructions": 379
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "4",
+    "file": "IDCT2.cpp",
+    "fileloc": 124,
+    "instructions": 721,
+    "loads": {
+      "L": 48
+    },
+    "name": "IDCT2B32",
+    "stores": {
+      "L": 48
+    },
+    "total_instructions": 1100
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "IDCT2.cpp",
+    "fileloc": 13,
+    "instructions": 11,
+    "loads": {
+      "L": 2
+    },
+    "name": "IDCT2B2",
+    "stores": {
+      "L": 2
+    },
+    "total_instructions": 11
+  }
+}
