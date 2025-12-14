@@ -1,0 +1,210 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'IDST7B16'" level="0">
+<item name = "Date">Tue Dec  9 15:04:46 2025
+</item>
+<item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
+<item name = "Project">idst7_dir</item>
+<item name = "Solution">hls (Vitis Kernel Flow Target)</item>
+<item name = "Product family">zynquplus</item>
+<item name = "Target device">xczu9eg-ffvb1156-2-e</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.027 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">23, 23, 0.230 us, 0.230 us, 23, 23, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_IDST7B16_Pipeline_VITIS_LOOP_47_1_fu_258">IDST7B16_Pipeline_VITIS_LOOP_47_1, 22, 22, 0.220 us, 0.220 us, 17, 17, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Utilization Estimates" level="0">
+<item name = "Summary"><table name="" hasTotal="1">
+<keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="DSP">-, -, -, -, -</column>
+<column name="Expression">-, -, 0, 381, -</column>
+<column name="FIFO">-, -, -, -, -</column>
+<column name="Instance">0, 32, 793, 2584, -</column>
+<column name="Memory">-, -, -, -, -</column>
+<column name="Multiplexer">-, -, 0, 158, -</column>
+<column name="Register">-, -, 730, -, -</column>
+<specialColumn name="Available">1824, 2520, 548160, 274080, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 1, ~0, 1, 0</specialColumn>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="1">
+<keys size="7">Instance, Module, BRAM_18K, DSP, FF, LUT, URAM</keys>
+<column name="grp_IDST7B16_Pipeline_VITIS_LOOP_47_1_fu_258">IDST7B16_Pipeline_VITIS_LOOP_47_1, 0, 32, 793, 2584, 0</column>
+</table>
+</item>
+<item name = "DSP"><table name="" hasTotal="0">
+<keys size="3">Instance, Module, Expression</keys>
+</table>
+</item>
+<item name = "Memory"><table name="" hasTotal="1">
+<keys size="10">Memory, Module, BRAM_18K, FF, LUT, URAM, Words, Bits, Banks, W*Bits*Banks</keys>
+</table>
+</item>
+<item name = "FIFO"><table name="" hasTotal="1">
+<keys size="8">Name, BRAM_18K, FF, LUT, URAM, Depth, Bits, Size:D*B</keys>
+</table>
+</item>
+<item name = "Expression"><table name="" hasTotal="1">
+<keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
+<column name="add_ln43_fu_376_p2">+, 0, 0, 40, 33, 2</column>
+<column name="cutoff_fu_421_p2">-, 0, 0, 39, 5, 32</column>
+<column name="sub_i_i_i_i_fu_437_p2">-, 0, 0, 39, 1, 32</column>
+<column name="sub_ln43_fu_394_p2">-, 0, 0, 39, 1, 32</column>
+<column name="rndFactor_fu_400_p2">lshr, 0, 0, 96, 1, 32</column>
+<column name="rndFactor_6_fu_412_p3">select, 0, 0, 32, 1, 32</column>
+<column name="rndFactor_5_fu_406_p2">shl, 0, 0, 96, 1, 32</column>
+</table>
+</item>
+<item name = "Multiplexer"><table name="" hasTotal="1">
+<keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
+<column name="ap_NS_fsm">14, 3, 1, 3</column>
+<column name="dst_0">9, 2, 32, 64</column>
+<column name="dst_1">9, 2, 32, 64</column>
+<column name="dst_10">9, 2, 32, 64</column>
+<column name="dst_11">9, 2, 32, 64</column>
+<column name="dst_12">9, 2, 32, 64</column>
+<column name="dst_13">9, 2, 32, 64</column>
+<column name="dst_14">9, 2, 32, 64</column>
+<column name="dst_15">9, 2, 32, 64</column>
+<column name="dst_2">9, 2, 32, 64</column>
+<column name="dst_3">9, 2, 32, 64</column>
+<column name="dst_4">9, 2, 32, 64</column>
+<column name="dst_5">9, 2, 32, 64</column>
+<column name="dst_6">9, 2, 32, 64</column>
+<column name="dst_7">9, 2, 32, 64</column>
+<column name="dst_8">9, 2, 32, 64</column>
+<column name="dst_9">9, 2, 32, 64</column>
+</table>
+</item>
+<item name = "Register"><table name="" hasTotal="1">
+<keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
+<column name="ap_CS_fsm">2, 0, 2, 0</column>
+<column name="cutoff_reg_588">32, 0, 32, 0</column>
+<column name="dst_0_reg">32, 0, 32, 0</column>
+<column name="dst_10_reg">32, 0, 32, 0</column>
+<column name="dst_11_reg">32, 0, 32, 0</column>
+<column name="dst_12_reg">32, 0, 32, 0</column>
+<column name="dst_13_reg">32, 0, 32, 0</column>
+<column name="dst_14_reg">32, 0, 32, 0</column>
+<column name="dst_15_reg">32, 0, 32, 0</column>
+<column name="dst_1_reg">32, 0, 32, 0</column>
+<column name="dst_2_reg">32, 0, 32, 0</column>
+<column name="dst_3_reg">32, 0, 32, 0</column>
+<column name="dst_4_reg">32, 0, 32, 0</column>
+<column name="dst_5_reg">32, 0, 32, 0</column>
+<column name="dst_6_reg">32, 0, 32, 0</column>
+<column name="dst_7_reg">32, 0, 32, 0</column>
+<column name="dst_8_reg">32, 0, 32, 0</column>
+<column name="dst_9_reg">32, 0, 32, 0</column>
+<column name="grp_IDST7B16_Pipeline_VITIS_LOOP_47_1_fu_258_ap_start_reg">1, 0, 1, 0</column>
+<column name="rndFactor_6_reg_583">32, 0, 32, 0</column>
+<column name="sub_i_i_i_i_reg_598">32, 0, 32, 0</column>
+<column name="tmp_23_reg_593">1, 0, 1, 0</column>
+<column name="tmp_24_reg_603">31, 0, 31, 0</column>
+<column name="tmp_25_reg_608">30, 0, 30, 0</column>
+<column name="tmp_26_reg_613">29, 0, 29, 0</column>
+<column name="tmp_27_reg_618">28, 0, 28, 0</column>
+</table>
+</item>
+</section>
+</item>
+</section>
+
+<section name = "Interface" level="0">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="6">RTL Ports, Dir, Bits, Protocol, Source Object, C Type</keys>
+<column name="ap_clk">in, 1, ap_ctrl_hs, IDST7B16, return value</column>
+<column name="ap_rst">in, 1, ap_ctrl_hs, IDST7B16, return value</column>
+<column name="ap_start">in, 1, ap_ctrl_hs, IDST7B16, return value</column>
+<column name="ap_done">out, 1, ap_ctrl_hs, IDST7B16, return value</column>
+<column name="ap_idle">out, 1, ap_ctrl_hs, IDST7B16, return value</column>
+<column name="ap_ready">out, 1, ap_ctrl_hs, IDST7B16, return value</column>
+<column name="src_0_val">in, 32, ap_none, src_0_val, scalar</column>
+<column name="src_1_val">in, 32, ap_none, src_1_val, scalar</column>
+<column name="src_2_val">in, 32, ap_none, src_2_val, scalar</column>
+<column name="src_3_val">in, 32, ap_none, src_3_val, scalar</column>
+<column name="src_4_val">in, 32, ap_none, src_4_val, scalar</column>
+<column name="src_5_val">in, 32, ap_none, src_5_val, scalar</column>
+<column name="src_6_val">in, 32, ap_none, src_6_val, scalar</column>
+<column name="src_7_val">in, 32, ap_none, src_7_val, scalar</column>
+<column name="src_8_val">in, 32, ap_none, src_8_val, scalar</column>
+<column name="src_9_val">in, 32, ap_none, src_9_val, scalar</column>
+<column name="src_10_val">in, 32, ap_none, src_10_val, scalar</column>
+<column name="src_11_val">in, 32, ap_none, src_11_val, scalar</column>
+<column name="src_12_val">in, 32, ap_none, src_12_val, scalar</column>
+<column name="src_13_val">in, 32, ap_none, src_13_val, scalar</column>
+<column name="src_14_val">in, 32, ap_none, src_14_val, scalar</column>
+<column name="src_15_val">in, 32, ap_none, src_15_val, scalar</column>
+<column name="dst_0">out, 32, ap_vld, dst_0, pointer</column>
+<column name="dst_0_ap_vld">out, 1, ap_vld, dst_0, pointer</column>
+<column name="dst_1">out, 32, ap_vld, dst_1, pointer</column>
+<column name="dst_1_ap_vld">out, 1, ap_vld, dst_1, pointer</column>
+<column name="dst_2">out, 32, ap_vld, dst_2, pointer</column>
+<column name="dst_2_ap_vld">out, 1, ap_vld, dst_2, pointer</column>
+<column name="dst_3">out, 32, ap_vld, dst_3, pointer</column>
+<column name="dst_3_ap_vld">out, 1, ap_vld, dst_3, pointer</column>
+<column name="dst_4">out, 32, ap_vld, dst_4, pointer</column>
+<column name="dst_4_ap_vld">out, 1, ap_vld, dst_4, pointer</column>
+<column name="dst_5">out, 32, ap_vld, dst_5, pointer</column>
+<column name="dst_5_ap_vld">out, 1, ap_vld, dst_5, pointer</column>
+<column name="dst_6">out, 32, ap_vld, dst_6, pointer</column>
+<column name="dst_6_ap_vld">out, 1, ap_vld, dst_6, pointer</column>
+<column name="dst_7">out, 32, ap_vld, dst_7, pointer</column>
+<column name="dst_7_ap_vld">out, 1, ap_vld, dst_7, pointer</column>
+<column name="dst_8">out, 32, ap_vld, dst_8, pointer</column>
+<column name="dst_8_ap_vld">out, 1, ap_vld, dst_8, pointer</column>
+<column name="dst_9">out, 32, ap_vld, dst_9, pointer</column>
+<column name="dst_9_ap_vld">out, 1, ap_vld, dst_9, pointer</column>
+<column name="dst_10">out, 32, ap_vld, dst_10, pointer</column>
+<column name="dst_10_ap_vld">out, 1, ap_vld, dst_10, pointer</column>
+<column name="dst_11">out, 32, ap_vld, dst_11, pointer</column>
+<column name="dst_11_ap_vld">out, 1, ap_vld, dst_11, pointer</column>
+<column name="dst_12">out, 32, ap_vld, dst_12, pointer</column>
+<column name="dst_12_ap_vld">out, 1, ap_vld, dst_12, pointer</column>
+<column name="dst_13">out, 32, ap_vld, dst_13, pointer</column>
+<column name="dst_13_ap_vld">out, 1, ap_vld, dst_13, pointer</column>
+<column name="dst_14">out, 32, ap_vld, dst_14, pointer</column>
+<column name="dst_14_ap_vld">out, 1, ap_vld, dst_14, pointer</column>
+<column name="dst_15">out, 32, ap_vld, dst_15, pointer</column>
+<column name="dst_15_ap_vld">out, 1, ap_vld, dst_15, pointer</column>
+<column name="shift">in, 32, ap_none, shift, scalar</column>
+<column name="skipLine2">in, 32, ap_none, skipLine2, scalar</column>
+<column name="oMin">in, 32, ap_none, oMin, scalar</column>
+<column name="oMax">in, 32, ap_none, oMax, scalar</column>
+</table>
+</item>
+</section>
+</profile>

@@ -1,0 +1,118 @@
+
+
+================================================================
+== Vitis HLS Report for 'IDCT2B2'
+================================================================
+* Date:           Fri Nov 21 21:48:43 2025
+
+* Version:        2024.2 (Build 5238294 on Nov  8 2024)
+* Project:        dct2_dir
+* Solution:       hls (Vitis Kernel Flow Target)
+* Product family: zynquplus
+* Target device:  xczu9eg-ffvb1156-2-e
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing: 
+    * Summary: 
+    +--------+----------+----------+------------+
+    |  Clock |  Target  | Estimated| Uncertainty|
+    +--------+----------+----------+------------+
+    |ap_clk  |  10.00 ns|  0.955 ns|     2.70 ns|
+    +--------+----------+----------+------------+
+
++ Latency: 
+    * Summary: 
+    +---------+---------+----------+----------+-----+-----+---------+
+    |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
+    |   min   |   max   |    min   |    max   | min | max |   Type  |
+    +---------+---------+----------+----------+-----+-----+---------+
+    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    +---------+---------+----------+----------+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 1
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 1
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 1, States = { 1 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 0.95>
+ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%in_1_val_read = read i26 @_ssdm_op_Read.ap_auto.i26, i26 %in_1_val" [src/IDCT2.cpp:20]   --->   Operation 2 'read' 'in_1_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%in_0_val_read = read i26 @_ssdm_op_Read.ap_auto.i26, i26 %in_0_val" [src/IDCT2.cpp:20]   --->   Operation 3 'read' 'in_0_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.95ns)   --->   "%diff = sub i26 %in_0_val_read, i26 %in_1_val_read" [src/IDCT2.cpp:20]   --->   Operation 4 'sub' 'diff' <Predicate = true> <Delay = 0.95> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 5 [1/1] (0.95ns)   --->   "%add_ln19 = add i26 %in_1_val_read, i26 %in_0_val_read" [src/IDCT2.cpp:19]   --->   Operation 5 'add' 'add_ln19' <Predicate = true> <Delay = 0.95> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%even = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i26.i6, i26 %add_ln19, i6 0" [src/IDCT2.cpp:19]   --->   Operation 6 'bitconcatenate' 'even' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%odd = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i26.i6, i26 %diff, i6 0" [src/IDCT2.cpp:20]   --->   Operation 7 'bitconcatenate' 'odd' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%mrv = insertvalue i64 <undef>, i32 %even" [src/IDCT2.cpp:24]   --->   Operation 8 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i64 %mrv, i32 %odd" [src/IDCT2.cpp:24]   --->   Operation 9 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%ret_ln24 = ret i64 %mrv_1" [src/IDCT2.cpp:24]   --->   Operation 10 'ret' 'ret_ln24' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+
+ <State 1>: 0.955ns
+The critical path consists of the following:
+	wire read operation ('in_1_val_read', src/IDCT2.cpp:20) on port 'in_1_val' (src/IDCT2.cpp:20) [3]  (0.000 ns)
+	'sub' operation 26 bit ('diff', src/IDCT2.cpp:20) [5]  (0.955 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

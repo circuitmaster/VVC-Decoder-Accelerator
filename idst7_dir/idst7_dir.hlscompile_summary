@@ -1,0 +1,248 @@
+<ENTRY>
+{
+ "thisFile": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/idst7_dir.hlscompile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Dec  9 15:04:32 2025",
+ "timestampMillis": "1765292672025",
+ "buildStep": {
+  "cmdId": "78a6dd2a-0ac3-4e5f-bb27-763a459bb843",
+  "name": "v++",
+  "logFile": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/logs/idst7_dir.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2024.2/bin/unwrapped/lnx64.o/v++  --target hw -c --mode hls --config dst7-compile.cfg --work_dir ../idst7_dir/ ",
+  "args": [
+   "--target",
+   "hw",
+   "-c",
+   "--mode",
+   "hls",
+   "--config",
+   "dst7-compile.cfg",
+   "--work_dir",
+   "../idst7_dir/"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dst7-compile.cfg",
+    "content": "part=xczu9eg-ffvb1156-2-e\n\n#save-temps=1\n#kernel=IDCT2\n#messageDb=build/IDCT2.mdb\n#temp_dir=build\n#report_dir=build/reports\n#log_dir=build/logs\n\n#[advanced]\n#misc=solution_name=IDCT2\n\n[hls]\n#freqhz=200MHz\n#clock_uncertainty=12%\nflow_target=vitis\npackage.output.format=xo\npackage.output.syn=false\nsyn.file=../src/IDST7.cpp\nsyn.file=../src/transform_coeffs.h\nsyn.top=IDST7"
+   }
+  ],
+  "cwd": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Dec  9 15:04:32 2025",
+ "timestampMillis": "1765292672025",
+ "status": {
+  "cmdId": "78a6dd2a-0ac3-4e5f-bb27-763a459bb843",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Dec  9 15:04:34 2025",
+ "timestampMillis": "1765292674726",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_HW",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "IDST7",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp",
+     "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/transform_coeffs.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Dec  9 15:04:34 2025",
+ "timestampMillis": "1765292674727",
+ "buildStep": {
+  "cmdId": "f9f8916b-1fcd-417b-a58a-96d58fa59e69",
+  "name": "",
+  "logFile": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Dec  9 15:04:34 2025",
+ "timestampMillis": "1765292674727",
+ "status": {
+  "cmdId": "f9f8916b-1fcd-417b-a58a-96d58fa59e69",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Dec  9 15:04:34 2025",
+ "timestampMillis": "1765292674727",
+ "report": {
+  "path": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/hls_data.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Dec  9 15:04:34 2025",
+ "timestampMillis": "1765292674727",
+ "report": {
+  "path": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Dec  9 15:04:34 2025",
+ "timestampMillis": "1765292674727",
+ "report": {
+  "path": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "HLS_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Dec  9 15:04:47 2025",
+ "timestampMillis": "1765292687194",
+ "report": {
+  "path": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_DATAFLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Dec  9 15:04:47 2025",
+ "timestampMillis": "1765292687195",
+ "report": {
+  "path": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_FUNCTION_CALL_GRAPH",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Dec  9 15:04:47 2025",
+ "timestampMillis": "1765292687195",
+ "report": {
+  "path": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "HLS_SCHEDULE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Dec  9 15:04:47 2025",
+ "timestampMillis": "1765292687195",
+ "status": {
+  "cmdId": "f9f8916b-1fcd-417b-a58a-96d58fa59e69",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Dec  9 15:04:47 2025",
+ "timestampMillis": "1765292687350",
+ "status": {
+  "cmdId": "78a6dd2a-0ac3-4e5f-bb27-763a459bb843",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Dec  9 15:04:47 2025",
+ "timestampMillis": "1765292687366",
+ "report": {
+  "path": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/reports/v++_compile_idst7_dir_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Dec  9 15:04:47 2025",
+ "timestampMillis": "1765292687366",
+ "report": {
+  "path": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/reports/.db/v++_compile_idst7_dir_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

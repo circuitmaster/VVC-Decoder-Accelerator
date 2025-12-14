@@ -1,0 +1,175 @@
+---
+MainSourceFile:  /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        /tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1049144
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        /tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1049610
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        /tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1050077
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1248_1:  '
+    FileOffset:      1248
+    FilePath:        /tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_fixed_base.h
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1333540
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1248_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_21_1:  '
+    FileOffset:      21
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1739573
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_21_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_25_2:  '
+    FileOffset:      25
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1739661
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_25_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_47_1:  '
+    FileOffset:      47
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1740283
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_47_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_52_2:  '
+    FileOffset:      52
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1740373
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_52_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_73_1:  '
+    FileOffset:      73
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1740986
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_73_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_78_2:  '
+    FileOffset:      78
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1741076
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_78_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_259_1:  '
+    FileOffset:      259
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1743641
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_259_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_272_2:  '
+    FileOffset:      272
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1744028
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_272_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_279_3:  '
+    FileOffset:      279
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1744213
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_279_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_292_4:  '
+    FileOffset:      292
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1744564
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_292_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_299_5:  '
+    FileOffset:      299
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1744749
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_299_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_311_6:  '
+    FileOffset:      311
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1745088
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_311_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_318_7:  '
+    FileOffset:      318
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1745271
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_318_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_331_8:  '
+    FileOffset:      331
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1745618
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_331_8: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_338_9:  '
+    FileOffset:      338
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDST7.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp
+        Offset:          1745796
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_338_9: '
+...

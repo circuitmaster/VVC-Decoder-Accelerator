@@ -89,12 +89,12 @@ void IDCT2B16(ap_int<32> in[16], ap_int<32> out[16]){
     #pragma HLS ARRAY_PARTITION variable=inputs complete dim=0
     inputs[0] = in[0];
     inputs[4] = in[8];
-    inputs[3] = in[4];
-    inputs[7] = in[12];
+    inputs[2] = in[4];
+    inputs[6] = in[12];
     inputs[1] = in[2];
-    inputs[2] = in[6];
+    inputs[3] = in[6];
     inputs[5] = in[10];
-    inputs[6] = in[14];
+    inputs[7] = in[14];
 
     IDCT2B8(inputs, evens);
 

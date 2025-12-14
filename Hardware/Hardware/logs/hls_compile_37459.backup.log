@@ -1,0 +1,6 @@
+INFO: [v++ 82-10520] No user clocking directives found, hence PL frequency is being inferred from the platform. 150.000000Mhz will be used as PL frequency
+  **** HLS Build v2024.2 5238294
+WARNING: [HLS 200-2059] The 'syn.output.format' name is deprecated, use 'package.output.format' instead /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(17)
+ERROR: [HLS 200-2075] Must use freqhz instead of hls.clock when specifying a platform see clock from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct-compile.cfg(14)
+ERROR: Unsupported clock constraints
+INFO: [HLS 200-112] Total CPU user time: 1.12 seconds. Total CPU system time: 0.05 seconds. Total elapsed time: 1.04 seconds; peak allocated memory: 365.070 MB.

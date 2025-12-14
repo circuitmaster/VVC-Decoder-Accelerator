@@ -1,0 +1,8 @@
+platform=/tools/Xilinx/Vitis/2024.2/base_platforms/xilinx_zcu102_base_202420_1/xilinx_zcu102_base_202420_1.xpfm
+part=xczu9eg-ffvb1156-2-e
+relativeroot=/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware
+original_argv=--target hw -c --mode hls --config dct-compile.cfg --work_dir Hardware 
+
+[hls]
+clock=150.000000Mhz
+

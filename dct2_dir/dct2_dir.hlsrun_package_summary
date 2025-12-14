@@ -1,0 +1,157 @@
+<ENTRY>
+{
+ "thisFile": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/dct2_dir.hlsrun_package_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Nov 21 21:48:50 2025",
+ "timestampMillis": "1763761730122",
+ "buildStep": {
+  "cmdId": "573b8acb-5ab8-4ad5-b964-95a22efda43d",
+  "name": "vitis-run",
+  "logFile": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/logs/dct2_dir.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2024.2/bin/unwrapped/lnx64.o/vitis-run  --mode hls --package --config dct-compile.cfg --work_dir ../dct2_dir/ ",
+  "args": [
+   "--mode",
+   "hls",
+   "--package",
+   "--config",
+   "dct-compile.cfg",
+   "--work_dir",
+   "../dct2_dir/"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 21 21:48:50 2025",
+ "timestampMillis": "1763761730123",
+ "status": {
+  "cmdId": "573b8acb-5ab8-4ad5-b964-95a22efda43d",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Nov 21 21:48:52 2025",
+ "timestampMillis": "1763761732909",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_XO",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "IDCT2",
+     "file": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/IDCT2.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp",
+     "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/transform_coeffs.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Fri Nov 21 21:48:52 2025",
+ "timestampMillis": "1763761732910",
+ "buildStep": {
+  "cmdId": "38dd0bdb-fd62-4916-81c8-4d48ee19f1b6",
+  "name": "",
+  "logFile": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 21 21:48:52 2025",
+ "timestampMillis": "1763761732910",
+ "status": {
+  "cmdId": "38dd0bdb-fd62-4916-81c8-4d48ee19f1b6",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 21 21:49:11 2025",
+ "timestampMillis": "1763761751134",
+ "status": {
+  "cmdId": "38dd0bdb-fd62-4916-81c8-4d48ee19f1b6",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Nov 21 21:49:11 2025",
+ "timestampMillis": "1763761751311",
+ "status": {
+  "cmdId": "573b8acb-5ab8-4ad5-b964-95a22efda43d",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 21 21:49:11 2025",
+ "timestampMillis": "1763761751312",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Nov 21 21:49:11 2025",
+ "timestampMillis": "1763761751312",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
