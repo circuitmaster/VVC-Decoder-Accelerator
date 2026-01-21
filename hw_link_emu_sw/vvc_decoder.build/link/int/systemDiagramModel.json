@@ -1,0 +1,358 @@
+{
+ "system_diagram_metadata": {
+  "schema_version": {
+   "major": "2",
+   "minor": "0",
+   "patch": "0"
+  },
+  "xsa": {
+   "vendor": "xilinx",
+   "board_id": "u2",
+   "name": "gen3x4_xdma_gc_2",
+   "version_major": "202110",
+   "version_minor": "1",
+   "description": "\n    This platform targets the Alveo U2 Data Center Accelerator Card.\n  ",
+   "generated_by": {
+    "name": "Vivado",
+    "version": "2021.1",
+    "cl": "3247384",
+    "time_stamp": "Mon Aug 23 19:11:19 2021"
+   },
+   "board": {
+    "name": "xilinx.com:u2:1.0",
+    "vendor": "xilinx.com",
+    "part": "xcku15p-ffva1156-2LV-e",
+    "board_part": "xilinx.com:u2:part0:1.0"
+   },
+   "available_resources": {
+    "LUT": "522720",
+    "REG": "705600",
+    "BRAM": "984",
+    "DSP": "1968",
+    "URAM": ""
+   },
+   "device_topology": [
+    {
+     "id": "0",
+     "type": "Ddr4",
+     "used": "yes",
+     "sizeKB": "17179869184",
+     "base_address": "0x00000000",
+     "tag": "bank0",
+     "slr": "",
+     "spTag": ""
+    },
+    {
+     "id": "1",
+     "type": "Ddr4",
+     "used": "yes",
+     "sizeKB": "17179869184",
+     "base_address": "0x00000001",
+     "tag": "plram",
+     "slr": "",
+     "spTag": ""
+    }
+   ],
+   "design_intent": [
+    "dataCenter",
+    "externalHost",
+    "serverManaged"
+   ],
+   "clocks": [
+    {
+     "name": "CPU",
+     "orig_name": "CPU",
+     "id": -1,
+     "default": false,
+     "type": "RESERVED",
+     "spec_frequency": 1,
+     "spec_period": 1000,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    },
+    {
+     "name": "PL 1",
+     "orig_name": "_bd_top_blp_s_aclk_kernel2_ref_clk_00",
+     "id": 1,
+     "default": false,
+     "type": "SCALABLE",
+     "spec_frequency": 500,
+     "spec_period": 2,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    },
+    {
+     "name": "PL 0",
+     "orig_name": "_bd_top_blp_s_aclk_kernel_ref_clk_00",
+     "id": 0,
+     "default": false,
+     "type": "SCALABLE",
+     "spec_frequency": 300,
+     "spec_period": 3.333333,
+     "requested_frequency": 0,
+     "achieved_frequency": 0,
+     "clock_domain": "",
+     "inst_ref": "",
+     "comp_ref": "",
+     "xclbin_name": ""
+    }
+   ]
+  },
+  "xclbin": {
+   "generated_by": {
+    "name": "v++",
+    "version": "2022.2.2",
+    "cl": "3716524",
+    "time_stamp": "2023-02-17-15:43:22",
+    "options": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++ --target sw_emu --link --config vvc_decoder-link.cfg -ovvc_decoder.xclbin ../Emulation-SW/build/idct2.xo ../Emulation-SW/build/idct8.xo ../Emulation-SW/build/idst7.xo ",
+    "xclbin_name": "vvc_decoder",
+    "uuid": "275f6447-0ed8-4c21-b85f-b3fc9d922faf",
+    "link_uuid": "275f6447-0ed8-4c21-b85f-b3fc9d922faf",
+    "package_uuid": "",
+    "system_compile_flow": false
+   },
+   "user_regions": [
+    {
+     "name": "OCL_REGION_0",
+     "type": "clc_region",
+     "instance_path": "level0_i/ulp",
+     "available_resources": {
+      "LUT": "352800",
+      "REG": "705600",
+      "BRAM": "672",
+      "DSP": "1344",
+      "by_SLR": [
+       {
+        "name": "SLR0",
+        "LUT": "352800",
+        "REG": "705600",
+        "BRAM": "672",
+        "DSP": "1344",
+        "URAM": "112"
+       }
+      ],
+      "URAM": ""
+     },
+     "kernels": [],
+     "compute_units": [
+      {
+       "id": "0",
+       "kernel_name": "IDST7",
+       "cu_name": "IDST7_1",
+       "base_address": "",
+       "actual_resources": [],
+       "clock_name": "",
+       "clock_id": 0,
+       "clocks": [],
+       "reset_port_names": [],
+       "slr_resources": []
+      },
+      {
+       "id": "1",
+       "kernel_name": "IDCT8",
+       "cu_name": "IDCT8_1",
+       "base_address": "",
+       "actual_resources": [],
+       "clock_name": "",
+       "clock_id": 0,
+       "clocks": [],
+       "reset_port_names": [],
+       "slr_resources": []
+      },
+      {
+       "id": "2",
+       "kernel_name": "IDCT2",
+       "cu_name": "IDCT2_1",
+       "base_address": "",
+       "actual_resources": [],
+       "clock_name": "",
+       "clock_id": 0,
+       "clocks": [],
+       "reset_port_names": [],
+       "slr_resources": []
+      }
+     ],
+     "connectivity": [
+      {
+       "id": "0",
+       "node1": {
+        "type": "compute_unit",
+        "id": "0",
+        "kernel_argument_id": "0",
+        "arg_name": "in_r",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      },
+      {
+       "id": "1",
+       "node1": {
+        "type": "compute_unit",
+        "id": "0",
+        "kernel_argument_id": "1",
+        "arg_name": "out_r",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      },
+      {
+       "id": "2",
+       "node1": {
+        "type": "compute_unit",
+        "id": "1",
+        "kernel_argument_id": "0",
+        "arg_name": "in_r",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      },
+      {
+       "id": "3",
+       "node1": {
+        "type": "compute_unit",
+        "id": "1",
+        "kernel_argument_id": "1",
+        "arg_name": "out_r",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      },
+      {
+       "id": "4",
+       "node1": {
+        "type": "compute_unit",
+        "id": "2",
+        "kernel_argument_id": "0",
+        "arg_name": "in_r",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      },
+      {
+       "id": "5",
+       "node1": {
+        "type": "compute_unit",
+        "id": "2",
+        "kernel_argument_id": "1",
+        "arg_name": "in2",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      },
+      {
+       "id": "6",
+       "node1": {
+        "type": "compute_unit",
+        "id": "2",
+        "kernel_argument_id": "2",
+        "arg_name": "out_r",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      },
+      {
+       "id": "7",
+       "node1": {
+        "type": "compute_unit",
+        "id": "2",
+        "kernel_argument_id": "3",
+        "arg_name": "out2",
+        "mode": "Master",
+        "name": "",
+        "port_name": ""
+       },
+       "node2": {
+        "type": "memory",
+        "id": "0",
+        "kernel_argument_id": "",
+        "arg_name": "",
+        "mode": "",
+        "name": "",
+        "port_name": ""
+       }
+      }
+     ]
+    }
+   ]
+  }
+ }
+}
+

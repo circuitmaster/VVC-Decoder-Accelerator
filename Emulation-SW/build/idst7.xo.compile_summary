@@ -1,0 +1,168 @@
+<ENTRY>
+{
+ "thisFile": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/idst7.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Wed Jan 21 16:25:23 2026",
+ "timestampMillis": "1769012723989",
+ "buildStep": {
+  "cmdId": "774c24e5-c39c-4862-b820-bc90e82dda3e",
+  "name": "v++",
+  "logFile": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDST7/IDST7.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --target sw_emu --compile -I../src --config dst7-compile.cfg -obuild/idst7.xo ../src/IDST7.cpp ",
+  "args": [
+   "--target",
+   "sw_emu",
+   "--compile",
+   "-I../src",
+   "--config",
+   "dst7-compile.cfg",
+   "-obuild/idst7.xo",
+   "../src/IDST7.cpp"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/dst7-compile.cfg",
+    "content": "platform=xilinx_u2_gen3x4_xdma_gc_2_202110_1\nsave-temps=1\nkernel=IDST7\nmessageDb=build/IDST7.mdb\ntemp_dir=build\nreport_dir=build/reports\nlog_dir=build/logs\n\n[advanced]\nmisc=solution_name=IDST7"
+   }
+  ],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jan 21 16:25:23 2026",
+ "timestampMillis": "1769012723990",
+ "status": {
+  "cmdId": "774c24e5-c39c-4862-b820-bc90e82dda3e",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Wed Jan 21 16:25:27 2026",
+ "timestampMillis": "1769012727126",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u2_gen3x4_xdma_gc_2_202110_1.xpfm",
+  "hardwareDsa": "hw.xsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u2_gen3x4_xdma_gc_2_202110_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_SW_EMU",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "IDST7",
+     "file": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/idst7.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/emre24/Desktop/vvc_proj_kernels/src/IDST7.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2022.2.2. SW Build 3716524 on 2023-02-17-15:43:22"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed Jan 21 16:25:27 2026",
+ "timestampMillis": "1769012727128",
+ "buildStep": {
+  "cmdId": "9f426b23-4835-4d8d-93aa-9a063f687552",
+  "name": "vitis_hls",
+  "logFile": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDST7/IDST7/vitis_hls.log",
+  "commandLine": "vitis_hls -f /home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDST7/IDST7/IDST7.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDST7/IDST7/IDST7.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jan 21 16:25:27 2026",
+ "timestampMillis": "1769012727129",
+ "status": {
+  "cmdId": "9f426b23-4835-4d8d-93aa-9a063f687552",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jan 21 16:25:41 2026",
+ "timestampMillis": "1769012741730",
+ "status": {
+  "cmdId": "9f426b23-4835-4d8d-93aa-9a063f687552",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jan 21 16:25:41 2026",
+ "timestampMillis": "1769012741744",
+ "status": {
+  "cmdId": "774c24e5-c39c-4862-b820-bc90e82dda3e",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jan 21 16:25:41 2026",
+ "timestampMillis": "1769012741843",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/reports/IDST7/IDST7_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jan 21 16:25:41 2026",
+ "timestampMillis": "1769012741844",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDST7_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

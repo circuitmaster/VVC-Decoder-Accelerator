@@ -1,0 +1,27 @@
+INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
+	Reports: /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/reports/link
+	Log files: /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/logs/link
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.xclbin.link_summary, at Wed Jan 21 16:29:28 2026
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/reports/link/link_guidance.html', at Wed Jan 21 16:29:28 2026
+INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u2_gen3x4_xdma_gc_2_202110_1/xilinx_u2_gen3x4_xdma_gc_2_202110_1.xpfm
+INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u2_gen3x4_xdma_gc_2_202110_1/hw/hw.xsa'
+INFO: [v++ 74-78] Compiler Version string: 2022.2
+INFO: [v++ 60-629] Linking for software emulation target
+INFO: [v++ 60-423]   Target device: xilinx_u2_gen3x4_xdma_gc_2_202110_1
+INFO: [v++ 60-645] kernel flags are '-I /home/emre24/Desktop/vvc_proj_kernels/src'
+INFO: [v++ 60-645] kernel flags are '-I /home/emre24/Desktop/vvc_proj_kernels/src'
+INFO: [v++ 60-645] kernel flags are '-I /home/emre24/Desktop/vvc_proj_kernels/src'
+ERROR: [v++ 17-1309] Gcc: /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp:6: multiple definition of `CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+ERROR: [v++ 17-1309] Gcc: IDST7/IDST7.csim_cu.a(IDST7.o):/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp:6: first defined here
+ERROR: [v++ 17-1309] Gcc: /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp:14: multiple definition of `INV_MATMUL_8(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [8])'
+ERROR: [v++ 17-1309] Gcc: IDST7/IDST7.csim_cu.a(IDST7.o):/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp:14: first defined here
+ERROR: [v++ 17-1309] Gcc: /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp:40: multiple definition of `INV_MATMUL_16(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [16])'
+ERROR: [v++ 17-1309] Gcc: IDST7/IDST7.csim_cu.a(IDST7.o):/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp:40: first defined here
+ERROR: [v++ 17-1309] Gcc: /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp:67: multiple definition of `INV_MATMUL_32(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [32])'
+ERROR: [v++ 17-1309] Gcc: IDST7/IDST7.csim_cu.a(IDST7.o):/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp:67: first defined here
+ERROR: [v++ 17-1309] Gcc: /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT2/IDCT2/cpu_sources/IDCT2.cpp:6: multiple definition of `CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+ERROR: [v++ 17-1309] Gcc: IDST7/IDST7.csim_cu.a(IDST7.o):/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp:6: first defined here
+ERROR: [v++ 60-398] g++ failed
+ERROR: [v++ 60-626] Kernel link failed to complete
+ERROR: [v++ 60-703] Failed to finish linking
+INFO: [v++ 60-1653] Closing dispatch client.
