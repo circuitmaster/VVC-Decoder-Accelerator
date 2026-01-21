@@ -1,0 +1,18 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [{
+          "functionName": "IDCT8",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/emre24\/Desktop\/vvc_proj_kernels\/Emulation-SW\/build\/IDCT8\/IDCT8\/IDCT8.tcl",
+          "sourceLine": "25",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "IDCT8"
+              }]
+          }
+        }]
+    }]}

@@ -1,0 +1,3 @@
+
+™
+IDST7$b2fd0cc9-2ca6-4442-b0dc-5199be1d8245"é/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop "run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}" --advanced.misc "report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}" --advanced.misc "report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}" --target sw_emu --compile -I../src --config dst7-compile.cfg -obuild/idst7.xo ../src/IDST7.cpp 

@@ -1,0 +1,489 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_ref.h:678:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="and_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_ref.h:692:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="or_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/tools/Xilinx/Vitis_HLS/2022.2/common/technology/autopilot/ap_int_ref.h:706:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="xor_reduce" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:7:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="CLIP3" ARG_PragmaIsValid="1" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:14:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B2" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:27:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B4" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:31:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=evens complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:32:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=odds complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:35:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B4" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=inputs complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:50:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B8" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:54:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B8" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=evens complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:55:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B8" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=odds complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:58:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B8" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=inputs complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:81:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B16" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:85:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B16" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=evens complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:86:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B16" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=odds complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:89:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B16" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=inputs complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:102:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B16" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:125:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B32" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:129:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B32" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=evens complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:130:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B32" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=odds complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:133:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B32" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=inputs complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:155:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B32" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:195:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B64" ARG_PragmaIsValid="1" ARG_PragmaOptions="off" ARG_PragmaType="inline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:199:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B64" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=evens complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:200:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B64" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=odds complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:203:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B64" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=inputs complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:242:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2B64" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDCT2/IDCT2/IDCT2.tcl:25:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=IDCT2" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:316:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in offset=slave bundle=gmem0" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:317:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=in2 offset=slave bundle=gmem1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:318:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=out offset=slave bundle=gmem0" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:319:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=out2 offset=slave bundle=gmem1" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:320:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=block_size" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:321:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=size" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:322:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=shift" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:323:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=outputMinimum" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:324:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=outputMaximum" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:325:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:330:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="min=1 max=1024" ARG_PragmaType="loop_tripcount" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:331:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="II=1" ARG_PragmaType="pipeline" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:341:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:342:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:345:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:350:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:357:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:362:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:370:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:371:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:374:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:381:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:389:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:390:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:393:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:400:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:408:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:409:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:412:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:419:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:427:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:428:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:431:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:438:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:446:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=in_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:447:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaOptions="variable=out_data complete dim=0" ARG_PragmaType="array_partition" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:450:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:457:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="IDCT2" ARG_PragmaIsValid="1" ARG_PragmaType="unroll" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:458:38" msg_body="Inlining function 'CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)' into 'IDCT2'">
+        <args Callee="CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)" Caller="IDCT2"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:439:38" msg_body="Inlining function 'CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)' into 'IDCT2'">
+        <args Callee="CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)" Caller="IDCT2"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:420:38" msg_body="Inlining function 'CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)' into 'IDCT2'">
+        <args Callee="CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)" Caller="IDCT2"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:401:38" msg_body="Inlining function 'CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)' into 'IDCT2'">
+        <args Callee="CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)" Caller="IDCT2"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:382:38" msg_body="Inlining function 'CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)' into 'IDCT2'">
+        <args Callee="CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)" Caller="IDCT2"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:363:39" msg_body="Inlining function 'CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)' into 'IDCT2'">
+        <args Callee="CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)" Caller="IDCT2"/>
+    </msg>
+    <msg msg_groups="CODE_UNSUPPORTED" msg_id="214-131" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:358:38" msg_body="Inlining function 'CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)' into 'IDCT2'">
+        <args Callee="CLIP3(ap_int&lt;32&gt;, ap_int&lt;32&gt;, ap_int&lt;32&gt;)" Caller="IDCT2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:444:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:445:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:449:2" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:456:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:425:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:426:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:430:2" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:437:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:406:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:407:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:411:2" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:418:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:387:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:388:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:392:2" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:399:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:368:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:369:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:373:2" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:380:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:339:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:340:24" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:344:2" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:349:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:356:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:361:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:241:5" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:202:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:198:16" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:197:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:154:5" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:132:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:128:16" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:127:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:101:5" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:88:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:84:16" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:83:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:57:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:53:16" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:52:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:34:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:30:16" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:29:13" msg_body="Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:444:24) in function 'IDCT2' completely with a factor of 2">
+        <args Factor="2" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:444:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:445:24) in function 'IDCT2' completely with a factor of 2">
+        <args Factor="2" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:445:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:449:2) in function 'IDCT2' completely with a factor of 2">
+        <args Factor="2" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:449:2" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:456:13) in function 'IDCT2' completely with a factor of 2">
+        <args Factor="2" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:456:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:425:24) in function 'IDCT2' completely with a factor of 4">
+        <args Factor="4" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:425:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:426:24) in function 'IDCT2' completely with a factor of 4">
+        <args Factor="4" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:426:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:430:2) in function 'IDCT2' completely with a factor of 4">
+        <args Factor="4" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:430:2" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:437:13) in function 'IDCT2' completely with a factor of 4">
+        <args Factor="4" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:437:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:406:24) in function 'IDCT2' completely with a factor of 8">
+        <args Factor="8" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:406:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:407:24) in function 'IDCT2' completely with a factor of 8">
+        <args Factor="8" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:407:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:411:2) in function 'IDCT2' completely with a factor of 8">
+        <args Factor="8" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:411:2" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:418:13) in function 'IDCT2' completely with a factor of 8">
+        <args Factor="8" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:418:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:387:24) in function 'IDCT2' completely with a factor of 16">
+        <args Factor="16" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:387:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:388:24) in function 'IDCT2' completely with a factor of 16">
+        <args Factor="16" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:388:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:392:2) in function 'IDCT2' completely with a factor of 16">
+        <args Factor="16" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:392:2" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:399:13) in function 'IDCT2' completely with a factor of 16">
+        <args Factor="16" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:399:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:368:24) in function 'IDCT2' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:368:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:369:24) in function 'IDCT2' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:369:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:373:2) in function 'IDCT2' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:373:2" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:380:13) in function 'IDCT2' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:380:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:339:24) in function 'IDCT2' completely with a factor of 64">
+        <args Factor="64" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:339:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:340:24) in function 'IDCT2' completely with a factor of 64">
+        <args Factor="64" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:340:24" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:344:2) in function 'IDCT2' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:344:2" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:349:13) in function 'IDCT2' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:349:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:356:13) in function 'IDCT2' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:356:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:361:13) in function 'IDCT2' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:361:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:194:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:241:5) in function 'IDCT2B64' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:241:5" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:194:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:202:13) in function 'IDCT2B64' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:202:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:194:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:198:16) in function 'IDCT2B64' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:198:16" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:194:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:197:13) in function 'IDCT2B64' completely with a factor of 32">
+        <args Factor="32" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:197:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:124:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:154:5) in function 'IDCT2B32' completely with a factor of 16">
+        <args Factor="16" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:154:5" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:124:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:132:13) in function 'IDCT2B32' completely with a factor of 16">
+        <args Factor="16" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:132:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:124:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:128:16) in function 'IDCT2B32' completely with a factor of 16">
+        <args Factor="16" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:128:16" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:124:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:127:13) in function 'IDCT2B32' completely with a factor of 16">
+        <args Factor="16" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:127:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:80:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:101:5) in function 'IDCT2B16' completely with a factor of 8">
+        <args Factor="8" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:101:5" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:80:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:88:13) in function 'IDCT2B16' completely with a factor of 8">
+        <args Factor="8" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:88:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:80:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:84:16) in function 'IDCT2B16' completely with a factor of 8">
+        <args Factor="8" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:84:16" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:80:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:83:13) in function 'IDCT2B16' completely with a factor of 8">
+        <args Factor="8" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:83:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:49:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:57:13) in function 'IDCT2B8' completely with a factor of 4">
+        <args Factor="4" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:57:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:49:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:53:16) in function 'IDCT2B8' completely with a factor of 4">
+        <args Factor="4" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:53:16" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:49:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:52:13) in function 'IDCT2B8' completely with a factor of 4">
+        <args Factor="4" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:52:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:26:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:34:13) in function 'IDCT2B4' completely with a factor of 2">
+        <args Factor="2" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:34:13" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:26:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:30:16) in function 'IDCT2B4' completely with a factor of 2">
+        <args Factor="2" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:30:16" LoopName="anonymous"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:26:0" msg_body="Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:29:13) in function 'IDCT2B4' completely with a factor of 2">
+        <args Factor="2" LoopLoc="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:29:13" LoopName="anonymous"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

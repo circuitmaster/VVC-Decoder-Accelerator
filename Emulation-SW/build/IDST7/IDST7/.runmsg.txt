@@ -1,0 +1,2 @@
+performing high-level synthesis for kernel: IDST7
+Log file: /home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDST7/IDST7/vitis_hls.log

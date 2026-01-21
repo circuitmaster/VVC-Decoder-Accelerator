@@ -1,0 +1,168 @@
+<ENTRY>
+{
+ "thisFile": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/idct8.xo.compile_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Wed Jan 21 16:24:49 2026",
+ "timestampMillis": "1769012689886",
+ "buildStep": {
+  "cmdId": "6e1658a9-4f31-47e1-8492-8d7843d1a939",
+  "name": "v++",
+  "logFile": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDCT8/IDCT8.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --target sw_emu --compile -I../src --config dct8-compile.cfg -obuild/idct8.xo ../src/IDCT8.cpp ",
+  "args": [
+   "--target",
+   "sw_emu",
+   "--compile",
+   "-I../src",
+   "--config",
+   "dct8-compile.cfg",
+   "-obuild/idct8.xo",
+   "../src/IDCT8.cpp"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/dct8-compile.cfg",
+    "content": "platform=xilinx_u2_gen3x4_xdma_gc_2_202110_1\nsave-temps=1\nkernel=IDCT8\nmessageDb=build/IDCT8.mdb\ntemp_dir=build\nreport_dir=build/reports\nlog_dir=build/logs\n\n[advanced]\nmisc=solution_name=IDCT8"
+   }
+  ],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jan 21 16:24:49 2026",
+ "timestampMillis": "1769012689886",
+ "status": {
+  "cmdId": "6e1658a9-4f31-47e1-8492-8d7843d1a939",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Wed Jan 21 16:24:52 2026",
+ "timestampMillis": "1769012692999",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u2_gen3x4_xdma_gc_2_202110_1.xpfm",
+  "hardwareDsa": "hw.xsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u2_gen3x4_xdma_gc_2_202110_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_COMPILE",
+  "target": "TT_SW_EMU",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "IDCT8",
+     "file": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/idct8.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/emre24/Desktop/vvc_proj_kernels/src/IDCT8.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2022.2.2. SW Build 3716524 on 2023-02-17-15:43:22"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Wed Jan 21 16:24:53 2026",
+ "timestampMillis": "1769012693001",
+ "buildStep": {
+  "cmdId": "8a1d6dcb-b395-4280-bf4e-55f4a03e2526",
+  "name": "vitis_hls",
+  "logFile": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDCT8/IDCT8/vitis_hls.log",
+  "commandLine": "vitis_hls -f /home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDCT8/IDCT8/IDCT8.tcl -messageDb vitis_hls.pb",
+  "args": [
+   "vitis_hls",
+   "-f",
+   "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDCT8/IDCT8/IDCT8.tcl",
+   "-messageDb",
+   "vitis_hls.pb"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jan 21 16:24:53 2026",
+ "timestampMillis": "1769012693001",
+ "status": {
+  "cmdId": "8a1d6dcb-b395-4280-bf4e-55f4a03e2526",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jan 21 16:25:07 2026",
+ "timestampMillis": "1769012707251",
+ "status": {
+  "cmdId": "8a1d6dcb-b395-4280-bf4e-55f4a03e2526",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Jan 21 16:25:07 2026",
+ "timestampMillis": "1769012707263",
+ "status": {
+  "cmdId": "6e1658a9-4f31-47e1-8492-8d7843d1a939",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jan 21 16:25:07 2026",
+ "timestampMillis": "1769012707381",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/reports/IDCT8/IDCT8_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Jan 21 16:25:07 2026",
+ "timestampMillis": "1769012707382",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDCT8_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

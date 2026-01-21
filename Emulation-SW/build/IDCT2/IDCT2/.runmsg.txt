@@ -1,0 +1,2 @@
+performing high-level synthesis for kernel: IDCT2
+Log file: /home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDCT2/IDCT2/vitis_hls.log

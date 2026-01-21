@@ -1,0 +1,95 @@
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:458:38: Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'IDCT2'
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:439:38: Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'IDCT2'
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:420:38: Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'IDCT2'
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:401:38: Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'IDCT2'
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:382:38: Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'IDCT2'
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:363:39: Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'IDCT2'
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:358:38: Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'IDCT2'
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:444:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:445:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:449:2: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:456:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:425:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:426:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:430:2: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:437:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:406:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:407:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:411:2: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:418:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:387:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:388:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:392:2: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:399:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:368:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:369:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:373:2: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:380:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:339:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:340:24: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:344:2: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:349:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:356:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:361:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:241:5: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:202:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:198:16: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:197:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:154:5: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:132:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:128:16: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:127:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:101:5: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:88:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:84:16: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:83:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:57:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:53:16: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:52:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:34:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:30:16: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:29:13: Loop 'anonymous' is marked as complete unroll implied by the pipeline pragma
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:444:24) in function 'IDCT2' completely with a factor of 2
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:445:24) in function 'IDCT2' completely with a factor of 2
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:449:2) in function 'IDCT2' completely with a factor of 2
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:456:13) in function 'IDCT2' completely with a factor of 2
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:425:24) in function 'IDCT2' completely with a factor of 4
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:426:24) in function 'IDCT2' completely with a factor of 4
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:430:2) in function 'IDCT2' completely with a factor of 4
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:437:13) in function 'IDCT2' completely with a factor of 4
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:406:24) in function 'IDCT2' completely with a factor of 8
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:407:24) in function 'IDCT2' completely with a factor of 8
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:411:2) in function 'IDCT2' completely with a factor of 8
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:418:13) in function 'IDCT2' completely with a factor of 8
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:387:24) in function 'IDCT2' completely with a factor of 16
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:388:24) in function 'IDCT2' completely with a factor of 16
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:392:2) in function 'IDCT2' completely with a factor of 16
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:399:13) in function 'IDCT2' completely with a factor of 16
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:368:24) in function 'IDCT2' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:369:24) in function 'IDCT2' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:373:2) in function 'IDCT2' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:380:13) in function 'IDCT2' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:339:24) in function 'IDCT2' completely with a factor of 64
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:340:24) in function 'IDCT2' completely with a factor of 64
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:344:2) in function 'IDCT2' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:349:13) in function 'IDCT2' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:356:13) in function 'IDCT2' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:315:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:361:13) in function 'IDCT2' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:194:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:241:5) in function 'IDCT2B64' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:194:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:202:13) in function 'IDCT2B64' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:194:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:198:16) in function 'IDCT2B64' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:194:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:197:13) in function 'IDCT2B64' completely with a factor of 32
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:124:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:154:5) in function 'IDCT2B32' completely with a factor of 16
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:124:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:132:13) in function 'IDCT2B32' completely with a factor of 16
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:124:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:128:16) in function 'IDCT2B32' completely with a factor of 16
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:124:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:127:13) in function 'IDCT2B32' completely with a factor of 16
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:80:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:101:5) in function 'IDCT2B16' completely with a factor of 8
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:80:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:88:13) in function 'IDCT2B16' completely with a factor of 8
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:80:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:84:16) in function 'IDCT2B16' completely with a factor of 8
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:80:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:83:13) in function 'IDCT2B16' completely with a factor of 8
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:49:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:57:13) in function 'IDCT2B8' completely with a factor of 4
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:49:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:53:16) in function 'IDCT2B8' completely with a factor of 4
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:49:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:52:13) in function 'IDCT2B8' completely with a factor of 4
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:26:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:34:13) in function 'IDCT2B4' completely with a factor of 2
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:26:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:30:16) in function 'IDCT2B4' completely with a factor of 2
+remark: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:26:0: Unrolling loop 'anonymous' (/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:29:13) in function 'IDCT2B4' completely with a factor of 2

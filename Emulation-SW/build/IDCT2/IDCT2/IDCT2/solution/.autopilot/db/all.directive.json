@@ -1,0 +1,18 @@
+{"sourceFile": [{
+      "name": "",
+      "directive": [{
+          "functionName": "IDCT2",
+          "label": "",
+          "functionLabel": "",
+          "id": "1",
+          "sourceFile": "\/home\/emre24\/Desktop\/vvc_proj_kernels\/Emulation-SW\/build\/IDCT2\/IDCT2\/IDCT2.tcl",
+          "sourceLine": "25",
+          "pragma": {
+            "name": "TOP",
+            "option": [{
+                "name": "name",
+                "value": "IDCT2"
+              }]
+          }
+        }]
+    }]}

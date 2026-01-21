@@ -1,0 +1,3 @@
+
+à
+link$771fcbd9-a354-4882-a6bd-192658c0cd91"±/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop "run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}" --advanced.misc "report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}" --advanced.misc "report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}" --target sw_emu --link --config vvc_decoder-link.cfg -ovvc_decoder.xclbin ../Emulation-SW/build/idct2.xo ../Emulation-SW/build/idct8.xo ../Emulation-SW/build/idst7.xo 
