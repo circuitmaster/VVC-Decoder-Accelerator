@@ -10,3 +10,15 @@ Hardware/build/
 # ignore ./vitis_analyzer*
 vitis_analyzer*
 
+*.log
+*.rpt
+*.pb
+*.rpv
+*.rpx
+*.xutil
+*.backup.log
+
+# FPGA outputs
+*.xclbin
+*.xsa
+*.mdb
