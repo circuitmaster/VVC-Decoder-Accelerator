@@ -1,6 +1,6 @@
 
 set TopModule "IDST7"
-set ClockPeriod 10
+set ClockPeriod 3.333
 set ClockList ap_clk
 set AxiliteClockList {}
 set HasVivadoClockPeriod 0
@@ -42,7 +42,7 @@ set ExportMCPathFlag 0
 set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
-set TargetInfo xczu9eg:-ffvb1156:-2-e
+set TargetInfo xcvc1902:-vsva2197:-2MP-e-S
 set SourceFiles {sc {} c ../../src/IDST7.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {}
@@ -62,5 +62,5 @@ set DefaultPlatform DefaultPlatform
 set multiClockList {}
 set SCPortClockMap {}
 set intNbAccess 0
-set PlatformFiles {{DefaultPlatform {xilinx/zynquplus/zynquplus}}}
+set PlatformFiles {{DefaultPlatform {xilinx/versal/versal}}}
 set HPFPO 0

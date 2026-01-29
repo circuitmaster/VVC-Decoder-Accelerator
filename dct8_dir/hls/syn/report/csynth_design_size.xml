@@ -1,0 +1,66 @@
+<design_size title="Design Size Report">
+    <item name="Total Instructions per Compilation Phase">
+        <table>
+            <keys size="4">Phase, Step, Instructions, Description</keys>
+            <column name="Compile/Link">, 8976, After all functions are compiled and linked into a single design</column>
+            <column name="">, , </column>
+            <column name="Unroll/Inline">, , After user unroll and inline pragmas are applied</column>
+            <column name="">(1) unroll, 1356, user unroll pragmas are applied</column>
+            <column name="">(2) simplification, 1219, simplification of applied user unroll pragmas</column>
+            <column name="">(3) inline, 1191, user inline pragmas are applied</column>
+            <column name="">(4) simplification, 1168, simplification of applied user inline pragmas</column>
+            <column name="">, , </column>
+            <column name="Array/Struct">, , After user array partition and struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(1) array partition, 1555, user array partition pragmas are applied</column>
+            <column name="">(2) simplification, 1555, simplification of applied user array partition &amp; struct aggregate/disaggregate pragmas</column>
+            <column name="">(3) aggregate/disaggregate , 1555, user struct aggregate/disaggregate pragmas are applied</column>
+            <column name="">(4) array reshape, 1555, apply array reshape pragmas</column>
+            <column name="">(5) access patterns, 1558, array access pattern optmizations</column>
+            <column name="">, , </column>
+            <column name="Performance">, , After transformations are applied to meet performance pragma targets</column>
+            <column name="">(1) loop simplification, 1222, loop and instruction simplification</column>
+            <column name="">(2) parallelization, 1222, loops are unrolled or pipelined to meet performance targets</column>
+            <column name="">(3) array partition, 2566, arrays are partitioned to meet performance targets</column>
+            <column name="">(4) simplification, 1278, simplification of design after performance transformations</column>
+            <column name="">, , </column>
+            <column name="HW Transforms">, , After hardware transfomations</column>
+            <column name="">(1) lowering, 1286, initial conversion to HW specific instructions</column>
+            <column name="">(2) optimizations, 1134, high level synthesis optimizations</column>
+        </table>
+    </item>
+    <item name="Instructions per Function for each Compilation Phase">
+        <hiertable>
+            <header size="7" col0="Function" col1="Location" col2="Compile/Link" col3="Unroll/Inline" col4="Array/Struct" col5="Performance" col6="HW Transforms"/>
+            <rows>
+                <row id="0" col0="IDCT8" col1="IDCT8.cpp:245" col2="8976" col3="1168" col4="1558" col5="1278" col6="1134">
+                    <row id="1" col0="IDCT8B32" col1="IDCT8.cpp:163" col2="1317" col3="350" col4="416" col5="384" col6="388">
+                        <row id="2" col0="INV_MATMUL_32" col1="IDCT8.cpp:66" col2="1303" col3="" col4="" col5="" col6="">
+                            <row id="5" col0="CLIP3" col1="IDCT8.cpp:6" col2="53" col3="" col4="" col5="" col6=""/>
+                        </row>
+                    </row>
+                    <row id="7" col0="IDCT8B16" col1="IDCT8.cpp:117" col2="1317" col3="190" col4="224" col5="208" col6="212">
+                        <row id="3" col0="INV_MATMUL_16" col1="IDCT8.cpp:39" col2="1303" col3="" col4="" col5="" col6="">
+                            <row id="5" col0="CLIP3" col1="IDCT8.cpp:6" col2="53" col3="" col4="" col5="" col6=""/>
+                        </row>
+                    </row>
+                    <row id="6" col0="IDCT8B8" col1="IDCT8.cpp:113" col2="1317" col3="110" col4="128" col5="120" col6="124">
+                        <row id="4" col0="INV_MATMUL_8" col1="IDCT8.cpp:13" col2="1303" col3="" col4="" col5="" col6="">
+                            <row id="5" col0="CLIP3" col1="IDCT8.cpp:6" col2="53" col3="" col4="" col5="" col6=""/>
+                        </row>
+                    </row>
+                    <row id="11" col0="IDCT8B4" col1="IDCT8.cpp:92" col2="4165" col3="" col4="" col5="" col6="">
+                        <row id="5" col0="CLIP3" col1="IDCT8.cpp:6" col2="212" col2_disp=" 212 (4 calls)" col3="" col4="" col5="" col6=""/>
+                    </row>
+                </row>
+            </rows>
+            <notes/>
+        </hiertable>
+    </item>
+    <item name="Design Size Message Settings">
+        <table>
+            <keys size="3">Message Setting, Value, Description</keys>
+            <column name="config_compile -design_size_maximum_warning">100000, Show a warning when total design instructions exceeds this value</column>
+        </table>
+    </item>
+</design_size>
+

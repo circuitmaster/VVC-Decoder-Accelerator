@@ -10,7 +10,7 @@ in_r {
 	offset 16
 	offset_end 27
 }
-out_r { 
+in2 { 
 	dir I
 	width 64
 	depth 1
@@ -18,21 +18,61 @@ out_r {
 	offset 28
 	offset_end 39
 }
+out_r { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 40
+	offset_end 51
+}
+out2 { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 52
+	offset_end 63
+}
 block_size { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 40
-	offset_end 47
+	offset 64
+	offset_end 71
 }
 size { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 48
-	offset_end 55
+	offset 72
+	offset_end 79
+}
+shift { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 80
+	offset_end 87
+}
+outputMinimum { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 88
+	offset_end 95
+}
+outputMaximum { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 96
+	offset_end 103
 }
 ap_start { }
 ap_done { }

@@ -14,7 +14,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_IDST7B16_fu_690/grp_IDST7B16_Pipeline_VITIS_LOOP_47_1_fu_258/grp_IDST7B16_Pipeline_VITIS_LOOP_47_1_fu_258_activity": {
+				"grp_IDST7B16_fu_720/grp_IDST7B16_Pipeline_VITIS_LOOP_47_1_fu_258/grp_IDST7B16_Pipeline_VITIS_LOOP_47_1_fu_258_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -24,7 +24,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_IDST7B16_fu_690/grp_IDST7B16_fu_690_activity": {
+				"grp_IDST7B16_fu_720/grp_IDST7B16_fu_720_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -34,7 +34,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_IDST7B32_fu_762/grp_IDST7B32_Pipeline_VITIS_LOOP_73_1_fu_332/grp_IDST7B32_Pipeline_VITIS_LOOP_73_1_fu_332_activity": {
+				"grp_IDST7B32_fu_792/grp_IDST7B32_Pipeline_VITIS_LOOP_73_1_fu_452/grp_IDST7B32_Pipeline_VITIS_LOOP_73_1_fu_452_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -44,7 +44,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_IDST7B32_fu_762/grp_IDST7B32_fu_762_activity": {
+				"grp_IDST7B32_fu_792/grp_IDST7B32_fu_792_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -54,7 +54,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_IDST7B8_fu_650/grp_IDST7B8_Pipeline_VITIS_LOOP_21_1_fu_158/grp_IDST7B8_Pipeline_VITIS_LOOP_21_1_fu_158_activity": {
+				"grp_IDST7B8_fu_680/grp_IDST7B8_Pipeline_VITIS_LOOP_21_1_fu_158/grp_IDST7B8_Pipeline_VITIS_LOOP_21_1_fu_158_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -64,7 +64,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_IDST7B8_fu_650/grp_IDST7B8_fu_650_activity": {
+				"grp_IDST7B8_fu_680/grp_IDST7B8_fu_680_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},

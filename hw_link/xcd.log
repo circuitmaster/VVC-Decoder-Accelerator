@@ -1,0 +1,302 @@
+Sun Dec 21 19:42:05 2025: Running xcd server. This server was built by gradle.
+Sun Dec 21 19:42:05 2025: Server was asked to start on port: '33305'
+Sun Dec 21 19:42:05 2025: Server is using token UUID: '6fa02c86-8ffa-4a3a-91ae-27b7c6e41611'
+Sun Dec 21 19:42:05 2025: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Sun Dec 21 19:42:05 2025: Attempting to start server on port '33305'
+Sun Dec 21 19:42:05 2025: XCD main fifo: created main fifo '/tmp/xcdmain6fa02c86-8ffa-4a3a-91ae-27b7c6e41611', fd read = 14
+Sun Dec 21 19:42:05 2025: Running Dispatch Server
+Sun Dec 21 19:42:05 2025: Version 2.2.0
+Sun Dec 21 19:42:07 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:07 2025: Starting Socket connection
+Sun Dec 21 19:42:07 2025: EXCHANGE_TOKEN received, server token: 6fa02c86-8ffa-4a3a-91ae-27b7c6e41611, passed token: 6fa02c86-8ffa-4a3a-91ae-27b7c6e41611
+Sun Dec 21 19:42:07 2025: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Sun Dec 21 19:42:07 2025: SESSION_MGR: creating session with session uuid: '7e30be86-6f33-4722-8b05-6b517cfa5157' and name 'link'
+Sun Dec 21 19:42:07 2025: KERNEL_SVC: creating session with uuid: '7e30be86-6f33-4722-8b05-6b517cfa5157' and name 'link'
+Sun Dec 21 19:42:07 2025: GUIDANCE_SMGR: creating guidance session with uuid: '7e30be86-6f33-4722-8b05-6b517cfa5157' and name 'link'
+Sun Dec 21 19:42:07 2025: SYSTEM_DIAGRAM: creating session with uuid: '7e30be86-6f33-4722-8b05-6b517cfa5157' and name 'link'
+Sun Dec 21 19:42:13 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:13 2025: Starting Socket connection
+Sun Dec 21 19:42:16 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:16 2025: Starting Socket connection
+Sun Dec 21 19:42:47 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:47 2025: Starting Socket connection
+Sun Dec 21 19:42:47 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:47 2025: Starting Socket connection
+Sun Dec 21 19:42:47 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:47 2025: Starting Socket connection
+Sun Dec 21 19:42:47 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:47 2025: Starting Socket connection
+Sun Dec 21 19:42:47 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:47 2025: Starting Socket connection
+Sun Dec 21 19:42:47 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:47 2025: Starting Socket connection
+Sun Dec 21 19:42:47 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:47 2025: Starting Socket connection
+Sun Dec 21 19:42:47 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:42:47 2025: Starting Socket connection
+Sun Dec 21 19:43:22 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:43:22 2025: Starting Socket connection
+Sun Dec 21 19:43:25 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:43:25 2025: Starting Socket connection
+Sun Dec 21 19:43:25 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:43:25 2025: Starting Socket connection
+Sun Dec 21 19:43:25 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:43:25 2025: Starting Socket connection
+Sun Dec 21 19:43:25 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:43:25 2025: Starting Socket connection
+Sun Dec 21 19:43:25 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:43:25 2025: Starting Socket connection
+Sun Dec 21 19:43:26 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:43:26 2025: Starting Socket connection
+Sun Dec 21 19:43:29 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:43:29 2025: Starting Socket connection
+Sun Dec 21 19:43:38 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:43:38 2025: Starting Socket connection
+Sun Dec 21 19:44:02 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:02 2025: Starting Socket connection
+Sun Dec 21 19:44:02 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:02 2025: Starting Socket connection
+Sun Dec 21 19:44:02 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:02 2025: Starting Socket connection
+Sun Dec 21 19:44:03 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:03 2025: Starting Socket connection
+Sun Dec 21 19:44:05 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:05 2025: Starting Socket connection
+Sun Dec 21 19:44:07 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:07 2025: Starting Socket connection
+Sun Dec 21 19:44:15 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:15 2025: Starting Socket connection
+Sun Dec 21 19:44:22 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:22 2025: Starting Socket connection
+Sun Dec 21 19:44:30 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:30 2025: Starting Socket connection
+Sun Dec 21 19:44:38 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:38 2025: Starting Socket connection
+Sun Dec 21 19:44:40 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:40 2025: Starting Socket connection
+Sun Dec 21 19:44:44 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:44 2025: Starting Socket connection
+Sun Dec 21 19:44:44 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:44 2025: Starting Socket connection
+Sun Dec 21 19:44:56 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:56 2025: Starting Socket connection
+Sun Dec 21 19:44:59 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:59 2025: Starting Socket connection
+Sun Dec 21 19:44:59 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:59 2025: Starting Socket connection
+Sun Dec 21 19:44:59 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:44:59 2025: Starting Socket connection
+Sun Dec 21 19:45:02 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:45:02 2025: Starting Socket connection
+Sun Dec 21 19:45:04 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:45:04 2025: Starting Socket connection
+Sun Dec 21 19:45:06 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:45:06 2025: Starting Socket connection
+Sun Dec 21 19:45:10 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:45:10 2025: Starting Socket connection
+Sun Dec 21 19:45:11 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:45:11 2025: Starting Socket connection
+Sun Dec 21 19:45:14 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:45:14 2025: Starting Socket connection
+Sun Dec 21 19:45:54 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:45:54 2025: Starting Socket connection
+Sun Dec 21 19:45:57 2025: SESSION_MGR: closing session for UUID '7e30be86-6f33-4722-8b05-6b517cfa5157' with name 'link'
+Sun Dec 21 19:45:57 2025: KERNEL_SVC: closing session for UUID '7e30be86-6f33-4722-8b05-6b517cfa5157' with name 'link'
+Sun Dec 21 19:45:57 2025: GUIDANCE_SMGR: closing session for UUID '7e30be86-6f33-4722-8b05-6b517cfa5157' with name 'link'
+Sun Dec 21 19:45:57 2025: SYSTEM_DIAGRAM: closing session for UUID '7e30be86-6f33-4722-8b05-6b517cfa5157' with name 'link'
+Sun Dec 21 19:45:57 2025: STOP_SERVER received, server token: 6fa02c86-8ffa-4a3a-91ae-27b7c6e41611, passed token: 6fa02c86-8ffa-4a3a-91ae-27b7c6e41611
+Sun Dec 21 19:45:57 2025: DISPATCH_HANDLER: 6 connections are active. Stop request denied.
+Sun Dec 21 19:49:46 2025: Running xcd server. This server was built by gradle.
+Sun Dec 21 19:49:46 2025: Server was asked to start on port: '41033'
+Sun Dec 21 19:49:46 2025: Server is using token UUID: '16565a79-7b9d-462c-9e46-92f61e87662d'
+Sun Dec 21 19:49:46 2025: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Sun Dec 21 19:49:46 2025: Attempting to start server on port '41033'
+Sun Dec 21 19:49:46 2025: XCD main fifo: created main fifo '/tmp/xcdmain16565a79-7b9d-462c-9e46-92f61e87662d', fd read = 13
+Sun Dec 21 19:49:46 2025: Running Dispatch Server
+Sun Dec 21 19:49:46 2025: Version 2.2.0
+Sun Dec 21 19:49:48 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:49:48 2025: Starting Socket connection
+Sun Dec 21 19:49:48 2025: EXCHANGE_TOKEN received, server token: 16565a79-7b9d-462c-9e46-92f61e87662d, passed token: 16565a79-7b9d-462c-9e46-92f61e87662d
+Sun Dec 21 19:49:48 2025: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Sun Dec 21 19:49:48 2025: SESSION_MGR: creating session with session uuid: 'd0f4afb8-bab2-40cb-9407-0021f36fe987' and name 'link'
+Sun Dec 21 19:49:48 2025: KERNEL_SVC: creating session with uuid: 'd0f4afb8-bab2-40cb-9407-0021f36fe987' and name 'link'
+Sun Dec 21 19:49:48 2025: GUIDANCE_SMGR: creating guidance session with uuid: 'd0f4afb8-bab2-40cb-9407-0021f36fe987' and name 'link'
+Sun Dec 21 19:49:48 2025: SYSTEM_DIAGRAM: creating session with uuid: 'd0f4afb8-bab2-40cb-9407-0021f36fe987' and name 'link'
+Sun Dec 21 19:49:54 2025: Dispatch Server: do_await_stop
+Sun Dec 21 19:54:59 2025: Running xcd server. This server was built by gradle.
+Sun Dec 21 19:54:59 2025: Server was asked to start on port: '44895'
+Sun Dec 21 19:54:59 2025: Server is using token UUID: '1ea4cdc7-e150-40d0-be81-8fe27ff165b5'
+Sun Dec 21 19:54:59 2025: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Sun Dec 21 19:54:59 2025: Attempting to start server on port '44895'
+Sun Dec 21 19:54:59 2025: XCD main fifo: created main fifo '/tmp/xcdmain1ea4cdc7-e150-40d0-be81-8fe27ff165b5', fd read = 14
+Sun Dec 21 19:54:59 2025: Running Dispatch Server
+Sun Dec 21 19:54:59 2025: Version 2.2.0
+Sun Dec 21 19:55:01 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:01 2025: Starting Socket connection
+Sun Dec 21 19:55:01 2025: EXCHANGE_TOKEN received, server token: 1ea4cdc7-e150-40d0-be81-8fe27ff165b5, passed token: 1ea4cdc7-e150-40d0-be81-8fe27ff165b5
+Sun Dec 21 19:55:01 2025: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Sun Dec 21 19:55:01 2025: SESSION_MGR: creating session with session uuid: 'fa1df1ff-03fb-4ced-b923-e6c7c4569c1b' and name 'link'
+Sun Dec 21 19:55:01 2025: KERNEL_SVC: creating session with uuid: 'fa1df1ff-03fb-4ced-b923-e6c7c4569c1b' and name 'link'
+Sun Dec 21 19:55:01 2025: GUIDANCE_SMGR: creating guidance session with uuid: 'fa1df1ff-03fb-4ced-b923-e6c7c4569c1b' and name 'link'
+Sun Dec 21 19:55:01 2025: SYSTEM_DIAGRAM: creating session with uuid: 'fa1df1ff-03fb-4ced-b923-e6c7c4569c1b' and name 'link'
+Sun Dec 21 19:55:07 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:07 2025: Starting Socket connection
+Sun Dec 21 19:55:10 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:10 2025: Starting Socket connection
+Sun Dec 21 19:55:44 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:44 2025: Starting Socket connection
+Sun Dec 21 19:55:44 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:44 2025: Starting Socket connection
+Sun Dec 21 19:55:44 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:44 2025: Starting Socket connection
+Sun Dec 21 19:55:44 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:44 2025: Starting Socket connection
+Sun Dec 21 19:55:44 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:44 2025: Starting Socket connection
+Sun Dec 21 19:55:44 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:44 2025: Starting Socket connection
+Sun Dec 21 19:55:44 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:44 2025: Starting Socket connection
+Sun Dec 21 19:55:44 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:55:44 2025: Starting Socket connection
+Sun Dec 21 19:56:23 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:56:23 2025: Starting Socket connection
+Sun Dec 21 19:56:24 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:56:24 2025: Starting Socket connection
+Sun Dec 21 19:56:37 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:56:37 2025: Starting Socket connection
+Sun Dec 21 19:56:37 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 19:56:37 2025: Starting Socket connection
+Sun Dec 21 20:09:35 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 20:09:35 2025: Starting Socket connection
+Sun Dec 21 20:10:17 2025: Dispatch Server: Accepted socket connection from client
+Sun Dec 21 20:10:17 2025: Starting Socket connection
+Sun Dec 21 22:41:54 2025: SESSION_MGR: closing session for UUID 'fa1df1ff-03fb-4ced-b923-e6c7c4569c1b' with name 'link'
+Sun Dec 21 22:41:54 2025: KERNEL_SVC: closing session for UUID 'fa1df1ff-03fb-4ced-b923-e6c7c4569c1b' with name 'link'
+Sun Dec 21 22:41:54 2025: GUIDANCE_SMGR: closing session for UUID 'fa1df1ff-03fb-4ced-b923-e6c7c4569c1b' with name 'link'
+Sun Dec 21 22:41:54 2025: SYSTEM_DIAGRAM: closing session for UUID 'fa1df1ff-03fb-4ced-b923-e6c7c4569c1b' with name 'link'
+Sun Dec 21 22:41:54 2025: STOP_SERVER received, server token: 1ea4cdc7-e150-40d0-be81-8fe27ff165b5, passed token: 1ea4cdc7-e150-40d0-be81-8fe27ff165b5
+Sun Dec 21 22:41:54 2025: DISPATCH_HANDLER: 2 connections are active. Stop request denied.
+Mon Dec 22 13:54:26 2025: Running xcd server. This server was built by gradle.
+Mon Dec 22 13:54:26 2025: Server was asked to start on port: '41763'
+Mon Dec 22 13:54:26 2025: Server is using token UUID: '38370807-aab9-4edc-82fd-4dc266b2a757'
+Mon Dec 22 13:54:26 2025: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Dec 22 13:54:26 2025: Attempting to start server on port '41763'
+Mon Dec 22 13:54:26 2025: XCD main fifo: created main fifo '/tmp/xcdmain38370807-aab9-4edc-82fd-4dc266b2a757', fd read = 13
+Mon Dec 22 13:54:26 2025: Running Dispatch Server
+Mon Dec 22 13:54:26 2025: Version 2.2.0
+Mon Dec 22 13:54:28 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:54:28 2025: Starting Socket connection
+Mon Dec 22 13:54:28 2025: EXCHANGE_TOKEN received, server token: 38370807-aab9-4edc-82fd-4dc266b2a757, passed token: 38370807-aab9-4edc-82fd-4dc266b2a757
+Mon Dec 22 13:54:28 2025: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Dec 22 13:54:28 2025: SESSION_MGR: creating session with session uuid: 'cbfb1d07-2808-4c77-86b9-77af257c904f' and name 'link'
+Mon Dec 22 13:54:28 2025: KERNEL_SVC: creating session with uuid: 'cbfb1d07-2808-4c77-86b9-77af257c904f' and name 'link'
+Mon Dec 22 13:54:28 2025: GUIDANCE_SMGR: creating guidance session with uuid: 'cbfb1d07-2808-4c77-86b9-77af257c904f' and name 'link'
+Mon Dec 22 13:54:28 2025: SYSTEM_DIAGRAM: creating session with uuid: 'cbfb1d07-2808-4c77-86b9-77af257c904f' and name 'link'
+Mon Dec 22 13:54:28 2025: SESSION_MGR: closing session for UUID 'cbfb1d07-2808-4c77-86b9-77af257c904f' with name 'link'
+Mon Dec 22 13:54:28 2025: KERNEL_SVC: closing session for UUID 'cbfb1d07-2808-4c77-86b9-77af257c904f' with name 'link'
+Mon Dec 22 13:54:28 2025: GUIDANCE_SMGR: closing session for UUID 'cbfb1d07-2808-4c77-86b9-77af257c904f' with name 'link'
+Mon Dec 22 13:54:28 2025: SYSTEM_DIAGRAM: closing session for UUID 'cbfb1d07-2808-4c77-86b9-77af257c904f' with name 'link'
+Mon Dec 22 13:54:28 2025: STOP_SERVER received, server token: 38370807-aab9-4edc-82fd-4dc266b2a757, passed token: 38370807-aab9-4edc-82fd-4dc266b2a757
+Mon Dec 22 13:54:28 2025: Socket received request to stop server.
+Mon Dec 22 13:54:28 2025: Dispatch Server: do_await_stop
+Mon Dec 22 13:54:28 2025: Dispatch Server: stopping mainFifo_
+Mon Dec 22 13:54:28 2025: XCD main fifo: Stopping
+Mon Dec 22 13:54:28 2025: XCD main fifo: do_read error code: Operation canceled
+Mon Dec 22 13:54:28 2025: XCD main fifo: bytes_transferred: 0
+Mon Dec 22 13:54:28 2025: SERVER: destructor for server bound to port 41763
+Mon Dec 22 13:54:28 2025: XCD main fifo: Good unlink of /tmp/xcdmain38370807-aab9-4edc-82fd-4dc266b2a757
+Mon Dec 22 13:54:28 2025: Server exiting with status 0.
+Mon Dec 22 13:54:28 2025: Closing log file.
+Mon Dec 22 13:55:06 2025: Running xcd server. This server was built by gradle.
+Mon Dec 22 13:55:06 2025: Server was asked to start on port: '35577'
+Mon Dec 22 13:55:06 2025: Server is using token UUID: 'c2619231-46ca-4cbd-8f14-eacd074dd19c'
+Mon Dec 22 13:55:06 2025: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Mon Dec 22 13:55:06 2025: Attempting to start server on port '35577'
+Mon Dec 22 13:55:06 2025: XCD main fifo: created main fifo '/tmp/xcdmainc2619231-46ca-4cbd-8f14-eacd074dd19c', fd read = 14
+Mon Dec 22 13:55:06 2025: Running Dispatch Server
+Mon Dec 22 13:55:06 2025: Version 2.2.0
+Mon Dec 22 13:55:08 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:55:08 2025: Starting Socket connection
+Mon Dec 22 13:55:08 2025: EXCHANGE_TOKEN received, server token: c2619231-46ca-4cbd-8f14-eacd074dd19c, passed token: c2619231-46ca-4cbd-8f14-eacd074dd19c
+Mon Dec 22 13:55:08 2025: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Mon Dec 22 13:55:08 2025: SESSION_MGR: creating session with session uuid: '0efbef0e-e5ac-4eb1-8df0-5498022d887b' and name 'link'
+Mon Dec 22 13:55:08 2025: KERNEL_SVC: creating session with uuid: '0efbef0e-e5ac-4eb1-8df0-5498022d887b' and name 'link'
+Mon Dec 22 13:55:08 2025: GUIDANCE_SMGR: creating guidance session with uuid: '0efbef0e-e5ac-4eb1-8df0-5498022d887b' and name 'link'
+Mon Dec 22 13:55:08 2025: SYSTEM_DIAGRAM: creating session with uuid: '0efbef0e-e5ac-4eb1-8df0-5498022d887b' and name 'link'
+Mon Dec 22 13:55:15 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:55:15 2025: Starting Socket connection
+Mon Dec 22 13:55:18 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:55:18 2025: Starting Socket connection
+Mon Dec 22 13:57:14 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:57:14 2025: Starting Socket connection
+Mon Dec 22 13:57:14 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:57:14 2025: Starting Socket connection
+Mon Dec 22 13:57:14 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:57:14 2025: Starting Socket connection
+Mon Dec 22 13:57:14 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:57:14 2025: Starting Socket connection
+Mon Dec 22 13:57:14 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:57:14 2025: Starting Socket connection
+Mon Dec 22 13:57:14 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:57:14 2025: Starting Socket connection
+Mon Dec 22 13:57:14 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:57:14 2025: Starting Socket connection
+Mon Dec 22 13:57:14 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:57:14 2025: Starting Socket connection
+Mon Dec 22 13:57:57 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:57:57 2025: Starting Socket connection
+Mon Dec 22 13:58:04 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:04 2025: Starting Socket connection
+Mon Dec 22 13:58:04 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:04 2025: Starting Socket connection
+Mon Dec 22 13:58:12 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:12 2025: Starting Socket connection
+Mon Dec 22 13:58:15 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:15 2025: Starting Socket connection
+Mon Dec 22 13:58:15 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:15 2025: Starting Socket connection
+Mon Dec 22 13:58:15 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:15 2025: Starting Socket connection
+Mon Dec 22 13:58:16 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:16 2025: Starting Socket connection
+Mon Dec 22 13:58:20 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:20 2025: Starting Socket connection
+Mon Dec 22 13:58:20 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:20 2025: Starting Socket connection
+Mon Dec 22 13:58:59 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:59 2025: Starting Socket connection
+Mon Dec 22 13:58:59 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:58:59 2025: Starting Socket connection
+Mon Dec 22 13:59:02 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:59:02 2025: Starting Socket connection
+Mon Dec 22 13:59:02 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:59:02 2025: Starting Socket connection
+Mon Dec 22 13:59:02 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:59:02 2025: Starting Socket connection
+Mon Dec 22 13:59:06 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:59:06 2025: Starting Socket connection
+Mon Dec 22 13:59:06 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:59:06 2025: Starting Socket connection
+Mon Dec 22 13:59:11 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:59:11 2025: Starting Socket connection
+Mon Dec 22 13:59:45 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:59:45 2025: Starting Socket connection
+Mon Dec 22 13:59:45 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:59:45 2025: Starting Socket connection
+Mon Dec 22 13:59:48 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:59:48 2025: Starting Socket connection
+Mon Dec 22 13:59:58 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 13:59:58 2025: Starting Socket connection
+Mon Dec 22 14:00:13 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 14:00:13 2025: Starting Socket connection
+Mon Dec 22 14:20:23 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 14:20:23 2025: Starting Socket connection
+Mon Dec 22 14:21:23 2025: Dispatch Server: Accepted socket connection from client
+Mon Dec 22 14:21:23 2025: Starting Socket connection
+Mon Dec 22 14:45:11 2025: SESSION_MGR: closing session for UUID '0efbef0e-e5ac-4eb1-8df0-5498022d887b' with name 'link'
+Mon Dec 22 14:45:11 2025: KERNEL_SVC: closing session for UUID '0efbef0e-e5ac-4eb1-8df0-5498022d887b' with name 'link'
+Mon Dec 22 14:45:11 2025: GUIDANCE_SMGR: closing session for UUID '0efbef0e-e5ac-4eb1-8df0-5498022d887b' with name 'link'
+Mon Dec 22 14:45:11 2025: SYSTEM_DIAGRAM: closing session for UUID '0efbef0e-e5ac-4eb1-8df0-5498022d887b' with name 'link'
+Mon Dec 22 14:45:11 2025: STOP_SERVER received, server token: c2619231-46ca-4cbd-8f14-eacd074dd19c, passed token: c2619231-46ca-4cbd-8f14-eacd074dd19c
+Mon Dec 22 14:45:11 2025: DISPATCH_HANDLER: 2 connections are active. Stop request denied.

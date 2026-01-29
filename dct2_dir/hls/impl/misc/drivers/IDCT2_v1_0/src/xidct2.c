@@ -105,6 +105,25 @@ u64 XIdct2_Get_in_r(XIdct2 *InstancePtr) {
     return Data;
 }
 
+void XIdct2_Set_in2(XIdct2 *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XIdct2_WriteReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_IN2_DATA, (u32)(Data));
+    XIdct2_WriteReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_IN2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XIdct2_Get_in2(XIdct2 *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIdct2_ReadReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_IN2_DATA);
+    Data += (u64)XIdct2_ReadReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_IN2_DATA + 4) << 32;
+    return Data;
+}
+
 void XIdct2_Set_out_r(XIdct2 *InstancePtr, u64 Data) {
     Xil_AssertVoid(InstancePtr != NULL);
     Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
@@ -121,6 +140,25 @@ u64 XIdct2_Get_out_r(XIdct2 *InstancePtr) {
 
     Data = XIdct2_ReadReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_OUT_R_DATA);
     Data += (u64)XIdct2_ReadReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_OUT_R_DATA + 4) << 32;
+    return Data;
+}
+
+void XIdct2_Set_out2(XIdct2 *InstancePtr, u64 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XIdct2_WriteReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_OUT2_DATA, (u32)(Data));
+    XIdct2_WriteReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_OUT2_DATA + 4, (u32)(Data >> 32));
+}
+
+u64 XIdct2_Get_out2(XIdct2 *InstancePtr) {
+    u64 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIdct2_ReadReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_OUT2_DATA);
+    Data += (u64)XIdct2_ReadReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_OUT2_DATA + 4) << 32;
     return Data;
 }
 
@@ -155,6 +193,57 @@ u32 XIdct2_Get_size(XIdct2 *InstancePtr) {
     Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
 
     Data = XIdct2_ReadReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_SIZE_DATA);
+    return Data;
+}
+
+void XIdct2_Set_shift(XIdct2 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XIdct2_WriteReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_SHIFT_DATA, Data);
+}
+
+u32 XIdct2_Get_shift(XIdct2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIdct2_ReadReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_SHIFT_DATA);
+    return Data;
+}
+
+void XIdct2_Set_outputMinimum(XIdct2 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XIdct2_WriteReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_OUTPUTMINIMUM_DATA, Data);
+}
+
+u32 XIdct2_Get_outputMinimum(XIdct2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIdct2_ReadReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_OUTPUTMINIMUM_DATA);
+    return Data;
+}
+
+void XIdct2_Set_outputMaximum(XIdct2 *InstancePtr, u32 Data) {
+    Xil_AssertVoid(InstancePtr != NULL);
+    Xil_AssertVoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    XIdct2_WriteReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_OUTPUTMAXIMUM_DATA, Data);
+}
+
+u32 XIdct2_Get_outputMaximum(XIdct2 *InstancePtr) {
+    u32 Data;
+
+    Xil_AssertNonvoid(InstancePtr != NULL);
+    Xil_AssertNonvoid(InstancePtr->IsReady == XIL_COMPONENT_IS_READY);
+
+    Data = XIdct2_ReadReg(InstancePtr->Control_BaseAddress, XIDCT2_CONTROL_ADDR_OUTPUTMAXIMUM_DATA);
     return Data;
 }
 

@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:34:34 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Fri Nov 21 21:48:55 2025
-# Process ID         : 58029
+# Start of session at: Mon Dec 22 13:40:16 2025
+# Process ID         : 17106
 # Current directory  : /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/impl/ip
 # Command line       : vivado -notrace -mode batch -source run_ippack.tcl
 # Log file           : /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/impl/ip/vivado.log
@@ -13,12 +13,12 @@
 # Platform           : Ubuntu
 # Operating System   : Ubuntu 25.04
 # Processor Detail   : AMD RYZEN AI MAX+ 395 w/ Radeon 8060S
-# CPU Frequency      : 1723.306 MHz
+# CPU Frequency      : 5105.705 MHz
 # CPU Physical cores : 16
 # CPU Logical cores  : 32
 # Host memory        : 32728 MB
 # Swap memory        : 8589 MB
 # Total Virtual      : 41318 MB
-# Available Virtual  : 27645 MB
+# Available Virtual  : 31627 MB
 #-----------------------------------------------------------
 source run_ippack.tcl -notrace

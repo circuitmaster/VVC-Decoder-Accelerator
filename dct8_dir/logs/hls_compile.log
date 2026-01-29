@@ -1,0 +1,318 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir 
+INFO: [HLS 200-2006] Changing directory to /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=../src/IDCT8.cpp' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(19)
+INFO: [HLS 200-10] Adding design file '/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=../src/transform_coeffs.h' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(20)
+INFO: [HLS 200-10] Adding design file '/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/transform_coeffs.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=IDCT8' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(21)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(16)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'part=xcvc1902-vsva2197-2MP-e-s' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvc1902-vsva2197-2MP-e-S'
+INFO: [HLS 200-1465] Applying ini 'freqhz=300MHz' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(14)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.333ns.
+INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(17)
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 2.02 seconds. CPU system time: 0.18 seconds. Elapsed time: 2.1 seconds; current allocated memory: 909.316 MB.
+INFO: [HLS 200-10] Analyzing design file 'src/IDCT8.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3.07 seconds. CPU system time: 0.28 seconds. Elapsed time: 3.34 seconds; current allocated memory: 911.969 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
+INFO: [HLS 200-1995] There were 8,976 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,356 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,219 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,191 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,168 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,555 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,555 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,555 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,555 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,558 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,222 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,222 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,566 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,278 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,286 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,134 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 214-131] Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'INV_MATMUL_32(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [32])' (src/IDCT8.cpp:88:18)
+INFO: [HLS 214-131] Inlining function 'INV_MATMUL_32(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [32])' into 'IDCT8B32(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)' (src/IDCT8.cpp:165:5)
+INFO: [HLS 214-131] Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'INV_MATMUL_16(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [16])' (src/IDCT8.cpp:62:18)
+INFO: [HLS 214-131] Inlining function 'INV_MATMUL_16(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [16])' into 'IDCT8B16(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)' (src/IDCT8.cpp:118:5)
+INFO: [HLS 214-131] Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'INV_MATMUL_8(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [8])' (src/IDCT8.cpp:35:18)
+INFO: [HLS 214-131] Inlining function 'INV_MATMUL_8(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [8])' into 'IDCT8B8(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)' (src/IDCT8.cpp:114:5)
+INFO: [HLS 214-131] Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'IDCT8B4(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>)' (src/IDCT8.cpp:109:14)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_25_2' is marked as complete unroll implied by the pipeline pragma (src/IDCT8.cpp:25:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_52_2' is marked as complete unroll implied by the pipeline pragma (src/IDCT8.cpp:52:26)
+INFO: [HLS 214-291] Loop 'VITIS_LOOP_78_2' is marked as complete unroll implied by the pipeline pragma (src/IDCT8.cpp:78:26)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_332_8' (src/IDCT8.cpp:332:20) in function 'IDCT8' completely with a factor of 4 (src/IDCT8.cpp:245:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_339_9' (src/IDCT8.cpp:339:31) in function 'IDCT8' completely with a factor of 4 (src/IDCT8.cpp:245:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_312_6' (src/IDCT8.cpp:312:20) in function 'IDCT8' completely with a factor of 8 (src/IDCT8.cpp:245:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_319_7' (src/IDCT8.cpp:319:31) in function 'IDCT8' completely with a factor of 8 (src/IDCT8.cpp:245:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_293_4' (src/IDCT8.cpp:293:20) in function 'IDCT8' completely with a factor of 16 (src/IDCT8.cpp:245:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_300_5' (src/IDCT8.cpp:300:31) in function 'IDCT8' completely with a factor of 16 (src/IDCT8.cpp:245:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_273_2' (src/IDCT8.cpp:273:20) in function 'IDCT8' completely with a factor of 32 (src/IDCT8.cpp:245:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_280_3' (src/IDCT8.cpp:280:31) in function 'IDCT8' completely with a factor of 32 (src/IDCT8.cpp:245:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_25_2' (src/IDCT8.cpp:25:26) in function 'IDCT8B8' completely with a factor of 8 (src/IDCT8.cpp:113:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_25_2' (src/IDCT8.cpp:25:26) in function 'IDCT8B8' has been removed because the loop is unrolled completely (src/IDCT8.cpp:113:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_52_2' (src/IDCT8.cpp:52:26) in function 'IDCT8B16' completely with a factor of 16 (src/IDCT8.cpp:117:0)
+INFO: [HLS 214-186] Unrolling loop 'VITIS_LOOP_78_2' (src/IDCT8.cpp:78:26) in function 'IDCT8B32' completely with a factor of 32 (src/IDCT8.cpp:163:0)
+WARNING: [HLS 214-189] Pipeline directive for loop 'VITIS_LOOP_78_2' (src/IDCT8.cpp:78:26) in function 'IDCT8B32' has been removed because the loop is unrolled completely (src/IDCT8.cpp:163:0)
+INFO: [HLS 214-178] Inlining function 'IDCT8B4(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>)' into 'IDCT8' (src/IDCT8.cpp:245:0)
+INFO: [HLS 214-248] Applying array_partition to 'in_data': Complete partitioning on dimension 1. (src/IDCT8.cpp:268:24)
+INFO: [HLS 214-248] Applying array_partition to 'out_data': Complete partitioning on dimension 1. (src/IDCT8.cpp:269:24)
+INFO: [HLS 214-248] Applying array_partition to 'in_data36': Complete partitioning on dimension 1. (src/IDCT8.cpp:288:24)
+INFO: [HLS 214-248] Applying array_partition to 'out_data37': Complete partitioning on dimension 1. (src/IDCT8.cpp:289:24)
+INFO: [HLS 214-248] Applying array_partition to 'in_data79': Complete partitioning on dimension 1. (src/IDCT8.cpp:307:24)
+INFO: [HLS 214-248] Applying array_partition to 'out_data80': Complete partitioning on dimension 1. (src/IDCT8.cpp:308:24)
+INFO: [HLS 214-449] Automatically partitioning array '_ZL8idct8_32' dimension 1 completely based on constant index. (src/transform_coeffs.h:181:0)
+INFO: [HLS 214-449] Automatically partitioning array '_ZL8idct8_16' dimension 1 completely based on constant index. (src/transform_coeffs.h:159:0)
+INFO: [HLS 214-449] Automatically partitioning array '_ZL7idct8_8' dimension 1 completely based on constant index. (src/transform_coeffs.h:145:0)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'idct8_8' due to pipeline pragma (src/IDCT8.cpp:23:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'idct8_16' due to pipeline pragma (src/IDCT8.cpp:49:9)
+INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'idct8_32' due to pipeline pragma (src/IDCT8.cpp:75:9)
+INFO: [HLS 214-248] Applying array_partition to '_ZL8idct8_32': Complete partitioning on dimension 1. (src/transform_coeffs.h:181:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL8idct8_16': Complete partitioning on dimension 1. (src/transform_coeffs.h:159:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL7idct8_8': Complete partitioning on dimension 1. (src/transform_coeffs.h:145:0)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 1024 in loop 'VITIS_LOOP_260_1'(src/IDCT8.cpp:260:20) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (src/IDCT8.cpp:260:20)
+INFO: [HLS 214-115] Multiple burst writes of variable length and bit width 1024 in loop 'VITIS_LOOP_260_1'(src/IDCT8.cpp:260:20) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (src/IDCT8.cpp:260:20)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.12 seconds. CPU system time: 0.24 seconds. Elapsed time: 6.79 seconds; current allocated memory: 914.055 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 914.055 MB.
+INFO: [HLS 200-10] Starting code transformations ...
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 916.309 MB.
+INFO: [HLS 200-10] Checking synthesizability ...
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 918.746 MB.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/IDCT8.cpp:23:9) to (src/IDCT8.cpp:35:16) in function 'IDCT8B8'... converting 17 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/IDCT8.cpp:75:9) to (src/IDCT8.cpp:88:16) in function 'IDCT8B32'... converting 65 basic blocks.
+INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/IDCT8.cpp:49:9) to (src/IDCT8.cpp:62:16) in function 'IDCT8B16'... converting 33 basic blocks.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 943.047 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.25 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 994.746 MB.
+INFO: [HLS 200-10] Starting hardware synthesis ...
+INFO: [HLS 200-10] Synthesizing 'IDCT8' ...
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT8B8_Pipeline_VITIS_LOOP_21_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_21_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 10, loop 'VITIS_LOOP_21_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.36 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.38 seconds; current allocated memory: 997.871 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.19 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 997.871 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT8B8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 997.871 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 997.871 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT8B16_Pipeline_VITIS_LOOP_47_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_47_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 15, loop 'VITIS_LOOP_47_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 1001.117 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1001.117 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT8B16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.04 seconds; current allocated memory: 1001.117 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 1001.117 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT8B32_Pipeline_VITIS_LOOP_73_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_73_1'.
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 26, loop 'VITIS_LOOP_73_1'
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.31 seconds. CPU system time: 0 seconds. Elapsed time: 0.32 seconds; current allocated memory: 1007.520 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 1007.520 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT8B32' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 1007.520 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 1007.520 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-42] -- Implementing module 'IDCT8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-871] Estimated clock period (2.841 ns) exceeds the target (target clock period: 3.333 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.433 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'IDCT8' consists of the following:
+	'load' operation 31 bit ('i_load', src/IDCT8.cpp:260) on local variable 'i' [191]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln260_1', src/IDCT8.cpp:260) [194]  (0.671 ns)
+	bus read operation ('in_block', src/IDCT8.cpp:264) on port 'gmem0' (src/IDCT8.cpp:264) [201]  (1.320 ns)
+	'sub' operation 32 bit ('c', src/IDCT8.cpp:103->src/IDCT8.cpp:337) [211]  (0.850 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
+INFO: [SCHED 204-11] Finished scheduling.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.51 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.52 seconds; current allocated memory: 1008.941 MB.
+INFO: [BIND 205-100] Starting micro-architecture generation ...
+INFO: [BIND 205-101] Performing variable lifetime analysis.
+INFO: [BIND 205-101] Exploring resource sharing.
+INFO: [BIND 205-101] Binding ...
+INFO: [BIND 205-100] Finished micro-architecture generation.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.48 seconds. CPU system time: 0 seconds. Elapsed time: 1.5 seconds; current allocated memory: 1008.941 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT8B8_Pipeline_VITIS_LOOP_21_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDCT8B8_Pipeline_VITIS_LOOP_21_1' pipeline 'VITIS_LOOP_21_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_32s_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_32s_32_2_1': 7 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT8B8_Pipeline_VITIS_LOOP_21_1'.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idct8_8_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idct8_8_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idct8_8_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idct8_8_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idct8_8_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idct8_8_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idct8_8_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idct8_8_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.35 seconds. CPU system time: 0.01 seconds. Elapsed time: 1.36 seconds; current allocated memory: 1009.969 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT8B8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT8B8'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.14 seconds. CPU system time: 0 seconds. Elapsed time: 0.15 seconds; current allocated memory: 1013.094 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT8B16_Pipeline_VITIS_LOOP_47_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDCT8B16_Pipeline_VITIS_LOOP_47_1' pipeline 'VITIS_LOOP_47_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_32s_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_32s_32_2_1': 15 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT8B16_Pipeline_VITIS_LOOP_47_1'.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_8_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_9_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_10_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_11_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_12_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_13_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_14_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idct8_16_15_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.18 seconds; current allocated memory: 1016.957 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT8B16' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT8B16'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.18 seconds. CPU system time: 0 seconds. Elapsed time: 0.19 seconds; current allocated memory: 1022.137 MB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT8B32_Pipeline_VITIS_LOOP_73_1' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDCT8B32_Pipeline_VITIS_LOOP_73_1' pipeline 'VITIS_LOOP_73_1' pipeline type 'loop pipeline'
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_32s_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_32s_32_2_1': 31 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT8B32_Pipeline_VITIS_LOOP_73_1'.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_0_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_1_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_2_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_3_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_4_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_5_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_6_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_7_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_8_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_9_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_10_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_11_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_12_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_13_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_14_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_15_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_16_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_17_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_18_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_19_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_20_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_21_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_22_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_23_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_24_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_25_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_26_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_27_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_28_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_29_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_30_ROM_AUTO_1R' using auto ROMs.
+INFO: [RTMG 210-279] Implementing memory 'IDCT8_IDCT8B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idct8_32_31_ROM_AUTO_1R' using auto ROMs.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.25 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.26 seconds; current allocated memory: 1.005 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT8B32' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT8B32'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.29 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.29 seconds; current allocated memory: 1.015 GB.
+INFO: [HLS 200-10] ----------------------------------------------------------------
+INFO: [HLS 200-10] -- Generating RTL for module 'IDCT8' 
+INFO: [HLS 200-10] ----------------------------------------------------------------
+WARNING: [RTGEN 206-101] Design contains AXI ports. Reset is fixed to synchronous and active low.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT8/gmem0' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT8/gmem1' to 'm_axi'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT8/in_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT8/out_r' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT8/block_size' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT8/sIn' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT8/size' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT8/shift' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT8/oMin' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on port 'IDCT8/oMax' to 's_axilite & ap_none'.
+INFO: [RTGEN 206-500] Setting interface mode on function 'IDCT8' to 's_axilite & ap_ctrl_chain'.
+INFO: [RTGEN 206-100] Bundling port 'in_r', 'out_r', 'block_size', 'sIn', 'size', 'shift', 'oMin', 'oMax' to AXI-Lite port control.
+INFO: [RTGEN 206-100] Generating core module 'mul_32s_7s_39_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Finished creating RTL model for 'IDCT8'.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.13 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.14 seconds; current allocated memory: 1.021 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.82 seconds. CPU system time: 0.03 seconds. Elapsed time: 1.85 seconds; current allocated memory: 1.029 GB.
+INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.48 seconds. CPU system time: 0 seconds. Elapsed time: 0.49 seconds; current allocated memory: 1.043 GB.
+INFO: [VHDL 208-304] Generating VHDL RTL for IDCT8.
+INFO: [VLOG 209-307] Generating Verilog RTL for IDCT8.
+INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
+INFO: [HLS 200-789] **** Estimated Fmax: 351.99 MHz
+INFO: [HLS 200-112] Total CPU user time: 16.24 seconds. Total CPU system time: 0.84 seconds. Total elapsed time: 21.49 seconds; peak allocated memory: 1.043 GB.
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 24s

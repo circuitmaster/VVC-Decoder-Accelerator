@@ -18,78 +18,78 @@
       ^~~
       VITIS_LOOP_1248_1: 
 /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:32495:7: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34583:5: warning: Added loop label VITIS_LOOP_21_1:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34582:5: warning: Added loop label VITIS_LOOP_21_1:   [xilinx-label-all-loops]
     for (ap_int<32> j = 0; j < 8; j++) {
     ^~~
     VITIS_LOOP_21_1: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34583:5: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34587:9: warning: Added loop label VITIS_LOOP_25_2:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34582:5: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34586:9: warning: Added loop label VITIS_LOOP_25_2:   [xilinx-label-all-loops]
         for (ap_int<32> k = 0; k < 8; k++) {
         ^~~
         VITIS_LOOP_25_2: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34587:9: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34609:5: warning: Added loop label VITIS_LOOP_47_1:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34586:9: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34608:5: warning: Added loop label VITIS_LOOP_47_1:   [xilinx-label-all-loops]
     for (ap_int<32> j = 0; j < 16; j++) {
     ^~~
     VITIS_LOOP_47_1: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34609:5: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34614:9: warning: Added loop label VITIS_LOOP_52_2:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34608:5: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34613:9: warning: Added loop label VITIS_LOOP_52_2:   [xilinx-label-all-loops]
         for (ap_int<32> k = 0; k < 16; k++) {
         ^~~
         VITIS_LOOP_52_2: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34614:9: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34635:5: warning: Added loop label VITIS_LOOP_73_1:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34613:9: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34634:5: warning: Added loop label VITIS_LOOP_73_1:   [xilinx-label-all-loops]
     for (ap_int<32> j = 0; j < 32; j++) {
     ^~~
     VITIS_LOOP_73_1: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34635:5: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34640:9: warning: Added loop label VITIS_LOOP_78_2:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34634:5: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34639:9: warning: Added loop label VITIS_LOOP_78_2:   [xilinx-label-all-loops]
         for (ap_int<32> k = 0; k < 32; k++) {
         ^~~
         VITIS_LOOP_78_2: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34640:9: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34710:2: warning: Added loop label VITIS_LOOP_259_1:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34639:9: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34709:2: warning: Added loop label VITIS_LOOP_259_1:   [xilinx-label-all-loops]
  for(int i=0; i<size; i++){
  ^~~
  VITIS_LOOP_259_1: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34710:2: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34723:2: warning: Added loop label VITIS_LOOP_272_2:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34709:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34722:2: warning: Added loop label VITIS_LOOP_272_2:   [xilinx-label-all-loops]
  for(int j=0; j<32; j++){
  ^~~
  VITIS_LOOP_272_2: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34723:2: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34730:13: warning: Added loop label VITIS_LOOP_279_3:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34722:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34729:13: warning: Added loop label VITIS_LOOP_279_3:   [xilinx-label-all-loops]
             for(int j=0; j<32; j++){
             ^~~
             VITIS_LOOP_279_3: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34730:13: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34743:2: warning: Added loop label VITIS_LOOP_292_4:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34729:13: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34742:2: warning: Added loop label VITIS_LOOP_292_4:   [xilinx-label-all-loops]
  for(int j=0; j<16; j++){
  ^~~
  VITIS_LOOP_292_4: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34743:2: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34750:13: warning: Added loop label VITIS_LOOP_299_5:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34742:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34749:13: warning: Added loop label VITIS_LOOP_299_5:   [xilinx-label-all-loops]
             for(int j=0; j<16; j++){
             ^~~
             VITIS_LOOP_299_5: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34750:13: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34762:2: warning: Added loop label VITIS_LOOP_311_6:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34749:13: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34761:2: warning: Added loop label VITIS_LOOP_311_6:   [xilinx-label-all-loops]
  for(int j=0; j<8; j++){
  ^~~
  VITIS_LOOP_311_6: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34762:2: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34769:13: warning: Added loop label VITIS_LOOP_318_7:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34761:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34768:13: warning: Added loop label VITIS_LOOP_318_7:   [xilinx-label-all-loops]
             for(int j=0; j<8; j++){
             ^~~
             VITIS_LOOP_318_7: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34769:13: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34782:2: warning: Added loop label VITIS_LOOP_331_8:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34768:13: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34781:2: warning: Added loop label VITIS_LOOP_331_8:   [xilinx-label-all-loops]
  for(int j=0; j<4; j++){
  ^~~
  VITIS_LOOP_331_8: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34782:2: note: FIX-IT applied suggested code changes
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34789:13: warning: Added loop label VITIS_LOOP_338_9:   [xilinx-label-all-loops]
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34781:2: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34788:13: warning: Added loop label VITIS_LOOP_338_9:   [xilinx-label-all-loops]
             for(int j=0; j<4; j++){
             ^~~
             VITIS_LOOP_338_9: 
-/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34789:13: note: FIX-IT applied suggested code changes
+/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp:34788:13: note: FIX-IT applied suggested code changes

@@ -1,0 +1,169 @@
+{
+  "0": {
+    "basicblocks": 66,
+    "calls": "1 4 3 9",
+    "file": "IDCT8.cpp",
+    "fileloc": 245,
+    "instructions": 354,
+    "loads": {
+      "L": 5,
+      "T": 1
+    },
+    "name": "IDCT8",
+    "stores": {
+      "L": 22,
+      "T": 1
+    },
+    "total_instructions": 8976
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "10",
+    "file": "IDCT8.cpp",
+    "fileloc": 163,
+    "instructions": 14,
+    "loads": {
+      "L": 4
+    },
+    "name": "IDCT8B32",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1317
+  },
+  "10": {
+    "basicblocks": 15,
+    "calls": "2",
+    "file": "IDCT8.cpp",
+    "fileloc": 66,
+    "instructions": 143,
+    "loads": {
+      "L": 4
+    },
+    "name": "INV_MATMUL_32",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1303
+  },
+  "11": {
+    "basicblocks": 15,
+    "calls": "2",
+    "file": "IDCT8.cpp",
+    "fileloc": 39,
+    "instructions": 143,
+    "loads": {
+      "L": 4
+    },
+    "name": "INV_MATMUL_16",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1303
+  },
+  "12": {
+    "basicblocks": 15,
+    "calls": "2",
+    "file": "IDCT8.cpp",
+    "fileloc": 13,
+    "instructions": 143,
+    "loads": {
+      "L": 4
+    },
+    "name": "INV_MATMUL_8",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1303
+  },
+  "2": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "IDCT8.cpp",
+    "fileloc": 6,
+    "instructions": 22,
+    "name": "CLIP3",
+    "total_instructions": 53
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "12",
+    "file": "IDCT8.cpp",
+    "fileloc": 113,
+    "instructions": 14,
+    "loads": {
+      "L": 4
+    },
+    "name": "IDCT8B8",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1317
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "11",
+    "file": "IDCT8.cpp",
+    "fileloc": 117,
+    "instructions": 14,
+    "loads": {
+      "L": 4
+    },
+    "name": "IDCT8B16",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1317
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "transform_coeffs.h",
+    "fileloc": 145,
+    "instructions": 65,
+    "name": "__cxx_global_var_init.5",
+    "total_instructions": 1025
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "transform_coeffs.h",
+    "fileloc": 181,
+    "instructions": 1025,
+    "name": "__cxx_global_var_init.7",
+    "total_instructions": 16385
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "transform_coeffs.h",
+    "fileloc": 159,
+    "instructions": 257,
+    "name": "__cxx_global_var_init.6",
+    "total_instructions": 4097
+  },
+  "8": {
+    "basicblocks": 1,
+    "calls": "5 7 6",
+    "file": "IDCT8.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 4,
+    "name": "",
+    "total_instructions": 21511
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "2 2 2 2",
+    "file": "IDCT8.cpp",
+    "fileloc": 92,
+    "instructions": 351,
+    "loads": {
+      "L": 16
+    },
+    "name": "IDCT8B4",
+    "stores": {
+      "L": 16
+    },
+    "total_instructions": 4165
+  }
+}

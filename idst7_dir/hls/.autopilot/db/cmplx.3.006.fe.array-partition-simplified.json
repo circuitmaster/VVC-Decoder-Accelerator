@@ -1,10 +1,10 @@
 {
   "0": {
     "basicblocks": 9,
-    "calls": "2 1 3",
+    "calls": "3 1 2",
     "file": "IDST7.cpp",
     "fileloc": 244,
-    "instructions": 783,
+    "instructions": 782,
     "loads": {
       "L": 56,
       "T": 1
@@ -14,7 +14,7 @@
       "L": 56,
       "T": 1
     },
-    "total_instructions": 1551
+    "total_instructions": 1550
   },
   "1": {
     "basicblocks": 52,
@@ -33,22 +33,6 @@
     "total_instructions": 224
   },
   "2": {
-    "basicblocks": 100,
-    "calls": "",
-    "file": "IDST7.cpp",
-    "fileloc": 162,
-    "instructions": 416,
-    "loads": {
-      "G": 32,
-      "L": 32
-    },
-    "name": "IDST7B32",
-    "stores": {
-      "L": 32
-    },
-    "total_instructions": 416
-  },
-  "3": {
     "basicblocks": 28,
     "calls": "",
     "file": "IDST7.cpp",
@@ -63,5 +47,21 @@
       "L": 8
     },
     "total_instructions": 128
+  },
+  "3": {
+    "basicblocks": 100,
+    "calls": "",
+    "file": "IDST7.cpp",
+    "fileloc": 162,
+    "instructions": 416,
+    "loads": {
+      "G": 32,
+      "L": 32
+    },
+    "name": "IDST7B32",
+    "stores": {
+      "L": 32
+    },
+    "total_instructions": 416
   }
 }

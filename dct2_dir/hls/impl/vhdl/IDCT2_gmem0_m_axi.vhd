@@ -196,10 +196,112 @@ architecture behave of IDCT2_gmem0_m_axi is
             out_HLS_RDATA          : out UNSIGNED(BUS_DATA_WIDTH-1 downto 0));
     end component IDCT2_gmem0_m_axi_read;
     
+    component IDCT2_gmem0_m_axi_store is
+        generic (
+            C_TARGET_ADDR          : INTEGER := 16#00000000#;
+            NUM_WRITE_OUTSTANDING  : INTEGER := 2;
+            MAX_WRITE_BURST_LENGTH : INTEGER := 16;
+            BUS_ADDR_WIDTH         : INTEGER := 32;
+            BUS_DATA_WIDTH         : INTEGER := 32;
+            USER_DW                : INTEGER := 16;
+            USER_AW                : INTEGER := 32;
+            USER_MAXREQS           : INTEGER := 16;
+            BUFFER_IMPL            : STRING  := "auto");
+        port (
+            ACLK                   : in  STD_LOGIC;
+            ARESET                 : in  STD_LOGIC;
+            ACLK_EN                : in  STD_LOGIC;
+            out_AXI_AWADDR         : out UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
+            out_AXI_AWLEN          : out UNSIGNED(31 downto 0);
+            out_AXI_AWVALID        : out STD_LOGIC;
+            in_AXI_AWREADY         : in  STD_LOGIC;
+            out_AXI_WDATA          : out UNSIGNED(BUS_DATA_WIDTH-1 downto 0);
+            out_AXI_WSTRB          : out UNSIGNED(BUS_DATA_WIDTH/8-1 downto 0);
+            out_AXI_WVALID         : out STD_LOGIC;
+            in_AXI_WREADY          : in  STD_LOGIC;
+            in_AXI_BVALID          : in  STD_LOGIC;
+            out_AXI_BREADY         : out STD_LOGIC; 
+            in_HLS_AWADDR          : in  UNSIGNED(USER_AW-1 downto 0);
+            in_HLS_AWLEN           : in  UNSIGNED(31 downto 0);
+            in_HLS_AWVALID         : in  STD_LOGIC;
+            out_HLS_AWREADY        : out STD_LOGIC;
+            in_HLS_WDATA           : in  UNSIGNED(USER_DW-1 downto 0);
+            in_HLS_WSTRB           : in  UNSIGNED(USER_DW/8-1 downto 0);
+            in_HLS_WVALID          : in  STD_LOGIC;
+            out_HLS_WREADY         : out STD_LOGIC;
+            out_HLS_BVALID         : out STD_LOGIC;
+            in_HLS_BREADY          : in  STD_LOGIC);
+    end component IDCT2_gmem0_m_axi_store;
+
+    component IDCT2_gmem0_m_axi_write is
+        generic (
+            CONSERVATIVE           : INTEGER := 0;
+            C_M_AXI_ID_WIDTH       : INTEGER := 1;
+            C_M_AXI_AWUSER_WIDTH   : INTEGER := 1;
+            C_M_AXI_WUSER_WIDTH    : INTEGER := 1;
+            C_M_AXI_BUSER_WIDTH    : INTEGER := 1;
+            C_USER_VALUE           : INTEGER := 0;
+            C_PROT_VALUE           : INTEGER := 0;
+            C_CACHE_VALUE          : INTEGER := 2#0011#;
+            BUS_ADDR_WIDTH         : INTEGER := 32;
+            BUS_DATA_WIDTH         : INTEGER := 32;
+            NUM_WRITE_OUTSTANDING  : INTEGER := 1;
+            MAX_WRITE_BURST_LENGTH : INTEGER := 1);
+        port (
+            ACLK                   : in  STD_LOGIC;
+            ARESET                 : in  STD_LOGIC;
+            ACLK_EN                : in  STD_LOGIC;
+            out_BUS_AWID           : out UNSIGNED(C_M_AXI_ID_WIDTH-1 downto 0);
+            out_BUS_AWADDR         : out UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
+            out_BUS_AWLEN          : out UNSIGNED(7 downto 0);
+            out_BUS_AWSIZE         : out UNSIGNED(2 downto 0);
+            out_BUS_AWBURST        : out UNSIGNED(1 downto 0);
+            out_BUS_AWLOCK         : out UNSIGNED(1 downto 0);
+            out_BUS_AWCACHE        : out UNSIGNED(3 downto 0);
+            out_BUS_AWPROT         : out UNSIGNED(2 downto 0);
+            out_BUS_AWQOS          : out UNSIGNED(3 downto 0);
+            out_BUS_AWREGION       : out UNSIGNED(3 downto 0);
+            out_BUS_AWUSER         : out UNSIGNED(C_M_AXI_AWUSER_WIDTH-1 downto 0);
+            out_BUS_AWVALID        : out STD_LOGIC;
+            in_BUS_AWREADY         : in  STD_LOGIC;
+            out_BUS_WID            : out UNSIGNED(C_M_AXI_ID_WIDTH-1 downto 0);
+            out_BUS_WDATA          : out UNSIGNED(BUS_DATA_WIDTH-1 downto 0);
+            out_BUS_WSTRB          : out UNSIGNED(BUS_DATA_WIDTH/8-1 downto 0);
+            out_BUS_WLAST          : out STD_LOGIC;
+            out_BUS_WUSER          : out UNSIGNED(C_M_AXI_WUSER_WIDTH-1 downto 0);
+            out_BUS_WVALID         : out STD_LOGIC;
+            in_BUS_WREADY          : in  STD_LOGIC;
+            in_BUS_BID             : in  UNSIGNED(C_M_AXI_ID_WIDTH-1 downto 0);
+            in_BUS_BRESP           : in  UNSIGNED(1 downto 0);
+            in_BUS_BUSER           : in  UNSIGNED(C_M_AXI_BUSER_WIDTH-1 downto 0);
+            in_BUS_BVALID          : in  STD_LOGIC;
+            out_BUS_BREADY         : out STD_LOGIC;
+            in_HLS_AWADDR          : in  UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
+            in_HLS_AWLEN           : in  UNSIGNED(31 downto 0);
+            in_HLS_AWVALID         : in  STD_LOGIC;
+            out_HLS_AWREADY        : out STD_LOGIC;
+            in_HLS_WDATA           : in  UNSIGNED(BUS_DATA_WIDTH-1 downto 0);
+            in_HLS_WSTRB           : in  UNSIGNED(BUS_DATA_WIDTH/8-1 downto 0);
+            in_HLS_WVALID          : in  STD_LOGIC;
+            out_HLS_WREADY         : out STD_LOGIC;
+            out_HLS_BVALID         : out STD_LOGIC;
+            in_HLS_BREADY          : in  STD_LOGIC;
+            out_HLS_BRESP          : out UNSIGNED(1 downto 0));
+    end component IDCT2_gmem0_m_axi_write;
 
     
     --========================Local Signals===================
     -- AW/W/B channel signals 
+    signal AWADDR_Dummy   : UNSIGNED(C_M_AXI_ADDR_WIDTH-1 downto 0);
+    signal AWLEN_Dummy    : UNSIGNED(31 downto 0);
+    signal AWVALID_Dummy  : STD_LOGIC;
+    signal AWREADY_Dummy  : STD_LOGIC;
+    signal WDATA_Dummy    : UNSIGNED(C_M_AXI_DATA_WIDTH-1 downto 0);
+    signal WSTRB_Dummy    : UNSIGNED(C_M_AXI_DATA_WIDTH/8-1 downto 0);
+    signal WVALID_Dummy   : STD_LOGIC;
+    signal WREADY_Dummy   : STD_LOGIC;
+    signal BVALID_Dummy   : STD_LOGIC;
+    signal BREADY_Dummy   : STD_LOGIC;
     -- AR/R channel signals 
     signal ARADDR_Dummy   : UNSIGNED(C_M_AXI_ADDR_WIDTH-1 downto 0);
     signal ARLEN_Dummy    : UNSIGNED(31 downto 0);
@@ -213,32 +315,46 @@ architecture behave of IDCT2_gmem0_m_axi is
     
 begin
     -- AXI Ports Initialization 
-    AWID     <= (others=>'0');
-    AWADDR   <= (others=>'0');
-    AWLEN    <= (others=>'0');
-    AWSIZE   <= (others=>'0');
-    AWBURST  <= (others=>'0');
-    AWLOCK   <= (others=>'0');
-    AWCACHE  <= (others=>'0');
-    AWPROT   <= (others=>'0');
-    AWQOS    <= (others=>'0');
-    AWREGION <= (others=>'0');
-    AWUSER   <= (others=>'0');
-    AWVALID  <= '0';
-    WID      <= (others=>'0');
-    WDATA    <= (others=>'0');
-    WSTRB    <= (others=>'0');
-    WLAST    <= '0';
-    WUSER    <= (others=>'0');
-    WVALID   <= '0';
-    BREADY   <= '0';
     -- Kernel Ports Initialization 
-    I_CH0_AWREADY   <= '0';
-    I_CH0_WREADY    <= '0';
-    I_CH0_BVALID    <= '0';
     -- flush logic 
     --========================Instantiation========================
     -- ++++++++++++++++++++++ STORE UNITS ++++++++++++++++++++++ 
+    -- store_unit for channel 0
+    store_unit_0 : IDCT2_gmem0_m_axi_store
+    generic map (
+        C_TARGET_ADDR          => C_TARGET_ADDR,
+        NUM_WRITE_OUTSTANDING  => NUM_WRITE_OUTSTANDING,
+        MAX_WRITE_BURST_LENGTH => MAX_WRITE_BURST_LENGTH,
+        BUS_ADDR_WIDTH         => C_M_AXI_ADDR_WIDTH,
+        BUS_DATA_WIDTH         => C_M_AXI_DATA_WIDTH,
+        USER_DW                => CH0_USER_DW,
+        USER_AW                => CH0_USER_AW,
+        USER_MAXREQS           => USER_MAXREQS,
+        BUFFER_IMPL            => MAXI_BUFFER_IMPL) 
+    port map (
+        ACLK                   => ACLK,
+        ARESET                 => ARESET,
+        ACLK_EN                => ACLK_EN,
+        out_AXI_AWADDR         => AWADDR_Dummy,
+        out_AXI_AWLEN          => AWLEN_Dummy,
+        out_AXI_AWVALID        => AWVALID_Dummy,
+        in_AXI_AWREADY         => AWREADY_Dummy,
+        out_AXI_WDATA          => WDATA_Dummy,
+        out_AXI_WSTRB          => WSTRB_Dummy,
+        out_AXI_WVALID         => WVALID_Dummy,
+        in_AXI_WREADY          => WREADY_Dummy,
+        in_AXI_BVALID          => BVALID_Dummy,
+        out_AXI_BREADY         => BREADY_Dummy,
+        in_HLS_AWADDR          => UNSIGNED(I_CH0_AWADDR),
+        in_HLS_AWLEN           => UNSIGNED(I_CH0_AWLEN),
+        in_HLS_AWVALID         => I_CH0_AWVALID,
+        out_HLS_AWREADY        => I_CH0_AWREADY,
+        in_HLS_WDATA           => UNSIGNED(I_CH0_WDATA),
+        in_HLS_WSTRB           => UNSIGNED(I_CH0_WSTRB),
+        in_HLS_WVALID          => I_CH0_WVALID,
+        out_HLS_WREADY         => I_CH0_WREADY,
+        out_HLS_BVALID         => I_CH0_BVALID,
+        in_HLS_BREADY          => I_CH0_BREADY);
 
     -- ++++++++++++++++++++++ LOAD UNITS ++++++++++++++++++++++ 
     -- load_unit for channel 0
@@ -277,6 +393,62 @@ begin
         STD_LOGIC_VECTOR(out_HLS_RFIFONUM) => I_CH0_RFIFONUM);
 
     -- ++++++++++++++++++++++ AXI BUS READ/WRITE ++++++++++++++++++++++ 
+    -- IDCT2_gmem0_m_axi_write
+    bus_write : IDCT2_gmem0_m_axi_write
+    generic map (
+        CONSERVATIVE           => CONSERVATIVE,
+        C_M_AXI_ID_WIDTH       => C_M_AXI_ID_WIDTH,
+        C_M_AXI_AWUSER_WIDTH   => C_M_AXI_AWUSER_WIDTH,
+        C_M_AXI_WUSER_WIDTH    => C_M_AXI_WUSER_WIDTH,
+        C_M_AXI_BUSER_WIDTH    => C_M_AXI_BUSER_WIDTH,
+        C_USER_VALUE           => C_USER_VALUE,
+        C_PROT_VALUE           => C_PROT_VALUE,
+        C_CACHE_VALUE          => C_CACHE_VALUE,
+        BUS_ADDR_WIDTH         => C_M_AXI_ADDR_WIDTH,
+        BUS_DATA_WIDTH         => C_M_AXI_DATA_WIDTH,
+        MAX_WRITE_BURST_LENGTH => MAX_WRITE_BURST_LENGTH,
+        NUM_WRITE_OUTSTANDING  => NUM_WRITE_OUTSTANDING)
+    port map (
+        ACLK                               => ACLK,
+        ARESET                             => ARESET,
+        ACLK_EN                            => ACLK_EN,
+        STD_LOGIC_VECTOR(out_BUS_AWID)     => AWID,
+        STD_LOGIC_VECTOR(out_BUS_AWADDR)   => AWADDR,
+        STD_LOGIC_VECTOR(out_BUS_AWLEN)    => AWLEN,
+        STD_LOGIC_VECTOR(out_BUS_AWSIZE)   => AWSIZE,
+        STD_LOGIC_VECTOR(out_BUS_AWBURST)  => AWBURST,
+        STD_LOGIC_VECTOR(out_BUS_AWLOCK)   => AWLOCK,
+        STD_LOGIC_VECTOR(out_BUS_AWCACHE)  => AWCACHE,
+        STD_LOGIC_VECTOR(out_BUS_AWPROT)   => AWPROT,
+        STD_LOGIC_VECTOR(out_BUS_AWQOS)    => AWQOS,
+        STD_LOGIC_VECTOR(out_BUS_AWREGION) => AWREGION,
+        STD_LOGIC_VECTOR(out_BUS_AWUSER)   => AWUSER,
+        out_BUS_AWVALID                    => AWVALID ,
+        in_BUS_AWREADY                     => AWREADY ,
+        STD_LOGIC_VECTOR(out_BUS_WID)      => WID,
+        STD_LOGIC_VECTOR(out_BUS_WDATA)    => WDATA,
+        STD_LOGIC_VECTOR(out_BUS_WSTRB)    => WSTRB,
+        out_BUS_WLAST                      => WLAST,
+        STD_LOGIC_VECTOR(out_BUS_WUSER)    => WUSER,
+        out_BUS_WVALID                     => WVALID ,
+        in_BUS_WREADY                      => WREADY,
+        in_BUS_BID                         => UNSIGNED(BID),
+        in_BUS_BRESP                       => UNSIGNED(BRESP),
+        in_BUS_BUSER                       => UNSIGNED(BUSER),
+        in_BUS_BVALID                      => BVALID,
+        out_BUS_BREADY                     => BREADY ,
+        in_HLS_AWVALID                     => AWVALID_Dummy,
+        out_HLS_AWREADY                    => AWREADY_Dummy,
+        in_HLS_AWADDR                      => AWADDR_Dummy,
+        in_HLS_AWLEN                       => AWLEN_Dummy,
+        in_HLS_WVALID                      => WVALID_Dummy,
+        out_HLS_WREADY                     => WREADY_Dummy,
+        in_HLS_WSTRB                       => WSTRB_Dummy,
+        in_HLS_WDATA                       => WDATA_Dummy,
+        out_HLS_BRESP                      => open,
+        out_HLS_BVALID                     => BVALID_Dummy,
+        in_HLS_BREADY                      => BREADY_Dummy
+        );
     -- IDCT2_gmem0_m_axi_read
     bus_read : IDCT2_gmem0_m_axi_read
     generic map (

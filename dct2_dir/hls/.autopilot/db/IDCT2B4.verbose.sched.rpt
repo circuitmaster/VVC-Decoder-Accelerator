@@ -3,13 +3,13 @@
 ================================================================
 == Vitis HLS Report for 'IDCT2B4'
 ================================================================
-* Date:           Fri Nov 21 21:48:43 2025
+* Date:           Mon Dec 22 13:39:38 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        dct2_dir
 * Solution:       hls (Vitis Kernel Flow Target)
-* Product family: zynquplus
-* Target device:  xczu9eg-ffvb1156-2-e
+* Product family: versalaicore
+* Target device:  xcvc1902-vsva2197-2MP-e-S
 
 
 ================================================================
@@ -17,11 +17,11 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+----------+----------+------------+
-    |  Clock |  Target  | Estimated| Uncertainty|
-    +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  5.167 ns|     2.70 ns|
-    +--------+----------+----------+------------+
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  2.202 ns|     0.90 ns|
+    +--------+---------+----------+------------+
 
 + Latency: 
     * Summary: 
@@ -29,7 +29,7 @@
     |  Latency (cycles) |  Latency (absolute) |  Interval | Pipeline|
     |   min   |   max   |    min   |    max   | min | max |   Type  |
     +---------+---------+----------+----------+-----+-----+---------+
-    |        0|        0|      0 ns|      0 ns|    1|    1|      yes|
+    |        1|        1|  3.333 ns|  3.333 ns|    1|    1|      yes|
     +---------+---------+----------+----------+-----+-----+---------+
 
     + Detail: 
@@ -55,73 +55,84 @@ HasWiredReturn: 1
 HasMFsm: 2
 HasVarLatency: 0
 IsPipeline: 1
-IsRtlPipelined: 0
+IsRtlPipelined: 1
 IsInstanceOverlapped: 0
 IsDontTouch: 0
 HasImplIP: 0
 IsGatedGlobalClock: 0
 
 + Individual pipeline summary: 
-  * Pipeline-0: initiation interval (II) = 1, depth = 1
+  * Pipeline-0: initiation interval (II) = 1, depth = 2
 
 
 ============================================================
 + Verbose Summary: Schedule
 ============================================================
-* Number of FSM states : 1
+* Number of FSM states : 2
 * Pipeline : 1
-  Pipeline-0 : II = 1, D = 1, States = { 1 }
+  Pipeline-0 : II = 1, D = 2, States = { 1 2 }
 * Dataflow Pipeline: 0
 
 * FSM state transitions: 
-1 --> 
+1 --> 2 
+2 --> 
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 5.16>
-ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%in_3_val_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %in_3_val" [src/IDCT2.cpp:34]   --->   Operation 2 'read' 'in_3_val_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%in_2_val_read = read i26 @_ssdm_op_Read.ap_auto.i26, i26 %in_2_val" [src/IDCT2.cpp:34]   --->   Operation 3 'read' 'in_2_val_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%in_1_val_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %in_1_val" [src/IDCT2.cpp:34]   --->   Operation 4 'read' 'in_1_val_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%in_0_val_read = read i26 @_ssdm_op_Read.ap_auto.i26, i26 %in_0_val" [src/IDCT2.cpp:34]   --->   Operation 5 'read' 'in_0_val_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 6 [1/1] (0.95ns)   --->   "%call_ret = call i64 @IDCT2B2, i26 %in_0_val_read, i26 %in_2_val_read" [src/IDCT2.cpp:39]   --->   Operation 6 'call' 'call_ret' <Predicate = true> <Delay = 0.95> <CoreType = "Generic">   --->   Generic Core
-ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%evens = extractvalue i64 %call_ret" [src/IDCT2.cpp:39]   --->   Operation 7 'extractvalue' 'evens' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%evens_1 = extractvalue i64 %call_ret" [src/IDCT2.cpp:39]   --->   Operation 8 'extractvalue' 'evens_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 9 [1/1] (0.00ns) (grouped into LUT with out node add_ln40_1)   --->   "%shl_ln40 = shl i32 %in_1_val_read, i32 6" [src/IDCT2.cpp:40]   --->   Operation 9 'shl' 'shl_ln40' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 10 [1/1] (0.00ns) (grouped into LUT with out node add_ln40_1)   --->   "%shl_ln40_1 = shl i32 %in_1_val_read, i32 4" [src/IDCT2.cpp:40]   --->   Operation 10 'shl' 'shl_ln40_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 11 [1/1] (1.01ns) (out node of the LUT)   --->   "%add_ln40_1 = add i32 %shl_ln40, i32 %shl_ln40_1" [src/IDCT2.cpp:40]   --->   Operation 11 'add' 'add_ln40_1' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 12 [1/1] (0.00ns)   --->   "%shl_ln40_2 = shl i32 %in_1_val_read, i32 2" [src/IDCT2.cpp:40]   --->   Operation 12 'shl' 'shl_ln40_2' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 13 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln40_2 = add i32 %add_ln40_1, i32 %shl_ln40_2" [src/IDCT2.cpp:40]   --->   Operation 13 'add' 'add_ln40_2' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.36> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
-ST_1 : Operation 14 [1/1] (0.73ns) (root node of TernaryAdder)   --->   "%sub_ln40 = sub i32 %add_ln40_2, i32 %in_1_val_read" [src/IDCT2.cpp:40]   --->   Operation 14 'sub' 'sub_ln40' <Predicate = true> <Delay = 0.73> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.36> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
-ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%shl_ln40_3 = shl i32 %in_3_val_read, i32 5" [src/IDCT2.cpp:40]   --->   Operation 15 'shl' 'shl_ln40_3' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%shl_ln40_4 = shl i32 %in_3_val_read, i32 2" [src/IDCT2.cpp:40]   --->   Operation 16 'shl' 'shl_ln40_4' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 17 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln40_3 = add i32 %shl_ln40_3, i32 %shl_ln40_4" [src/IDCT2.cpp:40]   --->   Operation 17 'add' 'add_ln40_3' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.36> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
-ST_1 : Operation 18 [1/1] (0.73ns) (root node of TernaryAdder)   --->   "%add_ln40 = add i32 %add_ln40_3, i32 %sub_ln40" [src/IDCT2.cpp:40]   --->   Operation 18 'add' 'add_ln40' <Predicate = true> <Delay = 0.73> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.36> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
-ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%shl_ln41 = shl i32 %in_1_val_read, i32 5" [src/IDCT2.cpp:41]   --->   Operation 19 'shl' 'shl_ln41' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 20 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln41_1 = add i32 %shl_ln41, i32 %shl_ln40_2" [src/IDCT2.cpp:41]   --->   Operation 20 'add' 'add_ln41_1' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.36> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
-ST_1 : Operation 21 [1/1] (3.42ns)   --->   "%mul_ln41 = mul i32 %in_3_val_read, i32 4294967213" [src/IDCT2.cpp:41]   --->   Operation 21 'mul' 'mul_ln41' <Predicate = true> <Delay = 3.42> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 0> <II = 1> <Delay = 3.42> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 22 [1/1] (0.73ns) (root node of TernaryAdder)   --->   "%add_ln41 = add i32 %mul_ln41, i32 %add_ln41_1" [src/IDCT2.cpp:41]   --->   Operation 22 'add' 'add_ln41' <Predicate = true> <Delay = 0.73> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.36> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
-ST_1 : Operation 23 [1/1] (1.01ns)   --->   "%add_ln43 = add i32 %evens, i32 %add_ln40" [src/IDCT2.cpp:43]   --->   Operation 23 'add' 'add_ln43' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 24 [1/1] (1.01ns)   --->   "%add_ln44 = add i32 %evens_1, i32 %add_ln41" [src/IDCT2.cpp:44]   --->   Operation 24 'add' 'add_ln44' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 25 [1/1] (1.01ns)   --->   "%sub_ln45 = sub i32 %evens_1, i32 %add_ln41" [src/IDCT2.cpp:45]   --->   Operation 25 'sub' 'sub_ln45' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 26 [1/1] (1.01ns)   --->   "%sub_ln46 = sub i32 %evens, i32 %add_ln40" [src/IDCT2.cpp:46]   --->   Operation 26 'sub' 'sub_ln46' <Predicate = true> <Delay = 1.01> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 1.01> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%mrv = insertvalue i128 <undef>, i32 %add_ln43" [src/IDCT2.cpp:47]   --->   Operation 27 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i128 %mrv, i32 %add_ln44" [src/IDCT2.cpp:47]   --->   Operation 28 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 29 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i128 %mrv_1, i32 %sub_ln45" [src/IDCT2.cpp:47]   --->   Operation 29 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i128 %mrv_2, i32 %sub_ln46" [src/IDCT2.cpp:47]   --->   Operation 30 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%ret_ln47 = ret i128 %mrv_3" [src/IDCT2.cpp:47]   --->   Operation 31 'ret' 'ret_ln47' <Predicate = true> <Delay = 0.00>
+State 1 <SV = 0> <Delay = 2.15>
+ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%in_3_val_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %in_3_val" [src/IDCT2.cpp:34]   --->   Operation 3 'read' 'in_3_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 4 [1/1] (0.00ns)   --->   "%in_2_val_read = read i26 @_ssdm_op_Read.ap_auto.i26, i26 %in_2_val" [src/IDCT2.cpp:34]   --->   Operation 4 'read' 'in_2_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 5 [1/1] (0.00ns)   --->   "%in_1_val_read = read i32 @_ssdm_op_Read.ap_auto.i32, i32 %in_1_val" [src/IDCT2.cpp:34]   --->   Operation 5 'read' 'in_1_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%in_0_val_read = read i26 @_ssdm_op_Read.ap_auto.i26, i26 %in_0_val" [src/IDCT2.cpp:34]   --->   Operation 6 'read' 'in_0_val_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 7 [1/1] (0.00ns) (grouped into LUT with out node add_ln40_1)   --->   "%shl_ln40 = shl i32 %in_1_val_read, i32 6" [src/IDCT2.cpp:40]   --->   Operation 7 'shl' 'shl_ln40' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns) (grouped into LUT with out node add_ln40_1)   --->   "%shl_ln40_1 = shl i32 %in_1_val_read, i32 4" [src/IDCT2.cpp:40]   --->   Operation 8 'shl' 'shl_ln40_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.85ns) (out node of the LUT)   --->   "%add_ln40_1 = add i32 %shl_ln40, i32 %shl_ln40_1" [src/IDCT2.cpp:40]   --->   Operation 9 'add' 'add_ln40_1' <Predicate = true> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%shl_ln40_2 = shl i32 %in_1_val_read, i32 2" [src/IDCT2.cpp:40]   --->   Operation 10 'shl' 'shl_ln40_2' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln40_2 = add i32 %add_ln40_1, i32 %shl_ln40_2" [src/IDCT2.cpp:40]   --->   Operation 11 'add' 'add_ln40_2' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.52> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 12 [1/1] (1.05ns) (root node of TernaryAdder)   --->   "%sub_ln40 = sub i32 %add_ln40_2, i32 %in_1_val_read" [src/IDCT2.cpp:40]   --->   Operation 12 'sub' 'sub_ln40' <Predicate = true> <Delay = 1.05> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.52> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%muxLogicI0_to_mul_ln41 = muxlogic i32 %in_3_val_read"   --->   Operation 13 'muxlogic' 'muxLogicI0_to_mul_ln41' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%muxLogicI1_to_mul_ln41 = muxlogic i32 4294967213"   --->   Operation 14 'muxlogic' 'muxLogicI1_to_mul_ln41' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 15 [2/2] (2.15ns)   --->   "%mul_ln41 = mul i32 %in_3_val_read, i32 4294967213" [src/IDCT2.cpp:41]   --->   Operation 15 'mul' 'mul_ln41' <Predicate = true> <Delay = 2.15> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 2.15> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+State 2 <SV = 1> <Delay = 2.20>
+ST_2 : Operation 16 [1/1] (0.84ns)   --->   "%call_ret = call i64 @IDCT2B2, i26 %in_0_val_read, i26 %in_2_val_read" [src/IDCT2.cpp:39]   --->   Operation 16 'call' 'call_ret' <Predicate = true> <Delay = 0.84> <CoreType = "Generic">   --->   Generic Core
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%evens = extractvalue i64 %call_ret" [src/IDCT2.cpp:39]   --->   Operation 17 'extractvalue' 'evens' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "%evens_1 = extractvalue i64 %call_ret" [src/IDCT2.cpp:39]   --->   Operation 18 'extractvalue' 'evens_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%shl_ln40_3 = shl i32 %in_3_val_read, i32 5" [src/IDCT2.cpp:40]   --->   Operation 19 'shl' 'shl_ln40_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%shl_ln40_4 = shl i32 %in_3_val_read, i32 2" [src/IDCT2.cpp:40]   --->   Operation 20 'shl' 'shl_ln40_4' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln40_3 = add i32 %shl_ln40_3, i32 %shl_ln40_4" [src/IDCT2.cpp:40]   --->   Operation 21 'add' 'add_ln40_3' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.52> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 22 [1/1] (1.05ns) (root node of TernaryAdder)   --->   "%add_ln40 = add i32 %add_ln40_3, i32 %sub_ln40" [src/IDCT2.cpp:40]   --->   Operation 22 'add' 'add_ln40' <Predicate = true> <Delay = 1.05> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.52> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%shl_ln41 = shl i32 %in_1_val_read, i32 5" [src/IDCT2.cpp:41]   --->   Operation 23 'shl' 'shl_ln41' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%add_ln41_1 = add i32 %shl_ln41, i32 %shl_ln40_2" [src/IDCT2.cpp:41]   --->   Operation 24 'add' 'add_ln41_1' <Predicate = true> <Delay = 0.00> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.52> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 25 [1/2] (0.29ns)   --->   "%mul_ln41 = mul i32 %in_3_val_read, i32 4294967213" [src/IDCT2.cpp:41]   --->   Operation 25 'mul' 'mul_ln41' <Predicate = true> <Delay = 0.29> <CoreInst = "Multiplier">   --->   Core 3 'Multiplier' <Latency = 1> <II = 1> <Delay = 2.15> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (1.05ns) (root node of TernaryAdder)   --->   "%add_ln41 = add i32 %mul_ln41, i32 %add_ln41_1" [src/IDCT2.cpp:41]   --->   Operation 26 'add' 'add_ln41' <Predicate = true> <Delay = 1.05> <CoreInst = "TAddSub">   --->   Core 10 'TAddSub' <Latency = 0> <II = 1> <Delay = 0.52> <IPBlock> <Opcode : '' 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 27 [1/1] (0.85ns)   --->   "%add_ln43 = add i32 %evens, i32 %add_ln40" [src/IDCT2.cpp:43]   --->   Operation 27 'add' 'add_ln43' <Predicate = true> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 28 [1/1] (0.85ns)   --->   "%add_ln44 = add i32 %evens_1, i32 %add_ln41" [src/IDCT2.cpp:44]   --->   Operation 28 'add' 'add_ln44' <Predicate = true> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 29 [1/1] (0.85ns)   --->   "%sub_ln45 = sub i32 %evens_1, i32 %add_ln41" [src/IDCT2.cpp:45]   --->   Operation 29 'sub' 'sub_ln45' <Predicate = true> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 30 [1/1] (0.85ns)   --->   "%sub_ln46 = sub i32 %evens, i32 %add_ln40" [src/IDCT2.cpp:46]   --->   Operation 30 'sub' 'sub_ln46' <Predicate = true> <Delay = 0.85> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.85> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 31 [1/1] (0.00ns)   --->   "%mrv = insertvalue i128 <undef>, i32 %add_ln43" [src/IDCT2.cpp:47]   --->   Operation 31 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 32 [1/1] (0.00ns)   --->   "%mrv_1 = insertvalue i128 %mrv, i32 %add_ln44" [src/IDCT2.cpp:47]   --->   Operation 32 'insertvalue' 'mrv_1' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 33 [1/1] (0.00ns)   --->   "%mrv_2 = insertvalue i128 %mrv_1, i32 %sub_ln45" [src/IDCT2.cpp:47]   --->   Operation 33 'insertvalue' 'mrv_2' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 34 [1/1] (0.00ns)   --->   "%mrv_3 = insertvalue i128 %mrv_2, i32 %sub_ln46" [src/IDCT2.cpp:47]   --->   Operation 34 'insertvalue' 'mrv_3' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 35 [1/1] (0.00ns)   --->   "%ret_ln47 = ret i128 %mrv_3" [src/IDCT2.cpp:47]   --->   Operation 35 'ret' 'ret_ln47' <Predicate = true> <Delay = 0.00>
 
 
 ============================================================
 + Verbose Summary: Timing violations
 ============================================================
-Target clock period: 10.000ns, clock uncertainty: 2.700ns.
+Target clock period: 3.333ns, clock uncertainty: 0.900ns.
 
- <State 1>: 5.167ns
+ <State 1>: 2.153ns
 The critical path consists of the following:
 	wire read operation ('in_3_val_read', src/IDCT2.cpp:34) on port 'in_3_val' (src/IDCT2.cpp:34) [5]  (0.000 ns)
-	'mul' operation 32 bit ('mul_ln41', src/IDCT2.cpp:41) [24]  (3.420 ns)
-	'add' operation 32 bit ('add_ln41', src/IDCT2.cpp:41) [25]  (0.731 ns)
-	'add' operation 32 bit ('add_ln44', src/IDCT2.cpp:44) [27]  (1.016 ns)
+	'muxlogic' operation 32 bit ('muxLogicI0_to_mul_ln41') [24]  (0.000 ns)
+	'mul' operation 32 bit ('mul_ln41', src/IDCT2.cpp:41) [26]  (2.153 ns)
+
+ <State 2>: 2.202ns
+The critical path consists of the following:
+	'mul' operation 32 bit ('mul_ln41', src/IDCT2.cpp:41) [26]  (0.295 ns)
+	'add' operation 32 bit ('add_ln41', src/IDCT2.cpp:41) [27]  (1.057 ns)
+	'add' operation 32 bit ('add_ln44', src/IDCT2.cpp:44) [29]  (0.850 ns)
 
 
 ============================================================
@@ -133,6 +144,7 @@ N/A
  - Input state : 
   - Chain level:
 	State 1
+	State 2
 
 
 ============================================================

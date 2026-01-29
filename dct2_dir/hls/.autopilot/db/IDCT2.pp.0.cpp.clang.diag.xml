@@ -445,7 +445,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=m_axi port=out offset=slave bundle=gmem1_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=m_axi port=in2 offset=slave bundle=gmem1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -461,7 +461,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=in bundle=control_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=m_axi port=out offset=slave bundle=gmem0_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -477,7 +477,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=out bundle=control_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=m_axi port=out2 offset=slave bundle=gmem1_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -493,7 +493,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=block_size bundle=control_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=block_size_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -509,7 +509,7 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=size bundle=control_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=size_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -525,7 +525,39 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=return bundle=control_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=shift_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>src/IDCT2.cpp</string>
+      <key>line</key>
+      <integer>323</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=outputMinimum_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>src/IDCT2.cpp</string>
+      <key>line</key>
+      <integer>324</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=outputMaximum_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -541,6 +573,22 @@
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=interface_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=s_axilite port=return_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>src/IDCT2.cpp</string>
+      <key>line</key>
+      <integer>330</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
       <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=loop_tripcount_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=min=1 max=1024_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
@@ -553,7 +601,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>326</integer>
+      <integer>331</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -569,7 +617,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>334</integer>
+      <integer>341</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -585,27 +633,11 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>335</integer>
+      <integer>342</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
       <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=variable=out_data complete dim=0_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>src/IDCT2.cpp</string>
-      <key>line</key>
-      <integer>338</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -633,27 +665,11 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>353</integer>
+      <integer>350</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=variable=in_data complete dim=0_XLX_SEP_</string>
-      <key>ID</key>
-      <integer>5471</integer>
-      <key>WarningOption</key>
-      <string>dump-hls-pragmas</string>
-    </dict>
-    <dict>
-      <key>level</key>
-      <string>warning</string>
-      <key>filename</key>
-      <string>src/IDCT2.cpp</string>
-      <key>line</key>
-      <integer>354</integer>
-      <key>column</key>
-      <integer>9</integer>
-      <key>message</key>
-      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=variable=out_data complete dim=0_XLX_SEP_</string>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
       <key>ID</key>
       <integer>5471</integer>
       <key>WarningOption</key>
@@ -681,7 +697,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>364</integer>
+      <integer>362</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -697,7 +713,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>372</integer>
+      <integer>370</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -713,7 +729,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>373</integer>
+      <integer>371</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -729,7 +745,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>376</integer>
+      <integer>374</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -745,7 +761,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>383</integer>
+      <integer>381</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -761,7 +777,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>391</integer>
+      <integer>389</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -777,7 +793,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>392</integer>
+      <integer>390</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -793,7 +809,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>395</integer>
+      <integer>393</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -809,7 +825,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>402</integer>
+      <integer>400</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -825,7 +841,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>410</integer>
+      <integer>408</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -841,7 +857,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>411</integer>
+      <integer>409</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -857,7 +873,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>414</integer>
+      <integer>412</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -873,7 +889,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>421</integer>
+      <integer>419</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -889,7 +905,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>429</integer>
+      <integer>427</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -905,7 +921,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>430</integer>
+      <integer>428</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -921,7 +937,7 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>433</integer>
+      <integer>431</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>
@@ -937,7 +953,71 @@
       <key>filename</key>
       <string>src/IDCT2.cpp</string>
       <key>line</key>
-      <integer>440</integer>
+      <integer>438</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>src/IDCT2.cpp</string>
+      <key>line</key>
+      <integer>446</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=variable=in_data complete dim=0_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>src/IDCT2.cpp</string>
+      <key>line</key>
+      <integer>447</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=array_partition_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=variable=out_data complete dim=0_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>src/IDCT2.cpp</string>
+      <key>line</key>
+      <integer>450</integer>
+      <key>column</key>
+      <integer>9</integer>
+      <key>message</key>
+      <string>HLS pragma dump _XLX_SEP_ PragmaIsValid=1_XLX_SEP_ PragmaType=unroll_XLX_SEP_ PragmaContext=_XLX_SEP_ PragmaFunction=IDCT2_XLX_SEP_ PragmaOptions=_XLX_SEP_</string>
+      <key>ID</key>
+      <integer>5471</integer>
+      <key>WarningOption</key>
+      <string>dump-hls-pragmas</string>
+    </dict>
+    <dict>
+      <key>level</key>
+      <string>warning</string>
+      <key>filename</key>
+      <string>src/IDCT2.cpp</string>
+      <key>line</key>
+      <integer>457</integer>
       <key>column</key>
       <integer>9</integer>
       <key>message</key>

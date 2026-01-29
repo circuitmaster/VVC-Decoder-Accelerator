@@ -89,7 +89,7 @@ module IDCT2_gmem1_m_axi
     input  wire [C_M_AXI_RUSER_WIDTH-1:0]     RUSER,
     input  wire                               RVALID,
     output wire                               RREADY,
-    // internal channel 0 WRITE-ONLY 
+    // internal channel 0 READ-WRITE 
     input  wire [CH0_USER_AW-1:0]             I_CH0_AWADDR,
     input  wire [31:0]                        I_CH0_AWLEN,
     input  wire                               I_CH0_AWVALID,
@@ -122,27 +122,19 @@ module IDCT2_gmem1_m_axi
     wire                            BVALID_Dummy;
     wire                            BREADY_Dummy;
     // AR/R channel signals 
+    wire [C_M_AXI_ADDR_WIDTH-1:0]   ARADDR_Dummy;
+    wire [31:0]                     ARLEN_Dummy;
+    wire                            ARVALID_Dummy;
+    wire                            ARREADY_Dummy;
+    wire [C_M_AXI_DATA_WIDTH-1:0]   RDATA_Dummy;
+    wire [1:0]                      RLAST_Dummy;
+    wire                            RVALID_Dummy;
+    wire                            RREADY_Dummy;
+    wire                            RBURST_READY_Dummy;
     // flush logic 
 
     // AXI Ports Initialization 
-    assign ARID     = {C_M_AXI_ID_WIDTH{1'b0}};
-    assign ARADDR   = {C_M_AXI_ADDR_WIDTH{1'b0}};
-    assign ARLEN    = 8'd0;
-    assign ARSIZE   = 3'd0;
-    assign ARBURST  = 2'd0;
-    assign ARLOCK   = 2'd0;
-    assign ARCACHE  = 4'd0;
-    assign ARPROT   = 3'd0;
-    assign ARQOS    = 4'd0;
-    assign ARREGION = 4'd0;
-    assign ARUSER   = {C_M_AXI_ARUSER_WIDTH{1'b0}};
-    assign ARVALID  = 1'b0;
-    assign RREADY   = 1'b0;
     // Kernel Ports Initialization 
-    assign I_CH0_ARREADY    = 1'b0;
-    assign I_CH0_RDATA      = {CH0_USER_DW{1'b0}};
-    assign I_CH0_RVALID     = 1'b0;
-    assign I_CH0_RFIFONUM   = {CH0_USER_RFIFONUM_WIDTH{1'b0}};
     // flush logic 
 //------------------------Instantiation------------------
     // ================== STORE UNITS ================== 
@@ -184,6 +176,40 @@ module IDCT2_gmem1_m_axi
     );
 
     // ================== LOAD UNITS ================== 
+    // load_unit for channel 0
+    IDCT2_gmem1_m_axi_load #(
+        .C_TARGET_ADDR           ( C_TARGET_ADDR ),
+        .NUM_READ_OUTSTANDING    ( NUM_READ_OUTSTANDING ),
+        .MAX_READ_BURST_LENGTH   ( MAX_READ_BURST_LENGTH ),
+        .BUS_ADDR_WIDTH          ( C_M_AXI_ADDR_WIDTH ),
+        .BUS_DATA_WIDTH          ( C_M_AXI_DATA_WIDTH ),
+        .USER_DW                 ( CH0_USER_DW ),
+        .USER_AW                 ( CH0_USER_AW ),
+        .USER_MAXREQS            ( USER_MAXREQS ),
+        .USER_RFIFONUM_WIDTH     ( CH0_USER_RFIFONUM_WIDTH ),
+        .BUFFER_IMPL             ( MAXI_BUFFER_IMPL )
+    ) load_unit_0 (
+        .ACLK                    ( ACLK ),
+        .ARESET                  ( ARESET ),
+        .ACLK_EN                 ( ACLK_EN ),
+        .out_AXI_ARADDR          ( ARADDR_Dummy ),
+        .out_AXI_ARLEN           ( ARLEN_Dummy ),
+        .out_AXI_ARVALID         ( ARVALID_Dummy ),
+        .in_AXI_ARREADY          ( ARREADY_Dummy ),
+        .in_AXI_RDATA            ( RDATA_Dummy ),
+        .in_AXI_RLAST            ( RLAST_Dummy ),
+        .in_AXI_RVALID           ( RVALID_Dummy ),
+        .out_AXI_RREADY          ( RREADY_Dummy ),
+        .out_AXI_RBURST_READY    ( RBURST_READY_Dummy),
+        .in_HLS_ARADDR           ( I_CH0_ARADDR ),
+        .in_HLS_ARLEN            ( I_CH0_ARLEN ),
+        .in_HLS_ARVALID          ( I_CH0_ARVALID ),
+        .out_HLS_ARREADY         ( I_CH0_ARREADY ),
+        .out_HLS_RDATA           ( I_CH0_RDATA ),
+        .out_HLS_RVALID          ( I_CH0_RVALID ),
+        .in_HLS_RREADY           ( I_CH0_RREADY ),
+        .out_HLS_RFIFONUM        ( I_CH0_RFIFONUM )
+    );
 
     // ================== AXI BUS READ/WRITE ================== 
     // IDCT2_gmem1_m_axi_write
@@ -239,6 +265,52 @@ module IDCT2_gmem1_m_axi
         .in_HLS_WDATA            ( WDATA_Dummy ),
         .out_HLS_BVALID          ( BVALID_Dummy ),
         .in_HLS_BREADY           ( BREADY_Dummy )
+    );
+    // IDCT2_gmem1_m_axi_read
+    IDCT2_gmem1_m_axi_read #(
+        .C_M_AXI_ID_WIDTH         ( C_M_AXI_ID_WIDTH ),
+        .C_M_AXI_ARUSER_WIDTH     ( C_M_AXI_ARUSER_WIDTH ),
+        .C_M_AXI_RUSER_WIDTH      ( C_M_AXI_RUSER_WIDTH ),
+        .C_USER_VALUE             ( C_USER_VALUE ),
+        .C_PROT_VALUE             ( C_PROT_VALUE ),
+        .C_CACHE_VALUE            ( C_CACHE_VALUE ),
+        .BUS_ADDR_WIDTH           ( C_M_AXI_ADDR_WIDTH ),
+        .BUS_DATA_WIDTH           ( C_M_AXI_DATA_WIDTH ),
+        .MAX_READ_BURST_LENGTH    ( MAX_READ_BURST_LENGTH ),
+        .NUM_READ_OUTSTANDING     ( NUM_READ_OUTSTANDING )
+    ) bus_read (
+        .ACLK                     ( ACLK ),
+        .ARESET                   ( ARESET ),
+        .ACLK_EN                  ( ACLK_EN ),
+        .out_BUS_ARID             ( ARID ),
+        .out_BUS_ARADDR           ( ARADDR ),
+        .out_BUS_ARLEN            ( ARLEN ),
+        .out_BUS_ARSIZE           ( ARSIZE ),
+        .out_BUS_ARBURST          ( ARBURST ),
+        .out_BUS_ARLOCK           ( ARLOCK ),
+        .out_BUS_ARCACHE          ( ARCACHE ),
+        .out_BUS_ARPROT           ( ARPROT ),
+        .out_BUS_ARQOS            ( ARQOS ),
+        .out_BUS_ARREGION         ( ARREGION ),
+        .out_BUS_ARUSER           ( ARUSER ),
+        .out_BUS_ARVALID          ( ARVALID ),
+        .in_BUS_ARREADY           ( ARREADY ),
+        .in_BUS_RID               ( RID ),
+        .in_BUS_RDATA             ( RDATA ),
+        .in_BUS_RRESP             ( RRESP ),
+        .in_BUS_RLAST             ( RLAST ),
+        .in_BUS_RUSER             ( RUSER ),
+        .in_BUS_RVALID            ( RVALID ),
+        .out_BUS_RREADY           ( RREADY ),
+        .in_HLS_ARVALID           ( ARVALID_Dummy ),
+        .out_HLS_ARREADY          ( ARREADY_Dummy ),
+        .in_HLS_ARADDR            ( ARADDR_Dummy ),
+        .in_HLS_ARLEN             ( ARLEN_Dummy ),
+        .out_HLS_RVALID           ( RVALID_Dummy ),
+        .in_HLS_RREADY            ( RREADY_Dummy ),
+        .in_HLS_RBUST_READY       ( RBURST_READY_Dummy),
+        .out_HLS_RDATA            ( RDATA_Dummy ),
+        .out_HLS_RLAST            ( RLAST_Dummy )
     );
 
     

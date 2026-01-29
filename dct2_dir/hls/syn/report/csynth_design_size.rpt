@@ -6,59 +6,60 @@
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 | Phase         | Step                        | Instructions | Description                                                                            |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
-| Compile/Link  |                             | 65,659       | After all functions are compiled and linked into a single design                       |
+| Compile/Link  |                             | 67,762       | After all functions are compiled and linked into a single design                       |
 |               |                             |              |                                                                                        |
 | Unroll/Inline |                             |              | After user unroll and inline pragmas are applied                                       |
-|               | (1) unroll                  |  7,265       | user unroll pragmas are applied                                                        |
-|               | (2) simplification          |  6,143       | simplification of applied user unroll pragmas                                          |
-|               | (3) inline                  |  6,102       | user inline pragmas are applied                                                        |
-|               | (4) simplification          |  6,102       | simplification of applied user inline pragmas                                          |
+|               | (1) unroll                  |  9,337       | user unroll pragmas are applied                                                        |
+|               | (2) simplification          |  7,173       | simplification of applied user unroll pragmas                                          |
+|               | (3) inline                  |  7,086       | user inline pragmas are applied                                                        |
+|               | (4) simplification          |  7,086       | simplification of applied user inline pragmas                                          |
 |               |                             |              |                                                                                        |
 | Array/Struct  |                             |              | After user array partition and struct aggregate/disaggregate pragmas are applied       |
-|               | (1) array partition         |  6,269       | user array partition pragmas are applied                                               |
-|               | (2) simplification          |  6,188       | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
-|               | (3) aggregate/disaggregate  |  6,188       | user struct aggregate/disaggregate pragmas are applied                                 |
-|               | (4) array reshape           |  6,188       | apply array reshape pragmas                                                            |
-|               | (5) access patterns         |  6,191       | array access pattern optmizations                                                      |
+|               | (1) array partition         |  7,253       | user array partition pragmas are applied                                               |
+|               | (2) simplification          |  7,172       | simplification of applied user array partition & struct aggregate/disaggregate pragmas |
+|               | (3) aggregate/disaggregate  |  7,172       | user struct aggregate/disaggregate pragmas are applied                                 |
+|               | (4) array reshape           |  7,172       | apply array reshape pragmas                                                            |
+|               | (5) access patterns         |  7,177       | array access pattern optmizations                                                      |
 |               |                             |              |                                                                                        |
 | Performance   |                             |              | After transformations are applied to meet performance pragma targets                   |
-|               | (1) loop simplification     |  5,093       | loop and instruction simplification                                                    |
-|               | (2) parallelization         |  5,093       | loops are unrolled or pipelined to meet performance targets                            |
-|               | (3) array partition         |  5,093       | arrays are partitioned to meet performance targets                                     |
-|               | (4) simplification          |  5,093       | simplification of design after performance transformations                             |
+|               | (1) loop simplification     |  6,079       | loop and instruction simplification                                                    |
+|               | (2) parallelization         |  6,079       | loops are unrolled or pipelined to meet performance targets                            |
+|               | (3) array partition         |  6,079       | arrays are partitioned to meet performance targets                                     |
+|               | (4) simplification          |  6,079       | simplification of design after performance transformations                             |
 |               |                             |              |                                                                                        |
 | HW Transforms |                             |              | After hardware transfomations                                                          |
-|               | (1) lowering                |  5,103       | initial conversion to HW specific instructions                                         |
-|               | (2) optimizations           |  4,750       | high level synthesis optimizations                                                     |
+|               | (1) lowering                |  6,096       | initial conversion to HW specific instructions                                         |
+|               | (2) optimizations           |  5,742       | high level synthesis optimizations                                                     |
 +---------------+-----------------------------+--------------+----------------------------------------------------------------------------------------+
 
 * Instructions per Function for each Compilation Phase
-+-----------------+---------------+--------------+---------------+--------------+-------------+---------------+
-| Function        | Location      | Compile/Link | Unroll/Inline | Array/Struct | Performance | HW Transforms |
-+-----------------+---------------+--------------+---------------+--------------+-------------+---------------+
-| + IDCT2         | IDCT2.cpp:315 | 65,659       | 6,102         | 6,191        | 5,093       | 4,750         |
-|  + IDCT2B64     | IDCT2.cpp:194 | 31,122       | 3,611         | 3,260        | 3,010       | 3,016         |
-|   + IDCT2B32    | IDCT2.cpp:124 | 16,569       | 1,100         |  962         |  840        |  845          |
-|    + IDCT2B16   | IDCT2.cpp:80  | 9,296        |  379          |  309         |  251        |  255          |
-|     + IDCT2B8   | IDCT2.cpp:49  | 5,663        |  141          |  107         |   81        |   84          |
-|      + IDCT2B4  | IDCT2.cpp:26  | 1,629        |   51          |   37         |   27        |   29          |
-|         IDCT2B2 | IDCT2.cpp:13  |   365        |   11          |    9         |    7        |    8          |
-|  + IDCT2B32     | IDCT2.cpp:124 | 16,569       | 1,100         |  962         |  840        |  845          |
-|   + IDCT2B16    | IDCT2.cpp:80  | 9,296        |  379          |  309         |  251        |  255          |
-|    + IDCT2B8    | IDCT2.cpp:49  | 5,663        |  141          |  107         |   81        |   84          |
-|     + IDCT2B4   | IDCT2.cpp:26  | 1,629        |   51          |   37         |   27        |   29          |
-|        IDCT2B2  | IDCT2.cpp:13  |   365        |   11          |    9         |    7        |    8          |
-|  + IDCT2B16     | IDCT2.cpp:80  | 9,296        |  379          |  309         |  251        |  255          |
-|   + IDCT2B8     | IDCT2.cpp:49  | 5,663        |  141          |  107         |   81        |   84          |
-|    + IDCT2B4    | IDCT2.cpp:26  | 1,629        |   51          |   37         |   27        |   29          |
-|       IDCT2B2   | IDCT2.cpp:13  |   365        |   11          |    9         |    7        |    8          |
-|  + IDCT2B8      | IDCT2.cpp:49  | 5,663        |  141          |  107         |   81        |   84          |
-|   + IDCT2B4     | IDCT2.cpp:26  | 1,629        |   51          |   37         |   27        |   29          |
-|      IDCT2B2    | IDCT2.cpp:13  |   365        |   11          |    9         |    7        |    8          |
-|  + IDCT2B4      | IDCT2.cpp:26  | 1,629        |   51          |   37         |   27        |   29          |
-|     IDCT2B2     | IDCT2.cpp:13  |   365        |   11          |    9         |    7        |    8          |
-|    IDCT2B2      | IDCT2.cpp:13  |   365        |   11          |    9         |    7        |    8          |
-+-----------------+---------------+--------------+---------------+--------------+-------------+---------------+
++-----------------+---------------+-----------------+---------------+--------------+-------------+---------------+
+| Function        | Location      | Compile/Link    | Unroll/Inline | Array/Struct | Performance | HW Transforms |
++-----------------+---------------+-----------------+---------------+--------------+-------------+---------------+
+| + IDCT2         | IDCT2.cpp:315 | 67,762          | 7,086         | 7,177        | 6,079       | 5,742         |
+|  + IDCT2B64     | IDCT2.cpp:194 | 31,122          | 3,611         | 3,260        | 3,010       | 3,016         |
+|   + IDCT2B32    | IDCT2.cpp:124 | 16,569          | 1,100         |  962         |  840        |  845          |
+|    + IDCT2B16   | IDCT2.cpp:80  | 9,296           |  379          |  309         |  251        |  255          |
+|     + IDCT2B8   | IDCT2.cpp:49  | 5,663           |  141          |  107         |   81        |   84          |
+|      + IDCT2B4  | IDCT2.cpp:26  | 1,629           |   51          |   37         |   27        |   29          |
+|         IDCT2B2 | IDCT2.cpp:13  |   365           |   11          |    9         |    7        |    8          |
+|    CLIP3        | IDCT2.cpp:6   |   371 (7 calls) |               |              |             |               |
+|  + IDCT2B32     | IDCT2.cpp:124 | 16,569          | 1,100         |  962         |  840        |  845          |
+|   + IDCT2B16    | IDCT2.cpp:80  | 9,296           |  379          |  309         |  251        |  255          |
+|    + IDCT2B8    | IDCT2.cpp:49  | 5,663           |  141          |  107         |   81        |   84          |
+|     + IDCT2B4   | IDCT2.cpp:26  | 1,629           |   51          |   37         |   27        |   29          |
+|        IDCT2B2  | IDCT2.cpp:13  |   365           |   11          |    9         |    7        |    8          |
+|  + IDCT2B16     | IDCT2.cpp:80  | 9,296           |  379          |  309         |  251        |  255          |
+|   + IDCT2B8     | IDCT2.cpp:49  | 5,663           |  141          |  107         |   81        |   84          |
+|    + IDCT2B4    | IDCT2.cpp:26  | 1,629           |   51          |   37         |   27        |   29          |
+|       IDCT2B2   | IDCT2.cpp:13  |   365           |   11          |    9         |    7        |    8          |
+|  + IDCT2B8      | IDCT2.cpp:49  | 5,663           |  141          |  107         |   81        |   84          |
+|   + IDCT2B4     | IDCT2.cpp:26  | 1,629           |   51          |   37         |   27        |   29          |
+|      IDCT2B2    | IDCT2.cpp:13  |   365           |   11          |    9         |    7        |    8          |
+|  + IDCT2B4      | IDCT2.cpp:26  | 1,629           |   51          |   37         |   27        |   29          |
+|     IDCT2B2     | IDCT2.cpp:13  |   365           |   11          |    9         |    7        |    8          |
+|    IDCT2B2      | IDCT2.cpp:13  |   365           |   11          |    9         |    7        |    8          |
++-----------------+---------------+-----------------+---------------+--------------+-------------+---------------+
 
 * Design Size Message Settings
 +---------------------------------------------+--------+------------------------------------------------------------------+

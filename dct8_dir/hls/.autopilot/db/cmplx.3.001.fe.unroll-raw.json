@@ -1,0 +1,82 @@
+{
+  "0": {
+    "basicblocks": 26,
+    "calls": "4 2 3 1",
+    "file": "IDCT8.cpp",
+    "fileloc": 245,
+    "instructions": 494,
+    "loads": {
+      "L": 60,
+      "T": 1
+    },
+    "name": "IDCT8",
+    "stores": {
+      "L": 60,
+      "T": 1
+    },
+    "total_instructions": 1356
+  },
+  "1": {
+    "basicblocks": 36,
+    "calls": "",
+    "file": "IDCT8.cpp",
+    "fileloc": 92,
+    "instructions": 170,
+    "loads": {
+      "L": 10
+    },
+    "name": "IDCT8B4",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 170
+  },
+  "2": {
+    "basicblocks": 47,
+    "calls": "",
+    "file": "IDCT8.cpp",
+    "fileloc": 117,
+    "instructions": 204,
+    "loads": {
+      "G": 16,
+      "L": 16
+    },
+    "name": "IDCT8B16",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 204
+  },
+  "3": {
+    "basicblocks": 31,
+    "calls": "",
+    "file": "IDCT8.cpp",
+    "fileloc": 113,
+    "instructions": 124,
+    "loads": {
+      "G": 8,
+      "L": 8
+    },
+    "name": "IDCT8B8",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 124
+  },
+  "4": {
+    "basicblocks": 79,
+    "calls": "",
+    "file": "IDCT8.cpp",
+    "fileloc": 163,
+    "instructions": 364,
+    "loads": {
+      "G": 32,
+      "L": 32
+    },
+    "name": "IDCT8B32",
+    "stores": {
+      "L": 1
+    },
+    "total_instructions": 364
+  }
+}
