@@ -1,0 +1,16 @@
+IDCT8/IDCT8.csim_cu.a(IDCT8.o): In function `CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)':
+/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp:6: multiple definition of `CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+IDST7/IDST7.csim_cu.a(IDST7.o):/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp:6: first defined here
+IDCT8/IDCT8.csim_cu.a(IDCT8.o): In function `INV_MATMUL_8(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [8])':
+/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp:14: multiple definition of `INV_MATMUL_8(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [8])'
+IDST7/IDST7.csim_cu.a(IDST7.o):/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp:14: first defined here
+IDCT8/IDCT8.csim_cu.a(IDCT8.o): In function `INV_MATMUL_16(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [16])':
+/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp:40: multiple definition of `INV_MATMUL_16(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [16])'
+IDST7/IDST7.csim_cu.a(IDST7.o):/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp:40: first defined here
+IDCT8/IDCT8.csim_cu.a(IDCT8.o): In function `INV_MATMUL_32(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [32])':
+/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp:67: multiple definition of `INV_MATMUL_32(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [32])'
+IDST7/IDST7.csim_cu.a(IDST7.o):/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp:67: first defined here
+IDCT2/IDCT2.csim_cu.a(IDCT2.o): In function `CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)':
+/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT2/IDCT2/cpu_sources/IDCT2.cpp:6: multiple definition of `CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+IDST7/IDST7.csim_cu.a(IDST7.o):/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp:6: first defined here
+collect2: error: ld returned 1 exit status

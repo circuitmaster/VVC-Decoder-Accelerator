@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="IDCT8" dir="">
+  <FileSets>
+    <FileSet Name="kernel_IDCT8" Type="DesignSrcs">
+      <File Path="/home/emre24/Desktop/vvc_proj_kernels/src/IDCT8.cpp"/>
+      <Config/>
+    </FileSet>
+  </FileSets>
+  <Runs/>
+</project>

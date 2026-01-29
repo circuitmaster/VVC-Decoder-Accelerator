@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="IDST7" dir="">
+  <FileSets>
+    <FileSet Name="kernel_IDST7" Type="DesignSrcs">
+      <File Path="/home/emre24/Desktop/vvc_proj_kernels/src/IDST7.cpp"/>
+      <Config/>
+    </FileSet>
+  </FileSets>
+  <Runs/>
+</project>

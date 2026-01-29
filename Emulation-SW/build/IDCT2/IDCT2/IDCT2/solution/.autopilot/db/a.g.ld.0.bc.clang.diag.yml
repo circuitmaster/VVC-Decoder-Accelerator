@@ -1,0 +1,1351 @@
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 458, Column: 38 }
+Function:        IDCT2
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          IDCT2
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 315, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 439, Column: 38 }
+Function:        IDCT2
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          IDCT2
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 315, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 420, Column: 38 }
+Function:        IDCT2
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          IDCT2
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 315, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 401, Column: 38 }
+Function:        IDCT2
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          IDCT2
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 315, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 382, Column: 38 }
+Function:        IDCT2
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          IDCT2
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 315, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 363, Column: 39 }
+Function:        IDCT2
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          IDCT2
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 315, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 358, Column: 38 }
+Function:        IDCT2
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          IDCT2
+    DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                       Line: 315, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 444, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 445, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 449, Column: 2 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 456, Column: 13 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 425, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 426, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 430, Column: 2 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 437, Column: 13 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 406, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 407, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 411, Column: 2 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 418, Column: 13 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 387, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 388, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 392, Column: 2 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 399, Column: 13 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 368, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 369, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 373, Column: 2 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 380, Column: 13 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 339, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 340, Column: 24 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 344, Column: 2 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 349, Column: 13 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 356, Column: 13 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 361, Column: 13 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 241, Column: 5 }
+Function:        _Z8IDCT2B64P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 202, Column: 13 }
+Function:        _Z8IDCT2B64P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 198, Column: 16 }
+Function:        _Z8IDCT2B64P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 197, Column: 13 }
+Function:        _Z8IDCT2B64P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 154, Column: 5 }
+Function:        _Z8IDCT2B32P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 132, Column: 13 }
+Function:        _Z8IDCT2B32P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 128, Column: 16 }
+Function:        _Z8IDCT2B32P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 127, Column: 13 }
+Function:        _Z8IDCT2B32P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 101, Column: 5 }
+Function:        _Z8IDCT2B16P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 88, Column: 13 }
+Function:        _Z8IDCT2B16P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 84, Column: 16 }
+Function:        _Z8IDCT2B16P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 83, Column: 13 }
+Function:        _Z8IDCT2B16P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 57, Column: 13 }
+Function:        _Z7IDCT2B8P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 53, Column: 16 }
+Function:        _Z7IDCT2B8P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 52, Column: 13 }
+Function:        _Z7IDCT2B8P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 34, Column: 13 }
+Function:        _Z7IDCT2B4P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 30, Column: 16 }
+Function:        _Z7IDCT2B4P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 29, Column: 13 }
+Function:        _Z7IDCT2B4P6ap_intILi32EES1_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        anonymous
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:444:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:445:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:449:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:456:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:425:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:426:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:430:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:437:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:406:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:407:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:411:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:418:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:387:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:388:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:392:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:399:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:368:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:369:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:373:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:380:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:339:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '64'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:340:24'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '64'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:344:2'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:349:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:356:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:361:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 194, Column: 0 }
+Function:        _Z8IDCT2B64P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:241:5'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B64
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 194, Column: 0 }
+Function:        _Z8IDCT2B64P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:202:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B64
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 194, Column: 0 }
+Function:        _Z8IDCT2B64P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:198:16'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B64
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 194, Column: 0 }
+Function:        _Z8IDCT2B64P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:197:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B64
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 124, Column: 0 }
+Function:        _Z8IDCT2B32P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:154:5'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B32
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 124, Column: 0 }
+Function:        _Z8IDCT2B32P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:132:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B32
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 124, Column: 0 }
+Function:        _Z8IDCT2B32P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:128:16'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B32
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 124, Column: 0 }
+Function:        _Z8IDCT2B32P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:127:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B32
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 80, Column: 0 }
+Function:        _Z8IDCT2B16P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:101:5'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B16
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 80, Column: 0 }
+Function:        _Z8IDCT2B16P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:88:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B16
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 80, Column: 0 }
+Function:        _Z8IDCT2B16P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:84:16'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B16
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 80, Column: 0 }
+Function:        _Z8IDCT2B16P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:83:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B16
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 49, Column: 0 }
+Function:        _Z7IDCT2B8P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:57:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B8
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 49, Column: 0 }
+Function:        _Z7IDCT2B8P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:53:16'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B8
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 49, Column: 0 }
+Function:        _Z7IDCT2B8P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:52:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B8
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 26, Column: 0 }
+Function:        _Z7IDCT2B4P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:34:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B4
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 26, Column: 0 }
+Function:        _Z7IDCT2B4P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:30:16'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B4
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: /home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp, 
+                   Line: 26, Column: 0 }
+Function:        _Z7IDCT2B4P6ap_intILi32EES1_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        anonymous
+  - String:          ''' ('
+  - LoopLoc:         '/home/emre24/Desktop/vvc_proj_kernels/src/IDCT2.cpp:29:13'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2B4
+  - String:          ''' completely with a factor of '
+  - Factor:          '2'
+...

@@ -1,0 +1,1 @@
+/tools/Xilinx/Vitis/2022.2/bin/v++ --target sw_emu --link --config vvc_decoder-link.cfg -ovvc_decoder.xclbin ../Emulation-SW/build/idct2.xo ../Emulation-SW/build/idct8.xo ../Emulation-SW/build/idst7.xo

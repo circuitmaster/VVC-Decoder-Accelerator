@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="link" dir="">
+  <FileSets>
+    <FileSet Name="kernel_IDCT2" Type="DesignSrcs">
+      <File Path="/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT2/IDCT2/cpu_sources/IDCT2.cpp"/>
+      <Config/>
+    </FileSet>
+    <FileSet Name="kernel_IDCT8" Type="DesignSrcs">
+      <File Path="/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp"/>
+      <Config/>
+    </FileSet>
+    <FileSet Name="kernel_IDST7" Type="DesignSrcs">
+      <File Path="/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp"/>
+      <Config/>
+    </FileSet>
+  </FileSets>
+  <Runs/>
+</project>

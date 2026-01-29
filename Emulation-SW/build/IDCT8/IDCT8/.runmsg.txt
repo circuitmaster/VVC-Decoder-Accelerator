@@ -1,0 +1,2 @@
+performing high-level synthesis for kernel: IDCT8
+Log file: /home/emre24/Desktop/vvc_proj_kernels/Emulation-SW/build/IDCT8/IDCT8/vitis_hls.log

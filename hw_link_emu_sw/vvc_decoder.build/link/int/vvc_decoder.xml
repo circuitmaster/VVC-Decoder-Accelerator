@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="vvc_decoder">
+  <platform vendor="xilinx" boardid="u2" name="gen3x4_xdma_gc_2" featureRomTime="0">
+    <version major="202110" minor="1"/>
+    <description/>
+    <board name="xilinx.com:u2:1.0" vendor="xilinx.com" fpga="xcku15p-ffva1156-2LV-e">
+      <interfaces>
+        <interface id="int1" name="PCIe" type="gen3x4"/>
+      </interfaces>
+      <memories>
+        <memory name="mem0" type="ddr4" size="4GB"/>
+      </memories>
+      <images>
+        <image name="u2_image.jpg" type="HDPI"/>
+        <image name="" type="MDPI"/>
+        <image name="" type="LDPI"/>
+      </images>
+      <id>
+        <vendor/>
+        <device/>
+        <subsystem/>
+      </id>
+    </board>
+    <build_flow/>
+    <host architecture="x86_64"/>
+    <device name="fpga0" fpgaDevice="kintexuplus:xcku15p:ffva1156:-2LV:e" addrWidth="0">
+      <core name="OCL_REGION_0" target="csim" type="clc_region" clockFreq="0MHz" numComputeUnits="60">
+        <kernel name="IDST7" language="c" vlnv="xilinx.com:hls:IDST7:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" interrupt="true" hwControlProtocol="ap_ctrl_chain" countedAutoRestart="0" deadlockDetection="local" mailbox="none" swReset="false">
+          <port name="M_AXI_GMEM0" mode="master" range="0xFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="M_AXI_GMEM1" mode="master" range="0xFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="S_AXI_CONTROL" mode="slave" range="0x58" dataWidth="32" portType="addressable" base="0x0"/>
+          <arg name="in_r" addressQualifier="1" id="0" port="M_AXI_GMEM0" size="0x8" offset="0x10" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="out_r" addressQualifier="1" id="1" port="M_AXI_GMEM1" size="0x8" offset="0x1C" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="block_size" addressQualifier="0" id="2" port="S_AXI_CONTROL" size="0x4" offset="0x28" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="sIn" addressQualifier="0" id="3" port="S_AXI_CONTROL" size="0x4" offset="0x30" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="size" addressQualifier="0" id="4" port="S_AXI_CONTROL" size="0x4" offset="0x38" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="shift" addressQualifier="0" id="5" port="S_AXI_CONTROL" size="0x4" offset="0x40" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="oMin" addressQualifier="0" id="6" port="S_AXI_CONTROL" size="0x4" offset="0x48" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="oMax" addressQualifier="0" id="7" port="S_AXI_CONTROL" size="0x4" offset="0x50" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <compileWorkGroupSize x="1" y="1" z="1"/>
+          <maxWorkGroupSize x="1" y="1" z="1"/>
+          <string_table/>
+          <instance name="IDST7_1">
+            <addrRemap base="0x00000000" port="S_AXI_CONTROL"/>
+          </instance>
+        </kernel>
+        <kernel name="IDCT8" language="c" vlnv="xilinx.com:hls:IDCT8:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" interrupt="true" hwControlProtocol="ap_ctrl_chain" countedAutoRestart="0" deadlockDetection="local" mailbox="none" swReset="false">
+          <port name="M_AXI_GMEM0" mode="master" range="0xFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="M_AXI_GMEM1" mode="master" range="0xFFFFFFFF" dataWidth="512" portType="addressable" base="0x0"/>
+          <port name="S_AXI_CONTROL" mode="slave" range="0x58" dataWidth="32" portType="addressable" base="0x0"/>
+          <arg name="in_r" addressQualifier="1" id="0" port="M_AXI_GMEM0" size="0x8" offset="0x10" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="out_r" addressQualifier="1" id="1" port="M_AXI_GMEM1" size="0x8" offset="0x1C" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="block_size" addressQualifier="0" id="2" port="S_AXI_CONTROL" size="0x4" offset="0x28" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="sIn" addressQualifier="0" id="3" port="S_AXI_CONTROL" size="0x4" offset="0x30" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="size" addressQualifier="0" id="4" port="S_AXI_CONTROL" size="0x4" offset="0x38" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="shift" addressQualifier="0" id="5" port="S_AXI_CONTROL" size="0x4" offset="0x40" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="oMin" addressQualifier="0" id="6" port="S_AXI_CONTROL" size="0x4" offset="0x48" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="oMax" addressQualifier="0" id="7" port="S_AXI_CONTROL" size="0x4" offset="0x50" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <compileWorkGroupSize x="1" y="1" z="1"/>
+          <maxWorkGroupSize x="1" y="1" z="1"/>
+          <string_table/>
+          <instance name="IDCT8_1">
+            <addrRemap base="0x00010000" port="S_AXI_CONTROL"/>
+          </instance>
+        </kernel>
+        <kernel name="IDCT2" language="c" vlnv="xilinx.com:hls:IDCT2:1.0" preferredWorkGroupSizeMultiple="0" workGroupSize="1" debug="false" interrupt="true" hwControlProtocol="ap_ctrl_chain" countedAutoRestart="0" deadlockDetection="local" mailbox="none" swReset="false">
+          <port name="M_AXI_GMEM0" mode="master" range="0xFFFFFFFF" dataWidth="1024" portType="addressable" base="0x0"/>
+          <port name="M_AXI_GMEM1" mode="master" range="0xFFFFFFFF" dataWidth="1024" portType="addressable" base="0x0"/>
+          <port name="S_AXI_CONTROL" mode="slave" range="0x68" dataWidth="32" portType="addressable" base="0x0"/>
+          <arg name="in_r" addressQualifier="1" id="0" port="M_AXI_GMEM0" size="0x8" offset="0x10" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="in2" addressQualifier="1" id="1" port="M_AXI_GMEM1" size="0x8" offset="0x1C" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="out_r" addressQualifier="1" id="2" port="M_AXI_GMEM0" size="0x8" offset="0x28" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="out2" addressQualifier="1" id="3" port="M_AXI_GMEM1" size="0x8" offset="0x34" hostOffset="0x0" hostSize="0x8" type="void*"/>
+          <arg name="block_size" addressQualifier="0" id="4" port="S_AXI_CONTROL" size="0x4" offset="0x40" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="size" addressQualifier="0" id="5" port="S_AXI_CONTROL" size="0x4" offset="0x48" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="shift" addressQualifier="0" id="6" port="S_AXI_CONTROL" size="0x4" offset="0x50" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="outputMinimum" addressQualifier="0" id="7" port="S_AXI_CONTROL" size="0x4" offset="0x58" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <arg name="outputMaximum" addressQualifier="0" id="8" port="S_AXI_CONTROL" size="0x4" offset="0x60" hostOffset="0x0" hostSize="0x4" type="unsigned int"/>
+          <compileWorkGroupSize x="1" y="1" z="1"/>
+          <maxWorkGroupSize x="1" y="1" z="1"/>
+          <string_table/>
+          <instance name="IDCT2_1">
+            <addrRemap base="0x00020000" port="S_AXI_CONTROL"/>
+          </instance>
+        </kernel>
+      </core>
+    </device>
+  </platform>
+</project>

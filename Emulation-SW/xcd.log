@@ -1,0 +1,99 @@
+Wed Jan 21 16:11:27 2026: Running xcd server. This server was built by gradle.
+Wed Jan 21 16:11:27 2026: Server was asked to start on port: '41289'
+Wed Jan 21 16:11:27 2026: Server is using token UUID: '4ff08501-4a04-4609-af84-2b55cce41a27'
+Wed Jan 21 16:11:27 2026: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Wed Jan 21 16:11:27 2026: Attempting to start server on port '41289'
+Wed Jan 21 16:11:27 2026: XCD main fifo: created main fifo '/tmp/xcdmain4ff08501-4a04-4609-af84-2b55cce41a27', fd read = 14
+Wed Jan 21 16:11:27 2026: Running Dispatch Server
+Wed Jan 21 16:11:27 2026: Version 2.2.0
+Wed Jan 21 16:11:37 2026: Dispatch Server: Accepted socket connection from client
+Wed Jan 21 16:11:37 2026: Starting Socket connection
+Wed Jan 21 16:11:37 2026: EXCHANGE_TOKEN received, server token: 4ff08501-4a04-4609-af84-2b55cce41a27, passed token: 4ff08501-4a04-4609-af84-2b55cce41a27
+Wed Jan 21 16:11:37 2026: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Wed Jan 21 16:11:37 2026: SESSION_MGR: creating session with session uuid: '550904e6-99a2-49c2-9abc-4d539cf16971' and name 'IDCT2'
+Wed Jan 21 16:11:37 2026: KERNEL_SVC: creating session with uuid: '550904e6-99a2-49c2-9abc-4d539cf16971' and name 'IDCT2'
+Wed Jan 21 16:11:37 2026: GUIDANCE_SMGR: creating guidance session with uuid: '550904e6-99a2-49c2-9abc-4d539cf16971' and name 'IDCT2'
+Wed Jan 21 16:11:37 2026: SYSTEM_DIAGRAM: creating session with uuid: '550904e6-99a2-49c2-9abc-4d539cf16971' and name 'IDCT2'
+Wed Jan 21 16:11:45 2026: Dispatch Server: Accepted socket connection from client
+Wed Jan 21 16:11:45 2026: Starting Socket connection
+Wed Jan 21 16:11:58 2026: SESSION_MGR: closing session for UUID '550904e6-99a2-49c2-9abc-4d539cf16971' with name 'IDCT2'
+Wed Jan 21 16:11:58 2026: KERNEL_SVC: closing session for UUID '550904e6-99a2-49c2-9abc-4d539cf16971' with name 'IDCT2'
+Wed Jan 21 16:11:58 2026: GUIDANCE_SMGR: closing session for UUID '550904e6-99a2-49c2-9abc-4d539cf16971' with name 'IDCT2'
+Wed Jan 21 16:11:58 2026: SYSTEM_DIAGRAM: closing session for UUID '550904e6-99a2-49c2-9abc-4d539cf16971' with name 'IDCT2'
+Wed Jan 21 16:11:58 2026: STOP_SERVER received, server token: 4ff08501-4a04-4609-af84-2b55cce41a27, passed token: 4ff08501-4a04-4609-af84-2b55cce41a27
+Wed Jan 21 16:11:58 2026: Socket received request to stop server.
+Wed Jan 21 16:11:58 2026: Dispatch Server: do_await_stop
+Wed Jan 21 16:11:58 2026: Dispatch Server: stopping mainFifo_
+Wed Jan 21 16:11:58 2026: XCD main fifo: Stopping
+Wed Jan 21 16:11:58 2026: XCD main fifo: do_read error code: Operation canceled
+Wed Jan 21 16:11:58 2026: XCD main fifo: bytes_transferred: 0
+Wed Jan 21 16:11:58 2026: SERVER: destructor for server bound to port 41289
+Wed Jan 21 16:11:58 2026: XCD main fifo: Good unlink of /tmp/xcdmain4ff08501-4a04-4609-af84-2b55cce41a27
+Wed Jan 21 16:11:58 2026: Server exiting with status 0.
+Wed Jan 21 16:11:58 2026: Closing log file.
+Wed Jan 21 16:24:40 2026: Running xcd server. This server was built by gradle.
+Wed Jan 21 16:24:40 2026: Server was asked to start on port: '43901'
+Wed Jan 21 16:24:40 2026: Server is using token UUID: '6fd9c09b-329a-4230-b9ab-a4e73e9afda2'
+Wed Jan 21 16:24:40 2026: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Wed Jan 21 16:24:40 2026: Attempting to start server on port '43901'
+Wed Jan 21 16:24:40 2026: XCD main fifo: created main fifo '/tmp/xcdmain6fd9c09b-329a-4230-b9ab-a4e73e9afda2', fd read = 14
+Wed Jan 21 16:24:40 2026: Running Dispatch Server
+Wed Jan 21 16:24:40 2026: Version 2.2.0
+Wed Jan 21 16:24:49 2026: Dispatch Server: Accepted socket connection from client
+Wed Jan 21 16:24:49 2026: Starting Socket connection
+Wed Jan 21 16:24:49 2026: EXCHANGE_TOKEN received, server token: 6fd9c09b-329a-4230-b9ab-a4e73e9afda2, passed token: 6fd9c09b-329a-4230-b9ab-a4e73e9afda2
+Wed Jan 21 16:24:50 2026: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Wed Jan 21 16:24:50 2026: SESSION_MGR: creating session with session uuid: '1c9f59a0-51d0-447c-aa88-574d2d7aaf2b' and name 'IDCT8'
+Wed Jan 21 16:24:50 2026: KERNEL_SVC: creating session with uuid: '1c9f59a0-51d0-447c-aa88-574d2d7aaf2b' and name 'IDCT8'
+Wed Jan 21 16:24:50 2026: GUIDANCE_SMGR: creating guidance session with uuid: '1c9f59a0-51d0-447c-aa88-574d2d7aaf2b' and name 'IDCT8'
+Wed Jan 21 16:24:50 2026: SYSTEM_DIAGRAM: creating session with uuid: '1c9f59a0-51d0-447c-aa88-574d2d7aaf2b' and name 'IDCT8'
+Wed Jan 21 16:24:57 2026: Dispatch Server: Accepted socket connection from client
+Wed Jan 21 16:24:57 2026: Starting Socket connection
+Wed Jan 21 16:25:07 2026: SESSION_MGR: closing session for UUID '1c9f59a0-51d0-447c-aa88-574d2d7aaf2b' with name 'IDCT8'
+Wed Jan 21 16:25:07 2026: KERNEL_SVC: closing session for UUID '1c9f59a0-51d0-447c-aa88-574d2d7aaf2b' with name 'IDCT8'
+Wed Jan 21 16:25:07 2026: GUIDANCE_SMGR: closing session for UUID '1c9f59a0-51d0-447c-aa88-574d2d7aaf2b' with name 'IDCT8'
+Wed Jan 21 16:25:07 2026: SYSTEM_DIAGRAM: closing session for UUID '1c9f59a0-51d0-447c-aa88-574d2d7aaf2b' with name 'IDCT8'
+Wed Jan 21 16:25:07 2026: STOP_SERVER received, server token: 6fd9c09b-329a-4230-b9ab-a4e73e9afda2, passed token: 6fd9c09b-329a-4230-b9ab-a4e73e9afda2
+Wed Jan 21 16:25:07 2026: Socket received request to stop server.
+Wed Jan 21 16:25:07 2026: Dispatch Server: do_await_stop
+Wed Jan 21 16:25:07 2026: Dispatch Server: stopping mainFifo_
+Wed Jan 21 16:25:07 2026: XCD main fifo: Stopping
+Wed Jan 21 16:25:07 2026: XCD main fifo: do_read error code: Operation canceled
+Wed Jan 21 16:25:07 2026: XCD main fifo: bytes_transferred: 0
+Wed Jan 21 16:25:07 2026: SERVER: destructor for server bound to port 43901
+Wed Jan 21 16:25:07 2026: XCD main fifo: Good unlink of /tmp/xcdmain6fd9c09b-329a-4230-b9ab-a4e73e9afda2
+Wed Jan 21 16:25:07 2026: Server exiting with status 0.
+Wed Jan 21 16:25:07 2026: Closing log file.
+Wed Jan 21 16:25:14 2026: Running xcd server. This server was built by gradle.
+Wed Jan 21 16:25:14 2026: Server was asked to start on port: '38387'
+Wed Jan 21 16:25:14 2026: Server is using token UUID: '0c8dd007-a69c-4ab6-97da-569b55925259'
+Wed Jan 21 16:25:14 2026: SESSION_MGR: creating session with session uuid: '6d04a3e9-ade5-4ab9-8d63-1f78fcd2ec76' and name 'default'
+Wed Jan 21 16:25:14 2026: Attempting to start server on port '38387'
+Wed Jan 21 16:25:14 2026: XCD main fifo: created main fifo '/tmp/xcdmain0c8dd007-a69c-4ab6-97da-569b55925259', fd read = 14
+Wed Jan 21 16:25:14 2026: Running Dispatch Server
+Wed Jan 21 16:25:14 2026: Version 2.2.0
+Wed Jan 21 16:25:23 2026: Dispatch Server: Accepted socket connection from client
+Wed Jan 21 16:25:23 2026: Starting Socket connection
+Wed Jan 21 16:25:23 2026: EXCHANGE_TOKEN received, server token: 0c8dd007-a69c-4ab6-97da-569b55925259, passed token: 0c8dd007-a69c-4ab6-97da-569b55925259
+Wed Jan 21 16:25:24 2026: DISPATCH_HANDLER: Adding handler from function makeHandler in library libxv_system_diagram
+Wed Jan 21 16:25:24 2026: SESSION_MGR: creating session with session uuid: 'b2fd0cc9-2ca6-4442-b0dc-5199be1d8245' and name 'IDST7'
+Wed Jan 21 16:25:24 2026: KERNEL_SVC: creating session with uuid: 'b2fd0cc9-2ca6-4442-b0dc-5199be1d8245' and name 'IDST7'
+Wed Jan 21 16:25:24 2026: GUIDANCE_SMGR: creating guidance session with uuid: 'b2fd0cc9-2ca6-4442-b0dc-5199be1d8245' and name 'IDST7'
+Wed Jan 21 16:25:24 2026: SYSTEM_DIAGRAM: creating session with uuid: 'b2fd0cc9-2ca6-4442-b0dc-5199be1d8245' and name 'IDST7'
+Wed Jan 21 16:25:31 2026: Dispatch Server: Accepted socket connection from client
+Wed Jan 21 16:25:31 2026: Starting Socket connection
+Wed Jan 21 16:25:41 2026: SESSION_MGR: closing session for UUID 'b2fd0cc9-2ca6-4442-b0dc-5199be1d8245' with name 'IDST7'
+Wed Jan 21 16:25:41 2026: KERNEL_SVC: closing session for UUID 'b2fd0cc9-2ca6-4442-b0dc-5199be1d8245' with name 'IDST7'
+Wed Jan 21 16:25:41 2026: GUIDANCE_SMGR: closing session for UUID 'b2fd0cc9-2ca6-4442-b0dc-5199be1d8245' with name 'IDST7'
+Wed Jan 21 16:25:41 2026: SYSTEM_DIAGRAM: closing session for UUID 'b2fd0cc9-2ca6-4442-b0dc-5199be1d8245' with name 'IDST7'
+Wed Jan 21 16:25:41 2026: STOP_SERVER received, server token: 0c8dd007-a69c-4ab6-97da-569b55925259, passed token: 0c8dd007-a69c-4ab6-97da-569b55925259
+Wed Jan 21 16:25:41 2026: Socket received request to stop server.
+Wed Jan 21 16:25:41 2026: Dispatch Server: do_await_stop
+Wed Jan 21 16:25:41 2026: Dispatch Server: stopping mainFifo_
+Wed Jan 21 16:25:41 2026: XCD main fifo: Stopping
+Wed Jan 21 16:25:41 2026: XCD main fifo: do_read error code: Operation canceled
+Wed Jan 21 16:25:41 2026: XCD main fifo: bytes_transferred: 0
+Wed Jan 21 16:25:41 2026: SERVER: destructor for server bound to port 38387
+Wed Jan 21 16:25:41 2026: XCD main fifo: Good unlink of /tmp/xcdmain0c8dd007-a69c-4ab6-97da-569b55925259
+Wed Jan 21 16:25:41 2026: Server exiting with status 0.
+Wed Jan 21 16:25:41 2026: Closing log file.

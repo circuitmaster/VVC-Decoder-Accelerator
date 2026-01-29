@@ -7,6 +7,27 @@ Hardware/*.log
 # ignore ./Hardware/build/*
 Hardware/build/
 
+# ignore ./Emulation-SW/build/*
+Emulation-SW/build/
+
+# ignore ./Emulation-SW/*.log
+Emulation-SW/*.log
+
+# ignore ./hw_link_emu_sw/vvc_decoder.build/*
+hw_link_emu_sw/vvc_decoder.build/
+
+# ignore ./hw_link_emu_sw/*.log
+hw_link_emu_sw/*.log
+
+# ignore ./hw_link_emu_sw/*.mdb
+hw_link_emu_sw/*.mdb
+
+# ignore ./hw_link_emu_sw/*.xclbin
+hw_link_emu_sw/*.xclbin
+
+# ignore ./hw_link_emu_sw/.Xil/*
+hw_link_emu_sw/.Xil/
+
 # ignore ./vitis_analyzer*
 vitis_analyzer*
 
