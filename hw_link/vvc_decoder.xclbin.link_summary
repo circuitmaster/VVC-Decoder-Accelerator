@@ -1,0 +1,720 @@
+<ENTRY>
+{
+ "thisFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.xclbin.link_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Feb  3 22:31:19 2026",
+ "timestampMillis": "1770157879132",
+ "buildStep": {
+  "cmdId": "cbc7b03c-ef06-48f0-a142-9e5c7db145e8",
+  "name": "v++",
+  "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/link.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --target hw --link --config vvc_decoder-link.cfg -ovvc_decoder.xclbin ../Hardware/build/idct2.xo ../Hardware/build/idct8.xo ../Hardware/build/idst7.xo ",
+  "args": [
+   "--target",
+   "hw",
+   "--link",
+   "--config",
+   "vvc_decoder-link.cfg",
+   "-ovvc_decoder.xclbin",
+   "../Hardware/build/idct2.xo",
+   "../Hardware/build/idct8.xo",
+   "../Hardware/build/idst7.xo"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder-link.cfg",
+    "content": "platform=xilinx_u2_gen3x4_xdma_gc_2_202110_1\nsave-temps=1\nmessageDb=vvc_decoder.mdb\ntemp_dir=vvc_decoder.build\nreport_dir=vvc_decoder.build/reports\nlog_dir=vvc_decoder.build/logs\n\n[advanced]\nmisc=solution_name=link\n\n[connectivity]\nnk=IDCT2:1:IDCT2_1\n#nk=IDCT8:1:IDCT8_1\n#nk=IDST7:1:IDST7_1"
+   }
+  ],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:31:19 2026",
+ "timestampMillis": "1770157879133",
+ "status": {
+  "cmdId": "cbc7b03c-ef06-48f0-a142-9e5c7db145e8",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Tue Feb  3 22:31:22 2026",
+ "timestampMillis": "1770157882837",
+ "buildSummary": {
+  "hardwarePlatform": "xilinx_u2_gen3x4_xdma_gc_2_202110_1.xpfm",
+  "hardwareDsa": "hw.xsa",
+  "platformDirectory": "/opt/xilinx/platforms/xilinx_u2_gen3x4_xdma_gc_2_202110_1",
+  "runtime": "OpenCL",
+  "systemConfig": "Linux",
+  "flow": "BF_LINK",
+  "target": "TT_HW",
+  "binaryContainer": {
+   "base": {
+    "type": "BT_UKNOWN",
+    "name": "vvc_decoder",
+    "file": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.xclbin",
+    "reports": [],
+    "uuid": ""
+   },
+   "kernels": []
+  },
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "IDCT2",
+     "file": "/home/emre24/Desktop/vvc_proj_kernels/Hardware/build/idct2.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/IDCT2/IDCT2/cpu_sources/IDCT2.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "IDCT2_1"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   },
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "IDCT8",
+     "file": "/home/emre24/Desktop/vvc_proj_kernels/Hardware/build/idct8.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "IDCT8_1"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   },
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "IDST7",
+     "file": "/home/emre24/Desktop/vvc_proj_kernels/Hardware/build/idst7.xo",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [
+     "IDST7_1"
+    ],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "Vitis V++ Compiler Release 2022.2.2. SW Build 3716524 on 2023-02-17-15:43:22"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Feb  3 22:31:23 2026",
+ "timestampMillis": "1770157883074",
+ "buildStep": {
+  "cmdId": "824abf50-2228-4789-835b-2b6f4e2478e9",
+  "name": "system_link",
+  "logFile": "",
+  "commandLine": "system_link --xo /home/emre24/Desktop/vvc_proj_kernels/Hardware/build/idct2.xo --xo /home/emre24/Desktop/vvc_proj_kernels/Hardware/build/idct8.xo --xo /home/emre24/Desktop/vvc_proj_kernels/Hardware/build/idst7.xo -keep --config /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_u2_gen3x4_xdma_gc_2_202110_1/xilinx_u2_gen3x4_xdma_gc_2_202110_1.xpfm --target hw --output_dir /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int --temp_dir /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/sys_link",
+  "args": [
+   "--xo",
+   "/home/emre24/Desktop/vvc_proj_kernels/Hardware/build/idct2.xo",
+   "--xo",
+   "/home/emre24/Desktop/vvc_proj_kernels/Hardware/build/idct8.xo",
+   "--xo",
+   "/home/emre24/Desktop/vvc_proj_kernels/Hardware/build/idst7.xo",
+   "-keep",
+   "--config",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/syslinkConfig.ini",
+   "--xpfm",
+   "/opt/xilinx/platforms/xilinx_u2_gen3x4_xdma_gc_2_202110_1/xilinx_u2_gen3x4_xdma_gc_2_202110_1.xpfm",
+   "--target",
+   "hw",
+   "--output_dir",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int",
+   "--temp_dir",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/sys_link"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/syslinkConfig.ini",
+    "content": "nk=IDCT2:1:IDCT2_1\n\n"
+   }
+  ],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:31:23 2026",
+ "timestampMillis": "1770157883074",
+ "status": {
+  "cmdId": "824abf50-2228-4789-835b-2b6f4e2478e9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:31:38 2026",
+ "timestampMillis": "1770157898494",
+ "status": {
+  "cmdId": "824abf50-2228-4789-835b-2b6f4e2478e9",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Feb  3 22:31:38 2026",
+ "timestampMillis": "1770157898495",
+ "buildStep": {
+  "cmdId": "fb4c1a1c-3438-4e40-974c-ac4a3b5e86e5",
+  "name": "cf2sw",
+  "logFile": "",
+  "commandLine": "cf2sw -sdsl /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/sdsl.dat -rtd /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/cf2sw.rtd -nofilter /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/cf2sw_full.rtd -xclbin /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xclbin_orig.xml -o /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xclbin_orig.1.xml",
+  "args": [
+   "-sdsl",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/sdsl.dat",
+   "-rtd",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/cf2sw.rtd",
+   "-nofilter",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/cf2sw_full.rtd",
+   "-xclbin",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xclbin_orig.xml",
+   "-o",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xclbin_orig.1.xml"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:31:38 2026",
+ "timestampMillis": "1770157898495",
+ "status": {
+  "cmdId": "fb4c1a1c-3438-4e40-974c-ac4a3b5e86e5",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:31:42 2026",
+ "timestampMillis": "1770157902575",
+ "status": {
+  "cmdId": "fb4c1a1c-3438-4e40-974c-ac4a3b5e86e5",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Feb  3 22:31:42 2026",
+ "timestampMillis": "1770157902577",
+ "buildStep": {
+  "cmdId": "40b63a05-0f7d-4a95-ae13-63219cb1bd2f",
+  "name": "rtd2_system_diagram",
+  "logFile": "",
+  "commandLine": "rtd2SystemDiagram",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:31:42 2026",
+ "timestampMillis": "1770157902577",
+ "status": {
+  "cmdId": "40b63a05-0f7d-4a95-ae13-63219cb1bd2f",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Feb  3 22:31:42 2026",
+ "timestampMillis": "1770157902839",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/systemDiagramModel.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "SYSTEM_DIAGRAM",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:31:42 2026",
+ "timestampMillis": "1770157902840",
+ "status": {
+  "cmdId": "40b63a05-0f7d-4a95-ae13-63219cb1bd2f",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Feb  3 22:31:42 2026",
+ "timestampMillis": "1770157902842",
+ "buildStep": {
+  "cmdId": "9e2b6b46-095b-4014-8baf-494caebcafe9",
+  "name": "vpl",
+  "logFile": "",
+  "commandLine": "vpl -t hw -f xilinx_u2_gen3x4_xdma_gc_2_202110_1 -s --remote_ip_cache /home/emre24/Desktop/vvc_proj_kernels/hw_link/.ipcache --output_dir /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int --log_dir /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/logs/link --report_dir /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link --config /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/vplConfig.ini -k /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link --no-info --iprepo /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDCT8_1_0 --iprepo /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDST7_1_0 --iprepo /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDCT2_1_0 --messageDb /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/run_link/vpl.pb /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/dr.bd.tcl",
+  "args": [
+   "-t",
+   "hw",
+   "-f",
+   "xilinx_u2_gen3x4_xdma_gc_2_202110_1",
+   "-s",
+   "--remote_ip_cache",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/.ipcache",
+   "--output_dir",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int",
+   "--log_dir",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/logs/link",
+   "--report_dir",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link",
+   "--config",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/vplConfig.ini",
+   "-k",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/kernel_info.dat",
+   "--webtalk_flag",
+   "Vitis",
+   "--temp_dir",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link",
+   "--no-info",
+   "--iprepo",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDCT8_1_0",
+   "--iprepo",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDST7_1_0",
+   "--iprepo",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDCT2_1_0",
+   "--messageDb",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/run_link/vpl.pb",
+   "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/dr.bd.tcl"
+  ],
+  "iniFiles": [
+   {
+    "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/vplConfig.ini",
+    "content": "[advanced]\nmisc=report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\nmisc=report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\nparam=compiler.enablePerformanceTrace=1\nmisc=solution_name=link\nparam=compiler.vppCurrentWorkingDir=/home/emre24/Desktop/vvc_proj_kernels/hw_link\nmisc=BinaryName=vvc_decoder\n\n[connectivity]\nnk=IDCT2:1:IDCT2_1\nnk=IDCT8:1:IDCT8_1\nnk=IDST7:1:IDST7_1\n\n[vivado]\nprop=run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\n\n"
+   }
+  ],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/hw_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:31:42 2026",
+ "timestampMillis": "1770157902842",
+ "status": {
+  "cmdId": "9e2b6b46-095b-4014-8baf-494caebcafe9",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Feb  3 22:31:44 2026",
+ "timestampMillis": "1770157904252",
+ "buildStep": {
+  "cmdId": "b62156a1-a988-4580-99fc-e021717a36e4",
+  "name": "vpl",
+  "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/link.steps.log",
+  "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/vpl -t hw -f xilinx_u2_gen3x4_xdma_gc_2_202110_1 -s --remote_ip_cache /home/emre24/Desktop/vvc_proj_kernels/hw_link/.ipcache --output_dir /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int --log_dir /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/logs/link --report_dir /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link --config /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/vplConfig.ini -k /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link --no-info --iprepo /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDCT8_1_0 --iprepo /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDST7_1_0 --iprepo /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDCT2_1_0 --messageDb /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/run_link/vpl.pb /home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/dr.bd.tcl ",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:31:44 2026",
+ "timestampMillis": "1770157904253",
+ "status": {
+  "cmdId": "b62156a1-a988-4580-99fc-e021717a36e4",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_VivadoProject",
+ "dateTimestamp": "Tue Feb  3 22:31:48 2026",
+ "timestampMillis": "1770157908868",
+ "vivadoProject": {
+  "openDir": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/vivado/vpl",
+  "openScript": "openprj.tcl",
+  "relativeProject": "prj/prj.xpr"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "Tue Feb  3 22:31:48 2026",
+ "timestampMillis": "1770157908869",
+ "buildStep": {
+  "cmdId": "9515dae2-6da8-4549-a3d2-9b8a94e10a61",
+  "name": "vivado",
+  "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/vivado/vpl/vivado.log",
+  "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
+  "args": [
+   "-log",
+   "vivado.log",
+   "-applog",
+   " -m64",
+   "-messageDb",
+   "vivado.pb",
+   "-mode",
+   "batch",
+   "-source",
+   "vpl.tcl",
+   "-notrace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/run_link"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:31:48 2026",
+ "timestampMillis": "1770157908869",
+ "status": {
+  "cmdId": "9515dae2-6da8-4549-a3d2-9b8a94e10a61",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Tue Feb  3 22:32:43 2026",
+ "timestampMillis": "1770157963229",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/int/automation_summary_update_bd.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VITIS_DESIGN_FLOW",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Feb  3 22:49:50 2026",
+ "timestampMillis": "1770158990201",
+ "buildStep": {
+  "cmdId": "e58f3bd1-650b-4c08-a1aa-a9bcee1bef88",
+  "name": "vivado.impl",
+  "logFile": "",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/vivado/vpl"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:49:50 2026",
+ "timestampMillis": "1770158990201",
+ "status": {
+  "cmdId": "e58f3bd1-650b-4c08-a1aa-a9bcee1bef88",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Tue Feb  3 22:49:50 2026",
+ "timestampMillis": "1770158990201",
+ "buildStep": {
+  "cmdId": "cb8abcd5-8e34-4095-8fb6-a9e36c804cbf",
+  "name": "vivado.impl.impl_1",
+  "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/vivado/vpl/prj/prj.runs/impl_1/runme.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link/vivado/vpl/prj/prj.runs/impl_1"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Tue Feb  3 22:49:50 2026",
+ "timestampMillis": "1770158990202",
+ "status": {
+  "cmdId": "cb8abcd5-8e34-4095-8fb6-a9e36c804cbf",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256157",
+ "status": {
+  "cmdId": "9515dae2-6da8-4549-a3d2-9b8a94e10a61",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256490",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link/imp/impl_1_full_util_synthed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256491",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link/imp/impl_1_slr_util_placed.pb",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256491",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link/imp/impl_1_kernel_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256492",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link/imp/impl_1_slr_util_placed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_SLR_UTIL_PLACED",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256492",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link/imp/impl_1_kernel_util_synthed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256492",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link/imp/impl_1_kernel_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "KERNEL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256493",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link/imp/impl_1_kernel_util_placed.xutil",
+  "name": "",
+  "fileType": "XUTIL",
+  "reportType": "KERNEL_UTILIZATION_PLACEMENT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256493",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link/imp/impl_1_full_util_synthed.rpt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_UTILIZATION_SYNTHESIS",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256522",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link/syn/ulp_IDCT2_1_0_synth_1_ulp_IDCT2_1_0_utilization_synth.rpt",
+  "name": "IDCT2",
+  "fileType": "TEXT",
+  "reportType": "GLOBAL_REPORT_UTILIZATION",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256524",
+ "status": {
+  "cmdId": "b62156a1-a988-4580-99fc-e021717a36e4",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256538",
+ "status": {
+  "cmdId": "9e2b6b46-095b-4014-8baf-494caebcafe9",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256544",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/logs/optraceViewer.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "OPERATION_TRACE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256544",
+ "status": {
+  "cmdId": "cbc7b03c-ef06-48f0-a142-9e5c7db145e8",
+  "state": "CS_FAILED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256657",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/reports/link/link_guidance.html",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Wed Feb  4 00:17:36 2026",
+ "timestampMillis": "1770164256658",
+ "report": {
+  "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link/vvc_decoder.build/link_guidance.pb3",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

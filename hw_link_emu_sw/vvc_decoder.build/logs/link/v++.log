@@ -1,8 +1,8 @@
 INFO: [v++ 60-1306] Additional information associated with this v++ link can be found at:
 	Reports: /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/reports/link
 	Log files: /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/logs/link
-INFO: [v++ 60-1548] Creating build summary session with primary output /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.xclbin.link_summary, at Wed Jan 21 16:29:28 2026
-INFO: [v++ 60-1315] Creating rulecheck session with output '/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/reports/link/link_guidance.html', at Wed Jan 21 16:29:28 2026
+INFO: [v++ 60-1548] Creating build summary session with primary output /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.xclbin.link_summary, at Wed Jan 21 16:39:14 2026
+INFO: [v++ 60-1315] Creating rulecheck session with output '/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/reports/link/link_guidance.html', at Wed Jan 21 16:39:14 2026
 INFO: [v++ 60-895]   Target platform: /opt/xilinx/platforms/xilinx_u2_gen3x4_xdma_gc_2_202110_1/xilinx_u2_gen3x4_xdma_gc_2_202110_1.xpfm
 INFO: [v++ 60-1578]   This platform contains Xilinx Shell Archive '/opt/xilinx/platforms/xilinx_u2_gen3x4_xdma_gc_2_202110_1/hw/hw.xsa'
 INFO: [v++ 74-78] Compiler Version string: 2022.2

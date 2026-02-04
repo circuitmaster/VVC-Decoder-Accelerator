@@ -3,13 +3,13 @@
 #
 
 # compiler tools
-#XILINX_VITIS ?= /tools/Xilinx/Vitis/2022.2
-XILINX_VITIS ?= /tools/Xilinx/Vitis/2024.2
+XILINX_VITIS ?= /tools/Xilinx/Vitis/2022.2
+#XILINX_VITIS ?= /tools/Xilinx/Vitis/2024.2
 XILINX_XRT ?= /opt/xilinx/xrt
-#XILINX_VIVADO ?= /tools/Xilinx/Vivado/2022.2
-XILINX_VIVADO ?= /tools/Xilinx/Vivado/2024.2
-#XILINX_HLS ?= $(XILINX_VITIS)/Vivado_HLS
-XILINX_HLS ?= /tools/Xilinx/Vitis/Vitis_HLS
+XILINX_VIVADO ?= /tools/Xilinx/Vivado/2022.2
+#XILINX_VIVADO ?= /tools/Xilinx/Vivado/2024.2
+XILINX_HLS ?= $(XILINX_VITIS)/Vivado_HLS
+#XILINX_HLS ?= /tools/Xilinx/Vitis/Vitis_HLS
 
 VPP ?= ${XILINX_VITIS}/bin/v++
 RM = rm -f
@@ -58,17 +58,14 @@ nothing:
 build/idct2.xo: ../src/IDCT2.cpp dct-compile.cfg
 	-@mkdir -p $(@D)
 	-@$(RM) $@
-	$(VPP) $(VPP_OPTS) -c --mode hls --config dct-compile.cfg --work_dir ../dct2_dir/
-	vitis-run --mode hls --package --config dct-compile.cfg --work_dir ../dct2_dir/
+	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config dct-compile.cfg -o"$@" "$<"
 
-build/idct8.xo: ../src/IDCT8.cpp dct-compile.cfg
+build/idct8.xo: ../src/IDCT8.cpp dct8-compile.cfg
 	-@mkdir -p $(@D)
 	-@$(RM) $@
-	$(VPP) $(VPP_OPTS) -c --mode hls --config dct8-compile.cfg --work_dir ../dct8_dir/
-	vitis-run --mode hls --package --config dct8-compile.cfg --work_dir ../dct8_dir/
+	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config dct8-compile.cfg -o"$@" "$<"
 
-build/idst7.xo: ../src/IDST7.cpp dct-compile.cfg
+build/idst7.xo: ../src/IDST7.cpp dst7-compile.cfg
 	-@mkdir -p $(@D)
 	-@$(RM) $@
-	$(VPP) $(VPP_OPTS) -c --mode hls --config dst7-compile.cfg --work_dir ../idst7_dir/
-	vitis-run --mode hls --package --config dst7-compile.cfg --work_dir ../idst7_dir/
+	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config dst7-compile.cfg -o"$@" "$<"

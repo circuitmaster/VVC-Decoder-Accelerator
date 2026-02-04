@@ -28,5 +28,22 @@ hw_link_emu_sw/*.xclbin
 # ignore ./hw_link_emu_sw/.Xil/*
 hw_link_emu_sw/.Xil/
 
+# ignore ./hw_link/vvc_decoder.build/*
+hw_link/vvc_decoder.build/
+
+# ignore ./hw_link/*.log
+hw_link/*.log
+
+# ignore ./hw_link/*.mdb
+hw_link/*.mdb
+
+# ignore ./hw_link/*.xclbin
+hw_link/*.xclbin
+
+# ignore ./hw_link/.Xil/*
+hw_link/.Xil/
+
+hw_link/.ipcache/
+
 # ignore ./vitis_analyzer*
 vitis_analyzer*

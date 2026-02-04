@@ -114,8 +114,8 @@
     "time_stamp": "2023-02-17-15:43:22",
     "options": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++ --target sw_emu --link --config vvc_decoder-link.cfg -ovvc_decoder.xclbin ../Emulation-SW/build/idct2.xo ../Emulation-SW/build/idct8.xo ../Emulation-SW/build/idst7.xo ",
     "xclbin_name": "vvc_decoder",
-    "uuid": "275f6447-0ed8-4c21-b85f-b3fc9d922faf",
-    "link_uuid": "275f6447-0ed8-4c21-b85f-b3fc9d922faf",
+    "uuid": "212ec26c-c9bd-4853-9a32-0a84db1f1a84",
+    "link_uuid": "212ec26c-c9bd-4853-9a32-0a84db1f1a84",
     "package_uuid": "",
     "system_compile_flow": false
    },
