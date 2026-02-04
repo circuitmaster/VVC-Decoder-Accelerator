@@ -402,6 +402,137 @@ void IDCT2B64(ap_int<32> in1[32], ap_int<32> in2[32], ap_int<32> out1[32], ap_in
     ap_int<16> in31_f = in1[31] << 1;
     ap_int<8> in31_g = in1[31];
 
+
+    ap_int<16> in1_a_2 = in2[1] << 6;
+    ap_int<16> in1_b_2 = in2[1] << 5;
+    ap_int<16> in1_c_2 = in2[1] << 4;
+    ap_int<16> in1_d_2 = in2[1] << 3;
+    ap_int<16> in1_e_2 = in2[1] << 2;
+    ap_int<16> in1_f_2 = in2[1] << 1;
+    ap_int<8> in1_g_2 = in2[1];
+
+    ap_int<16> in3_a_2 = in2[3] << 6;
+    ap_int<16> in3_b_2 = in2[3] << 5;
+    ap_int<16> in3_c_2 = in2[3] << 4;
+    ap_int<16> in3_d_2 = in2[3] << 3;
+    ap_int<16> in3_e_2 = in2[3] << 2;
+    ap_int<16> in3_f_2 = in2[3] << 1;
+    ap_int<8> in3_g_2 = in2[3];
+
+    ap_int<16> in5_a_2 = in2[5] << 6;
+    ap_int<16> in5_b_2 = in2[5] << 5;
+    ap_int<16> in5_c_2 = in2[5] << 4;
+    ap_int<16> in5_d_2 = in2[5] << 3;
+    ap_int<16> in5_e_2 = in2[5] << 2;
+    ap_int<16> in5_f_2 = in2[5] << 1;
+    ap_int<8> in5_g_2 = in2[5];
+
+    ap_int<16> in7_a_2 = in2[7] << 6;
+    ap_int<16> in7_b_2 = in2[7] << 5;
+    ap_int<16> in7_c_2 = in2[7] << 4;
+    ap_int<16> in7_d_2 = in2[7] << 3;
+    ap_int<16> in7_e_2 = in2[7] << 2;
+    ap_int<16> in7_f_2 = in2[7] << 1;
+    ap_int<8> in7_g_2 = in2[7];
+
+    ap_int<16> in9_a_2 = in2[9] << 6;
+    ap_int<16> in9_b_2 = in2[9] << 5;
+    ap_int<16> in9_c_2 = in2[9] << 4;
+    ap_int<16> in9_d_2 = in2[9] << 3;
+    ap_int<16> in9_e_2 = in2[9] << 2;
+    ap_int<16> in9_f_2 = in2[9] << 1;
+    ap_int<8> in9_g_2 = in2[9];
+
+    ap_int<16> in11_a_2 = in2[11] << 6;
+    ap_int<16> in11_b_2 = in2[11] << 5;
+    ap_int<16> in11_c_2 = in2[11] << 4;
+    ap_int<16> in11_d_2 = in2[11] << 3;
+    ap_int<16> in11_e_2 = in2[11] << 2;
+    ap_int<16> in11_f_2 = in2[11] << 1;
+    ap_int<8> in11_g_2 = in2[11];
+
+    ap_int<16> in13_a_2 = in2[13] << 6;
+    ap_int<16> in13_b_2 = in2[13] << 5;
+    ap_int<16> in13_c_2 = in2[13] << 4;
+    ap_int<16> in13_d_2 = in2[13] << 3;
+    ap_int<16> in13_e_2 = in2[13] << 2;
+    ap_int<16> in13_f_2 = in2[13] << 1;
+    ap_int<8> in13_g_2 = in2[13];
+
+    ap_int<16> in15_a_2 = in2[15] << 6;
+    ap_int<16> in15_b_2 = in2[15] << 5;
+    ap_int<16> in15_c_2 = in2[15] << 4;
+    ap_int<16> in15_d_2 = in2[15] << 3;
+    ap_int<16> in15_e_2 = in2[15] << 2;
+    ap_int<16> in15_f_2 = in2[15] << 1;
+    ap_int<8> in15_g_2 = in2[15];
+
+    ap_int<16> in17_a_2 = in2[17] << 6;
+    ap_int<16> in17_b_2 = in2[17] << 5;
+    ap_int<16> in17_c_2 = in2[17] << 4;
+    ap_int<16> in17_d_2 = in2[17] << 3;
+    ap_int<16> in17_e_2 = in2[17] << 2;
+    ap_int<16> in17_f_2 = in2[17] << 1;
+    ap_int<8> in17_g_2 = in2[17];
+
+    ap_int<16> in19_a_2 = in2[19] << 6;
+    ap_int<16> in19_b_2 = in2[19] << 5;
+    ap_int<16> in19_c_2 = in2[19] << 4;
+    ap_int<16> in19_d_2 = in2[19] << 3;
+    ap_int<16> in19_e_2 = in2[19] << 2;
+    ap_int<16> in19_f_2 = in2[19] << 1;
+    ap_int<8> in19_g_2 = in2[19];
+
+    ap_int<16> in21_a_2 = in2[21] << 6;
+    ap_int<16> in21_b_2 = in2[21] << 5;
+    ap_int<16> in21_c_2 = in2[21] << 4;
+    ap_int<16> in21_d_2 = in2[21] << 3;
+    ap_int<16> in21_e_2 = in2[21] << 2;
+    ap_int<16> in21_f_2 = in2[21] << 1;
+    ap_int<8> in21_g_2 = in2[21];
+
+    ap_int<16> in23_a_2 = in2[23] << 6;
+    ap_int<16> in23_b_2 = in2[23] << 5;
+    ap_int<16> in23_c_2 = in2[23] << 4;
+    ap_int<16> in23_d_2 = in2[23] << 3;
+    ap_int<16> in23_e_2 = in2[23] << 2;
+    ap_int<16> in23_f_2 = in2[23] << 1;
+    ap_int<8> in23_g_2 = in2[23];
+
+    ap_int<16> in25_a_2 = in2[25] << 6;
+    ap_int<16> in25_b_2 = in2[25] << 5;
+    ap_int<16> in25_c_2 = in2[25] << 4;
+    ap_int<16> in25_d_2 = in2[25] << 3;
+    ap_int<16> in25_e_2 = in2[25] << 2;
+    ap_int<16> in25_f_2 = in2[25] << 1;
+    ap_int<8> in25_g_2 = in2[25];
+
+    ap_int<16> in27_a_2 = in2[27] << 6;
+    ap_int<16> in27_b_2 = in2[27] << 5;
+    ap_int<16> in27_c_2 = in2[27] << 4;
+    ap_int<16> in27_d_2 = in2[27] << 3;
+    ap_int<16> in27_e_2 = in2[27] << 2;
+    ap_int<16> in27_f_2 = in2[27] << 1;
+    ap_int<8> in27_g_2 = in2[27];
+
+    ap_int<16> in29_a_2 = in2[29] << 6;
+    ap_int<16> in29_b_2 = in2[29] << 5;
+    ap_int<16> in29_c_2 = in2[29] << 4;
+    ap_int<16> in29_d_2 = in2[29] << 3;
+    ap_int<16> in29_e_2 = in2[29] << 2;
+    ap_int<16> in29_f_2 = in2[29] << 1;
+    ap_int<8> in29_g_2 = in2[29];
+
+    ap_int<16> in31_a_2 = in2[31] << 6;
+    ap_int<16> in31_b_2 = in2[31] << 5;
+    ap_int<16> in31_c_2 = in2[31] << 4;
+    ap_int<16> in31_d_2 = in2[31] << 3;
+    ap_int<16> in31_e_2 = in2[31] << 2;
+    ap_int<16> in31_f_2 = in2[31] << 1;
+    ap_int<8> in31_g_2 = in2[31];
+
+    /* IN1s */
+
     ap_uint<16> in1s[32];
     #pragma HLS ARRAY_PARTITION variable=in1s complete dim=0
 
@@ -978,10 +1109,574 @@ void IDCT2B64(ap_int<32> in1[32], ap_int<32> in2[32], ap_int<32> out1[32], ap_in
     in31s[30] = -(in31_a + in31_e + in31_g);
     in31s[31] = -(in31_b + in31_c + in31_d + in31_e + in31_f);
 
+    /* IN2s */
+
+    ap_int<16> in1s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in1s_2 complete dim=0
+    in1s_2[0]  =  in1_a_2 - in1_f_2;
+    in1s_2[1]  = -(in1_a_2 + in1_e_2 + in1_g_2);
+    in1s_2[2]  = -(in1_b_2 + in1_c_2 + in1_d_2);
+    in1s_2[3]  =  in1_a_2 + in1_d_2 + in1_g_2;
+    in1s_2[4]  =  in1_b_2 + in1_c_2;
+    in1s_2[5]  = -(in1_a_2 + in1_d_2 + in1_e_2 + in1_f_2 + in1_g_2);
+    in1s_2[6]  = -(in1_b_2 + in1_d_2 + in1_g_2);
+    in1s_2[7]  =  in1_a_2 + in1_c_2 + in1_f_2 + in1_g_2;
+    in1s_2[8]  =  in1_b_2 + in1_g_2;
+    in1s_2[9]  = -(in1_a_2 + in1_c_2 + in1_e_2 + in1_f_2);
+    in1s_2[10] = -(in1_c_2 + in1_d_2);
+    in1s_2[11] =  in1_a_2 + in1_c_2 + in1_d_2;
+    in1s_2[12] =  in1_d_2 + in1_e_2 + in1_f_2 + in1_g_2;
+    in1s_2[13] = -(in1_a_2 + in1_c_2 + in1_d_2 + in1_f_2);
+    in1s_2[14] = -(in1_e_2 + in1_f_2 + in1_g_2);
+    in1s_2[15] =  in1_a_2 + in1_c_2 + in1_d_2 + in1_f_2 + in1_g_2;
+    in1s_2[16] = -in1_f_2;
+    in1s_2[17] = -(in1_a_2 + in1_c_2 + in1_d_2 + in1_f_2);
+    in1s_2[18] =  in1_d_2 + in1_f_2 + in1_g_2;
+    in1s_2[19] =  in1_a_2 + in1_c_2 + in1_d_2 + in1_f_2;
+    in1s_2[20] = -(in1_c_2 + in1_e_2);
+    in1s_2[21] = -(in1_a_2 + in1_c_2 + in1_e_2 + in1_f_2 + in1_g_2);
+    in1s_2[22] =  in1_c_2 + in1_d_2 + in1_e_2;
+    in1s_2[23] =  in1_a_2 + in1_c_2 + in1_e_2;
+    in1s_2[24] = -(in1_b_2 + in1_e_2 + in1_g_2);
+    in1s_2[25] = -(in1_a_2 + in1_c_2 + in1_g_2);
+    in1s_2[26] =  in1_b_2 + in1_d_2 + in1_e_2;
+    in1s_2[27] =  in1_a_2 + in1_d_2 + in1_e_2 + in1_g_2;
+    in1s_2[28] = -(in1_b_2 + in1_c_2 + in1_e_2);
+    in1s_2[29] = -(in1_a_2 + in1_e_2 + in1_f_2 + in1_g_2);
+    in1s_2[30] =  in1_b_2 + in1_c_2 + in1_d_2 + in1_f_2 + in1_g_2;
+    in1s_2[31] =  in1_a_2 + in1_g_2;
+
+    ap_int<16> in3s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in3s_2 complete dim=0
+    in3s_2[0]  =  in3_b_2 + in3_c_2 + in3_d_2 + in3_f_2 + in3_g_2;
+    in3s_2[1]  = -(in3_a_2 + in3_d_2 + in3_e_2 + in3_g_2);
+    in3s_2[2]  = -(in3_b_2 + in3_e_2 + in3_g_2);
+    in3s_2[3]  =  in3_a_2 + in3_c_2 + in3_e_2 + in3_f_2 + in3_g_2;
+    in3s_2[4]  =  in3_d_2 + in3_f_2 + in3_g_2;
+    in3s_2[5]  = -(in3_a_2 + in3_c_2 + in3_d_2 + in3_f_2 + in3_g_2);
+    in3s_2[6]  =  in3_d_2 + in3_e_2 + in3_f_2 + in3_g_2;
+    in3s_2[7]  =  in3_a_2 + in3_c_2 + in3_e_2 + in3_f_2;
+    in3s_2[8]  = -(in3_b_2 + in3_d_2 + in3_g_2);
+    in3s_2[9]  = -(in3_a_2 + in3_d_2 + in3_g_2);
+    in3s_2[10] =  in3_a_2 - in3_f_2;
+    in3s_2[11] =  in3_b_2 + in3_c_2 + in3_d_2;
+    in3s_2[12] = -(in3_a_2 + in3_d_2 + in3_e_2 + in3_f_2 + in3_g_2);
+    in3s_2[13] = -(in3_b_2 + in3_g_2);
+    in3s_2[14] =  in3_a_2 + in3_c_2 + in3_d_2;
+    in3s_2[15] =  in3_e_2 + in3_f_2 + in3_g_2;
+    in3s_2[16] = -(in3_a_2 + in3_c_2 + in3_d_2 + in3_f_2);
+    in3s_2[17] =  in3_c_2 + in3_e_2;
+    in3s_2[18] =  in3_a_2 + in3_c_2 + in3_e_2;
+    in3s_2[19] = -(in3_b_2 + in3_d_2 + in3_e_2);
+    in3s_2[20] = -(in3_a_2 + in3_e_2 + in3_f_2 + in3_g_2);
+    in3s_2[21] =  in3_a_2 + in3_g_2;
+    in3s_2[22] =  in3_b_2 + in3_c_2 + in3_e_2;
+    in3s_2[23] = -(in3_a_2 + in3_c_2 + in3_g_2);
+    in3s_2[24] = -(in3_b_2 + in3_c_2 + in3_d_2 + in3_f_2 + in3_g_2);
+    in3s_2[25] =  in3_a_2 + in3_c_2 + in3_d_2 + in3_f_2;
+    in3s_2[26] =  in3_f_2;
+    in3s_2[27] = -(in3_a_2 + in3_c_2 + in3_d_2 + in3_f_2);
+    in3s_2[28] =  in3_c_2 + in3_d_2;
+    in3s_2[29] =  in3_a_2 + in3_c_2 + in3_f_2 + in3_g_2;
+    in3s_2[30] = -(in3_b_2 + in3_c_2);
+    in3s_2[31] = -(in3_a_2 + in3_e_2 + in3_g_2);
+
+    ap_int<16> in5s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in5s_2 complete dim=0
+    in5s_2[0]  =  in5_b_2 + in5_c_2 + in5_d_2;
+    in5s_2[1]  = -(in5_a_2 + in5_c_2 + in5_f_2 + in5_g_2);
+    in5s_2[2]  = -(in5_d_2 + in5_e_2 + in5_f_2 + in5_g_2);
+    in5s_2[3]  =  in5_a_2 + in5_c_2 + in5_d_2 + in5_f_2;
+    in5s_2[4]  = -(in5_c_2 + in5_d_2 + in5_e_2);
+    in5s_2[5]  = -(in5_a_2 + in5_d_2 + in5_e_2 + in5_g_2);
+    in5s_2[6]  =  in5_a_2 + in5_g_2;
+    in5s_2[7]  =  in5_b_2 + in5_d_2 + in5_e_2;
+    in5s_2[8]  = -(in5_a_2 + in5_c_2 + in5_e_2 + in5_f_2 + in5_g_2);
+    in5s_2[9]  = -in5_f_2;
+    in5s_2[10] =  in5_a_2 + in5_c_2 + in5_d_2;
+    in5s_2[11] = -(in5_b_2 + in5_d_2 + in5_g_2);
+    in5s_2[12] = -(in5_a_2 + in5_e_2 + in5_g_2);
+    in5s_2[13] =  in5_a_2 + in5_d_2 + in5_g_2;
+    in5s_2[14] =  in5_b_2 + in5_g_2;
+    in5s_2[15] = -(in5_a_2 + in5_c_2 + in5_d_2 + in5_f_2);
+    in5s_2[16] =  in5_d_2 + in5_f_2 + in5_g_2;
+    in5s_2[17] =  in5_a_2 + in5_c_2 + in5_e_2;
+    in5s_2[18] = -(in5_b_2 + in5_c_2 + in5_e_2);
+    in5s_2[19] = -(in5_a_2 - in5_f_2);
+    in5s_2[20] = -(in5_b_2 + in5_c_2);
+    in5s_2[21] =  in5_a_2 + in5_c_2 + in5_e_2 + in5_f_2;
+    in5s_2[22] =  in5_e_2 + in5_f_2 + in5_g_2;
+    in5s_2[23] = -(in5_a_2 + in5_c_2 + in5_d_2 + in5_f_2);
+    in5s_2[24] =  in5_b_2 + in5_e_2 + in5_g_2;
+    in5s_2[25] =  in5_a_2 + in5_c_2 + in5_d_2 + in5_f_2 + in5_g_2;
+    in5s_2[26] =  in5_f_2 + in5_g_2;
+    in5s_2[27] = -(in5_d_2 + in5_e_2 + in5_f_2 + in5_g_2);
+    in5s_2[28] =  in5_a_2 + in5_d_2 + in5_e_2 + in5_f_2 + in5_g_2;
+    in5s_2[29] =  in5_a_2 + in5_d_2 + in5_g_2;
+    in5s_2[30] =  in5_b_2 + in5_e_2 + in5_g_2;
+    in5s_2[31] =  in5_a_2 + in5_e_2 + in5_f_2 + in5_g_2;
+
+    ap_int<16> in7s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in7s_2 complete dim=0
+    in7s_2[0]  =  in7_b_2 + in7_c_2 + in7_e_2;
+    in7s_2[1]  = -(in7_a_2 + in7_c_2 + in7_e_2 + in7_f_2 + in7_g_2);
+    in7s_2[2]  =  in7_e_2 + in7_f_2 + in7_g_2;
+    in7s_2[3]  =  in7_a_2 + in7_c_2 + in7_f_2 + in7_g_2;
+    in7s_2[4]  = -(in7_a_2 - in7_f_2);
+    in7s_2[5]  = -(in7_b_2 + in7_d_2 + in7_g_2);
+    in7s_2[6]  =  in7_a_2 + in7_c_2 + in7_d_2 + in7_f_2;
+    in7s_2[7]  = -(in7_c_2 + in7_e_2);
+    in7s_2[8]  = -(in7_a_2 + in7_d_2 + in7_e_2 + in7_g_2);
+    in7s_2[9]  =  in7_a_2 + in7_e_2 + in7_f_2 + in7_g_2;
+    in7s_2[10] =  in7_c_2 + in7_d_2 + in7_e_2;
+    in7s_2[11] = -(in7_a_2 + in7_c_2 + in7_d_2 + in7_f_2 + in7_g_2);
+    in7s_2[12] =  in7_b_2 + in7_g_2;
+    in7s_2[13] =  in7_a_2 + in7_c_2 + in7_c_2;
+    in7s_2[14] = -(in7_a_2 + in7_d_2 + in7_e_2 + in7_f_2 + in7_g_2);
+    in7s_2[15] = -(in7_d_2 + in7_e_2 + in7_f_2 + in7_g_2);
+    in7s_2[16] =  in7_a_2 + in7_c_2 + in7_d_2 + in7_f_2;
+    in7s_2[17] = -(in7_b_2 + in7_d_2 + in7_e_2);
+    in7s_2[18] = -(in7_b_2 + in7_c_2 + in7_d_2 + in7_f_2 + in7_g_2);
+    in7s_2[19] =  in7_a_2 + in7_c_2 + in7_e_2;
+    in7s_2[20] =  in7_f_2;
+    in7s_2[21] = -(in7_a_2 + in7_c_2 + in7_e_2 + in7_f_2);
+    in7s_2[22] =  in7_b_2 + in7_c_2 + in7_d_2;
+    in7s_2[23] =  in7_b_2 + in7_c_2;
+    in7s_2[24] = -(in7_a_2 + in7_c_2 + in7_d_2);
+    in7s_2[25] =  in7_d_2 + in7_f_2 + in7_g_2;
+    in7s_2[26] =  in7_a_2 + in7_c_2 + in7_g_2;
+    in7s_2[27] = -(in7_a_2 + in7_e_2 + in7_f_2 + in7_g_2);
+    in7s_2[28] = -(in7_b_2 + in7_e_2 + in7_g_2);
+    in7s_2[29] =  in7_a_2 + in7_d_2 + in7_f_2;
+    in7s_2[30] = -(in7_c_2 + in7_d_2);
+    in7s_2[31] = -(in7_a_2 + in7_d_2 + in7_g_2);
+
+    ap_int<16> in9s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in9s_2 complete dim=0
+    in9s_2[0]  =  in9_b_2 + in9_c_2;
+    in9s_2[1]  = -(in9_a_2 + in9_c_2 + in9_d_2 + in9_f_2);
+    in9s_2[2]  =  in9_c_2 + in9_d_2 + in9_e_2;
+    in9s_2[3]  =  in9_a_2 + in9_g_2;
+    in9s_2[4]  = -(in9_a_2 + in9_c_2 + in9_e_2);
+    in9s_2[5]  =  in9_e_2 + in9_f_2 + in9_g_2;
+    in9s_2[6]  =  in9_a_2 + in9_d_2 + in9_e_2 + in9_f_2 + in9_g_2;
+    in9s_2[7]  = -(in9_a_2 + in9_d_2 + in9_g_2);
+    in9s_2[8]  = -(in9_d_2 + in9_e_2 + in9_f_2 + in9_g_2);
+    in9s_2[9]  =  in9_a_2 + in9_c_2 + in9_e_2 + in9_f_2 + in9_g_2;
+    in9s_2[10] = -(in9_b_2 + in9_c_2 + in9_d_2 + in9_f_2 + in9_g_2);
+    in9s_2[11] = -(in9_b_2 + in9_e_2 + in9_g_2);
+    in9s_2[12] =  in9_a_2 + in9_c_2 + in9_d_2 + in9_f_2 + in9_g_2;
+    in9s_2[13] = -(in9_b_2 + in9_d_2 + in9_g_2);
+    in9s_2[14] = -(in9_b_2 + in9_c_2 + in9_d_2);
+    in9s_2[15] =  in9_a_2 + in9_c_2 + in9_d_2;
+    in9s_2[16] = -(in9_c_2 + in9_e_2);
+    in9s_2[17] = -(in9_a_2 + in9_e_2 + in9_f_2 + in9_g_2);
+    in9s_2[18] =  in9_a_2 + in9_c_2 + in9_g_2;
+    in9s_2[19] =  in9_c_2 + in9_d_2;
+    in9s_2[20] = -(in9_a_2 + in9_c_2 + in9_d_2 + in9_f_2);
+    in9s_2[21] =  in9_b_2 + in9_c_2 + in9_e_2;
+    in9s_2[22] =  in9_b_2 + in9_d_2 + in9_e_2;
+    in9s_2[23] = -(in9_a_2 + in9_c_2 + in9_d_2 + in9_f_2);
+    in9s_2[24] =  in9_b_2 + in9_g_2;
+    in9s_2[25] =  in9_a_2 - in9_f_2;
+    in9s_2[26] = -(in9_a_2 + in9_c_2 + in9_e_2 + in9_f_2);
+    in9s_2[27] =  in9_d_2 + in9_f_2 + in9_g_2;
+    in9s_2[28] =  in9_a_2 + in9_d_2 + in9_e_2 + in9_g_2;
+    in9s_2[29] = -(in9_b_2 + in9_c_2 + in9_d_2);
+    in9s_2[30] =  in9_d_2 + in9_f_2 + in9_g_2;
+    in9s_2[31] =  in9_a_2 + in9_c_2 + in9_e_2;
+
+    ap_int<16> in11s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in11s_2 complete dim=0
+    in11s_2[0]  =  in11_b_2 + in11_d_2 + in11_e_2;
+    in11s_2[1]  = -(in11_a_2 + in11_c_2 + in11_d_2 + in11_f_2 + in11_g_2);
+    in11s_2[2]  =  in11_b_2 + in11_c_2;
+    in11s_2[3]  =  in11_b_2 + in11_d_2 + in11_g_2;
+    in11s_2[4]  = -(in11_a_2 + in11_c_2 + in11_d_2 + in11_f_2);
+    in11s_2[5]  =  in11_b_2 + in11_c_2 + in11_e_2;
+    in11s_2[6]  =  in11_b_2 + in11_e_2 + in11_g_2;
+    in11s_2[7]  = -(in11_a_2 + in11_c_2 + in11_d_2 + in11_f_2);
+    in11s_2[8]  =  in11_b_2 + in11_c_2 + in11_d_2;
+    in11s_2[9]  =  in11_b_2 + in11_g_2;
+    in11s_2[10] = -(in11_a_2 + in11_c_2 + in11_d_2 + in11_f_2);
+    in11s_2[11] =  in11_b_2 + in11_c_2 + in11_d_2 + in11_f_2 + in11_g_2;
+    in11s_2[12] =  in11_c_2 + in11_d_2 + in11_e_2;
+    in11s_2[13] = -(in11_a_2 + in11_c_2 + in11_d_2);
+    in11s_2[14] =  in11_a_2 - in11_f_2;
+    in11s_2[15] =  in11_c_2 + in11_d_2;
+    in11s_2[16] = -(in11_a_2 + in11_c_2 + in11_e_2 + in11_f_2 + in11_g_2);
+    in11s_2[17] =  in11_a_2 + in11_g_2;
+    in11s_2[18] =  in11_c_2 + in11_e_2;
+    in11s_2[19] = -(in11_a_2 + in11_c_2 + in11_e_2 + in11_f_2);
+    in11s_2[20] =  in11_a_2 + in11_e_2 + in11_g_2;
+    in11s_2[21] =  in11_d_2 + in11_e_2 + in11_f_2 + in11_g_2;
+    in11s_2[22] = -(in11_a_2 + in11_c_2 + in11_e_2);
+    in11s_2[23] =  in11_c_2 + in11_e_2 + in11_f_2 + in11_g_2;
+    in11s_2[24] =  in11_d_2 + in11_f_2 + in11_g_2;
+    in11s_2[25] = -(in11_a_2 + in11_c_2 + in11_f_2 + in11_g_2);
+    in11s_2[26] =  in11_a_2 + in11_d_2 + in11_g_2;
+    in11s_2[27] =  in11_e_2 + in11_f_2 + in11_g_2;
+    in11s_2[28] = -(in11_a_2 + in11_c_2 + in11_d_2);
+    in11s_2[29] =  in11_a_2 + in11_c_2 + in11_d_2 + in11_f_2 + in11_g_2;
+    in11s_2[30] =  in11_f_2;
+    in11s_2[31] = -(in11_a_2 + in11_d_2 + in11_e_2 + in11_f_2 + in11_g_2);
+
+    ap_int<16> in13s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in13s_2 complete dim=0
+    in13s_2[0]  =  in13_b_2 + in13_d_2 + in13_g_2;
+    in13s_2[1]  = -(in13_a_2 + in13_c_2 + in13_d_2 + in13_f_2);
+    in13s_2[2]  =  in13_a_2 + in13_g_2;
+    in13s_2[3]  =  in13_d_2 + in13_f_2 + in13_g_2;
+    in13s_2[4]  = -(in13_a_2 + in13_d_2 + in13_e_2 + in13_f_2 + in13_g_2);
+    in13s_2[5]  =  in13_a_2 + in13_c_2 + in13_f_2 + in13_g_2;
+    in13s_2[6]  = -(in13_c_2 + in13_e_2);
+    in13s_2[7]  = -(in13_b_2 + in13_c_2 + in13_d_2 + in13_f_2 + in13_g_2);
+    in13s_2[8]  =  in13_a_2 + in13_c_2 + in13_d_2 + in13_f_2;
+    in13s_2[9]  = -(in13_b_2 + in13_c_2 + in13_d_2 + in13_f_2 + in13_g_2);
+    in13s_2[10] = -(in13_a_2 + in13_e_2 + in13_g_2);
+    in13s_2[11] =  in13_a_2 + in13_c_2 + in13_d_2 + in13_f_2 + in13_g_2;
+    in13s_2[12] =  in13_f_2;
+    in13s_2[13] =  in13_b_2 + in13_c_2 + in13_e_2 + in13_f_2 + in13_g_2;
+    in13s_2[14] = -(in13_a_2 + in13_e_2 + in13_f_2 + in13_g_2);
+    in13s_2[15] = -(in13_b_2 + in13_d_2 + in13_e_2);
+    in13s_2[16] =  in13_c_2 + in13_e_2 + in13_f_2 + in13_g_2;
+    in13s_2[17] =  in13_a_2 + in13_c_2 + in13_f_2 + in13_g_2;
+    in13s_2[18] = -(in13_b_2 + in13_e_2 + in13_g_2);
+    in13s_2[19] =  in13_a_2 + in13_c_2 + in13_d_2 + in13_f_2 + in13_g_2;
+    in13s_2[20] = -(in13_a_2 + in13_e_2 + in13_f_2 + in13_g_2);
+    in13s_2[21] =  in13_b_2 + in13_d_2 + in13_e_2 + in13_g_2;
+    in13s_2[22] = -(in13_a_2 + in13_c_2 + in13_f_2 + in13_g_2);
+    in13s_2[23] = -(in13_b_2 + in13_e_2 + in13_g_2);
+    in13s_2[24] =  in13_a_2 + in13_c_2 + in13_d_2 + in13_f_2;
+    in13s_2[25] = -(in13_a_2 + in13_c_2 + in13_f_2 + in13_g_2);
+    in13s_2[26] =  in13_d_2 + in13_e_2 + in13_f_2 + in13_g_2;
+    in13s_2[27] = -(in13_b_2 + in13_c_2 + in13_d_2 + in13_f_2 + in13_g_2);
+    in13s_2[28] = -(in13_a_2 + in13_e_2 + in13_f_2 + in13_g_2);
+    in13s_2[29] = -(in13_b_2 + in13_c_2 + in13_d_2 + in13_f_2 + in13_g_2);
+    in13s_2[30] =  in13_a_2 + in13_d_2 + in13_f_2 + in13_g_2;
+    in13s_2[31] =  in13_a_2 + in13_c_2 + in13_g_2;
+
+    ap_int<16> in15s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in15s_2 complete dim=0
+    in15s_2[0]  =  in15_b_2 + in15_e_2 + in15_g_2;
+    in15s_2[1]  = -(in15_a_2 + in15_c_2 + in15_e_2 + in15_f_2);
+    in15s_2[2]  =  in15_a_2 + in15_d_2 + in15_e_2 + in15_f_2 + in15_g_2;
+    in15s_2[3]  = -(in15_c_2 + in15_e_2);
+    in15s_2[4]  = -(in15_b_2 + in15_c_2 + in15_e_2);
+    in15s_2[5]  =  in15_a_2 + in15_c_2 + in15_d_2 + in15_f_2;
+    in15s_2[6]  = -(in15_a_2 + in15_e_2 + in15_g_2);
+    in15s_2[7]  =  in15_f_2;
+    in15s_2[8]  =  in15_a_2 + in15_g_2;
+    in15s_2[9]  = -(in15_a_2 + in15_c_2 + in15_d_2 + in15_f_2);
+    in15s_2[10] =  in15_b_2 + in15_c_2 + in15_d_2;
+    in15s_2[11] =  in15_d_2 + in15_e_2 + in15_f_2 + in15_g_2;
+    in15s_2[12] = -(in15_a_2 + in15_d_2 + in15_e_2 + in15_g_2);
+    in15s_2[13] =  in15_a_2 + in15_c_2 + in15_e_2 + in15_f_2 + in15_g_2;
+    in15s_2[14] = -(in15_b_2 + in15_d_2 + in15_g_2);
+    in15s_2[15] = -(in15_b_2 + in15_g_2);
+    in15s_2[16] =  in15_a_2 + in15_c_2 + in15_e_2;
+    in15s_2[17] = -(in15_a_2 + in15_c_2 + in15_g_2);
+    in15s_2[18] =  in15_c_2 + in15_d_2;
+    in15s_2[19] =  in15_b_2 + in15_c_2;
+    in15s_2[20] = -(in15_a_2 + in15_c_2 + in15_d_2 + in15_f_2);
+    in15s_2[21] =  in15_a_2 + in15_e_2 + in15_f_2 + in15_g_2;
+    in15s_2[22] = -(in15_a_2 + in15_d_2 + in15_f_2 + in15_g_2);
+    in15s_2[23] = -(in15_a_2 - in15_f_2);
+    in15s_2[24] =  in15_a_2 + in15_c_2 + in15_d_2 + in15_f_2 + in15_g_2;
+    in15s_2[25] = -(in15_b_2 + in15_c_2 + in15_d_2 + in15_f_2 + in15_g_2);
+    in15s_2[26] = -(in15_d_2 + in15_f_2 + in15_g_2);
+    in15s_2[27] =  in15_a_2 + in15_d_2 + in15_f_2 + in15_g_2;
+    in15s_2[28] = -(in15_a_2 + in15_c_2 + in15_d_2);
+    in15s_2[29] =  in15_b_2 + in15_d_2 + in15_e_2;
+    in15s_2[30] =  in15_c_2 + in15_d_2 + in15_e_2;
+    in15s_2[31] = -(in15_a_2 + in15_c_2 + in15_f_2 + in15_g_2);
+
+    ap_int<16> in17s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in17s_2 complete dim=0
+    in17s_2[0]  =  in17_b_2 + in17_g_2;
+    in17s_2[1]  = -(in17_a_2 + in17_c_2 + in17_g_2);
+    in17s_2[2]  =  in17_a_2 + in17_c_2 + in17_e_2 + in17_f_2 + in17_g_2;
+    in17s_2[3]  = -(in17_b_2 + in17_c_2);
+    in17s_2[4]  = -(in17_d_2 + in17_e_2 + in17_f_2 + in17_g_2);
+    in17s_2[5]  =  in17_a_2 + in17_e_2 + in17_f_2 + in17_g_2;
+    in17s_2[6]  = -(in17_a_2 + in17_c_2 + in17_d_2 + in17_f_2);
+    in17s_2[7]  =  in17_a_2 - in17_f_2;
+    in17s_2[8]  = -in17_f_2;
+    in17s_2[9]  = -(in17_b_2 + in17_c_2 + in17_d_2 + in17_f_2 + in17_g_2);
+    in17s_2[10] =  in17_a_2 + in17_c_2 + in17_d_2 + in17_f_2;
+    in17s_2[11] = -(in17_a_2 + in17_d_2 + in17_g_2);
+    in17s_2[12] =  in17_c_2 + in17_e_2;
+    in17s_2[13] =  in17_b_2 + in17_d_2 + in17_e_2 + in17_g_2;
+    in17s_2[14] = -(in17_a_2 + in17_c_2 + in17_e_2 + in17_f_2);
+    in17s_2[15] =  in17_a_2 + in17_c_2 + in17_f_2 + in17_g_2;
+    in17s_2[16] = -(in17_b_2 + in17_e_2 + in17_g_2);
+    in17s_2[17] = -(in17_c_2 + in17_d_2 + in17_e_2);
+    in17s_2[18] =  in17_a_2 + in17_d_2 + in17_e_2 + in17_f_2 + in17_g_2;
+    in17s_2[19] = -(in17_a_2 + in17_c_2 + in17_d_2);
+    in17s_2[20] =  in17_b_2 + in17_c_2 + in17_e_2;
+    in17s_2[21] =  in17_d_2 + in17_f_2 + in17_g_2;
+    in17s_2[22] = -(in17_a_2 + in17_e_2 + in17_g_2);
+    in17s_2[23] =  in17_a_2 + in17_c_2 + in17_d_2 + in17_f_2 + in17_g_2;
+    in17s_2[24] = -(in17_a_2 + in17_e_2 + in17_g_2);
+    in17s_2[25] =  in17_b_2 + in17_e_2 + in17_g_2;
+    in17s_2[26] = -(in17_a_2 + in17_g_2);
+    in17s_2[27] =  in17_a_2 + in17_c_2 + in17_e_2 + in17_f_2 + in17_g_2;
+    in17s_2[28] = -(in17_a_2 + in17_c_2 + in17_e_2 + in17_f_2 + in17_g_2);
+    in17s_2[29] =  in17_b_2 + in17_c_2 + in17_d_2 + in17_f_2 + in17_g_2;
+    in17s_2[30] = -(in17_a_2 + in17_c_2 + in17_d_2 + in17_f_2 + in17_g_2);
+    in17s_2[31] =  in17_a_2 + in17_c_2 + in17_e_2;
+
+    ap_int<16> in19s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in19s_2 complete dim=0
+    in19s_2[0]  =  in19_c_2 + in19_d_2 + in19_e_2;
+    in19s_2[1]  = -(in19_a_2 + in19_d_2 + in19_g_2);
+    in19s_2[2]  =  in19_a_2 + in19_c_2 + in19_d_2 + in19_f_2 + in19_g_2;
+    in19s_2[3]  = -(in19_a_2 + in19_e_2 + in19_f_2 + in19_g_2);
+    in19s_2[4]  =  in19_c_2 + in19_d_2;
+    in19s_2[5]  =  in19_b_2 + in19_g_2;
+    in19s_2[6]  = -(in19_a_2 + in19_d_2 + in19_e_2 + in19_g_2);
+    in19s_2[7]  =  in19_a_2 + in19_c_2 + in19_d_2 + in19_f_2;
+    in19s_2[8]  = -(in19_a_2 + in19_e_2 + in19_g_2);
+    in19s_2[9]  =  in19_c_2 + in19_e_2;
+    in19s_2[10] =  in19_b_2 + in19_e_2 + in19_g_2;
+    in19s_2[11] = -(in19_a_2 + in19_d_2 + in19_e_2 + in19_f_2 + in19_g_2);
+    in19s_2[12] =  in19_a_2 + in19_c_2 + in19_d_2 + in19_f_2;
+    in19s_2[13] = -(in19_a_2 + in19_g_2);
+    in19s_2[14] =  in19_d_2 + in19_e_2 + in19_f_2 + in19_g_2;
+    in19s_2[15] =  in19_b_2 + in19_c_2 + in19_e_2;
+    in19s_2[16] = -(in19_a_2 + in19_c_2 + in19_e_2 + in19_f_2);
+    in19s_2[17] =  in19_a_2 + in19_d_2 + in19_g_2;
+    in19s_2[18] =  in19_f_2;
+    in19s_2[19] = -(in19_a_2 - in19_f_2);
+    in19s_2[20] = -(in19_a_2 + in19_c_2 + in19_d_2);
+    in19s_2[21] =  in19_a_2 + in19_c_2 + in19_d_2 + in19_e_2 + in19_f_2;
+    in19s_2[22] = -(in19_a_2 + in19_d_2 + in19_g_2);
+    in19s_2[23] =  in19_b_2 + in19_d_2 + in19_e_2;
+    in19s_2[24] =  in19_a_2 + in19_c_2 + in19_d_2 + in19_f_2 + in19_g_2;
+    in19s_2[25] = -(in19_b_2 + in19_c_2 + in19_d_2 + in19_f_2 + in19_g_2);
+    in19s_2[26] = -(in19_b_2 + in19_c_2 + in19_d_2 + in19_e_2 + in19_f_2);
+    in19s_2[27] =  in19_a_2 + in19_c_2 + in19_d_2 + in19_f_2;
+    in19s_2[28] =  in19_d_2 + in19_f_2 + in19_g_2;
+    in19s_2[29] = -(in19_b_2 + in19_d_2 + in19_g_2);
+    in19s_2[30] =  in19_a_2 + in19_c_2 + in19_d_2 + in19_f_2;
+    in19s_2[31] = -(in19_a_2 + in19_d_2 + in19_e_2 + in19_f_2 + in19_g_2);
+
+    ap_int<16> in21s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in21s_2 complete dim=0
+    in21s_2[0]  =  in21_c_2 + in21_d_2;
+    in21s_2[1]  = -(in21_a_2 + in21_g_2);
+    in21s_2[2]  =  in21_a_2 + in21_c_2 + in21_d_2;
+    in21s_2[3]  = -(in21_a_2 + in21_c_2 + in21_e_2 + in21_f_2);
+    in21s_2[4]  =  in21_b_2 + in21_c_2 + in21_d_2 + in21_f_2 + in21_g_2;
+    in21s_2[5]  = -(in21_d_2 + in21_e_2 + in21_f_2 + in21_g_2);
+    in21s_2[6]  = -(in21_b_2 + in21_g_2);
+    in21s_2[7]  =  in21_a_2 + in21_e_2 + in21_f_2 + in21_g_2;
+    in21s_2[8]  = -(in21_a_2 + in21_c_2 + in21_d_2 + in21_f_2);
+    in21s_2[9]  =  in21_a_2 + in21_c_2 + in21_f_2 + in21_g_2;
+    in21s_2[10] = -(in21_b_2 + in21_c_2 + in21_e_2);
+    in21s_2[11] =  in21_e_2 + in21_f_2 + in21_g_2;
+    in21s_2[12] =  in21_b_2 + in21_d_2 + in21_g_2;
+    in21s_2[13] = -(in21_a_2 + in21_d_2 + in21_e_2 + in21_g_2);
+    in21s_2[14] =  in21_a_2 + in21_c_2 + in21_d_2 + in21_f_2 + in21_g_2;
+    in21s_2[15] = -(in21_a_2 + in21_d_2 + in21_e_2 + in21_f_2 + in21_g_2);
+    in21s_2[16] =  in21_b_2 + in21_d_2 + in21_e_2 + in21_g_2;
+    in21s_2[17] =  in21_f_2;
+    in21s_2[18] = -(in21_b_2 + in21_c_2);
+    in21s_2[19] =  in21_a_2 + in21_c_2 + in21_g_2;
+    in21s_2[20] = -(in21_a_2 + in21_c_2 + in21_d_2 + in21_f_2);
+    in21s_2[21] =  in21_a_2 + in21_d_2 + in21_g_2;
+    in21s_2[22] = -(in21_a_2 + in21_g_2);
+    in21s_2[23] = -(in21_b_2 + in21_d_2 + in21_g_2);
+    in21s_2[24] =  in21_c_2 + in21_d_2 + in21_e_2;
+    in21s_2[25] =  in21_b_2 + in21_c_2 + in21_e_2;
+    in21s_2[26] = -(in21_a_2 - in21_f_2);
+    in21s_2[27] =  in21_b_2 + in21_c_2 + in21_d_2 + in21_e_2 + in21_f_2;
+    in21s_2[28] = -(in21_a_2 + in21_e_2 + in21_g_2);
+    in21s_2[29] =  in21_c_2 + in21_d_2 + in21_e_2;
+    in21s_2[30] =  in21_a_2 + in21_e_2 + in21_f_2 + in21_g_2;
+    in21s_2[31] =  in21_a_2 + in21_c_2 + in21_e_2 + in21_f_2 + in21_g_2;
+
+    ap_int<16> in23s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in23s_2 complete dim=0
+    in23s_2[0]  =  in23_c_2 + in23_e_2;
+    in23s_2[1]  = -(in23_b_2 + in23_c_2 + in23_d_2);
+    in23s_2[2]  =  in23_a_2 + in23_c_2 + in23_g_2;
+    in23s_2[3]  = -(in23_a_2 + in23_c_2 + in23_d_2 + in23_f_2 + in23_g_2);
+    in23s_2[4]  =  in23_a_2 + in23_d_2 + in23_e_2 + in23_f_2 + in23_g_2;
+    in23s_2[5]  = -(in23_b_2 + in23_c_2 + in23_d_2 + in23_f_2 + in23_g_2);
+    in23s_2[6]  =  in23_c_2 + in23_d_2;
+    in23s_2[7]  =  in23_d_2 + in23_e_2 + in23_f_2 + in23_g_2;
+    in23s_2[8]  = -(in23_a_2 + in23_c_2 + in23_d_2 + in23_f_2);
+    in23s_2[9]  = -(in23_b_2 + in23_d_2 + in23_f_2 + in23_g_2);
+    in23s_2[10] =  in23_b_2 + in23_c_2 + in23_d_2 + in23_f_2 + in23_g_2;
+    in23s_2[11] =  in23_a_2 + in23_c_2 + in23_d_2 + in23_g_2;
+    in23s_2[12] =  in23_a_2 - in23_f_2;
+    in23s_2[13] = -(in23_a_2 + in23_d_2 + in23_g_2);
+    in23s_2[14] =  in23_a_2 + in23_c_2 + in23_d_2 + in23_f_2 + in23_g_2;
+    in23s_2[15] = -(in23_b_2 + in23_c_2 + in23_d_2 + in23_e_2 + in23_f_2);
+    in23s_2[16] =  in23_a_2 + in23_d_2 + in23_e_2 + in23_f_2 + in23_g_2;
+    in23s_2[17] = -(in23_a_2 - in23_f_2);
+    in23s_2[18] = -(in23_b_2 + in23_e_2 + in23_g_2);
+    in23s_2[19] =  in23_b_2 + in23_e_2 + in23_g_2;
+    in23s_2[20] =  in23_a_2 + in23_c_2 + in23_d_2 + in23_f_2 + in23_g_2;
+    in23s_2[21] =  in23_c_2 + in23_d_2 + in23_e_2;
+    in23s_2[22] = -(in23_c_2 + in23_d_2 + in23_e_2);
+    in23s_2[23] = -(in23_a_2 + in23_d_2 + in23_e_2 + in23_f_2 + in23_g_2);
+    in23s_2[24] =  in23_a_2 + in23_c_2 + in23_e_2 + in23_f_2;
+    in23s_2[25] =  in23_a_2 + in23_d_2 + in23_f_2 + in23_g_2;
+    in23s_2[26] = -(in23_a_2 - in23_f_2);
+    in23s_2[27] =  in23_c_2 + in23_e_2 + in23_f_2 + in23_g_2;
+    in23s_2[28] =  in23_a_2 + in23_d_2 + in23_e_2 + in23_g_2;
+    in23s_2[29] = -(in23_b_2 + in23_d_2 + in23_g_2);
+    in23s_2[30] =  in23_b_2 + in23_c_2 + in23_d_2 + in23_e_2 + in23_f_2;
+    in23s_2[31] = -(in23_a_2 + in23_d_2 + in23_f_2 + in23_g_2);
+
+    ap_int<16> in25s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in25s_2 complete dim=0
+    in25s_2[0]  =  in25_d_2 + in25_e_2 + in25_f_2 + in25_g_2;
+    in25s_2[1]  = -(in25_b_2 + in25_d_2 + in25_e_2);
+    in25s_2[2]  =  in25_a_2 + in25_e_2 + in25_g_2;
+    in25s_2[3]  = -(in25_a_2 + in25_c_2 + in25_e_2);
+    in25s_2[4]  =  in25_a_2 + in25_c_2 + in25_d_2 + in25_f_2 + in25_g_2;
+    in25s_2[5]  = -(in25_a_2 + in25_c_2 + in25_e_2 + in25_f_2);
+    in25s_2[6]  =  in25_a_2 + in25_e_2 + in25_f_2 + in25_g_2;
+    in25s_2[7]  = -(in25_b_2 + in25_c_2);
+    in25s_2[8]  =  in25_c_2 + in25_e_2;
+    in25s_2[9]  =  in25_d_2 + in25_f_2 + in25_g_2;
+    in25s_2[10] =  in25_a_2 + in25_d_2 + in25_f_2 + in25_g_2;
+    in25s_2[11] = -(in25_b_2 + in25_d_2 + in25_g_2);
+    in25s_2[12] =  in25_a_2 + in25_g_2;
+    in25s_2[13] = -(in25_a_2 + in25_c_2 + in25_f_2 + in25_g_2);
+    in25s_2[14] =  in25_a_2 + in25_c_2 + in25_d_2 + in25_f_2;
+    in25s_2[15] = -(in25_a_2 + in25_c_2 + in25_e_2 + in25_f_2 + in25_g_2);
+    in25s_2[16] =  in25_a_2 + in25_d_2 + in25_f_2 + in25_g_2;
+    in25s_2[17] =  in25_c_2 + in25_d_2;
+    in25s_2[18] =  in25_e_2 + in25_f_2 + in25_g_2;
+    in25s_2[19] = -(in25_b_2 + in25_e_2 + in25_g_2);
+    in25s_2[20] =  in25_b_2 + in25_c_2 + in25_d_2 + in25_f_2;
+    in25s_2[21] =  in25_a_2 + in25_c_2 + in25_e_2;
+    in25s_2[22] = -(in25_a_2 + in25_c_2 + in25_d_2 + in25_f_2 + in25_g_2);
+    in25s_2[23] =  in25_a_2 + in25_c_2 + in25_d_2 + in25_e_2 + in25_f_2;
+    in25s_2[24] = -(in25_a_2 + in25_c_2 + in25_e_2 + in25_f_2);
+    in25s_2[25] = -(in25_b_2 + in25_c_2 + in25_d_2);
+    in25s_2[26] =  in25_a_2 + in25_c_2 + in25_d_2 + in25_f_2 + in25_g_2;
+    in25s_2[27] =  in25_c_2 + in25_d_2 + in25_e_2;
+    in25s_2[28] = -(in25_a_2 + in25_c_2 + in25_f_2 + in25_g_2);
+    in25s_2[29] =  in25_b_2 + in25_d_2 + in25_e_2 + in25_f_2 + in25_g_2;
+    in25s_2[30] = -(in25_a_2 - in25_f_2);
+    in25s_2[31] =  in25_a_2 + in25_c_2 + in25_e_2 + in25_f_2 + in25_g_2;
+
+    ap_int<16> in27s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in27s_2 complete dim=0
+    in27s_2[0]  =  in27_d_2 + in27_f_2 + in27_g_2;
+    in27s_2[1]  = -(in27_b_2 + in27_g_2);
+    in27s_2[2]  =  in27_b_2 + in27_c_2 + in27_e_2;
+    in27s_2[3]  = -(in27_b_2 + in27_d_2 + in27_e_2 + in27_f_2 + in27_g_2);
+    in27s_2[4]  =  in27_a_2 + in27_c_2 + in27_g_2;
+    in27s_2[5]  = -(in27_a_2 + in27_c_2 + in27_d_2);
+    in27s_2[6]  =  in27_a_2 + in27_c_2 + in27_d_2 + in27_f_2 + in27_g_2;
+    in27s_2[7]  = -(in27_a_2 + in27_c_2 + in27_e_2 + in27_f_2 + in27_g_2);
+    in27s_2[8]  =  in27_a_2 + in27_c_2 + in27_d_2 + in27_e_2 + in27_f_2;
+    in27s_2[9]  = -(in27_a_2 + in27_g_2);
+    in27s_2[10] =  in27_b_2 + in27_c_2;
+    in27s_2[11] = -(in27_c_2 + in27_d_2 + in27_e_2);
+    in27s_2[12] =  in27_e_2 + in27_f_2 + in27_g_2;
+    in27s_2[13] =  in27_d_2 + in27_e_2 + in27_f_2 + in27_g_2;
+    in27s_2[14] = -(in27_b_2 + in27_e_2 + in27_g_2);
+    in27s_2[15] =  in27_b_2 + in27_c_2 + in27_d_2;
+    in27s_2[16] =  in27_a_2 + in27_c_2 + in27_f_2 + in27_g_2;
+    in27s_2[17] = -(in27_a_2 - in27_f_2);
+    in27s_2[18] =  in27_b_2 + in27_d_2 + in27_e_2;
+    in27s_2[19] = -(in27_c_2 + in27_d_2);
+    in27s_2[20] =  in27_f_2;
+    in27s_2[21] =  in27_c_2 + in27_e_2;
+    in27s_2[22] = -(in27_b_2 + in27_d_2 + in27_g_2);
+    in27s_2[23] =  in27_b_2 + in27_c_2 + in27_d_2 + in27_f_2 + in27_g_2;
+    in27s_2[24] = -(in27_a_2 + in27_c_2 + in27_e_2 + in27_f_2);
+    in27s_2[25] =  in27_c_2 + in27_d_2 + in27_e_2 + in27_f_2 + in27_g_2;
+    in27s_2[26] =  in27_b_2 + in27_c_2 + in27_d_2 + in27_f_2 + in27_g_2;
+    in27s_2[27] = -(in27_a_2 + in27_d_2 + in27_g_2);
+    in27s_2[28] =  in27_a_2 + in27_c_2 + in27_e_2;
+    in27s_2[29] = -(in27_a_2 + in27_c_2 + in27_d_2);
+    in27s_2[30] =  in27_a_2 + in27_e_2 + in27_f_2 + in27_g_2;
+    in27s_2[31] = -(in27_a_2 + in27_c_2 + in27_d_2 + in27_f_2);
+
+    ap_int<16> in29s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in29s_2 complete dim=0
+    in29s_2[0]  =  in29_e_2 + in29_f_2 + in29_g_2;
+    in29s_2[1]  = -(in29_c_2 + in29_e_2);
+    in29s_2[2]  =  in29_b_2 + in29_g_2;
+    in29s_2[3]  = -(in29_b_2 + in29_d_2 + in29_e_2);
+    in29s_2[4]  =  in29_b_2 + in29_c_2 + in29_d_2;
+    in29s_2[5]  = -(in29_a_2 + in29_g_2);
+    in29s_2[6]  =  in29_a_2 + in29_d_2 + in29_g_2;
+    in29s_2[7]  = -(in29_a_2 + in29_c_2 + in29_g_2);
+    in29s_2[8]  =  in29_a_2 + in29_c_2 + in29_e_2 + in29_f_2;
+    in29s_2[9]  = -(in29_a_2 + in29_c_2 + in29_d_2 + in29_f_2);
+    in29s_2[10] =  in29_a_2 + in29_c_2 + in29_d_2 + in29_f_2 + in29_g_2;
+    in29s_2[11] = -(in29_a_2 + in29_c_2 + in29_d_2 + in29_f_2);
+    in29s_2[12] =  in29_a_2 + in29_c_2 + in29_e_2 + in29_f_2 + in29_g_2;
+    in29s_2[13] = -(in29_a_2 + in29_c_2 + in29_f_2 + in29_g_2);
+    in29s_2[14] =  in29_a_2 + in29_d_2 + in29_e_2 + in29_f_2 + in29_g_2;
+    in29s_2[15] = -(in29_a_2 + in29_e_2 + in29_g_2);
+    in29s_2[16] =  in29_b_2 + in29_c_2 + in29_d_2 + in29_f_2 + in29_g_2;
+    in29s_2[17] = -(in29_b_2 + in29_c_2);
+    in29s_2[18] =  in29_b_2 + in29_e_2 + in29_g_2;
+    in29s_2[19] = -(in29_c_2 + in29_d_2);
+    in29s_2[20] =  in29_d_2 + in29_f_2 + in29_g_2;
+    in29s_2[21] =  in29_f_2;
+    in29s_2[22] = -(in29_d_2 + in29_e_2 + in29_f_2 + in29_g_2);
+    in29s_2[23] =  in29_c_2 + in29_d_2 + in29_e_2;
+    in29s_2[24] = -(in29_b_2 + in29_d_2 + in29_g_2);
+    in29s_2[25] =  in29_b_2 + in29_c_2 + in29_e_2;
+    in29s_2[26] = -(in29_a_2 - in29_f_2);
+    in29s_2[27] =  in29_a_2 + in29_e_2 + in29_f_2 + in29_g_2;
+    in29s_2[28] = -(in29_a_2 + in29_d_2 + in29_e_2 + in29_f_2 + in29_g_2);
+    in29s_2[29] =  in29_a_2 + in29_c_2 + in29_e_2;
+    in29s_2[30] = -(in29_a_2 + in29_e_2 + in29_f_2 + in29_g_2);
+    in29s_2[31] =  in29_a_2 + in29_c_2 + in29_d_2 + in29_f_2;
+
+    ap_int<16> in31s_2[32];
+    #pragma HLS ARRAY_PARTITION variable=in31s_2 complete dim=0
+    in31s_2[0]  =  in31_f_2;
+    in31s_2[1]  = -(in31_e_2 + in31_f_2 + in31_g_2);
+    in31s_2[2]  =  in31_d_2 + in31_f_2 + in31_g_2;
+    in31s_2[3]  = -(in31_d_2 + in31_e_2 + in31_f_2 + in31_g_2);
+    in31s_2[4]  =  in31_c_2 + in31_e_2;
+    in31s_2[5]  = -(in31_c_2 + in31_d_2);
+    in31s_2[6]  =  in31_c_2 + in31_d_2 + in31_e_2;
+    in31s_2[7]  = -(in31_b_2 + in31_g_2);
+    in31s_2[8]  =  in31_b_2 + in31_e_2 + in31_g_2;
+    in31s_2[9]  = -(in31_b_2 + in31_d_2 + in31_g_2);
+    in31s_2[10] =  in31_b_2 + in31_d_2 + in31_e_2;
+    in31s_2[11] = -(in31_b_2 + in31_c_2);
+    in31s_2[12] =  in31_b_2 + in31_c_2 + in31_e_2;
+    in31s_2[13] = -(in31_b_2 + in31_c_2 + in31_d_2);
+    in31s_2[14] =  in31_b_2 + in31_c_2 + in31_d_2 + in31_f_2 + in31_g_2;
+    in31s_2[15] = -(in31_a_2 - in31_f_2);
+    in31s_2[16] =  in31_a_2 + in31_g_2;
+    in31s_2[17] = -(in31_a_2 + in31_e_2 + in31_g_2);
+    in31s_2[18] =  in31_a_2 + in31_e_2 + in31_f_2 + in31_g_2;
+    in31s_2[19] = -(in31_a_2 + in31_d_2 + in31_g_2);
+    in31s_2[20] =  in31_a_2 + in31_d_2 + in31_e_2 + in31_g_2;
+    in31s_2[21] = -(in31_a_2 + in31_d_2 + in31_e_2 + in31_f_2 + in31_g_2);
+    in31s_2[22] =  in31_a_2 + in31_c_2 + in31_g_2;
+    in31s_2[23] = -(in31_a_2 + in31_c_2 + in31_f_2 + in31_g_2);
+    in31s_2[24] =  in31_a_2 + in31_c_2 + in31_e_2;
+    in31s_2[25] = -(in31_a_2 + in31_c_2 + in31_e_2 + in31_f_2);
+    in31s_2[26] =  in31_a_2 + in31_c_2 + in31_e_2 + in31_f_2 + in31_g_2;
+    in31s_2[27] = -(in31_a_2 + in31_c_2 + in31_d_2);
+    in31s_2[28] =  in31_a_2 + in31_c_2 + in31_d_2 + in31_f_2;
+    in31s_2[29] = -(in31_a_2 + in31_c_2 + in31_d_2 + in31_f_2);
+    in31s_2[30] =  in31_a_2 + in31_c_2 + in31_d_2 + in31_f_2;
+    in31s_2[31] = -(in31_a_2 + in31_c_2 + in31_d_2 + in31_f_2 + in31_g_2);
+
     for(int i=0; i<32; i++){
         #pragma HLS UNROLL
         odds[i] = in1s[i] + in3s[i] + in5s[i] + in7s[i] + in9s[i] + in11s[i] + in13s[i] + in15s[i] +
-            in17s[i] + in19s[i] + in21s[i] + in23s[i] + in25s[i] + in27s[i] + in29s[i] + in31s[i];
+            in17s[i] + in19s[i] + in21s[i] + in23s[i] + in25s[i] + in27s[i] + in29s[i] + in31s[i] +
+            in1s_2[i] + in3s_2[i] + in5s_2[i] + in7s_2[i] + in9s_2[i] + in11s_2[i] + in13s_2[i] + in15s_2[i] +
+            in17s_2[i] + in19s_2[i] + in21s_2[i] + in23s_2[i] + in25s_2[i] + in27s_2[i] + in29s_2[i] + in31s_2[i];
     }
 
     /* for(int i=0; i<32; i++){
@@ -1279,12 +1974,12 @@ extern "C" void IDCT2(ap_int<1024>* in, ap_int<1024>* in2, ap_int<1024>* out, ap
 
         for(int j=0; j<32; j++){
             #pragma HLS UNROLL
-            out_block.range((j+1)*32-1, j*32) =  out_data_a[j]+add;//CLIP3(((out_data_a[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
-            out_block2.range((j+1)*32-1, j*32) = out_data_b[j]+add;// CLIP3(((out_data_b[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
+            out_block.range((j+1)*32-1, j*32) = CLIP3(((out_data_a[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
+            out_block2.range((j+1)*32-1, j*32) = CLIP3(((out_data_b[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
         }
 
-        out_block = out_block >> shift;
-        out_block2 = out_block2 >> shift;
+       /*  out_block = out_block >> shift;
+        out_block2 = out_block2 >> shift; */
 
         /* for(int j=0; j<32; j++){
             #pragma HLS UNROLL
