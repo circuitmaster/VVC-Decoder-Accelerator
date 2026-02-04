@@ -241,7 +241,7 @@ void IDST7B32(ap_int<32> src[32], ap_int<32> dst[32], ap_int<32> shift, ap_int<3
 }
 
 
-extern "C" void IDST7(ap_int<512>* in, ap_int<512>* out, ap_int<32> block_size, ap_int<32> sIn, ap_int<32>  size, ap_int<32>  shift, ap_int<32>  oMin, ap_int<32>  oMax) {
+extern "C" void IDST7(ap_int<1024>* in, ap_int<1024>* out, ap_int<32> block_size, ap_int<32> sIn, ap_int<32>  size, ap_int<32>  shift, ap_int<32>  oMin, ap_int<32>  oMax) {
     #pragma HLS INTERFACE m_axi port=in offset=slave bundle=gmem0
     #pragma HLS INTERFACE m_axi port=out offset=slave bundle=gmem1
     #pragma HLS INTERFACE s_axilite port=in bundle=control
@@ -260,8 +260,8 @@ extern "C" void IDST7(ap_int<512>* in, ap_int<512>* out, ap_int<32> block_size, 
         #pragma HLS LOOP_TRIPCOUNT min=1 max=1024
         #pragma HLS PIPELINE OFF
 
-        ap_int<512> in_block = in[i];
-        ap_int<512> out_block = 0;
+        ap_int<1024> in_block = in[i];
+        ap_int<1024> out_block = 0;
 
        if(block_size == 32){
             ap_int<32> in_data[32];

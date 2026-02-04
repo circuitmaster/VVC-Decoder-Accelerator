@@ -6,11 +6,11 @@
 
 <UserAssignments>
 <unit>ns</unit>
-<ProductFamily>zynquplus</ProductFamily>
-<Part>xczu9eg-ffvb1156-2-e</Part>
+<ProductFamily>versalaicore</ProductFamily>
+<Part>xcvc1902-vsva2197-2MP-e-S</Part>
 <TopModelName>IDST7B8</TopModelName>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>2.70</ClockUncertainty>
+<TargetClockPeriod>3.33</TargetClockPeriod>
+<ClockUncertainty>0.90</ClockUncertainty>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
 
@@ -18,18 +18,18 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>7.027</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.408</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>13</Best-caseLatency>
-<Average-caseLatency>13</Average-caseLatency>
-<Worst-caseLatency>13</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.130 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.130 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.130 us</Worst-caseRealTimeLatency>
-<Interval-min>13</Interval-min>
-<Interval-max>13</Interval-max>
+<Best-caseLatency>20</Best-caseLatency>
+<Average-caseLatency>20</Average-caseLatency>
+<Worst-caseLatency>20</Worst-caseLatency>
+<Best-caseRealTimeLatency>66.660 ns</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>66.660 ns</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>66.660 ns</Worst-caseRealTimeLatency>
+<Interval-min>20</Interval-min>
+<Interval-max>20</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
@@ -40,18 +40,18 @@
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>0</BRAM_18K>
+<BRAM_18K>8</BRAM_18K>
 <DSP>16</DSP>
-<FF>908</FF>
-<LUT>1990</LUT>
+<FF>1755</FF>
+<LUT>1807</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
-<BRAM_18K>1824</BRAM_18K>
-<DSP>2520</DSP>
-<FF>548160</FF>
-<LUT>274080</LUT>
-<URAM>0</URAM>
+<BRAM_18K>1934</BRAM_18K>
+<DSP>1968</DSP>
+<FF>1799680</FF>
+<LUT>899840</LUT>
+<URAM>463</URAM>
 </AvailableResources>
 </AreaEstimates>
 

@@ -6,11 +6,11 @@
 
 <UserAssignments>
 <unit>ns</unit>
-<ProductFamily>zynquplus</ProductFamily>
-<Part>xczu9eg-ffvb1156-2-e</Part>
+<ProductFamily>versalaicore</ProductFamily>
+<Part>xcvc1902-vsva2197-2MP-e-S</Part>
 <TopModelName>IDST7</TopModelName>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>2.70</ClockUncertainty>
+<TargetClockPeriod>3.33</TargetClockPeriod>
+<ClockUncertainty>0.90</ClockUncertainty>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
 
@@ -18,22 +18,22 @@
 <PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+<EstimatedClockPeriod>3.048</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>144</Best-caseLatency>
-<Average-caseLatency>10892</Average-caseLatency>
-<Worst-caseLatency>50316</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.440 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.109 ms</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.503 ms</Worst-caseRealTimeLatency>
-<Interval-min>145</Interval-min>
-<Interval-max>50317</Interval-max>
+<Best-caseLatency>151</Best-caseLatency>
+<Average-caseLatency>13972</Average-caseLatency>
+<Worst-caseLatency>66708</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.503 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>46.569 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>0.222 ms</Worst-caseRealTimeLatency>
+<Interval-min>152</Interval-min>
+<Interval-max>66709</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <VITIS_LOOP_259_1>
-<Slack>7.30</Slack>
+<Slack>2.43</Slack>
 <TripCount>
 <range>
 <min>1</min>
@@ -42,20 +42,20 @@
 </TripCount>
 <Latency>
 <range>
-<min>4</min>
-<max>50176</max>
+<min>3</min>
+<max>66560</max>
 </range>
 </Latency>
 <AbsoluteTimeLatency>
 <range>
-<min>40</min>
-<max>501760</max>
+<min>9</min>
+<max>221844</max>
 </range>
 </AbsoluteTimeLatency>
 <IterationLatency>
 <range>
-<min>4</min>
-<max>49</max>
+<min>3</min>
+<max>65</max>
 </range>
 </IterationLatency>
 <InstanceList>
@@ -63,7 +63,7 @@
 </VITIS_LOOP_259_1>
 </SummaryOfLoopLatency>
 <SummaryOfViolations>
-<IssueType>-</IssueType>
+<IssueType>Timing Violation</IssueType>
 <ViolationType>-</ViolationType>
 <SourceLocation>src/IDST7.cpp:244</SourceLocation>
 <SummaryOfLoopViolations>
@@ -79,18 +79,18 @@
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>58</BRAM_18K>
+<BRAM_18K>97</BRAM_18K>
 <DSP>112</DSP>
-<FF>13016</FF>
-<LUT>19231</LUT>
+<FF>23583</FF>
+<LUT>18111</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
-<BRAM_18K>1824</BRAM_18K>
-<DSP>2520</DSP>
-<FF>548160</FF>
-<LUT>274080</LUT>
-<URAM>0</URAM>
+<BRAM_18K>1934</BRAM_18K>
+<DSP>1968</DSP>
+<FF>1799680</FF>
+<LUT>899840</LUT>
+<URAM>463</URAM>
 </AvailableResources>
 </AreaEstimates>
 
@@ -503,7 +503,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>512</Bits>
+<Bits>1024</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -515,7 +515,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>64</Bits>
+<Bits>128</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -743,7 +743,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>512</Bits>
+<Bits>1024</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -1043,7 +1043,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>512</Bits>
+<Bits>1024</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -1055,7 +1055,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>64</Bits>
+<Bits>128</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -1283,7 +1283,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>512</Bits>
+<Bits>1024</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>

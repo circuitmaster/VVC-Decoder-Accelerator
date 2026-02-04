@@ -12,12 +12,22 @@ int CLIP3(ap_int<32> outputMinimum, ap_int<32> outputMaximum, ap_int<32> x){
 
 void IDCT2B2(ap_int<32> in[2], ap_int<32> out[2]){
     #pragma HLS inline off
+<<<<<<< HEAD
+=======
+    std::cout << "IDCT2B2 input: " << in[0] << " " << in[1] << std::endl;
+
+>>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
 
     ap_int<32> sum = in[0] + in[1];
     ap_int<32> diff = in[0] - in[1];
 
     ap_int<32> even = sum << 6;
     ap_int<32> odd = diff << 6;
+<<<<<<< HEAD
+=======
+    std::cout << "IDCT2B2 even: " << even << ", odd: " << odd << std::endl;
+
+>>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
 
     out[0] = even;
     out[1] = odd;
@@ -39,11 +49,25 @@ void IDCT2B4(ap_int<32> in[4], ap_int<32> out[4]){
     IDCT2B2(inputs, evens);
     odds[0] = 83*in[1] + 36*in[3];
     odds[1] = 36*in[1] - 83*in[3];
+<<<<<<< HEAD
+=======
+    std::cout << "IDCT2B4 odds: ";
+    for(int i=0; i<2; i++) std::cout << odds[i] << " ";
+    std::cout << std::endl;
+
+>>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
 
     out[0] = evens[0] + odds[0];
     out[1] = evens[1] + odds[1];
     out[2] = evens[1] - odds[1];
     out[3] = evens[0] - odds[0];
+<<<<<<< HEAD
+=======
+    std::cout << "IDCT2B4 output: ";
+    for(int i=0; i<4; i++) std::cout << out[i] << " ";
+    std::cout << std::endl;
+
+>>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
 }
 
 void IDCT2B8(ap_int<32> in[8], ap_int<32> out[8]){
@@ -334,6 +358,12 @@ extern "C" void IDCT2(ap_uint<1024>* in, ap_uint<1024>* in2, ap_uint<1024>* out,
         ap_uint<1024> in_block2 = in2[i];
         ap_uint<1024> out_block = 0;
         ap_uint<1024> out_block2 = 0;
+<<<<<<< HEAD
+=======
+        ap_uint<256> tmp_block8 = 0;
+        ap_uint<128> tmp_block4 = 0;
+
+>>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
 
         if(block_size == 64){
             ap_int<32> in_data[64];
@@ -412,6 +442,7 @@ extern "C" void IDCT2(ap_uint<1024>* in, ap_uint<1024>* in2, ap_uint<1024>* out,
                 #pragma HLS UNROLL
                 in_data[j] = in_block.range((j+1)*32-1, j*32);
             }
+<<<<<<< HEAD
 
             IDCT2B8(in_data, out_data);
 
@@ -419,6 +450,45 @@ extern "C" void IDCT2(ap_uint<1024>* in, ap_uint<1024>* in2, ap_uint<1024>* out,
                 #pragma HLS UNROLL
                 out_block.range((j+1)*32-1, j*32) = CLIP3(((out_data[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
             }
+=======
+            std::cout << "Entering IDCT2B8 with inputs: ";
+            for(int i=0; i<8; i++) std::cout << in_data[i] << " ";
+            std::cout << std::endl;
+            IDCT2B8(in_data, out_data);
+
+            std::cout << "out_block before assigning = " << out_block << std::endl;
+
+            for(int j=0; j<8; j++){
+                std::cout << "out_block.range(" << (j+1)*32-1 << "," << j*32 << ") = " 
+                    << out_block.range((j+1)*32-1, j*32) << std::endl;
+            }
+
+
+           /*  for(int j=0; j<8; j++){
+                #pragma HLS UNROLL
+                out_block.range((j+1)*32-1, j*32) = CLIP3(((out_data[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
+            }
+ */
+        
+            for(int j=0; j<8; j++){
+                #pragma HLS UNROLL
+                tmp_block8.range((j+1)*32-1, j*32) = (ap_uint<32>) ((out_data[j] + add) >> shift);
+            }
+            
+            out_block.range(255,0) = tmp_block8; // promote to 1024-bit
+
+
+            std::cout << "out_block after assigning = " << out_block << std::endl;
+
+            for(int j=0; j<8; j++){
+                std::cout << "out_block.range(" << (j+1)*32-1 << "," << j*32 << ") = " 
+                    << out_block.range((j+1)*32-1, j*32) << std::endl;
+            }
+
+            std::cout << "IDCT2B8 output in main: ";
+            for(int i=0; i<8; i++) std::cout << out_data[i] << " ";
+            std::cout << std::endl;
+>>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
 
             //out[i] = out_block;
         }else if(block_size == 4){
@@ -430,6 +500,7 @@ extern "C" void IDCT2(ap_uint<1024>* in, ap_uint<1024>* in2, ap_uint<1024>* out,
             for(int j=0; j<4; j++){
                 #pragma HLS UNROLL
                 in_data[j] = in_block.range((j+1)*32-1, j*32);
+<<<<<<< HEAD
             }
 
             IDCT2B4(in_data, out_data);
@@ -438,6 +509,51 @@ extern "C" void IDCT2(ap_uint<1024>* in, ap_uint<1024>* in2, ap_uint<1024>* out,
                 #pragma HLS UNROLL
                 out_block.range((j+1)*32-1, j*32) = CLIP3(((out_data[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
             }
+=======
+                std::cout << "in_data[" << j << "] = " << in_data[j] << std::endl;
+            }
+            std::cout << "Entering IDCT2B4 with inputs: ";
+            for(int i=0; i<4; i++) std::cout << in_data[i] << " ";
+            std::cout << std::endl;
+            IDCT2B4(in_data, out_data);
+
+            std::cout << "out_block before assigning = " << out_block << std::endl;
+
+            for(int j=0; j<4; j++){
+                std::cout << "out_block.range(" << (j+1)*32-1 << "," << j*32 << ") = " 
+                    << out_block.range((j+1)*32-1, j*32) << std::endl;
+            }
+
+
+
+            /* for(int j=0; j<4; j++){
+                #pragma HLS UNROLL
+                out_block.range((j+1)*32-1, j*32) = (ap_uint<32>)CLIP3(((out_data[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
+
+            } */
+
+            //ap_uint<1024> out_block = 0;
+            //ap_uint<128> tmp_block = 0;
+            for(int j=0; j<4; j++){
+                #pragma HLS UNROLL
+                tmp_block4.range((j+1)*32-1, j*32) = (ap_uint<32>) ((out_data[j] + add) >> shift);
+            }
+            
+            out_block.range(127,0) = tmp_block4; // promote to 1024-bit
+
+
+
+            std::cout << "out_block after assigning = " << out_block << std::endl;
+
+            for(int j=0; j<4; j++){
+                std::cout << "out_block.range(" << (j+1)*32-1 << "," << j*32 << ") = " 
+                    << out_block.range((j+1)*32-1, j*32) << std::endl;
+            }
+
+            std::cout << "IDCT2B4 output in main: ";
+            for(int i=0; i<4; i++) std::cout << out_data[i] << " ";
+            std::cout << std::endl;
+>>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
 
             //out[i] = out_block;
         }else{
@@ -460,6 +576,10 @@ extern "C" void IDCT2(ap_uint<1024>* in, ap_uint<1024>* in2, ap_uint<1024>* out,
 
             //out[i] = out_block;
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
         out[i] = out_block;
         out2[i] = out_block2;
     }

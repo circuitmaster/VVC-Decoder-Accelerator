@@ -31,29 +31,58 @@
 // 0x14 : Data signal of in_r
 //        bit 31~0 - in_r[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of out_r
-//        bit 31~0 - out_r[31:0] (Read/Write)
-// 0x20 : Data signal of out_r
-//        bit 31~0 - out_r[63:32] (Read/Write)
+// 0x1c : Data signal of in2
+//        bit 31~0 - in2[31:0] (Read/Write)
+// 0x20 : Data signal of in2
+//        bit 31~0 - in2[63:32] (Read/Write)
 // 0x24 : reserved
-// 0x28 : Data signal of block_size
+// 0x28 : Data signal of out_r
+//        bit 31~0 - out_r[31:0] (Read/Write)
+// 0x2c : Data signal of out_r
+//        bit 31~0 - out_r[63:32] (Read/Write)
+// 0x30 : reserved
+// 0x34 : Data signal of out2
+//        bit 31~0 - out2[31:0] (Read/Write)
+// 0x38 : Data signal of out2
+//        bit 31~0 - out2[63:32] (Read/Write)
+// 0x3c : reserved
+// 0x40 : Data signal of block_size
 //        bit 31~0 - block_size[31:0] (Read/Write)
-// 0x2c : reserved
-// 0x30 : Data signal of size
+// 0x44 : reserved
+// 0x48 : Data signal of size
 //        bit 31~0 - size[31:0] (Read/Write)
-// 0x34 : reserved
+// 0x4c : reserved
+// 0x50 : Data signal of shift
+//        bit 31~0 - shift[31:0] (Read/Write)
+// 0x54 : reserved
+// 0x58 : Data signal of outputMinimum
+//        bit 31~0 - outputMinimum[31:0] (Read/Write)
+// 0x5c : reserved
+// 0x60 : Data signal of outputMaximum
+//        bit 31~0 - outputMaximum[31:0] (Read/Write)
+// 0x64 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
-#define XIDCT2_CONTROL_ADDR_AP_CTRL         0x00
-#define XIDCT2_CONTROL_ADDR_GIE             0x04
-#define XIDCT2_CONTROL_ADDR_IER             0x08
-#define XIDCT2_CONTROL_ADDR_ISR             0x0c
-#define XIDCT2_CONTROL_ADDR_IN_R_DATA       0x10
-#define XIDCT2_CONTROL_BITS_IN_R_DATA       64
-#define XIDCT2_CONTROL_ADDR_OUT_R_DATA      0x1c
-#define XIDCT2_CONTROL_BITS_OUT_R_DATA      64
-#define XIDCT2_CONTROL_ADDR_BLOCK_SIZE_DATA 0x28
-#define XIDCT2_CONTROL_BITS_BLOCK_SIZE_DATA 32
-#define XIDCT2_CONTROL_ADDR_SIZE_DATA       0x30
-#define XIDCT2_CONTROL_BITS_SIZE_DATA       32
+#define XIDCT2_CONTROL_ADDR_AP_CTRL            0x00
+#define XIDCT2_CONTROL_ADDR_GIE                0x04
+#define XIDCT2_CONTROL_ADDR_IER                0x08
+#define XIDCT2_CONTROL_ADDR_ISR                0x0c
+#define XIDCT2_CONTROL_ADDR_IN_R_DATA          0x10
+#define XIDCT2_CONTROL_BITS_IN_R_DATA          64
+#define XIDCT2_CONTROL_ADDR_IN2_DATA           0x1c
+#define XIDCT2_CONTROL_BITS_IN2_DATA           64
+#define XIDCT2_CONTROL_ADDR_OUT_R_DATA         0x28
+#define XIDCT2_CONTROL_BITS_OUT_R_DATA         64
+#define XIDCT2_CONTROL_ADDR_OUT2_DATA          0x34
+#define XIDCT2_CONTROL_BITS_OUT2_DATA          64
+#define XIDCT2_CONTROL_ADDR_BLOCK_SIZE_DATA    0x40
+#define XIDCT2_CONTROL_BITS_BLOCK_SIZE_DATA    32
+#define XIDCT2_CONTROL_ADDR_SIZE_DATA          0x48
+#define XIDCT2_CONTROL_BITS_SIZE_DATA          32
+#define XIDCT2_CONTROL_ADDR_SHIFT_DATA         0x50
+#define XIDCT2_CONTROL_BITS_SHIFT_DATA         32
+#define XIDCT2_CONTROL_ADDR_OUTPUTMINIMUM_DATA 0x58
+#define XIDCT2_CONTROL_BITS_OUTPUTMINIMUM_DATA 32
+#define XIDCT2_CONTROL_ADDR_OUTPUTMAXIMUM_DATA 0x60
+#define XIDCT2_CONTROL_BITS_OUTPUTMAXIMUM_DATA 32
 

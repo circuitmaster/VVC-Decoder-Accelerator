@@ -1,0 +1,614 @@
+
+
+================================================================
+== Synthesis Summary Report of 'IDCT8'
+================================================================
++ General Information: 
+    * Date:           Mon Dec 22 13:42:17 2025
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        dct8_dir
+    * Solution:       hls (Vitis Kernel Flow Target)
+    * Product family: versalaicore
+    * Target device:  xcvc1902-vsva2197-2MP-e-S
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+------------+------------+-----+
+    |                 Modules                |  Issue |       | Latency |  Latency  | Iteration|         | Trip |          |          |          |            |            |     |
+    |                 & Loops                |  Type  | Slack | (cycles)|    (ns)   |  Latency | Interval| Count| Pipelined|   BRAM   |    DSP   |     FF     |     LUT    | URAM|
+    +----------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+------------+------------+-----+
+    |+ IDCT8                                 |  Timing|  -0.41|    67732|  2.258e+05|         -|    67733|     -|        no|   97 (5%)|  114 (5%)|  23619 (1%)|  18064 (2%)|    -|
+    | o VITIS_LOOP_260_1                     |       -|   2.43|    67584|  2.253e+05|        66|        -|  1024|        no|         -|         -|           -|           -|    -|
+    |  + IDCT8B8                             |       -|   0.02|       20|     66.660|         -|       20|     -|        no|   8 (~0%)|  16 (~0%)|  1755 (~0%)|  1807 (~0%)|    -|
+    |   + IDCT8B8_Pipeline_VITIS_LOOP_21_1   |       -|   0.02|       18|     59.994|         -|       18|     -|        no|   8 (~0%)|  16 (~0%)|  1243 (~0%)|  1220 (~0%)|    -|
+    |    o VITIS_LOOP_21_1                   |       -|   2.43|       16|     53.328|        10|        1|     8|       yes|         -|         -|           -|           -|    -|
+    |  + IDCT8B16                            |       -|   0.02|       33|    109.989|         -|       33|     -|        no|  16 (~0%)|   32 (1%)|  3079 (~0%)|  2942 (~0%)|    -|
+    |   + IDCT8B16_Pipeline_VITIS_LOOP_47_1  |       -|   0.02|       31|    103.323|         -|       31|     -|        no|  16 (~0%)|   32 (1%)|  2283 (~0%)|  2099 (~0%)|    -|
+    |    o VITIS_LOOP_47_1                   |       -|   2.43|       29|     96.657|        15|        1|    16|       yes|         -|         -|           -|           -|    -|
+    |  + IDCT8B32                            |       -|   0.02|       60|    199.980|         -|       60|     -|        no|   32 (1%)|   64 (3%)|  5748 (~0%)|  5207 (~0%)|    -|
+    |   + IDCT8B32_Pipeline_VITIS_LOOP_73_1  |       -|   0.02|       58|    193.314|         -|       58|     -|        no|   32 (1%)|   64 (3%)|  4413 (~0%)|  3852 (~0%)|    -|
+    |    o VITIS_LOOP_73_1                   |       -|   2.43|       56|    186.648|        26|        1|    32|       yes|         -|         -|           -|           -|    -|
+    +----------------------------------------+--------+-------+---------+-----------+----------+---------+------+----------+----------+----------+------------+------------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++-------------+------------+--------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface   | Read/Write | Data Width   | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|             |            | (SW->HW)     |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++-------------+------------+--------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem0 | READ_ONLY  | 1024 -> 1024 | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=27           |
+| m_axi_gmem1 | WRITE_ONLY | 1024 -> 1024 | 64            | 64      | slave  | 0        | 512       | 16           | 16           | 16          | 16          | BRAM=14           |
++-------------+------------+--------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 7             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| Interface     | Register   | Offset | Width | Access | Description                      | Bit Fields                                                                         |
++---------------+------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+| s_axi_control | CTRL       | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 4=AP_CONTINUE 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER       | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                                           |
+| s_axi_control | IP_IER     | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                                      |
+| s_axi_control | IP_ISR     | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                                      |
+| s_axi_control | in_r_1     | 0x10   | 32    | W      | Data signal of in_r              |                                                                                    |
+| s_axi_control | in_r_2     | 0x14   | 32    | W      | Data signal of in_r              |                                                                                    |
+| s_axi_control | out_r_1    | 0x1c   | 32    | W      | Data signal of out_r             |                                                                                    |
+| s_axi_control | out_r_2    | 0x20   | 32    | W      | Data signal of out_r             |                                                                                    |
+| s_axi_control | block_size | 0x28   | 32    | W      | Data signal of block_size        |                                                                                    |
+| s_axi_control | sIn        | 0x30   | 32    | W      | Data signal of sIn               |                                                                                    |
+| s_axi_control | size       | 0x38   | 32    | W      | Data signal of size              |                                                                                    |
+| s_axi_control | shift      | 0x40   | 32    | W      | Data signal of shift             |                                                                                    |
+| s_axi_control | oMin       | 0x48   | 32    | W      | Data signal of oMin              |                                                                                    |
+| s_axi_control | oMax       | 0x50   | 32    | W      | Data signal of oMax              |                                                                                    |
++---------------+------------+--------+-------+--------+----------------------------------+------------------------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+---------------+-----------+
+| Interface | Type          | Ports     |
++-----------+---------------+-----------+
+| ap_clk    | clock         | ap_clk    |
+| ap_rst_n  | reset         | ap_rst_n  |
+| interrupt | interrupt     | interrupt |
+| ap_ctrl   | ap_ctrl_chain |           |
++-----------+---------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++------------+-----------+---------------+
+| Argument   | Direction | Datatype      |
++------------+-----------+---------------+
+| in         | in        | ap_int<1024>* |
+| out        | out       | ap_int<1024>* |
+| block_size | in        | ap_int<32>    |
+| sIn        | in        | ap_int<32>    |
+| size       | in        | ap_int<32>    |
+| shift      | in        | ap_int<32>    |
+| oMin       | in        | ap_int<32>    |
+| oMax       | in        | ap_int<32>    |
++------------+-----------+---------------+
+
+* SW-to-HW Mapping
++------------+---------------+-----------+----------+--------------------------------------+
+| Argument   | HW Interface  | HW Type   | HW Usage | HW Info                              |
++------------+---------------+-----------+----------+--------------------------------------+
+| in         | m_axi_gmem0   | interface |          | channel=0                            |
+| in         | s_axi_control | register  | offset   | name=in_r_1 offset=0x10 range=32     |
+| in         | s_axi_control | register  | offset   | name=in_r_2 offset=0x14 range=32     |
+| out        | m_axi_gmem1   | interface |          | channel=0                            |
+| out        | s_axi_control | register  | offset   | name=out_r_1 offset=0x1c range=32    |
+| out        | s_axi_control | register  | offset   | name=out_r_2 offset=0x20 range=32    |
+| block_size | s_axi_control | register  |          | name=block_size offset=0x28 range=32 |
+| sIn        | s_axi_control | register  |          | name=sIn offset=0x30 range=32        |
+| size       | s_axi_control | register  |          | name=size offset=0x38 range=32       |
+| shift      | s_axi_control | register  |          | name=shift offset=0x40 range=32      |
+| oMin       | s_axi_control | register  |          | name=oMin offset=0x48 range=32       |
+| oMax       | s_axi_control | register  |          | name=oMax offset=0x50 range=32       |
++------------+---------------+-----------+----------+--------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+----------+-------+------------------+----------------------+
+| HW Interface | Direction | Length   | Width | Loop             | Loop Location        |
++--------------+-----------+----------+-------+------------------+----------------------+
+| m_axi_gmem0  | read      | variable | 1024  | VITIS_LOOP_260_1 | src/IDCT8.cpp:260:20 |
+| m_axi_gmem1  | write     | variable | 1024  | VITIS_LOOP_260_1 | src/IDCT8.cpp:260:20 |
++--------------+-----------+----------+-------+------------------+----------------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+----------------------+-----------+--------------+----------+------------------+----------------------+------------+-----------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location      | Direction | Burst Status | Length   | Loop             | Loop Location        | Resolution | Problem                                                                                                   |
++--------------+----------+----------------------+-----------+--------------+----------+------------------+----------------------+------------+-----------------------------------------------------------------------------------------------------------+
+| m_axi_gmem0  | in       | src/IDCT8.cpp:264:26 | read      | Widen Fail   |          | VITIS_LOOP_260_1 | src/IDCT8.cpp:260:20 | 214-353    | Could not widen since type i1024 size is greater than or equal to the max_widen_bitwidth threshold of 512 |
+| m_axi_gmem0  | in       | src/IDCT8.cpp:264:26 | read      | Inferred     | variable | VITIS_LOOP_260_1 | src/IDCT8.cpp:260:20 |            |                                                                                                           |
+| m_axi_gmem1  | out      | src/IDCT8.cpp:346:16 | write     | Widen Fail   |          | VITIS_LOOP_260_1 | src/IDCT8.cpp:260:20 | 214-353    | Could not widen since type i1024 size is greater than or equal to the max_widen_bitwidth threshold of 512 |
+| m_axi_gmem1  | out      | src/IDCT8.cpp:346:16 | write     | Inferred     | variable | VITIS_LOOP_260_1 | src/IDCT8.cpp:260:20 |            |                                                                                                           |
++--------------+----------+----------------------+-----------+--------------+----------+------------------+----------------------+------------+-----------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++---------------------------------------+-----+--------+----------------+--------+-----------+---------+
+| Name                                  | DSP | Pragma | Variable       | Op     | Impl      | Latency |
++---------------------------------------+-----+--------+----------------+--------+-----------+---------+
+| + IDCT8                               | 114 |        |                |        |           |         |
+|   icmp_ln260_fu_1183_p2               |     |        | icmp_ln260     | setgt  | auto      | 0       |
+|   sub_i_i_i_fu_1243_p2                |     |        | sub_i_i_i      | add    | fabric    | 0       |
+|   sub_i_i_i831_i_fu_1253_p2           |     |        | sub_i_i_i831_i | sub    | fabric    | 0       |
+|   rnd_factor_fu_1258_p2               |     |        | rnd_factor     | lshr   | auto_pipe | 0       |
+|   rnd_factor_1_fu_1264_p2             |     |        | rnd_factor_1   | shl    | auto_pipe | 0       |
+|   sub_i_i_i540_i_fu_1269_p2           |     |        | sub_i_i_i540_i | sub    | fabric    | 0       |
+|   empty_305_fu_1209_p3                |     |        | empty_305      | select | auto_sel  | 0       |
+|   add_ln260_fu_1308_p2                |     |        | add_ln260      | add    | fabric    | 0       |
+|   icmp_ln260_1_fu_1318_p2             |     |        | icmp_ln260_1   | setlt  | auto      | 0       |
+|   rnd_factor_2_fu_1346_p3             |     |        | rnd_factor_2   | select | auto_sel  | 0       |
+|   c_fu_1361_p2                        |     |        | c              | add    | fabric    | 0       |
+|   c_1_fu_1366_p2                      |     |        | c_1            | add    | fabric    | 0       |
+|   c_2_fu_1352_p2                      |     |        | c_2            | sub    | fabric    | 0       |
+|   add_ln106_fu_1650_p2                |     |        | add_ln106      | add    | fabric    | 0       |
+|   shl_ln106_fu_1750_p2                |     |        | shl_ln106      | shl    | auto_pipe | 0       |
+|   ashr_ln106_fu_1755_p2               |     |        | ashr_ln106     | ashr   | auto_pipe | 0       |
+|   x_fu_1768_p3                        |     |        | x              | select | auto_sel  | 0       |
+|   icmp_ln8_fu_1836_p2                 |     |        | icmp_ln8       | setlt  | auto      | 0       |
+|   icmp_ln9_fu_1840_p2                 |     |        | icmp_ln9       | setgt  | auto      | 0       |
+|   select_ln9_fu_1844_p3               |     |        | select_ln9     | select | auto_sel  | 0       |
+|   select_ln8_fu_1850_p3               |     |        | select_ln8     | select | auto_sel  | 0       |
+|   sub_ln107_fu_1580_p2                |     |        | sub_ln107      | sub    | fabric    | 0       |
+|   sub_ln107_1_fu_1593_p2              |     |        | sub_ln107_1    | sub    | fabric    | 0       |
+|   shl_ln107_fu_1691_p2                |     |        | shl_ln107      | shl    | auto_pipe | 0       |
+|   ashr_ln107_fu_1696_p2               |     |        | ashr_ln107     | ashr   | auto_pipe | 0       |
+|   x_1_fu_1775_p3                      |     |        | x_1            | select | auto_sel  | 0       |
+|   icmp_ln8_1_fu_1857_p2               |     |        | icmp_ln8_1     | setlt  | auto      | 0       |
+|   icmp_ln9_1_fu_1861_p2               |     |        | icmp_ln9_1     | setgt  | auto      | 0       |
+|   select_ln9_1_fu_1865_p3             |     |        | select_ln9_1   | select | auto_sel  | 0       |
+|   select_ln8_1_fu_1871_p3             |     |        | select_ln8_1   | select | auto_sel  | 0       |
+|   sub_ln108_fu_1709_p2                |     |        | sub_ln108      | sub    | fabric    | 0       |
+|   shl_ln108_fu_1783_p2                |     |        | shl_ln108      | shl    | auto_pipe | 0       |
+|   ashr_ln108_fu_1788_p2               |     |        | ashr_ln108     | ashr   | auto_pipe | 0       |
+|   x_2_fu_1801_p3                      |     |        | x_2            | select | auto_sel  | 0       |
+|   icmp_ln8_2_fu_1878_p2               |     |        | icmp_ln8_2     | setlt  | auto      | 0       |
+|   icmp_ln9_2_fu_1882_p2               |     |        | icmp_ln9_2     | setgt  | auto      | 0       |
+|   select_ln9_2_fu_1886_p3             |     |        | select_ln9_2   | select | auto_sel  | 0       |
+|   select_ln8_2_fu_1892_p3             |     |        | select_ln8_2   | select | auto_sel  | 0       |
+|   mul_32s_7s_39_2_1_U384              | 2   |        | mul_ln109      | mul    | auto      | 1       |
+|   add_ln109_1_fu_1729_p2              |     |        | add_ln109_1    | add    | fabric    | 0       |
+|   shl_ln109_fu_1811_p2                |     |        | shl_ln109      | shl    | auto_pipe | 0       |
+|   ashr_ln109_fu_1816_p2               |     |        | ashr_ln109     | ashr   | auto_pipe | 0       |
+|   x_3_fu_1829_p3                      |     |        | x_3            | select | auto_sel  | 0       |
+|   icmp_ln8_3_fu_1899_p2               |     |        | icmp_ln8_3     | setlt  | auto      | 0       |
+|   icmp_ln9_3_fu_1903_p2               |     |        | icmp_ln9_3     | setgt  | auto      | 0       |
+|   select_ln9_3_fu_1907_p3             |     |        | select_ln9_3   | select | auto_sel  | 0       |
+|   select_ln8_3_fu_1913_p3             |     |        | select_ln8_3   | select | auto_sel  | 0       |
+|  + IDCT8B8                            | 16  |        |                |        |           |         |
+|    add_ln17_fu_226_p2                 |     |        | add_ln17       | add    | fabric    | 0       |
+|    sub_ln17_fu_244_p2                 |     |        | sub_ln17       | sub    | fabric    | 0       |
+|    rndFactor_fu_258_p2                |     |        | rndFactor      | lshr   | auto_pipe | 0       |
+|    rndFactor_1_fu_263_p2              |     |        | rndFactor_1    | shl    | auto_pipe | 0       |
+|    rndFactor_2_fu_268_p3              |     |        | rndFactor_2    | select | auto_sel  | 0       |
+|    cutoff_fu_276_p2                   |     |        | cutoff         | sub    | fabric    | 0       |
+|    sub_i_i_i_i_fu_283_p2              |     |        | sub_i_i_i_i    | sub    | fabric    | 0       |
+|   + IDCT8B8_Pipeline_VITIS_LOOP_21_1  | 16  |        |                |        |           |         |
+|     icmp50_fu_450_p2                  |     |        | icmp50         | setgt  | auto      | 0       |
+|     cmp_i_i_6_fu_456_p2               |     |        | cmp_i_i_6      | setgt  | auto      | 0       |
+|     cmp_i_i_5_fu_462_p2               |     |        | cmp_i_i_5      | setgt  | auto      | 0       |
+|     cmp_i_i_4_fu_468_p2               |     |        | cmp_i_i_4      | setgt  | auto      | 0       |
+|     icmp47_fu_474_p2                  |     |        | icmp47         | setgt  | auto      | 0       |
+|     cmp_i_i_2_fu_480_p2               |     |        | cmp_i_i_2      | setgt  | auto      | 0       |
+|     icmp_fu_486_p2                    |     |        | icmp           | setgt  | auto      | 0       |
+|     cmp_i_i_fu_492_p2                 |     |        | cmp_i_i        | setgt  | auto      | 0       |
+|     add_ln21_fu_506_p2                |     |        | add_ln21       | add    | fabric    | 0       |
+|     icmp_ln21_fu_512_p2               |     |        | icmp_ln21      | seteq  | auto      | 0       |
+|     mul_7ns_32s_32_2_1_U1             | 2   |        | sum            | mul    | auto      | 1       |
+|     sum_1_fu_613_p3                   |     |        | sum_1          | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U2              | 2   |        | mul_ln30       | mul    | auto      | 1       |
+|     sum_2_fu_620_p2                   |     |        | sum_2          | add    | fabric    | 0       |
+|     sum_3_fu_626_p3                   |     |        | sum_3          | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U3              | 2   |        | mul_ln30_1     | mul    | auto      | 1       |
+|     sum_4_fu_643_p2                   |     |        | sum_4          | add    | fabric    | 0       |
+|     sum_5_fu_648_p3                   |     |        | sum_5          | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U4              | 2   |        | mul_ln30_2     | mul    | auto      | 1       |
+|     sum_6_fu_654_p2                   |     |        | sum_6          | add    | fabric    | 0       |
+|     sum_7_fu_680_p3                   |     |        | sum_7          | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U5              | 2   |        | mul_ln30_3     | mul    | auto      | 1       |
+|     sum_8_fu_685_p2                   |     |        | sum_8          | add    | fabric    | 0       |
+|     sum_9_fu_691_p3                   |     |        | sum_9          | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U6              | 2   |        | mul_ln30_4     | mul    | auto      | 1       |
+|     sum_10_fu_708_p2                  |     |        | sum_10         | add    | fabric    | 0       |
+|     sum_11_fu_713_p3                  |     |        | sum_11         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U7              | 2   |        | mul_ln30_5     | mul    | auto      | 1       |
+|     sum_12_fu_719_p2                  |     |        | sum_12         | add    | fabric    | 0       |
+|     sum_13_fu_725_p3                  |     |        | sum_13         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U8              | 2   |        | mul_ln30_6     | mul    | auto      | 1       |
+|     sum_14_fu_730_p2                  |     |        | sum_14         | add    | fabric    | 0       |
+|     sum_15_fu_736_p3                  |     |        | sum_15         | select | auto_sel  | 0       |
+|     add_ln34_fu_747_p2                |     |        | add_ln34       | add    | fabric    | 0       |
+|     shl_ln34_fu_752_p2                |     |        | shl_ln34       | shl    | auto_pipe | 0       |
+|     ashr_ln34_fu_756_p2               |     |        | ashr_ln34      | ashr   | auto_pipe | 0       |
+|     scaled_fu_768_p3                  |     |        | scaled         | select | auto_sel  | 0       |
+|     icmp_ln8_fu_775_p2                |     |        | icmp_ln8       | setlt  | auto      | 0       |
+|     icmp_ln9_fu_779_p2                |     |        | icmp_ln9       | setgt  | auto      | 0       |
+|     select_ln9_fu_783_p3              |     |        | select_ln9     | select | auto_sel  | 0       |
+|     select_ln8_fu_789_p3              |     |        | select_ln8     | select | auto_sel  | 0       |
+|  + IDCT8B16                           | 32  |        |                |        |           |         |
+|    add_ln43_fu_375_p2                 |     |        | add_ln43       | add    | fabric    | 0       |
+|    sub_ln43_fu_393_p2                 |     |        | sub_ln43       | sub    | fabric    | 0       |
+|    rndFactor_fu_407_p2                |     |        | rndFactor      | lshr   | auto_pipe | 0       |
+|    rndFactor_5_fu_412_p2              |     |        | rndFactor_5    | shl    | auto_pipe | 0       |
+|    rndFactor_6_fu_417_p3              |     |        | rndFactor_6    | select | auto_sel  | 0       |
+|    cutoff_fu_425_p2                   |     |        | cutoff         | sub    | fabric    | 0       |
+|    sub_i_i_i_i_fu_432_p2              |     |        | sub_i_i_i_i    | sub    | fabric    | 0       |
+|   + IDCT8B16_Pipeline_VITIS_LOOP_47_1 | 32  |        |                |        |           |         |
+|     icmp101_fu_780_p2                 |     |        | icmp101        | setgt  | auto      | 0       |
+|     cmp_i_i_14_fu_786_p2              |     |        | cmp_i_i_14     | setgt  | auto      | 0       |
+|     cmp_i_i_13_fu_792_p2              |     |        | cmp_i_i_13     | setgt  | auto      | 0       |
+|     cmp_i_i_12_fu_798_p2              |     |        | cmp_i_i_12     | setgt  | auto      | 0       |
+|     cmp_i_i_11_fu_804_p2              |     |        | cmp_i_i_11     | setgt  | auto      | 0       |
+|     cmp_i_i_10_fu_810_p2              |     |        | cmp_i_i_10     | setgt  | auto      | 0       |
+|     cmp_i_i_9_fu_816_p2               |     |        | cmp_i_i_9      | setgt  | auto      | 0       |
+|     cmp_i_i_8_fu_822_p2               |     |        | cmp_i_i_8      | setgt  | auto      | 0       |
+|     icmp98_fu_828_p2                  |     |        | icmp98         | setgt  | auto      | 0       |
+|     cmp_i_i_6_fu_834_p2               |     |        | cmp_i_i_6      | setgt  | auto      | 0       |
+|     cmp_i_i_5_fu_840_p2               |     |        | cmp_i_i_5      | setgt  | auto      | 0       |
+|     cmp_i_i_4_fu_846_p2               |     |        | cmp_i_i_4      | setgt  | auto      | 0       |
+|     icmp95_fu_852_p2                  |     |        | icmp95         | setgt  | auto      | 0       |
+|     cmp_i_i_2_fu_858_p2               |     |        | cmp_i_i_2      | setgt  | auto      | 0       |
+|     icmp_fu_864_p2                    |     |        | icmp           | setgt  | auto      | 0       |
+|     cmp_i_i_fu_870_p2                 |     |        | cmp_i_i        | setgt  | auto      | 0       |
+|     add_ln47_fu_884_p2                |     |        | add_ln47       | add    | fabric    | 0       |
+|     icmp_ln47_fu_890_p2               |     |        | icmp_ln47      | seteq  | auto      | 0       |
+|     mul_7ns_32s_32_2_1_U65            | 2   |        | sum            | mul    | auto      | 1       |
+|     sum_79_fu_975_p3                  |     |        | sum_79         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U66             | 2   |        | mul_ln57       | mul    | auto      | 1       |
+|     sum_80_fu_982_p2                  |     |        | sum_80         | add    | fabric    | 0       |
+|     sum_81_fu_988_p3                  |     |        | sum_81         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U67             | 2   |        | mul_ln57_1     | mul    | auto      | 1       |
+|     sum_82_fu_1014_p2                 |     |        | sum_82         | add    | fabric    | 0       |
+|     sum_83_fu_1019_p3                 |     |        | sum_83         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U68             | 2   |        | mul_ln57_2     | mul    | auto      | 1       |
+|     sum_84_fu_1025_p2                 |     |        | sum_84         | add    | fabric    | 0       |
+|     sum_85_fu_1057_p3                 |     |        | sum_85         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U69             | 2   |        | mul_ln57_3     | mul    | auto      | 1       |
+|     sum_86_fu_1062_p2                 |     |        | sum_86         | add    | fabric    | 0       |
+|     sum_87_fu_1068_p3                 |     |        | sum_87         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U70             | 2   |        | mul_ln57_4     | mul    | auto      | 1       |
+|     sum_88_fu_1118_p2                 |     |        | sum_88         | add    | fabric    | 0       |
+|     sum_89_fu_1123_p3                 |     |        | sum_89         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U71             | 2   |        | mul_ln57_5     | mul    | auto      | 1       |
+|     sum_90_fu_1129_p2                 |     |        | sum_90         | add    | fabric    | 0       |
+|     sum_91_fu_1157_p3                 |     |        | sum_91         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U72             | 2   |        | mul_ln57_6     | mul    | auto      | 1       |
+|     sum_92_fu_1162_p2                 |     |        | sum_92         | add    | fabric    | 0       |
+|     sum_93_fu_1168_p3                 |     |        | sum_93         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U73             | 2   |        | mul_ln57_7     | mul    | auto      | 1       |
+|     sum_94_fu_1185_p2                 |     |        | sum_94         | add    | fabric    | 0       |
+|     sum_95_fu_1190_p3                 |     |        | sum_95         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U74             | 2   |        | mul_ln57_8     | mul    | auto      | 1       |
+|     sum_96_fu_1196_p2                 |     |        | sum_96         | add    | fabric    | 0       |
+|     sum_97_fu_1222_p3                 |     |        | sum_97         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U75             | 2   |        | mul_ln57_9     | mul    | auto      | 1       |
+|     sum_98_fu_1227_p2                 |     |        | sum_98         | add    | fabric    | 0       |
+|     sum_99_fu_1233_p3                 |     |        | sum_99         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U76             | 2   |        | mul_ln57_10    | mul    | auto      | 1       |
+|     sum_100_fu_1250_p2                |     |        | sum_100        | add    | fabric    | 0       |
+|     sum_101_fu_1255_p3                |     |        | sum_101        | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U77             | 2   |        | mul_ln57_11    | mul    | auto      | 1       |
+|     sum_102_fu_1261_p2                |     |        | sum_102        | add    | fabric    | 0       |
+|     sum_103_fu_1287_p3                |     |        | sum_103        | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U78             | 2   |        | mul_ln57_12    | mul    | auto      | 1       |
+|     sum_104_fu_1292_p2                |     |        | sum_104        | add    | fabric    | 0       |
+|     sum_105_fu_1298_p3                |     |        | sum_105        | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U79             | 2   |        | mul_ln57_13    | mul    | auto      | 1       |
+|     sum_106_fu_1305_p2                |     |        | sum_106        | add    | fabric    | 0       |
+|     sum_107_fu_1310_p3                |     |        | sum_107        | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U80             | 2   |        | mul_ln57_14    | mul    | auto      | 1       |
+|     sum_108_fu_1316_p2                |     |        | sum_108        | add    | fabric    | 0       |
+|     sum_109_fu_1322_p3                |     |        | sum_109        | select | auto_sel  | 0       |
+|     add_ln61_fu_1331_p2               |     |        | add_ln61       | add    | fabric    | 0       |
+|     shl_ln61_fu_1336_p2               |     |        | shl_ln61       | shl    | auto_pipe | 0       |
+|     ashr_ln61_fu_1341_p2              |     |        | ashr_ln61      | ashr   | auto_pipe | 0       |
+|     scaled_fu_1354_p3                 |     |        | scaled         | select | auto_sel  | 0       |
+|     icmp_ln8_fu_1361_p2               |     |        | icmp_ln8       | setlt  | auto      | 0       |
+|     icmp_ln9_fu_1365_p2               |     |        | icmp_ln9       | setgt  | auto      | 0       |
+|     select_ln9_fu_1369_p3             |     |        | select_ln9     | select | auto_sel  | 0       |
+|     select_ln8_fu_1375_p3             |     |        | select_ln8     | select | auto_sel  | 0       |
+|  + IDCT8B32                           | 64  |        |                |        |           |         |
+|    add_ln70_fu_666_p2                 |     |        | add_ln70       | add    | fabric    | 0       |
+|    sub_ln70_fu_684_p2                 |     |        | sub_ln70       | sub    | fabric    | 0       |
+|    rndFactor_fu_698_p2                |     |        | rndFactor      | lshr   | auto_pipe | 0       |
+|    rndFactor_3_fu_703_p2              |     |        | rndFactor_3    | shl    | auto_pipe | 0       |
+|    rndFactor_4_fu_708_p3              |     |        | rndFactor_4    | select | auto_sel  | 0       |
+|    cutoff_fu_716_p2                   |     |        | cutoff         | sub    | fabric    | 0       |
+|    sub_i_i_i_i_fu_723_p2              |     |        | sub_i_i_i_i    | sub    | fabric    | 0       |
+|   + IDCT8B32_Pipeline_VITIS_LOOP_73_1 | 64  |        |                |        |           |         |
+|     icmp200_fu_1430_p2                |     |        | icmp200        | setgt  | auto      | 0       |
+|     cmp_i_i_30_fu_1436_p2             |     |        | cmp_i_i_30     | setgt  | auto      | 0       |
+|     cmp_i_i_29_fu_1442_p2             |     |        | cmp_i_i_29     | setgt  | auto      | 0       |
+|     cmp_i_i_28_fu_1448_p2             |     |        | cmp_i_i_28     | setgt  | auto      | 0       |
+|     cmp_i_i_27_fu_1454_p2             |     |        | cmp_i_i_27     | setgt  | auto      | 0       |
+|     cmp_i_i_26_fu_1460_p2             |     |        | cmp_i_i_26     | setgt  | auto      | 0       |
+|     cmp_i_i_25_fu_1466_p2             |     |        | cmp_i_i_25     | setgt  | auto      | 0       |
+|     cmp_i_i_24_fu_1472_p2             |     |        | cmp_i_i_24     | setgt  | auto      | 0       |
+|     cmp_i_i_23_fu_1478_p2             |     |        | cmp_i_i_23     | setgt  | auto      | 0       |
+|     cmp_i_i_22_fu_1484_p2             |     |        | cmp_i_i_22     | setgt  | auto      | 0       |
+|     cmp_i_i_21_fu_1490_p2             |     |        | cmp_i_i_21     | setgt  | auto      | 0       |
+|     cmp_i_i_20_fu_1496_p2             |     |        | cmp_i_i_20     | setgt  | auto      | 0       |
+|     cmp_i_i_19_fu_1502_p2             |     |        | cmp_i_i_19     | setgt  | auto      | 0       |
+|     cmp_i_i_18_fu_1508_p2             |     |        | cmp_i_i_18     | setgt  | auto      | 0       |
+|     cmp_i_i_17_fu_1514_p2             |     |        | cmp_i_i_17     | setgt  | auto      | 0       |
+|     cmp_i_i_16_fu_1520_p2             |     |        | cmp_i_i_16     | setgt  | auto      | 0       |
+|     icmp197_fu_1526_p2                |     |        | icmp197        | setgt  | auto      | 0       |
+|     cmp_i_i_14_fu_1532_p2             |     |        | cmp_i_i_14     | setgt  | auto      | 0       |
+|     cmp_i_i_13_fu_1538_p2             |     |        | cmp_i_i_13     | setgt  | auto      | 0       |
+|     cmp_i_i_12_fu_1544_p2             |     |        | cmp_i_i_12     | setgt  | auto      | 0       |
+|     cmp_i_i_11_fu_1550_p2             |     |        | cmp_i_i_11     | setgt  | auto      | 0       |
+|     cmp_i_i_10_fu_1556_p2             |     |        | cmp_i_i_10     | setgt  | auto      | 0       |
+|     cmp_i_i_9_fu_1562_p2              |     |        | cmp_i_i_9      | setgt  | auto      | 0       |
+|     cmp_i_i_8_fu_1568_p2              |     |        | cmp_i_i_8      | setgt  | auto      | 0       |
+|     icmp194_fu_1574_p2                |     |        | icmp194        | setgt  | auto      | 0       |
+|     cmp_i_i_6_fu_1580_p2              |     |        | cmp_i_i_6      | setgt  | auto      | 0       |
+|     cmp_i_i_5_fu_1586_p2              |     |        | cmp_i_i_5      | setgt  | auto      | 0       |
+|     cmp_i_i_4_fu_1592_p2              |     |        | cmp_i_i_4      | setgt  | auto      | 0       |
+|     icmp191_fu_1598_p2                |     |        | icmp191        | setgt  | auto      | 0       |
+|     cmp_i_i_2_fu_1604_p2              |     |        | cmp_i_i_2      | setgt  | auto      | 0       |
+|     icmp_fu_1610_p2                   |     |        | icmp           | setgt  | auto      | 0       |
+|     cmp_i_i_fu_1616_p2                |     |        | cmp_i_i        | setgt  | auto      | 0       |
+|     add_ln73_fu_1630_p2               |     |        | add_ln73       | add    | fabric    | 0       |
+|     icmp_ln73_fu_1636_p2              |     |        | icmp_ln73      | seteq  | auto      | 0       |
+|     mul_7ns_32s_32_2_1_U176           | 2   |        | sum            | mul    | auto      | 1       |
+|     sum_16_fu_1721_p3                 |     |        | sum_16         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U177            | 2   |        | mul_ln83       | mul    | auto      | 1       |
+|     sum_17_fu_1728_p2                 |     |        | sum_17         | add    | fabric    | 0       |
+|     sum_18_fu_1734_p3                 |     |        | sum_18         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U178            | 2   |        | mul_ln83_1     | mul    | auto      | 1       |
+|     sum_19_fu_1760_p2                 |     |        | sum_19         | add    | fabric    | 0       |
+|     sum_20_fu_1765_p3                 |     |        | sum_20         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U179            | 2   |        | mul_ln83_2     | mul    | auto      | 1       |
+|     sum_21_fu_1771_p2                 |     |        | sum_21         | add    | fabric    | 0       |
+|     sum_22_fu_1803_p3                 |     |        | sum_22         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U180            | 2   |        | mul_ln83_3     | mul    | auto      | 1       |
+|     sum_23_fu_1808_p2                 |     |        | sum_23         | add    | fabric    | 0       |
+|     sum_24_fu_1814_p3                 |     |        | sum_24         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U181            | 2   |        | mul_ln83_4     | mul    | auto      | 1       |
+|     sum_25_fu_1840_p2                 |     |        | sum_25         | add    | fabric    | 0       |
+|     sum_26_fu_1845_p3                 |     |        | sum_26         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U182            | 2   |        | mul_ln83_5     | mul    | auto      | 1       |
+|     sum_27_fu_1851_p2                 |     |        | sum_27         | add    | fabric    | 0       |
+|     sum_28_fu_1883_p3                 |     |        | sum_28         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U183            | 2   |        | mul_ln83_6     | mul    | auto      | 1       |
+|     sum_29_fu_1888_p2                 |     |        | sum_29         | add    | fabric    | 0       |
+|     sum_30_fu_1894_p3                 |     |        | sum_30         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U184            | 2   |        | mul_ln83_7     | mul    | auto      | 1       |
+|     sum_31_fu_1920_p2                 |     |        | sum_31         | add    | fabric    | 0       |
+|     sum_32_fu_1925_p3                 |     |        | sum_32         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U185            | 2   |        | mul_ln83_8     | mul    | auto      | 1       |
+|     sum_33_fu_1931_p2                 |     |        | sum_33         | add    | fabric    | 0       |
+|     sum_34_fu_1963_p3                 |     |        | sum_34         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U186            | 2   |        | mul_ln83_9     | mul    | auto      | 1       |
+|     sum_35_fu_1968_p2                 |     |        | sum_35         | add    | fabric    | 0       |
+|     sum_36_fu_1974_p3                 |     |        | sum_36         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U187            | 2   |        | mul_ln83_10    | mul    | auto      | 1       |
+|     sum_37_fu_2000_p2                 |     |        | sum_37         | add    | fabric    | 0       |
+|     sum_38_fu_2005_p3                 |     |        | sum_38         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U188            | 2   |        | mul_ln83_11    | mul    | auto      | 1       |
+|     sum_39_fu_2011_p2                 |     |        | sum_39         | add    | fabric    | 0       |
+|     sum_40_fu_2043_p3                 |     |        | sum_40         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U189            | 2   |        | mul_ln83_12    | mul    | auto      | 1       |
+|     sum_41_fu_2048_p2                 |     |        | sum_41         | add    | fabric    | 0       |
+|     sum_42_fu_2054_p3                 |     |        | sum_42         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U190            | 2   |        | mul_ln83_13    | mul    | auto      | 1       |
+|     sum_43_fu_2080_p2                 |     |        | sum_43         | add    | fabric    | 0       |
+|     sum_44_fu_2085_p3                 |     |        | sum_44         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U191            | 2   |        | mul_ln83_14    | mul    | auto      | 1       |
+|     sum_45_fu_2091_p2                 |     |        | sum_45         | add    | fabric    | 0       |
+|     sum_46_fu_2123_p3                 |     |        | sum_46         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U192            | 2   |        | mul_ln83_15    | mul    | auto      | 1       |
+|     sum_47_fu_2128_p2                 |     |        | sum_47         | add    | fabric    | 0       |
+|     sum_48_fu_2134_p3                 |     |        | sum_48         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U193            | 2   |        | mul_ln83_16    | mul    | auto      | 1       |
+|     sum_49_fu_2160_p2                 |     |        | sum_49         | add    | fabric    | 0       |
+|     sum_50_fu_2165_p3                 |     |        | sum_50         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U194            | 2   |        | mul_ln83_17    | mul    | auto      | 1       |
+|     sum_51_fu_2171_p2                 |     |        | sum_51         | add    | fabric    | 0       |
+|     sum_52_fu_2203_p3                 |     |        | sum_52         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U195            | 2   |        | mul_ln83_18    | mul    | auto      | 1       |
+|     sum_53_fu_2208_p2                 |     |        | sum_53         | add    | fabric    | 0       |
+|     sum_54_fu_2214_p3                 |     |        | sum_54         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U196            | 2   |        | mul_ln83_19    | mul    | auto      | 1       |
+|     sum_55_fu_2268_p2                 |     |        | sum_55         | add    | fabric    | 0       |
+|     sum_56_fu_2273_p3                 |     |        | sum_56         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U197            | 2   |        | mul_ln83_20    | mul    | auto      | 1       |
+|     sum_57_fu_2279_p2                 |     |        | sum_57         | add    | fabric    | 0       |
+|     sum_58_fu_2307_p3                 |     |        | sum_58         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U198            | 2   |        | mul_ln83_21    | mul    | auto      | 1       |
+|     sum_59_fu_2312_p2                 |     |        | sum_59         | add    | fabric    | 0       |
+|     sum_60_fu_2318_p3                 |     |        | sum_60         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U199            | 2   |        | mul_ln83_22    | mul    | auto      | 1       |
+|     sum_61_fu_2335_p2                 |     |        | sum_61         | add    | fabric    | 0       |
+|     sum_62_fu_2340_p3                 |     |        | sum_62         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U200            | 2   |        | mul_ln83_23    | mul    | auto      | 1       |
+|     sum_63_fu_2346_p2                 |     |        | sum_63         | add    | fabric    | 0       |
+|     sum_64_fu_2372_p3                 |     |        | sum_64         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U201            | 2   |        | mul_ln83_24    | mul    | auto      | 1       |
+|     sum_65_fu_2377_p2                 |     |        | sum_65         | add    | fabric    | 0       |
+|     sum_66_fu_2383_p3                 |     |        | sum_66         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U202            | 2   |        | mul_ln83_25    | mul    | auto      | 1       |
+|     sum_67_fu_2400_p2                 |     |        | sum_67         | add    | fabric    | 0       |
+|     sum_68_fu_2405_p3                 |     |        | sum_68         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U203            | 2   |        | mul_ln83_26    | mul    | auto      | 1       |
+|     sum_69_fu_2411_p2                 |     |        | sum_69         | add    | fabric    | 0       |
+|     sum_70_fu_2437_p3                 |     |        | sum_70         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U204            | 2   |        | mul_ln83_27    | mul    | auto      | 1       |
+|     sum_71_fu_2442_p2                 |     |        | sum_71         | add    | fabric    | 0       |
+|     sum_72_fu_2448_p3                 |     |        | sum_72         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U205            | 2   |        | mul_ln83_28    | mul    | auto      | 1       |
+|     sum_73_fu_2465_p2                 |     |        | sum_73         | add    | fabric    | 0       |
+|     sum_74_fu_2470_p3                 |     |        | sum_74         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U206            | 2   |        | mul_ln83_29    | mul    | auto      | 1       |
+|     sum_75_fu_2476_p2                 |     |        | sum_75         | add    | fabric    | 0       |
+|     sum_76_fu_2482_p3                 |     |        | sum_76         | select | auto_sel  | 0       |
+|     mul_8s_32s_32_2_1_U207            | 2   |        | mul_ln83_30    | mul    | auto      | 1       |
+|     sum_77_fu_2487_p2                 |     |        | sum_77         | add    | fabric    | 0       |
+|     sum_78_fu_2493_p3                 |     |        | sum_78         | select | auto_sel  | 0       |
+|     add_ln87_fu_2504_p2               |     |        | add_ln87       | add    | fabric    | 0       |
+|     shl_ln87_fu_2509_p2               |     |        | shl_ln87       | shl    | auto_pipe | 0       |
+|     ashr_ln87_fu_2513_p2              |     |        | ashr_ln87      | ashr   | auto_pipe | 0       |
+|     scaled_fu_2525_p3                 |     |        | scaled         | select | auto_sel  | 0       |
+|     icmp_ln8_fu_2532_p2               |     |        | icmp_ln8       | setlt  | auto      | 0       |
+|     icmp_ln9_fu_2536_p2               |     |        | icmp_ln9       | setgt  | auto      | 0       |
+|     select_ln9_fu_2540_p3             |     |        | select_ln9     | select | auto_sel  | 0       |
+|     select_ln8_fu_2546_p3             |     |        | select_ln8     | select | auto_sel  | 0       |
++---------------------------------------+-----+--------+----------------+--------+-----------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++---------------------------------------+-----------+-----------+------+------+--------+------------------+------+---------+------------------+
+| Name                                  | Usage     | Type      | BRAM | URAM | Pragma | Variable         | Impl | Latency | Bitwidth, Depth, |
+|                                       |           |           |      |      |        |                  |      |         | Banks            |
++---------------------------------------+-----------+-----------+------+------+--------+------------------+------+---------+------------------+
+| + IDCT8                               |           |           | 97   | 0    |        |                  |      |         |                  |
+|   control_s_axi_U                     | interface | s_axilite |      |      |        |                  |      |         |                  |
+|   gmem0_m_axi_U                       | interface | m_axi     | 27   |      |        |                  |      |         |                  |
+|   gmem1_m_axi_U                       | interface | m_axi     | 14   |      |        |                  |      |         |                  |
+|  + IDCT8B8                            |           |           | 8    | 0    |        |                  |      |         |                  |
+|   + IDCT8B8_Pipeline_VITIS_LOOP_21_1  |           |           | 8    | 0    |        |                  |      |         |                  |
+|     p_ZL7idct8_8_0_U                  | rom_1p    |           | 1    |      |        | p_ZL7idct8_8_0   | auto | 1       | 7, 8, 1          |
+|     p_ZL7idct8_8_1_U                  | rom_1p    |           | 1    |      |        | p_ZL7idct8_8_1   | auto | 1       | 8, 8, 1          |
+|     p_ZL7idct8_8_2_U                  | rom_1p    |           | 1    |      |        | p_ZL7idct8_8_2   | auto | 1       | 8, 8, 1          |
+|     p_ZL7idct8_8_3_U                  | rom_1p    |           | 1    |      |        | p_ZL7idct8_8_3   | auto | 1       | 8, 8, 1          |
+|     p_ZL7idct8_8_4_U                  | rom_1p    |           | 1    |      |        | p_ZL7idct8_8_4   | auto | 1       | 8, 8, 1          |
+|     p_ZL7idct8_8_5_U                  | rom_1p    |           | 1    |      |        | p_ZL7idct8_8_5   | auto | 1       | 8, 8, 1          |
+|     p_ZL7idct8_8_6_U                  | rom_1p    |           | 1    |      |        | p_ZL7idct8_8_6   | auto | 1       | 8, 8, 1          |
+|     p_ZL7idct8_8_7_U                  | rom_1p    |           | 1    |      |        | p_ZL7idct8_8_7   | auto | 1       | 8, 8, 1          |
+|  + IDCT8B16                           |           |           | 16   | 0    |        |                  |      |         |                  |
+|   + IDCT8B16_Pipeline_VITIS_LOOP_47_1 |           |           | 16   | 0    |        |                  |      |         |                  |
+|     p_ZL8idct8_16_0_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_0  | auto | 1       | 7, 16, 1         |
+|     p_ZL8idct8_16_1_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_1  | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_2_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_2  | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_3_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_3  | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_4_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_4  | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_5_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_5  | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_6_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_6  | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_7_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_7  | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_8_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_8  | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_9_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_9  | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_10_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_10 | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_11_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_11 | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_12_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_12 | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_13_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_13 | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_14_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_14 | auto | 1       | 8, 16, 1         |
+|     p_ZL8idct8_16_15_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_16_15 | auto | 1       | 8, 16, 1         |
+|  + IDCT8B32                           |           |           | 32   | 0    |        |                  |      |         |                  |
+|   + IDCT8B32_Pipeline_VITIS_LOOP_73_1 |           |           | 32   | 0    |        |                  |      |         |                  |
+|     p_ZL8idct8_32_0_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_0  | auto | 1       | 7, 32, 1         |
+|     p_ZL8idct8_32_1_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_1  | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_2_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_2  | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_3_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_3  | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_4_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_4  | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_5_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_5  | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_6_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_6  | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_7_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_7  | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_8_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_8  | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_9_U                 | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_9  | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_10_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_10 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_11_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_11 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_12_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_12 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_13_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_13 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_14_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_14 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_15_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_15 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_16_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_16 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_17_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_17 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_18_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_18 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_19_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_19 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_20_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_20 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_21_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_21 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_22_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_22 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_23_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_23 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_24_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_24 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_25_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_25 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_26_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_26 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_27_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_27 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_28_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_28 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_29_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_29 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_30_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_30 | auto | 1       | 8, 32, 1         |
+|     p_ZL8idct8_32_31_U                | rom_1p    |           | 1    |      |        | p_ZL8idct8_32_31 | auto | 1       | 8, 32, 1         |
++---------------------------------------+-----------+-----------+------+------+--------+------------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------------+------------------------------------------+----------------------------------------+
+| Type            | Options                                  | Location                               |
++-----------------+------------------------------------------+----------------------------------------+
+| inline          |                                          | src/IDCT8.cpp:7 in clip3               |
+| inline          |                                          | src/IDCT8.cpp:15 in inv_matmul_8       |
+| pipeline        |                                          | src/IDCT8.cpp:23 in inv_matmul_8       |
+| pipeline        |                                          | src/IDCT8.cpp:27 in inv_matmul_8       |
+| inline          |                                          | src/IDCT8.cpp:41 in inv_matmul_16      |
+| pipeline        |                                          | src/IDCT8.cpp:49 in inv_matmul_16      |
+| inline          |                                          | src/IDCT8.cpp:68 in inv_matmul_32      |
+| pipeline        |                                          | src/IDCT8.cpp:75 in inv_matmul_32      |
+| pipeline        |                                          | src/IDCT8.cpp:80 in inv_matmul_32      |
+| interface       | m_axi port=in offset=slave bundle=gmem0  | src/IDCT8.cpp:246 in idct8, in         |
+| interface       | m_axi port=out offset=slave bundle=gmem1 | src/IDCT8.cpp:247 in idct8, out        |
+| interface       | s_axilite port=in bundle=control         | src/IDCT8.cpp:248 in idct8, in         |
+| interface       | s_axilite port=out bundle=control        | src/IDCT8.cpp:249 in idct8, out        |
+| interface       | s_axilite port=block_size bundle=control | src/IDCT8.cpp:250 in idct8, block_size |
+| interface       | s_axilite port=sIn bundle=control        | src/IDCT8.cpp:251 in idct8, sIn        |
+| interface       | s_axilite port=size bundle=control       | src/IDCT8.cpp:253 in idct8, size       |
+| interface       | s_axilite port=shift bundle=control      | src/IDCT8.cpp:254 in idct8, shift      |
+| interface       | s_axilite port=oMin bundle=control       | src/IDCT8.cpp:255 in idct8, oMin       |
+| interface       | s_axilite port=oMax bundle=control       | src/IDCT8.cpp:256 in idct8, oMax       |
+| interface       | s_axilite port=return bundle=control     | src/IDCT8.cpp:257 in idct8, return     |
+| loop_tripcount  | min=1 max=1024                           | src/IDCT8.cpp:261 in idct8             |
+| pipeline        | OFF                                      | src/IDCT8.cpp:262 in idct8             |
+| array_partition | variable=in_data complete dim=0          | src/IDCT8.cpp:270 in idct8, in_data    |
+| array_partition | variable=out_data complete dim=0         | src/IDCT8.cpp:271 in idct8, out_data   |
+| unroll          |                                          | src/IDCT8.cpp:274 in idct8             |
+| unroll          |                                          | src/IDCT8.cpp:281 in idct8             |
+| array_partition | variable=in_data complete dim=0          | src/IDCT8.cpp:290 in idct8, in_data    |
+| array_partition | variable=out_data complete dim=0         | src/IDCT8.cpp:291 in idct8, out_data   |
+| unroll          |                                          | src/IDCT8.cpp:294 in idct8             |
+| unroll          |                                          | src/IDCT8.cpp:301 in idct8             |
+| array_partition | variable=in_data complete dim=0          | src/IDCT8.cpp:309 in idct8, in_data    |
+| array_partition | variable=out_data complete dim=0         | src/IDCT8.cpp:310 in idct8, out_data   |
+| unroll          |                                          | src/IDCT8.cpp:313 in idct8             |
+| unroll          |                                          | src/IDCT8.cpp:320 in idct8             |
+| array_partition | variable=in_data complete dim=0          | src/IDCT8.cpp:329 in idct8, in_data    |
+| array_partition | variable=out_data complete dim=0         | src/IDCT8.cpp:330 in idct8, out_data   |
+| unroll          |                                          | src/IDCT8.cpp:333 in idct8             |
+| unroll          |                                          | src/IDCT8.cpp:340 in idct8             |
++-----------------+------------------------------------------+----------------------------------------+
+
+* Inferred Pragmas
++----------------------------+-----------------+--------------------------------------------+-------------------------------------------------------+
+| Source                     | Inferred Pragma | Options                                    | Location                                              |
++----------------------------+-----------------+--------------------------------------------+-------------------------------------------------------+
+| pipeline  src/IDCT8.cpp:23 | array_partition | dim=1 type=complete  variable=_ZL7idct8_8  | variable idct8_8 in idct8 src/transform_coeffs.h:145  |
+| pipeline  src/IDCT8.cpp:49 | array_partition | dim=1 type=complete  variable=_ZL8idct8_16 | variable idct8_16 in idct8 src/transform_coeffs.h:159 |
+| pipeline  src/IDCT8.cpp:75 | array_partition | dim=1 type=complete  variable=_ZL8idct8_32 | variable idct8_32 in idct8 src/transform_coeffs.h:181 |
++----------------------------+-----------------+--------------------------------------------+-------------------------------------------------------+
+
+

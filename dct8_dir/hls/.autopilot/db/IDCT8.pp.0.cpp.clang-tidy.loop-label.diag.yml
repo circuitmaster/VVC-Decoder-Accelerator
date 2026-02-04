@@ -1,0 +1,175 @@
+---
+MainSourceFile:  /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        /tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1049144
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        /tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1049610
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        /tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_int_ref.h
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1050077
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1248_1:  '
+    FileOffset:      1248
+    FilePath:        /tools/Xilinx/Vitis/2024.2/common/technology/autopilot/etc/ap_fixed_base.h
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1333540
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1248_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_21_1:  '
+    FileOffset:      21
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1739572
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_21_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_25_2:  '
+    FileOffset:      25
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1739660
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_25_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_47_1:  '
+    FileOffset:      47
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1740282
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_47_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_52_2:  '
+    FileOffset:      52
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1740372
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_52_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_73_1:  '
+    FileOffset:      73
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1740985
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_73_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_78_2:  '
+    FileOffset:      78
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1741075
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_78_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_260_1:  '
+    FileOffset:      260
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1743648
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_260_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_273_2:  '
+    FileOffset:      273
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1744037
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_273_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_280_3:  '
+    FileOffset:      280
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1744222
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_280_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_293_4:  '
+    FileOffset:      293
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1744573
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_293_4: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_300_5:  '
+    FileOffset:      300
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1744758
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_300_5: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_312_6:  '
+    FileOffset:      312
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1745097
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_312_6: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_319_7:  '
+    FileOffset:      319
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1745280
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_319_7: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_332_8:  '
+    FileOffset:      332
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1745627
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_332_8: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_339_9:  '
+    FileOffset:      339
+    FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp
+    Replacements:    
+      - FilePath:        /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp
+        Offset:          1745805
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_339_9: '
+...

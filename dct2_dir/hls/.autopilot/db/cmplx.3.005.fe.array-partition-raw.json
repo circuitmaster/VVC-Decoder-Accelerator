@@ -1,39 +1,39 @@
 {
   "0": {
     "basicblocks": 11,
-    "calls": "4 5 3 2 1 6",
+    "calls": "4 1 3 2 5 6",
     "file": "IDCT2.cpp",
     "fileloc": 315,
-    "instructions": 1504,
+    "instructions": 2488,
     "loads": {
       "L": 126,
-      "T": 1
+      "T": 2
     },
     "name": "IDCT2",
     "stores": {
       "L": 126,
-      "T": 1
+      "T": 2
     },
-    "total_instructions": 6269
+    "total_instructions": 7253
   },
   "1": {
     "basicblocks": 1,
-    "calls": "6",
+    "calls": "3",
     "file": "IDCT2.cpp",
-    "fileloc": 26,
-    "instructions": 28,
+    "fileloc": 124,
+    "instructions": 653,
     "loads": {
-      "L": 6
+      "L": 48
     },
-    "name": "IDCT2B4",
+    "name": "IDCT2B32",
     "stores": {
-      "L": 6
+      "L": 48
     },
-    "total_instructions": 37
+    "total_instructions": 962
   },
   "2": {
     "basicblocks": 1,
-    "calls": "1",
+    "calls": "5",
     "file": "IDCT2.cpp",
     "fileloc": 49,
     "instructions": 70,
@@ -63,7 +63,7 @@
   },
   "4": {
     "basicblocks": 1,
-    "calls": "5",
+    "calls": "1",
     "file": "IDCT2.cpp",
     "fileloc": 194,
     "instructions": 2379,
@@ -78,18 +78,18 @@
   },
   "5": {
     "basicblocks": 1,
-    "calls": "3",
+    "calls": "6",
     "file": "IDCT2.cpp",
-    "fileloc": 124,
-    "instructions": 653,
+    "fileloc": 26,
+    "instructions": 28,
     "loads": {
-      "L": 48
+      "L": 6
     },
-    "name": "IDCT2B32",
+    "name": "IDCT2B4",
     "stores": {
-      "L": 48
+      "L": 6
     },
-    "total_instructions": 962
+    "total_instructions": 37
   },
   "6": {
     "basicblocks": 1,

@@ -89,7 +89,7 @@ module IDCT2_gmem0_m_axi
     input  wire [C_M_AXI_RUSER_WIDTH-1:0]     RUSER,
     input  wire                               RVALID,
     output wire                               RREADY,
-    // internal channel 0 READ-ONLY 
+    // internal channel 0 READ-WRITE 
     input  wire [CH0_USER_AW-1:0]             I_CH0_AWADDR,
     input  wire [31:0]                        I_CH0_AWLEN,
     input  wire                               I_CH0_AWVALID,
@@ -111,6 +111,16 @@ module IDCT2_gmem0_m_axi
     );
 //------------------------Local signal-------------------
     // AW/W/B channel signals 
+    wire [C_M_AXI_ADDR_WIDTH-1:0]   AWADDR_Dummy;
+    wire [31:0]                     AWLEN_Dummy;
+    wire                            AWVALID_Dummy;
+    wire                            AWREADY_Dummy;
+    wire [C_M_AXI_DATA_WIDTH-1:0]   WDATA_Dummy;
+    wire [C_M_AXI_DATA_WIDTH/8-1:0] WSTRB_Dummy;
+    wire                            WVALID_Dummy;
+    wire                            WREADY_Dummy;
+    wire                            BVALID_Dummy;
+    wire                            BREADY_Dummy;
     // AR/R channel signals 
     wire [C_M_AXI_ADDR_WIDTH-1:0]   ARADDR_Dummy;
     wire [31:0]                     ARLEN_Dummy;
@@ -124,32 +134,46 @@ module IDCT2_gmem0_m_axi
     // flush logic 
 
     // AXI Ports Initialization 
-    assign AWID     = {C_M_AXI_ID_WIDTH{1'b0}};
-    assign AWADDR   = {C_M_AXI_ADDR_WIDTH{1'b0}};
-    assign AWLEN    = 8'd0;
-    assign AWSIZE   = 3'd0;
-    assign AWBURST  = 2'd0;
-    assign AWLOCK   = 2'd0;
-    assign AWCACHE  = 4'd0;
-    assign AWPROT   = 3'd0;
-    assign AWQOS    = 4'd0;
-    assign AWREGION = 4'd0;
-    assign AWUSER   = {C_M_AXI_AWUSER_WIDTH{1'b0}};
-    assign AWVALID  = 1'b0;
-    assign WID      = {C_M_AXI_ID_WIDTH{1'b0}};
-    assign WDATA    = {C_M_AXI_DATA_WIDTH{1'b0}};
-    assign WSTRB    = {C_M_AXI_DATA_WIDTH/8{1'b0}};
-    assign WLAST    = 1'b0;
-    assign WUSER    = {C_M_AXI_WUSER_WIDTH{1'b0}};
-    assign WVALID   = 1'b0;
-    assign BREADY   = 1'b0;
     // Kernel Ports Initialization 
-    assign I_CH0_AWREADY    = 1'b0;
-    assign I_CH0_WREADY     = 1'b0;
-    assign I_CH0_BVALID     = 1'b0; 
     // flush logic 
 //------------------------Instantiation------------------
     // ================== STORE UNITS ================== 
+    // store_unit for channel 0
+    IDCT2_gmem0_m_axi_store #(
+        .C_TARGET_ADDR           ( C_TARGET_ADDR ),
+        .NUM_WRITE_OUTSTANDING   ( NUM_WRITE_OUTSTANDING ),
+        .MAX_WRITE_BURST_LENGTH  ( MAX_WRITE_BURST_LENGTH ),
+        .BUS_ADDR_WIDTH          ( C_M_AXI_ADDR_WIDTH ),
+        .BUS_DATA_WIDTH          ( C_M_AXI_DATA_WIDTH ),
+        .USER_DW                 ( CH0_USER_DW ),
+        .USER_AW                 ( CH0_USER_AW ),
+        .USER_MAXREQS            ( USER_MAXREQS ),
+        .BUFFER_IMPL             ( MAXI_BUFFER_IMPL )
+    ) store_unit_0 (
+        .ACLK                    ( ACLK ),
+        .ARESET                  ( ARESET ),
+        .ACLK_EN                 ( ACLK_EN ),
+        .out_AXI_AWADDR          ( AWADDR_Dummy ),
+        .out_AXI_AWLEN           ( AWLEN_Dummy ),
+        .out_AXI_AWVALID         ( AWVALID_Dummy ),
+        .in_AXI_AWREADY          ( AWREADY_Dummy ),
+        .out_AXI_WDATA           ( WDATA_Dummy ),
+        .out_AXI_WSTRB           ( WSTRB_Dummy ),
+        .out_AXI_WVALID          ( WVALID_Dummy ),
+        .in_AXI_WREADY           ( WREADY_Dummy ),
+        .in_AXI_BVALID           ( BVALID_Dummy ),
+        .out_AXI_BREADY          ( BREADY_Dummy ),
+        .in_HLS_AWADDR           ( I_CH0_AWADDR ),
+        .in_HLS_AWLEN            ( I_CH0_AWLEN ),
+        .in_HLS_AWVALID          ( I_CH0_AWVALID ),
+        .out_HLS_AWREADY         ( I_CH0_AWREADY ),
+        .in_HLS_WDATA            ( I_CH0_WDATA ),
+        .in_HLS_WSTRB            ( I_CH0_WSTRB ),
+        .in_HLS_WVALID           ( I_CH0_WVALID ),
+        .out_HLS_WREADY          ( I_CH0_WREADY ),
+        .out_HLS_BVALID          ( I_CH0_BVALID ),
+        .in_HLS_BREADY           ( I_CH0_BREADY )
+    );
 
     // ================== LOAD UNITS ================== 
     // load_unit for channel 0
@@ -188,6 +212,60 @@ module IDCT2_gmem0_m_axi
     );
 
     // ================== AXI BUS READ/WRITE ================== 
+    // IDCT2_gmem0_m_axi_write
+    IDCT2_gmem0_m_axi_write #(
+        .CONSERVATIVE            ( CONSERVATIVE),
+        .C_M_AXI_ID_WIDTH        ( C_M_AXI_ID_WIDTH ),
+        .C_M_AXI_AWUSER_WIDTH    ( C_M_AXI_AWUSER_WIDTH ),
+        .C_M_AXI_WUSER_WIDTH     ( C_M_AXI_WUSER_WIDTH ),
+        .C_M_AXI_BUSER_WIDTH     ( C_M_AXI_BUSER_WIDTH ),
+        .C_USER_VALUE            ( C_USER_VALUE ),
+        .C_PROT_VALUE            ( C_PROT_VALUE ),
+        .C_CACHE_VALUE           ( C_CACHE_VALUE ),
+        .BUS_ADDR_WIDTH          ( C_M_AXI_ADDR_WIDTH ),
+        .BUS_DATA_WIDTH          ( C_M_AXI_DATA_WIDTH ),
+        .MAX_WRITE_BURST_LENGTH  ( MAX_WRITE_BURST_LENGTH ),
+        .NUM_WRITE_OUTSTANDING   ( NUM_WRITE_OUTSTANDING )
+    ) bus_write (
+        .ACLK                    ( ACLK ),
+        .ARESET                  ( ARESET ),
+        .ACLK_EN                 ( ACLK_EN ),
+        .out_BUS_AWID            ( AWID ),
+        .out_BUS_AWSIZE          ( AWSIZE ),
+        .out_BUS_AWBURST         ( AWBURST ),
+        .out_BUS_AWLOCK          ( AWLOCK ),
+        .out_BUS_AWCACHE         ( AWCACHE ),
+        .out_BUS_AWPROT          ( AWPROT ),
+        .out_BUS_AWQOS           ( AWQOS ),
+        .out_BUS_AWREGION        ( AWREGION ),
+        .out_BUS_AWUSER          ( AWUSER ),
+        .out_BUS_AWADDR          ( AWADDR ),
+        .out_BUS_AWLEN           ( AWLEN ),
+        .out_BUS_AWVALID         ( AWVALID ),
+        .in_BUS_AWREADY          ( AWREADY ),
+        .out_BUS_WID             ( WID),
+        .out_BUS_WUSER           ( WUSER),
+        .out_BUS_WDATA           ( WDATA ),
+        .out_BUS_WSTRB           ( WSTRB ),
+        .out_BUS_WLAST           ( WLAST ),
+        .out_BUS_WVALID          ( WVALID ),
+        .in_BUS_WREADY           ( WREADY ),
+        .in_BUS_BID              ( BID ),
+        .in_BUS_BRESP            ( BRESP ),
+        .in_BUS_BUSER            ( BUSER ),
+        .in_BUS_BVALID           ( BVALID ),
+        .out_BUS_BREADY          ( BREADY ),
+        .in_HLS_AWVALID          ( AWVALID_Dummy ),
+        .out_HLS_AWREADY         ( AWREADY_Dummy ),
+        .in_HLS_AWADDR           ( AWADDR_Dummy ),
+        .in_HLS_AWLEN            ( AWLEN_Dummy ),
+        .in_HLS_WVALID           ( WVALID_Dummy ),
+        .out_HLS_WREADY          ( WREADY_Dummy ),
+        .in_HLS_WSTRB            ( WSTRB_Dummy ),
+        .in_HLS_WDATA            ( WDATA_Dummy ),
+        .out_HLS_BVALID          ( BVALID_Dummy ),
+        .in_HLS_BREADY           ( BREADY_Dummy )
+    );
     // IDCT2_gmem0_m_axi_read
     IDCT2_gmem0_m_axi_read #(
         .C_M_AXI_ID_WIDTH         ( C_M_AXI_ID_WIDTH ),

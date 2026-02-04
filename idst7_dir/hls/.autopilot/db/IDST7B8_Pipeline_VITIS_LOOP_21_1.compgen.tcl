@@ -1,14 +1,14 @@
 # This script segment is generated automatically by AutoPilot
 
-set name IDST7_mul_7ns_32s_32_1_1
+set name IDST7_mul_7ns_32s_32_2_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 
-set name IDST7_mul_8s_32s_32_1_1
+set name IDST7_mul_8s_32s_32_2_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 
@@ -348,14 +348,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 38 \
-    name empty_36 \
+    name empty_33 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_36 \
+    corename dc_empty_33 \
     op interface \
-    ports { empty_36 { I 1 vector } } \
+    ports { empty_33 { I 1 vector } } \
 } "
 }
 
@@ -393,14 +393,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 41 \
-    name empty_37 \
+    name empty_34 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_37 \
+    corename dc_empty_34 \
     op interface \
-    ports { empty_37 { I 29 vector } } \
+    ports { empty_34 { I 29 vector } } \
 } "
 }
 
@@ -423,14 +423,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 43 \
-    name empty_38 \
+    name empty_35 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_38 \
+    corename dc_empty_35 \
     op interface \
-    ports { empty_38 { I 30 vector } } \
+    ports { empty_35 { I 30 vector } } \
 } "
 }
 

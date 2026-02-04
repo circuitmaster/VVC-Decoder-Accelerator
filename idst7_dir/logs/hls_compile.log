@@ -15,29 +15,31 @@ INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: co
 INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
 INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
 INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
-INFO: [HLS 200-1465] Applying ini 'part=xczu9eg-ffvb1156-2-e' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dst7-compile.cfg(1)
-INFO: [HLS 200-1611] Setting target device to 'xczu9eg-ffvb1156-2-e'
+INFO: [HLS 200-1465] Applying ini 'part=xcvc1902-vsva2197-2MP-e-s' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dst7-compile.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvc1902-vsva2197-2MP-e-S'
+INFO: [HLS 200-1465] Applying ini 'freqhz=300MHz' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dst7-compile.cfg(14)
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 3.333ns.
 INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dst7-compile.cfg(17)
-INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.95 seconds. CPU system time: 0.18 seconds. Elapsed time: 2.02 seconds; current allocated memory: 909.387 MB.
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 2.01 seconds. CPU system time: 0.2 seconds. Elapsed time: 2.09 seconds; current allocated memory: 909.445 MB.
 INFO: [HLS 200-10] Analyzing design file 'src/IDST7.cpp' ... 
-INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2.88 seconds. CPU system time: 0.29 seconds. Elapsed time: 3.17 seconds; current allocated memory: 912.008 MB.
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 2.97 seconds. CPU system time: 0.31 seconds. Elapsed time: 3.27 seconds; current allocated memory: 912.070 MB.
 INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.
 INFO: [HLS 200-1995] There were 8,888 instructions in the design after the 'Compile/Link' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 200-1995] There were 1,353 instructions in the design after the 'Unroll/Inline (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 200-1995] There were 1,216 instructions in the design after the 'Unroll/Inline (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,189 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,164 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,551 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,551 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,551 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,551 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,554 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,218 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,218 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 2,562 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,274 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,282 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
-INFO: [HLS 200-1995] There were 1,130 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,188 instructions in the design after the 'Unroll/Inline (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,163 instructions in the design after the 'Unroll/Inline (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,550 instructions in the design after the 'Array/Struct (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,550 instructions in the design after the 'Array/Struct (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,550 instructions in the design after the 'Array/Struct (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,550 instructions in the design after the 'Array/Struct (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,553 instructions in the design after the 'Array/Struct (step 5)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,217 instructions in the design after the 'Performance (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,217 instructions in the design after the 'Performance (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 2,561 instructions in the design after the 'Performance (step 3)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,273 instructions in the design after the 'Performance (step 4)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,281 instructions in the design after the 'HW Transforms (step 1)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
+INFO: [HLS 200-1995] There were 1,129 instructions in the design after the 'HW Transforms (step 2)' phase of compilation. See the Design Size Report for more details: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/syn/report/csynth_design_size.rpt
 INFO: [HLS 214-131] Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'INV_MATMUL_32(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [32])' (src/IDST7.cpp:88:18)
 INFO: [HLS 214-131] Inlining function 'INV_MATMUL_32(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [32])' into 'IDST7B32(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)' (src/IDST7.cpp:164:5)
 INFO: [HLS 214-131] Inlining function 'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)' into 'INV_MATMUL_16(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [16])' (src/IDST7.cpp:62:18)
@@ -68,129 +70,136 @@ INFO: [HLS 214-248] Applying array_partition to 'in_data36': Complete partitioni
 INFO: [HLS 214-248] Applying array_partition to 'out_data37': Complete partitioning on dimension 1. (src/IDST7.cpp:288:24)
 INFO: [HLS 214-248] Applying array_partition to 'in_data79': Complete partitioning on dimension 1. (src/IDST7.cpp:306:24)
 INFO: [HLS 214-248] Applying array_partition to 'out_data80': Complete partitioning on dimension 1. (src/IDST7.cpp:307:24)
-INFO: [HLS 214-449] Automatically partitioning array '_ZL8idst7_32' dimension 1 completely based on constant index. (src/transform_coeffs.h:256:0)
-INFO: [HLS 214-449] Automatically partitioning array '_ZL8idst7_16' dimension 1 completely based on constant index. (src/transform_coeffs.h:236:0)
-INFO: [HLS 214-449] Automatically partitioning array '_ZL7idst7_8' dimension 1 completely based on constant index. (src/transform_coeffs.h:223:0)
+INFO: [HLS 214-449] Automatically partitioning array '_ZL8idst7_32' dimension 1 completely based on constant index. (src/transform_coeffs.h:255:0)
+INFO: [HLS 214-449] Automatically partitioning array '_ZL8idst7_16' dimension 1 completely based on constant index. (src/transform_coeffs.h:235:0)
+INFO: [HLS 214-449] Automatically partitioning array '_ZL7idst7_8' dimension 1 completely based on constant index. (src/transform_coeffs.h:222:0)
 INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'idst7_8' due to pipeline pragma (src/IDST7.cpp:23:9)
 INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'idst7_16' due to pipeline pragma (src/IDST7.cpp:49:9)
 INFO: [HLS 214-270] Inferring pragma 'array_partition type=complete dim=1' for array 'idst7_32' due to pipeline pragma (src/IDST7.cpp:75:9)
-INFO: [HLS 214-248] Applying array_partition to '_ZL8idst7_32': Complete partitioning on dimension 1. (src/transform_coeffs.h:256:0)
-INFO: [HLS 214-248] Applying array_partition to '_ZL8idst7_16': Complete partitioning on dimension 1. (src/transform_coeffs.h:236:0)
-INFO: [HLS 214-248] Applying array_partition to '_ZL7idst7_8': Complete partitioning on dimension 1. (src/transform_coeffs.h:223:0)
-INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 512 in loop 'VITIS_LOOP_259_1'(src/IDST7.cpp:259:20) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (src/IDST7.cpp:259:20)
-INFO: [HLS 214-115] Multiple burst writes of variable length and bit width 512 in loop 'VITIS_LOOP_259_1'(src/IDST7.cpp:259:20) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (src/IDST7.cpp:259:20)
-INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.09 seconds. CPU system time: 0.23 seconds. Elapsed time: 6.79 seconds; current allocated memory: 914.055 MB.
-INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 914.055 MB.
+INFO: [HLS 214-248] Applying array_partition to '_ZL8idst7_32': Complete partitioning on dimension 1. (src/transform_coeffs.h:255:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL8idst7_16': Complete partitioning on dimension 1. (src/transform_coeffs.h:235:0)
+INFO: [HLS 214-248] Applying array_partition to '_ZL7idst7_8': Complete partitioning on dimension 1. (src/transform_coeffs.h:222:0)
+INFO: [HLS 214-115] Multiple burst reads of variable length and bit width 1024 in loop 'VITIS_LOOP_259_1'(src/IDST7.cpp:259:20) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (src/IDST7.cpp:259:20)
+INFO: [HLS 214-115] Multiple burst writes of variable length and bit width 1024 in loop 'VITIS_LOOP_259_1'(src/IDST7.cpp:259:20) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (src/IDST7.cpp:259:20)
+INFO: [HLS 200-111] Finished Compiling Optimization and Transform: CPU user time: 2.2 seconds. CPU system time: 0.24 seconds. Elapsed time: 6.89 seconds; current allocated memory: 914.121 MB.
+INFO: [HLS 200-111] Finished Checking Pragmas: CPU user time: 0 seconds. CPU system time: 0 seconds. Elapsed time: 0 seconds; current allocated memory: 914.121 MB.
 INFO: [HLS 200-10] Starting code transformations ...
-INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 916.039 MB.
+INFO: [HLS 200-111] Finished Standard Transforms: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 916.387 MB.
 INFO: [HLS 200-10] Checking synthesizability ...
-WARNING: [SYNCHK 200-24] src/IDST7.cpp:274: Index for bit vector operation is out of bound.
-INFO: [SYNCHK 200-10] 0 error(s), 1 warning(s).
-INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.05 seconds; current allocated memory: 918.551 MB.
+INFO: [HLS 200-111] Finished Checking Synthesizability: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 918.797 MB.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/IDST7.cpp:23:9) to (src/IDST7.cpp:35:16) in function 'IDST7B8'... converting 17 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/IDST7.cpp:75:9) to (src/IDST7.cpp:88:16) in function 'IDST7B32'... converting 65 basic blocks.
 INFO: [XFORM 203-401] Performing if-conversion on hyperblock from (src/IDST7.cpp:49:9) to (src/IDST7.cpp:62:16) in function 'IDST7B16'... converting 33 basic blocks.
-INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.22 seconds; current allocated memory: 942.746 MB.
-INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.23 seconds; current allocated memory: 993.922 MB.
+INFO: [HLS 200-111] Finished Loop, function and other optimizations: CPU user time: 0.22 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.22 seconds; current allocated memory: 943.082 MB.
+INFO: [HLS 200-111] Finished Architecture Synthesis: CPU user time: 0.23 seconds. CPU system time: 0 seconds. Elapsed time: 0.24 seconds; current allocated memory: 994.777 MB.
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'IDST7' ...
-INFO: [SYN 201-201] Setting up clock 'default' with a period of 10ns.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'IDST7B8_Pipeline_VITIS_LOOP_21_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_21_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 4, loop 'VITIS_LOOP_21_1'
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 10, loop 'VITIS_LOOP_21_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.08 seconds; current allocated memory: 996.625 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.33 seconds. CPU system time: 0.02 seconds. Elapsed time: 0.34 seconds; current allocated memory: 997.902 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 996.625 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 997.902 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'IDST7B8' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 996.625 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 997.902 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 996.625 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.22 seconds. CPU system time: 0 seconds. Elapsed time: 0.21 seconds; current allocated memory: 997.902 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'IDST7B16_Pipeline_VITIS_LOOP_47_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_47_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 6, loop 'VITIS_LOOP_47_1'
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 15, loop 'VITIS_LOOP_47_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.07 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.08 seconds; current allocated memory: 999.375 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.2 seconds. CPU system time: 0 seconds. Elapsed time: 0.2 seconds; current allocated memory: 1001.148 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.02 seconds; current allocated memory: 999.375 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 1001.148 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'IDST7B16' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 999.375 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.03 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 1001.148 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0 seconds. Elapsed time: 0.01 seconds; current allocated memory: 999.375 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 1001.148 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'IDST7B32_Pipeline_VITIS_LOOP_73_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-61] Pipelining loop 'VITIS_LOOP_73_1'.
-INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 10, loop 'VITIS_LOOP_73_1'
+INFO: [HLS 200-1470] Pipelining result : Target II = NA, Final II = 1, Depth = 26, loop 'VITIS_LOOP_73_1'
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 1004.773 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.3 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.3 seconds; current allocated memory: 1007.344 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.02 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 1004.773 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 1007.344 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'IDST7B32' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.03 seconds; current allocated memory: 1004.773 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.05 seconds; current allocated memory: 1007.344 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.01 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.02 seconds; current allocated memory: 1004.773 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 0.07 seconds. CPU system time: 0 seconds. Elapsed time: 0.07 seconds; current allocated memory: 1007.344 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'IDST7' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
+WARNING: [HLS 200-871] Estimated clock period (3.048 ns) exceeds the target (target clock period: 3.333 ns, clock uncertainty: 0.900 ns, effective delay budget: 2.433 ns).
+Resolution: For help on HLS 200-871 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-871.html
+WARNING: [HLS 200-1016] The critical path in module 'IDST7' consists of the following:
+	'load' operation 31 bit ('i_load', src/IDST7.cpp:259) on local variable 'i' [189]  (0.000 ns)
+	'icmp' operation 1 bit ('icmp_ln259_1', src/IDST7.cpp:259) [192]  (0.671 ns)
+	bus read operation ('in_block', src/IDST7.cpp:263) on port 'gmem0' (src/IDST7.cpp:263) [199]  (1.320 ns)
+	'add' operation 32 bit ('add_ln104', src/IDST7.cpp:104->src/IDST7.cpp:336) [214]  (0.000 ns)
+	'add' operation 32 bit ('c', src/IDST7.cpp:104->src/IDST7.cpp:336) [217]  (1.057 ns)
+
+Resolution: For help on HLS 200-1016 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1016.html
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.08 seconds. CPU system time: 0 seconds. Elapsed time: 0.09 seconds; current allocated memory: 1005.996 MB.
+INFO: [HLS 200-111] Finished Scheduling: CPU user time: 0.48 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.5 seconds; current allocated memory: 1008.867 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111] Finished Binding: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 1005.996 MB.
+INFO: [HLS 200-111] Finished Binding: CPU user time: 1.46 seconds. CPU system time: 0 seconds. Elapsed time: 1.45 seconds; current allocated memory: 1008.867 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'IDST7B8_Pipeline_VITIS_LOOP_21_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDST7B8_Pipeline_VITIS_LOOP_21_1' pipeline 'VITIS_LOOP_21_1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'mul_7ns_32s_32_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_8s_32s_32_1_1': 7 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_32s_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_32s_32_2_1': 7 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'IDST7B8_Pipeline_VITIS_LOOP_21_1'.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idst7_8_0_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idst7_8_1_ROM_AUTO_1R' using auto ROMs.
@@ -200,18 +209,18 @@ INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B8_Pipeline_VITIS_LOOP_21_1
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idst7_8_5_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idst7_8_6_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B8_Pipeline_VITIS_LOOP_21_1_p_ZL7idst7_8_7_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.06 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 1006.777 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 1.35 seconds. CPU system time: 0 seconds. Elapsed time: 1.36 seconds; current allocated memory: 1009.977 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'IDST7B8' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'IDST7B8'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.04 seconds. CPU system time: 0 seconds. Elapsed time: 0.04 seconds; current allocated memory: 1009.508 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.15 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.15 seconds; current allocated memory: 1013.094 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'IDST7B16_Pipeline_VITIS_LOOP_47_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDST7B16_Pipeline_VITIS_LOOP_47_1' pipeline 'VITIS_LOOP_47_1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'mul_7ns_32s_32_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_8s_32s_32_1_1': 15 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_32s_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_32s_32_2_1': 15 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'IDST7B16_Pipeline_VITIS_LOOP_47_1'.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idst7_16_0_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idst7_16_1_ROM_AUTO_1R' using auto ROMs.
@@ -229,18 +238,18 @@ INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B16_Pipeline_VITIS_LOOP_47_
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idst7_16_13_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idst7_16_14_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B16_Pipeline_VITIS_LOOP_47_1_p_ZL8idst7_16_15_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.06 seconds; current allocated memory: 1012.484 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.17 seconds. CPU system time: 0 seconds. Elapsed time: 0.18 seconds; current allocated memory: 1016.953 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'IDST7B16' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'IDST7B16'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.05 seconds. CPU system time: 0 seconds. Elapsed time: 0.06 seconds; current allocated memory: 1017.000 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.19 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.19 seconds; current allocated memory: 1022.121 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'IDST7B32_Pipeline_VITIS_LOOP_73_1' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-1030] Apply Unified Pipeline Control on module 'IDST7B32_Pipeline_VITIS_LOOP_73_1' pipeline 'VITIS_LOOP_73_1' pipeline type 'loop pipeline'
-INFO: [RTGEN 206-100] Generating core module 'mul_7ns_32s_32_1_1': 1 instance(s).
-INFO: [RTGEN 206-100] Generating core module 'mul_8s_32s_32_1_1': 31 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_7ns_32s_32_2_1': 1 instance(s).
+INFO: [RTGEN 206-100] Generating core module 'mul_8s_32s_32_2_1': 31 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'IDST7B32_Pipeline_VITIS_LOOP_73_1'.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idst7_32_0_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idst7_32_1_ROM_AUTO_1R' using auto ROMs.
@@ -274,12 +283,12 @@ INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B32_Pipeline_VITIS_LOOP_73_
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idst7_32_29_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idst7_32_30_ROM_AUTO_1R' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'IDST7_IDST7B32_Pipeline_VITIS_LOOP_73_1_p_ZL8idst7_32_31_ROM_AUTO_1R' using auto ROMs.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.09 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.1 seconds; current allocated memory: 1022.176 MB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.23 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.24 seconds; current allocated memory: 1.005 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'IDST7B32' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'IDST7B32'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0 seconds. Elapsed time: 0.11 seconds; current allocated memory: 1.006 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.26 seconds. CPU system time: 0 seconds. Elapsed time: 0.27 seconds; current allocated memory: 1.015 GB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'IDST7' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -297,13 +306,13 @@ INFO: [RTGEN 206-500] Setting interface mode on port 'IDST7/oMax' to 's_axilite 
 INFO: [RTGEN 206-500] Setting interface mode on function 'IDST7' to 's_axilite & ap_ctrl_chain'.
 INFO: [RTGEN 206-100] Bundling port 'in_r', 'out_r', 'block_size', 'sIn', 'size', 'shift', 'oMin', 'oMax' to AXI-Lite port control.
 INFO: [RTGEN 206-100] Finished creating RTL model for 'IDST7'.
-INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.12 seconds. CPU system time: 0 seconds. Elapsed time: 0.12 seconds; current allocated memory: 1.012 GB.
-INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 0.2 seconds. CPU system time: 0.03 seconds. Elapsed time: 0.22 seconds; current allocated memory: 1.020 GB.
+INFO: [HLS 200-111] Finished Creating RTL model: CPU user time: 0.11 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.11 seconds; current allocated memory: 1.021 GB.
+INFO: [HLS 200-111] Finished Generating all RTL models: CPU user time: 1.76 seconds. CPU system time: 0.02 seconds. Elapsed time: 1.77 seconds; current allocated memory: 1.029 GB.
 INFO: [HLS 200-1603] Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
-INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.45 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.47 seconds; current allocated memory: 1.034 GB.
+INFO: [HLS 200-111] Finished Updating report files: CPU user time: 0.45 seconds. CPU system time: 0.01 seconds. Elapsed time: 0.47 seconds; current allocated memory: 1.043 GB.
 INFO: [VHDL 208-304] Generating VHDL RTL for IDST7.
 INFO: [VLOG 209-307] Generating Verilog RTL for IDST7.
 INFO: [HLS 200-790] **** Loop Constraint Status: All loop constraints were satisfied.
-INFO: [HLS 200-789] **** Estimated Fmax: 136.99 MHz
-INFO: [HLS 200-112] Total CPU user time: 9.3 seconds. Total CPU system time: 0.81 seconds. Total elapsed time: 14.48 seconds; peak allocated memory: 1.034 GB.
-INFO: [v++ 60-791] Total elapsed time: 0h 0m 17s
+INFO: [HLS 200-789] **** Estimated Fmax: 328.08 MHz
+INFO: [HLS 200-112] Total CPU user time: 15.89 seconds. Total CPU system time: 0.87 seconds. Total elapsed time: 21.12 seconds; peak allocated memory: 1.043 GB.
+INFO: [v++ 60-791] Total elapsed time: 0h 0m 24s

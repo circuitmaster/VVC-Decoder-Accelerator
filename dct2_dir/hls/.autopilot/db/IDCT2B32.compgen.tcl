@@ -1,8 +1,8 @@
 # This script segment is generated automatically by AutoPilot
 
-set name IDCT2_mul_32s_5s_32_1_1
+set name IDCT2_mul_32s_5s_32_2_1
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 0 ALLOW_PRAGMA 1
+	::AP::rtl_comp_handler $name BINDTYPE {op} TYPE {mul} IMPL {auto} LATENCY 1 ALLOW_PRAGMA 1
 }
 
 

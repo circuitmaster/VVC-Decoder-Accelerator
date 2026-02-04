@@ -1,6 +1,6 @@
 
 set TopModule "IDCT2"
-set ClockPeriod 10
+set ClockPeriod 3.333
 set ClockList ap_clk
 set AxiliteClockList {}
 set HasVivadoClockPeriod 0
@@ -8,7 +8,7 @@ set CombLogicFlag 0
 set PipelineFlag 0
 set DataflowTaskPipelineFlag 1
 set TrivialPipelineFlag 0
-set noPortSwitchingFlag 1
+set noPortSwitchingFlag 0
 set FloatingPointFlag 0
 set FftOrFirFlag 0
 set NbRWValue 0
@@ -42,7 +42,7 @@ set ExportMCPathFlag 0
 set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
-set TargetInfo xczu9eg:-ffvb1156:-2-e
+set TargetInfo xcvc1902:-vsva2197:-2MP-e-S
 set SourceFiles {sc {} c ../../src/IDCT2.cpp}
 set SourceFlags {sc {} c {{}}}
 set DirectiveFile {}
@@ -62,5 +62,5 @@ set DefaultPlatform DefaultPlatform
 set multiClockList {}
 set SCPortClockMap {}
 set intNbAccess 0
-set PlatformFiles {{DefaultPlatform {xilinx/zynquplus/zynquplus}}}
+set PlatformFiles {{DefaultPlatform {xilinx/versal/versal}}}
 set HPFPO 0

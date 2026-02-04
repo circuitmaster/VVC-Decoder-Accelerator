@@ -1,0 +1,104 @@
+{
+    "1": {
+        "name": "IDCT8B16",
+        "file": "IDCT8.cpp",
+        "fileloc": "117",
+        "instructions": "37",
+        "total_instructions": "237",
+        "calls": "3",
+        "basicblocks": "1"
+    },
+    "2": {
+        "name": "IDCT8B32_Pipeline_VITIS_LOOP_73_1",
+        "file": "src\/IDCT8.cpp",
+        "fileloc": "165",
+        "instructions": "361",
+        "total_instructions": "361",
+        "calls": "",
+        "basicblocks": "37",
+        "loads": {
+            "G": "32",
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "3": {
+        "name": "IDCT8B16_Pipeline_VITIS_LOOP_47_1",
+        "file": "src\/IDCT8.cpp",
+        "fileloc": "118",
+        "instructions": "200",
+        "total_instructions": "200",
+        "calls": "",
+        "basicblocks": "21",
+        "loads": {
+            "G": "16",
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "0": {
+        "name": "IDCT8",
+        "file": "IDCT8.cpp",
+        "fileloc": "245",
+        "instructions": "371",
+        "total_instructions": "1170",
+        "calls": "4 1 5",
+        "basicblocks": "9",
+        "loads": {
+            "L": "57"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    },
+    "4": {
+        "name": "IDCT8B32",
+        "file": "IDCT8.cpp",
+        "fileloc": "163",
+        "instructions": "54",
+        "total_instructions": "415",
+        "calls": "2",
+        "basicblocks": "1"
+    },
+    "5": {
+        "name": "IDCT8B8",
+        "file": "IDCT8.cpp",
+        "fileloc": "113",
+        "instructions": "28",
+        "total_instructions": "147",
+        "calls": "6",
+        "basicblocks": "1"
+    },
+    "6": {
+        "name": "IDCT8B8_Pipeline_VITIS_LOOP_21_1",
+        "file": "src\/IDCT8.cpp",
+        "fileloc": "114",
+        "instructions": "119",
+        "total_instructions": "119",
+        "calls": "",
+        "basicblocks": "13",
+        "loads": {
+            "G": "8",
+            "L": "1"
+        },
+        "stores": {
+            "L": "2"
+        },
+        "loops": {
+            "L": "1"
+        }
+    }
+}

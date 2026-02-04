@@ -906,6 +906,231 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 289 \
+    name src_17_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_17_val \
+    op interface \
+    ports { src_17_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 290 \
+    name src_18_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_18_val \
+    op interface \
+    ports { src_18_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 291 \
+    name src_19_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_19_val \
+    op interface \
+    ports { src_19_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 292 \
+    name src_20_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_20_val \
+    op interface \
+    ports { src_20_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 293 \
+    name src_21_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_21_val \
+    op interface \
+    ports { src_21_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 294 \
+    name src_22_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_22_val \
+    op interface \
+    ports { src_22_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 295 \
+    name src_23_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_23_val \
+    op interface \
+    ports { src_23_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 296 \
+    name src_24_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_24_val \
+    op interface \
+    ports { src_24_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 297 \
+    name src_25_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_25_val \
+    op interface \
+    ports { src_25_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 298 \
+    name src_26_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_26_val \
+    op interface \
+    ports { src_26_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 299 \
+    name src_27_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_27_val \
+    op interface \
+    ports { src_27_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 300 \
+    name src_28_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_28_val \
+    op interface \
+    ports { src_28_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 301 \
+    name src_29_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_29_val \
+    op interface \
+    ports { src_29_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 302 \
+    name src_30_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_30_val \
+    op interface \
+    ports { src_30_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 303 \
+    name src_31_val \
+    type other \
+    dir I \
+    reset_level 1 \
+    sync_rst true \
+    corename dc_src_31_val \
+    op interface \
+    ports { src_31_val { I 32 vector } } \
+} "
+}
+
+# Direct connection:
+if {${::AESL::PGuard_autoexp_gen}} {
+eval "cg_default_interface_gen_dc { \
+    id 304 \
     name conv3_i12_i_i \
     type other \
     dir I \
@@ -920,7 +1145,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 290 \
+    id 305 \
     name sh_prom_i9_i_i \
     type other \
     dir I \
@@ -935,7 +1160,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 291 \
+    id 306 \
     name sh_prom_i_i_i \
     type other \
     dir I \
@@ -950,22 +1175,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 292 \
-    name empty_39 \
+    id 307 \
+    name empty_36 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_39 \
+    corename dc_empty_36 \
     op interface \
-    ports { empty_39 { I 1 vector } } \
+    ports { empty_36 { I 1 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 293 \
+    id 308 \
     name oMin \
     type other \
     dir I \
@@ -980,7 +1205,7 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 294 \
+    id 309 \
     name oMax \
     type other \
     dir I \
@@ -995,22 +1220,22 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 295 \
-    name empty_40 \
+    id 310 \
+    name empty_37 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_40 \
+    corename dc_empty_37 \
     op interface \
-    ports { empty_40 { I 27 vector } } \
+    ports { empty_37 { I 27 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 296 \
+    id 311 \
     name cutoff \
     type other \
     dir I \
@@ -1025,52 +1250,52 @@ eval "cg_default_interface_gen_dc { \
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 297 \
-    name empty_41 \
+    id 312 \
+    name empty_38 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_41 \
+    corename dc_empty_38 \
     op interface \
-    ports { empty_41 { I 28 vector } } \
+    ports { empty_38 { I 28 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 298 \
-    name empty_42 \
+    id 313 \
+    name empty_39 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_42 \
+    corename dc_empty_39 \
     op interface \
-    ports { empty_42 { I 29 vector } } \
+    ports { empty_39 { I 29 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 299 \
-    name empty_43 \
+    id 314 \
+    name empty_40 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_43 \
+    corename dc_empty_40 \
     op interface \
-    ports { empty_43 { I 30 vector } } \
+    ports { empty_40 { I 30 vector } } \
 } "
 }
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
-    id 300 \
+    id 315 \
     name empty \
     type other \
     dir I \

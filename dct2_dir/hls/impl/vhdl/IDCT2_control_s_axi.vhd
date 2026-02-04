@@ -11,7 +11,7 @@ use IEEE.NUMERIC_STD.all;
 
 entity IDCT2_control_s_axi is
 generic (
-    C_S_AXI_ADDR_WIDTH    : INTEGER := 6;
+    C_S_AXI_ADDR_WIDTH    : INTEGER := 7;
     C_S_AXI_DATA_WIDTH    : INTEGER := 32);
 port (
     ACLK                  :in   STD_LOGIC;
@@ -36,9 +36,14 @@ port (
     RREADY                :in   STD_LOGIC;
     interrupt             :out  STD_LOGIC;
     in_r                  :out  STD_LOGIC_VECTOR(63 downto 0);
+    in2                   :out  STD_LOGIC_VECTOR(63 downto 0);
     out_r                 :out  STD_LOGIC_VECTOR(63 downto 0);
+    out2                  :out  STD_LOGIC_VECTOR(63 downto 0);
     block_size            :out  STD_LOGIC_VECTOR(31 downto 0);
     size                  :out  STD_LOGIC_VECTOR(31 downto 0);
+    shift                 :out  STD_LOGIC_VECTOR(31 downto 0);
+    outputMinimum         :out  STD_LOGIC_VECTOR(31 downto 0);
+    outputMaximum         :out  STD_LOGIC_VECTOR(31 downto 0);
     ap_start              :out  STD_LOGIC;
     ap_done               :in   STD_LOGIC;
     ap_ready              :in   STD_LOGIC;
@@ -75,17 +80,36 @@ end entity IDCT2_control_s_axi;
 -- 0x14 : Data signal of in_r
 --        bit 31~0 - in_r[63:32] (Read/Write)
 -- 0x18 : reserved
--- 0x1c : Data signal of out_r
---        bit 31~0 - out_r[31:0] (Read/Write)
--- 0x20 : Data signal of out_r
---        bit 31~0 - out_r[63:32] (Read/Write)
+-- 0x1c : Data signal of in2
+--        bit 31~0 - in2[31:0] (Read/Write)
+-- 0x20 : Data signal of in2
+--        bit 31~0 - in2[63:32] (Read/Write)
 -- 0x24 : reserved
--- 0x28 : Data signal of block_size
+-- 0x28 : Data signal of out_r
+--        bit 31~0 - out_r[31:0] (Read/Write)
+-- 0x2c : Data signal of out_r
+--        bit 31~0 - out_r[63:32] (Read/Write)
+-- 0x30 : reserved
+-- 0x34 : Data signal of out2
+--        bit 31~0 - out2[31:0] (Read/Write)
+-- 0x38 : Data signal of out2
+--        bit 31~0 - out2[63:32] (Read/Write)
+-- 0x3c : reserved
+-- 0x40 : Data signal of block_size
 --        bit 31~0 - block_size[31:0] (Read/Write)
--- 0x2c : reserved
--- 0x30 : Data signal of size
+-- 0x44 : reserved
+-- 0x48 : Data signal of size
 --        bit 31~0 - size[31:0] (Read/Write)
--- 0x34 : reserved
+-- 0x4c : reserved
+-- 0x50 : Data signal of shift
+--        bit 31~0 - shift[31:0] (Read/Write)
+-- 0x54 : reserved
+-- 0x58 : Data signal of outputMinimum
+--        bit 31~0 - outputMinimum[31:0] (Read/Write)
+-- 0x5c : reserved
+-- 0x60 : Data signal of outputMaximum
+--        bit 31~0 - outputMaximum[31:0] (Read/Write)
+-- 0x64 : reserved
 -- (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 architecture behave of IDCT2_control_s_axi is
@@ -93,21 +117,33 @@ architecture behave of IDCT2_control_s_axi is
     signal wstate  : states := wrreset;
     signal rstate  : states := rdreset;
     signal wnext, rnext: states;
-    constant ADDR_AP_CTRL           : INTEGER := 16#00#;
-    constant ADDR_GIE               : INTEGER := 16#04#;
-    constant ADDR_IER               : INTEGER := 16#08#;
-    constant ADDR_ISR               : INTEGER := 16#0c#;
-    constant ADDR_IN_R_DATA_0       : INTEGER := 16#10#;
-    constant ADDR_IN_R_DATA_1       : INTEGER := 16#14#;
-    constant ADDR_IN_R_CTRL         : INTEGER := 16#18#;
-    constant ADDR_OUT_R_DATA_0      : INTEGER := 16#1c#;
-    constant ADDR_OUT_R_DATA_1      : INTEGER := 16#20#;
-    constant ADDR_OUT_R_CTRL        : INTEGER := 16#24#;
-    constant ADDR_BLOCK_SIZE_DATA_0 : INTEGER := 16#28#;
-    constant ADDR_BLOCK_SIZE_CTRL   : INTEGER := 16#2c#;
-    constant ADDR_SIZE_DATA_0       : INTEGER := 16#30#;
-    constant ADDR_SIZE_CTRL         : INTEGER := 16#34#;
-    constant ADDR_BITS         : INTEGER := 6;
+    constant ADDR_AP_CTRL              : INTEGER := 16#00#;
+    constant ADDR_GIE                  : INTEGER := 16#04#;
+    constant ADDR_IER                  : INTEGER := 16#08#;
+    constant ADDR_ISR                  : INTEGER := 16#0c#;
+    constant ADDR_IN_R_DATA_0          : INTEGER := 16#10#;
+    constant ADDR_IN_R_DATA_1          : INTEGER := 16#14#;
+    constant ADDR_IN_R_CTRL            : INTEGER := 16#18#;
+    constant ADDR_IN2_DATA_0           : INTEGER := 16#1c#;
+    constant ADDR_IN2_DATA_1           : INTEGER := 16#20#;
+    constant ADDR_IN2_CTRL             : INTEGER := 16#24#;
+    constant ADDR_OUT_R_DATA_0         : INTEGER := 16#28#;
+    constant ADDR_OUT_R_DATA_1         : INTEGER := 16#2c#;
+    constant ADDR_OUT_R_CTRL           : INTEGER := 16#30#;
+    constant ADDR_OUT2_DATA_0          : INTEGER := 16#34#;
+    constant ADDR_OUT2_DATA_1          : INTEGER := 16#38#;
+    constant ADDR_OUT2_CTRL            : INTEGER := 16#3c#;
+    constant ADDR_BLOCK_SIZE_DATA_0    : INTEGER := 16#40#;
+    constant ADDR_BLOCK_SIZE_CTRL      : INTEGER := 16#44#;
+    constant ADDR_SIZE_DATA_0          : INTEGER := 16#48#;
+    constant ADDR_SIZE_CTRL            : INTEGER := 16#4c#;
+    constant ADDR_SHIFT_DATA_0         : INTEGER := 16#50#;
+    constant ADDR_SHIFT_CTRL           : INTEGER := 16#54#;
+    constant ADDR_OUTPUTMINIMUM_DATA_0 : INTEGER := 16#58#;
+    constant ADDR_OUTPUTMINIMUM_CTRL   : INTEGER := 16#5c#;
+    constant ADDR_OUTPUTMAXIMUM_DATA_0 : INTEGER := 16#60#;
+    constant ADDR_OUTPUTMAXIMUM_CTRL   : INTEGER := 16#64#;
+    constant ADDR_BITS         : INTEGER := 7;
 
     signal waddr               : UNSIGNED(ADDR_BITS-1 downto 0);
     signal wmask               : UNSIGNED(C_S_AXI_DATA_WIDTH-1 downto 0);
@@ -137,9 +173,14 @@ architecture behave of IDCT2_control_s_axi is
     signal int_ier             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_isr             : UNSIGNED(1 downto 0) := (others => '0');
     signal int_in_r            : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_in2             : UNSIGNED(63 downto 0) := (others => '0');
     signal int_out_r           : UNSIGNED(63 downto 0) := (others => '0');
+    signal int_out2            : UNSIGNED(63 downto 0) := (others => '0');
     signal int_block_size      : UNSIGNED(31 downto 0) := (others => '0');
     signal int_size            : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_shift           : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_outputMinimum   : UNSIGNED(31 downto 0) := (others => '0');
+    signal int_outputMaximum   : UNSIGNED(31 downto 0) := (others => '0');
 
 
 begin
@@ -273,14 +314,28 @@ begin
                         rdata_data <= RESIZE(int_in_r(31 downto 0), 32);
                     when ADDR_IN_R_DATA_1 =>
                         rdata_data <= RESIZE(int_in_r(63 downto 32), 32);
+                    when ADDR_IN2_DATA_0 =>
+                        rdata_data <= RESIZE(int_in2(31 downto 0), 32);
+                    when ADDR_IN2_DATA_1 =>
+                        rdata_data <= RESIZE(int_in2(63 downto 32), 32);
                     when ADDR_OUT_R_DATA_0 =>
                         rdata_data <= RESIZE(int_out_r(31 downto 0), 32);
                     when ADDR_OUT_R_DATA_1 =>
                         rdata_data <= RESIZE(int_out_r(63 downto 32), 32);
+                    when ADDR_OUT2_DATA_0 =>
+                        rdata_data <= RESIZE(int_out2(31 downto 0), 32);
+                    when ADDR_OUT2_DATA_1 =>
+                        rdata_data <= RESIZE(int_out2(63 downto 32), 32);
                     when ADDR_BLOCK_SIZE_DATA_0 =>
                         rdata_data <= RESIZE(int_block_size(31 downto 0), 32);
                     when ADDR_SIZE_DATA_0 =>
                         rdata_data <= RESIZE(int_size(31 downto 0), 32);
+                    when ADDR_SHIFT_DATA_0 =>
+                        rdata_data <= RESIZE(int_shift(31 downto 0), 32);
+                    when ADDR_OUTPUTMINIMUM_DATA_0 =>
+                        rdata_data <= RESIZE(int_outputMinimum(31 downto 0), 32);
+                    when ADDR_OUTPUTMAXIMUM_DATA_0 =>
+                        rdata_data <= RESIZE(int_outputMaximum(31 downto 0), 32);
                     when others =>
                         NULL;
                     end case;
@@ -296,9 +351,14 @@ begin
     task_ap_ready        <= ap_ready and not int_auto_restart;
     ap_continue          <= int_ap_continue or auto_restart_status;
     in_r                 <= STD_LOGIC_VECTOR(int_in_r);
+    in2                  <= STD_LOGIC_VECTOR(int_in2);
     out_r                <= STD_LOGIC_VECTOR(int_out_r);
+    out2                 <= STD_LOGIC_VECTOR(int_out2);
     block_size           <= STD_LOGIC_VECTOR(int_block_size);
     size                 <= STD_LOGIC_VECTOR(int_size);
+    shift                <= STD_LOGIC_VECTOR(int_shift);
+    outputMinimum        <= STD_LOGIC_VECTOR(int_outputMinimum);
+    outputMaximum        <= STD_LOGIC_VECTOR(int_outputMaximum);
 
     process (ACLK)
     begin
@@ -530,6 +590,32 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
+                int_in2(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_IN2_DATA_0) then
+                    int_in2(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_in2(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_in2(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_IN2_DATA_1) then
+                    int_in2(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_in2(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
                 int_out_r(31 downto 0) <= (others => '0');
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_OUT_R_DATA_0) then
@@ -556,6 +642,32 @@ begin
     begin
         if (ACLK'event and ACLK = '1') then
             if (ARESET = '1') then
+                int_out2(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_OUT2_DATA_0) then
+                    int_out2(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_out2(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_out2(63 downto 32) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_OUT2_DATA_1) then
+                    int_out2(63 downto 32) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_out2(63 downto 32));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
                 int_block_size(31 downto 0) <= (others => '0');
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_BLOCK_SIZE_DATA_0) then
@@ -573,6 +685,45 @@ begin
             elsif (ACLK_EN = '1') then
                 if (w_hs = '1' and waddr = ADDR_SIZE_DATA_0) then
                     int_size(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_size(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_shift(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_SHIFT_DATA_0) then
+                    int_shift(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_shift(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_outputMinimum(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_OUTPUTMINIMUM_DATA_0) then
+                    int_outputMinimum(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_outputMinimum(31 downto 0));
+                end if;
+            end if;
+        end if;
+    end process;
+
+    process (ACLK)
+    begin
+        if (ACLK'event and ACLK = '1') then
+            if (ARESET = '1') then
+                int_outputMaximum(31 downto 0) <= (others => '0');
+            elsif (ACLK_EN = '1') then
+                if (w_hs = '1' and waddr = ADDR_OUTPUTMAXIMUM_DATA_0) then
+                    int_outputMaximum(31 downto 0) <= (UNSIGNED(WDATA(31 downto 0)) and wmask(31 downto 0)) or ((not wmask(31 downto 0)) and int_outputMaximum(31 downto 0));
                 end if;
             end if;
         end if;

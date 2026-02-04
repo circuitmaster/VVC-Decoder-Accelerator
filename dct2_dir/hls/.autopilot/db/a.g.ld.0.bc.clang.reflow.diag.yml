@@ -36,7 +36,7 @@ DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_di
 Function:        _GLOBAL__sub_I_IDCT2.pp.0.cpp
 Args:            
   - Callee:          __cxx_global_var_init.4
-    DebugLoc:        { File: src/transform_coeffs.h, Line: 77, Column: 0 }
+    DebugLoc:        { File: src/transform_coeffs.h, Line: 76, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          _GLOBAL__sub_I_IDCT2.pp.0.cpp
     DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct2_dir/hls/.autopilot/db/IDCT2.pp.0.cpp, 
@@ -108,10 +108,24 @@ Args:
     DebugLoc:        { File: src/IDCT2.cpp, Line: 194, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: src/IDCT2.cpp, Line: 458, Column: 38 }
+Function:        IDCT2
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          IDCT2
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+  - String:          ''''
+...
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 437, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 454, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B2(ap_int<32>*, ap_int<32>*)'
@@ -124,7 +138,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 418, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 435, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B4(ap_int<32>*, ap_int<32>*)'
@@ -137,7 +151,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 399, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 416, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B8(ap_int<32>*, ap_int<32>*)'
@@ -150,20 +164,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 342, Column: 13 }
-Function:        IDCT2
-Args:            
-  - Callee:          'IDCT2B64(ap_int<32>*, ap_int<32>*)'
-    DebugLoc:        { File: src/IDCT2.cpp, Line: 194, Column: 0 }
-  - String:          ' not inlined into '
-  - Caller:          IDCT2
-    DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
-  - String:          ' because it should never be inlined (cost=never)'
-...
---- !Missed
-Pass:            inline
-Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 380, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 397, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B16(ap_int<32>*, ap_int<32>*)'
@@ -176,7 +177,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 361, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 378, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B32(ap_int<32>*, ap_int<32>*)'
@@ -186,90 +187,143 @@ Args:
     DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
   - String:          ' because it should never be inlined (cost=never)'
 ...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT2.cpp, Line: 354, Column: 13 }
+Function:        IDCT2
+Args:            
+  - Callee:          'IDCT2B64(ap_int<32>*, ap_int<32>*)'
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 194, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT2
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 432, Column: 21 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 449, Column: 21 }
 Function:        IDCT2
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_432_12
+  - LoopName:        VITIS_LOOP_449_14
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 439, Column: 32 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 456, Column: 32 }
 Function:        IDCT2
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_439_13
+  - LoopName:        VITIS_LOOP_456_15
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 413, Column: 21 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 430, Column: 21 }
 Function:        IDCT2
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_413_10
+  - LoopName:        VITIS_LOOP_430_12
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 420, Column: 32 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 437, Column: 32 }
 Function:        IDCT2
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_420_11
+  - LoopName:        VITIS_LOOP_437_13
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 394, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 411, Column: 21 }
 Function:        IDCT2
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_394_8
+  - LoopName:        VITIS_LOOP_411_10
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 401, Column: 31 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 418, Column: 32 }
 Function:        IDCT2
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_401_9
+  - LoopName:        VITIS_LOOP_418_11
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 375, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 392, Column: 20 }
 Function:        IDCT2
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_375_6
+  - LoopName:        VITIS_LOOP_392_8
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 382, Column: 31 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 399, Column: 31 }
 Function:        IDCT2
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_382_7
+  - LoopName:        VITIS_LOOP_399_9
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 356, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 373, Column: 20 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_373_6
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: src/IDCT2.cpp, Line: 380, Column: 31 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_380_7
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: src/IDCT2.cpp, Line: 344, Column: 20 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_344_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: src/IDCT2.cpp, Line: 349, Column: 31 }
+Function:        IDCT2
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_349_3
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: src/IDCT2.cpp, Line: 356, Column: 31 }
 Function:        IDCT2
 Args:            
   - String:          'Loop '''
@@ -279,31 +333,11 @@ Args:
 --- !Passed
 Pass:            reflow-infer-unroll
 Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 363, Column: 31 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 361, Column: 31 }
 Function:        IDCT2
 Args:            
   - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_363_5
-  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
-...
---- !Passed
-Pass:            reflow-infer-unroll
-Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 337, Column: 20 }
-Function:        IDCT2
-Args:            
-  - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_337_2
-  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
-...
---- !Passed
-Pass:            reflow-infer-unroll
-Name:            ImplicitUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 344, Column: 31 }
-Function:        IDCT2
-Args:            
-  - String:          'Loop '''
-  - LoopName:        VITIS_LOOP_344_3
+  - LoopName:        VITIS_LOOP_361_5
   - String:          ''' is marked as complete unroll implied by the pipeline pragma'
 ...
 --- !Passed
@@ -343,9 +377,9 @@ DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
 Function:        IDCT2
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_432_12
+  - LoopName:        VITIS_LOOP_449_14
   - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:432:21'
+  - LoopLoc:         'src/IDCT2.cpp:449:21'
   - String:          ') '
   - String:          'in function '''
   - String:          IDCT2
@@ -359,9 +393,9 @@ DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
 Function:        IDCT2
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_439_13
+  - LoopName:        VITIS_LOOP_456_15
   - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:439:32'
+  - LoopLoc:         'src/IDCT2.cpp:456:32'
   - String:          ') '
   - String:          'in function '''
   - String:          IDCT2
@@ -375,9 +409,9 @@ DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
 Function:        IDCT2
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_413_10
+  - LoopName:        VITIS_LOOP_430_12
   - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:413:21'
+  - LoopLoc:         'src/IDCT2.cpp:430:21'
   - String:          ') '
   - String:          'in function '''
   - String:          IDCT2
@@ -391,9 +425,9 @@ DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
 Function:        IDCT2
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_420_11
+  - LoopName:        VITIS_LOOP_437_13
   - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:420:32'
+  - LoopLoc:         'src/IDCT2.cpp:437:32'
   - String:          ') '
   - String:          'in function '''
   - String:          IDCT2
@@ -407,9 +441,9 @@ DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
 Function:        IDCT2
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_394_8
+  - LoopName:        VITIS_LOOP_411_10
   - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:394:20'
+  - LoopLoc:         'src/IDCT2.cpp:411:21'
   - String:          ') '
   - String:          'in function '''
   - String:          IDCT2
@@ -423,9 +457,9 @@ DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
 Function:        IDCT2
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_401_9
+  - LoopName:        VITIS_LOOP_418_11
   - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:401:31'
+  - LoopLoc:         'src/IDCT2.cpp:418:32'
   - String:          ') '
   - String:          'in function '''
   - String:          IDCT2
@@ -439,9 +473,9 @@ DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
 Function:        IDCT2
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_375_6
+  - LoopName:        VITIS_LOOP_392_8
   - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:375:20'
+  - LoopLoc:         'src/IDCT2.cpp:392:20'
   - String:          ') '
   - String:          'in function '''
   - String:          IDCT2
@@ -455,14 +489,78 @@ DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
 Function:        IDCT2
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_382_7
+  - LoopName:        VITIS_LOOP_399_9
   - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:382:31'
+  - LoopLoc:         'src/IDCT2.cpp:399:31'
   - String:          ') '
   - String:          'in function '''
   - String:          IDCT2
   - String:          ''' completely with a factor of '
   - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_373_6
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT2.cpp:373:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_380_7
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT2.cpp:380:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_344_2
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT2.cpp:344:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+Function:        IDCT2
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_349_3
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT2.cpp:349:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT2
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
 ...
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
@@ -473,7 +571,7 @@ Args:
   - String:          'Unrolling loop '''
   - LoopName:        VITIS_LOOP_356_4
   - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:356:20'
+  - LoopLoc:         'src/IDCT2.cpp:356:31'
   - String:          ') '
   - String:          'in function '''
   - String:          IDCT2
@@ -487,46 +585,14 @@ DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
 Function:        IDCT2
 Args:            
   - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_363_5
+  - LoopName:        VITIS_LOOP_361_5
   - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:363:31'
+  - LoopLoc:         'src/IDCT2.cpp:361:31'
   - String:          ') '
   - String:          'in function '''
   - String:          IDCT2
   - String:          ''' completely with a factor of '
   - Factor:          '32'
-...
---- !Passed
-Pass:            reflow-pragma-loop-unroll
-Name:            PragmaFullyUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
-Function:        IDCT2
-Args:            
-  - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_337_2
-  - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:337:20'
-  - String:          ') '
-  - String:          'in function '''
-  - String:          IDCT2
-  - String:          ''' completely with a factor of '
-  - Factor:          '64'
-...
---- !Passed
-Pass:            reflow-pragma-loop-unroll
-Name:            PragmaFullyUnroll
-DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
-Function:        IDCT2
-Args:            
-  - String:          'Unrolling loop '''
-  - LoopName:        VITIS_LOOP_344_3
-  - String:          ''' ('
-  - LoopLoc:         'src/IDCT2.cpp:344:31'
-  - String:          ') '
-  - String:          'in function '''
-  - String:          IDCT2
-  - String:          ''' completely with a factor of '
-  - Factor:          '64'
 ...
 --- !Passed
 Pass:            reflow-pragma-loop-unroll
@@ -644,7 +710,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 342, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 354, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B64(ap_int<32>*, ap_int<32>*)'
@@ -657,7 +723,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 361, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 378, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B32(ap_int<32>*, ap_int<32>*)'
@@ -670,7 +736,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 380, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 397, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B16(ap_int<32>*, ap_int<32>*)'
@@ -683,7 +749,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 399, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 416, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B8(ap_int<32>*, ap_int<32>*)'
@@ -696,7 +762,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 418, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 435, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B4(ap_int<32>*, ap_int<32>*)'
@@ -709,7 +775,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 437, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 454, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B2(ap_int<32>*, ap_int<32>*)'
@@ -931,7 +997,7 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 332, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 339, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
@@ -949,7 +1015,7 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 333, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 340, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
@@ -967,13 +1033,13 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 351, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 368, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          in_data27
+  - UOName:          in_data76
   - String:          ''':'
   - String:          ' '
   - Mode:            Complete
@@ -985,13 +1051,13 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 352, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 369, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          out_data28
+  - UOName:          out_data77
   - String:          ''':'
   - String:          ' '
   - Mode:            Complete
@@ -1003,13 +1069,13 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 370, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 387, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          in_data66
+  - UOName:          in_data121
   - String:          ''':'
   - String:          ' '
   - Mode:            Complete
@@ -1021,13 +1087,13 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 371, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 388, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          out_data67
+  - UOName:          out_data122
   - String:          ''':'
   - String:          ' '
   - Mode:            Complete
@@ -1039,13 +1105,13 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 389, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 406, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          in_data105
+  - UOName:          in_data166
   - String:          ''':'
   - String:          ' '
   - Mode:            Complete
@@ -1057,13 +1123,13 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 390, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 407, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          out_data106
+  - UOName:          out_data167
   - String:          ''':'
   - String:          ' '
   - Mode:            Complete
@@ -1075,13 +1141,13 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 408, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 425, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          in_data144
+  - UOName:          in_data211
   - String:          ''':'
   - String:          ' '
   - Mode:            Complete
@@ -1093,13 +1159,13 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 409, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 426, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          out_data145
+  - UOName:          out_data212
   - String:          ''':'
   - String:          ' '
   - Mode:            Complete
@@ -1111,13 +1177,13 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 427, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 444, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          in_data181
+  - UOName:          in_data254
   - String:          ''':'
   - String:          ' '
   - Mode:            Complete
@@ -1129,13 +1195,13 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/IDCT2.cpp, Line: 428, Column: 24 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 445, Column: 24 }
 Function:        IDCT2
 Args:            
   - String:          'Applying '
   - String:          array_partition
   - String:          ' to '''
-  - UOName:          out_data182
+  - UOName:          out_data255
   - String:          ''':'
   - String:          ' '
   - Mode:            Complete
@@ -1147,7 +1213,7 @@ Args:
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: src/IDCT2.cpp, Line: 324, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
 Function:        IDCT2
 Args:            
   - String:          'Sequential '
@@ -1162,23 +1228,54 @@ Args:
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
-  - LoopName:        VITIS_LOOP_324_1
+  - LoopName:        VITIS_LOOP_329_1
   - String:          ' '
-  - LoopLoc:         'src/IDCT2.cpp:324:20'
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
   - String:          ' '
   - Function:        IDCT2
     DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
-    DebugLoc:        { File: src/IDCT2.cpp, Line: 328, Column: 25 }
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 333, Column: 26 }
   - OrigDirection:   read
   - OrigID:          for.body.load.6
 ...
 --- !Passed
 Pass:            reflow-burst-inference
 Name:            BurstInferred
-DebugLoc:        { File: src/IDCT2.cpp, Line: 324, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
+Function:        IDCT2
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        in2seq
+  - ArrayName:       in2
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_329_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
+  - String:          ' '
+  - Function:        IDCT2
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 334, Column: 34 }
+  - OrigDirection:   read
+  - OrigID:          for.body.load.12
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
 Function:        IDCT2
 Args:            
   - String:          'Sequential '
@@ -1191,43 +1288,74 @@ Args:
   - AccessID:        outseq
   - ArrayName:       out
   - String:          ' '
-  - BundleName:      gmem1
+  - BundleName:      gmem0
   - String:          ' '
-  - LoopName:        VITIS_LOOP_324_1
+  - LoopName:        VITIS_LOOP_329_1
   - String:          ' '
-  - LoopLoc:         'src/IDCT2.cpp:324:20'
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
   - String:          ' '
   - Function:        IDCT2
     DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      store
-    DebugLoc:        { File: src/IDCT2.cpp, Line: 446, Column: 16 }
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 463, Column: 16 }
   - OrigDirection:   write
-  - OrigID:          for.inc223.store.4
+  - OrigID:          for.inc304.store.6
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
+Function:        IDCT2
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        out2seq
+  - ArrayName:       out2
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_329_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
+  - String:          ' '
+  - Function:        IDCT2
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 464, Column: 17 }
+  - OrigDirection:   write
+  - OrigID:          for.inc304.store.9
 ...
 --- !Missed
 Pass:            reflow-burst-widen
 Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: src/IDCT2.cpp, Line: 324, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
 Function:        IDCT2
 Args:            
   - String:          'Could not widen since type '
-  - Type:            i512
+  - Type:            i1024
   - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
   - Threshold:       '512'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: src/IDCT2.cpp, Line: 324, Column: 20 }
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
   - OrigDirection:   write
   - OrigID:          outseq
   - ArrayName:       out
   - String:          ' '
-  - BundleName:      gmem1
+  - BundleName:      gmem0
   - String:          ' '
-  - LoopName:        VITIS_LOOP_324_1
+  - LoopName:        VITIS_LOOP_329_1
   - String:          ' '
-  - LoopLoc:         'src/IDCT2.cpp:324:20'
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
   - String:          ' '
   - Function:        IDCT2
     DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
@@ -1236,25 +1364,79 @@ Args:
 --- !Missed
 Pass:            reflow-burst-widen
 Name:            GreaterOrEqualThreshold
-DebugLoc:        { File: src/IDCT2.cpp, Line: 324, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
 Function:        IDCT2
 Args:            
   - String:          'Could not widen since type '
-  - Type:            i512
+  - Type:            i1024
   - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
   - Threshold:       '512'
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      call
-    DebugLoc:        { File: src/IDCT2.cpp, Line: 324, Column: 20 }
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
+  - OrigDirection:   write
+  - OrigID:          out2seq
+  - ArrayName:       out2
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_329_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
+  - String:          ' '
+  - Function:        IDCT2
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
+Function:        IDCT2
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i1024
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '512'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
   - OrigDirection:   read
   - OrigID:          inseq
   - ArrayName:       in
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
-  - LoopName:        VITIS_LOOP_324_1
+  - LoopName:        VITIS_LOOP_329_1
   - String:          ' '
-  - LoopLoc:         'src/IDCT2.cpp:324:20'
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
+  - String:          ' '
+  - Function:        IDCT2
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
+Function:        IDCT2
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i1024
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '512'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
+  - OrigDirection:   read
+  - OrigID:          in2seq
+  - ArrayName:       in2
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_329_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
   - String:          ' '
   - Function:        IDCT2
     DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
@@ -1263,21 +1445,21 @@ Args:
 --- !Failure
 Pass:            reflow-occurrence-analysis
 Name:            CouldNotAnalyzeBBInfo
-DebugLoc:        { File: src/IDCT2.cpp, Line: 427, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 444, Column: 13 }
 Function:        IDCT2
 Args:            
   - String:          'Could not analyze occurrence information for '''
-  - BBName:          VITIS_LOOP_432_12
+  - BBName:          VITIS_LOOP_449_14
   - String:          ''' living in '''
-  - LoopName:        VITIS_LOOP_324_1
+  - LoopName:        VITIS_LOOP_329_1
   - String:          '''('
-  - LoopLoc:         'src/IDCT2.cpp:324:20'
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
   - String:          ') .'
 ...
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: src/IDCT2.cpp, Line: 324, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
 Function:        IDCT2
 Args:            
   - String:          'Multiple burst '
@@ -1285,7 +1467,7 @@ Args:
   - String:          ' of '
   - Length:          variable
   - String:          ' length and bit width '
-  - Width:           '512'
+  - Width:           '1024'
   - String:          ' has been inferred.'
   - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
   - String:          ' _XLX_SEP_ '
@@ -1294,9 +1476,9 @@ Args:
   - String:          ' '
   - BundleName:      gmem0
   - String:          ' '
-  - LoopName:        VITIS_LOOP_324_1
+  - LoopName:        VITIS_LOOP_329_1
   - String:          ' '
-  - LoopLoc:         'src/IDCT2.cpp:324:20'
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
   - String:          ' '
   - Function:        IDCT2
     DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
@@ -1305,7 +1487,7 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: src/IDCT2.cpp, Line: 324, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
 Function:        IDCT2
 Args:            
   - String:          'Multiple burst '
@@ -1313,11 +1495,11 @@ Args:
   - String:          ' of '
   - Length:          variable
   - String:          ' length and bit width '
-  - Width:           '512'
+  - Width:           '1024'
   - String:          ' in loop '''
-  - LoopName:        VITIS_LOOP_324_1
+  - LoopName:        VITIS_LOOP_329_1
   - String:          '''('
-  - LoopLoc:         'src/IDCT2.cpp:324:20'
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      gmem0
@@ -1327,15 +1509,15 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredVerboseSummary
-DebugLoc:        { File: src/IDCT2.cpp, Line: 324, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
 Function:        IDCT2
 Args:            
   - String:          'Multiple burst '
-  - Direction:       writes
+  - Direction:       reads
   - String:          ' of '
   - Length:          variable
   - String:          ' length and bit width '
-  - Width:           '512'
+  - Width:           '1024'
   - String:          ' has been inferred.'
   - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
   - String:          ' _XLX_SEP_ '
@@ -1344,9 +1526,9 @@ Args:
   - String:          ' '
   - BundleName:      gmem1
   - String:          ' '
-  - LoopName:        VITIS_LOOP_324_1
+  - LoopName:        VITIS_LOOP_329_1
   - String:          ' '
-  - LoopLoc:         'src/IDCT2.cpp:324:20'
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
   - String:          ' '
   - Function:        IDCT2
     DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
@@ -1355,7 +1537,29 @@ Args:
 --- !Passed
 Pass:            reflow-burst-summary
 Name:            BurstInferredSummary
-DebugLoc:        { File: src/IDCT2.cpp, Line: 324, Column: 20 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
+Function:        IDCT2
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '1024'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_329_1
+  - String:          '''('
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem1
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
 Function:        IDCT2
 Args:            
   - String:          'Multiple burst '
@@ -1363,11 +1567,89 @@ Args:
   - String:          ' of '
   - Length:          variable
   - String:          ' length and bit width '
-  - Width:           '512'
+  - Width:           '1024'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq2
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_329_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
+  - String:          ' '
+  - Function:        IDCT2
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
+Function:        IDCT2
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '1024'
   - String:          ' in loop '''
-  - LoopName:        VITIS_LOOP_324_1
+  - LoopName:        VITIS_LOOP_329_1
   - String:          '''('
-  - LoopLoc:         'src/IDCT2.cpp:324:20'
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
+Function:        IDCT2
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '1024'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq3
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_329_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
+  - String:          ' '
+  - Function:        IDCT2
+    DebugLoc:        { File: src/IDCT2.cpp, Line: 315, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: src/IDCT2.cpp, Line: 329, Column: 23 }
+Function:        IDCT2
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '1024'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_329_1
+  - String:          '''('
+  - LoopLoc:         'src/IDCT2.cpp:329:23'
   - String:          ')'
   - String:          ' has been inferred on bundle '''
   - BundleName:      gmem1
@@ -1442,7 +1724,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 342, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 354, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B64(ap_int<32>*, ap_int<32>*)'
@@ -1455,7 +1737,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 361, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 378, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B32(ap_int<32>*, ap_int<32>*)'
@@ -1468,7 +1750,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 380, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 397, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B16(ap_int<32>*, ap_int<32>*)'
@@ -1481,7 +1763,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 399, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 416, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B8(ap_int<32>*, ap_int<32>*)'
@@ -1494,7 +1776,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 418, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 435, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B4(ap_int<32>*, ap_int<32>*)'
@@ -1507,7 +1789,7 @@ Args:
 --- !Missed
 Pass:            inline
 Name:            NeverInline
-DebugLoc:        { File: src/IDCT2.cpp, Line: 437, Column: 13 }
+DebugLoc:        { File: src/IDCT2.cpp, Line: 454, Column: 13 }
 Function:        IDCT2
 Args:            
   - Callee:          'IDCT2B2(ap_int<32>*, ap_int<32>*)'

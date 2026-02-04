@@ -6,11 +6,11 @@
 
 <UserAssignments>
 <unit>ns</unit>
-<ProductFamily>zynquplus</ProductFamily>
-<Part>xczu9eg-ffvb1156-2-e</Part>
+<ProductFamily>versalaicore</ProductFamily>
+<Part>xcvc1902-vsva2197-2MP-e-S</Part>
 <TopModelName>IDST7B8_Pipeline_VITIS_LOOP_21_1</TopModelName>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>2.70</ClockUncertainty>
+<TargetClockPeriod>3.33</TargetClockPeriod>
+<ClockUncertainty>0.90</ClockUncertainty>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
 
@@ -18,27 +18,27 @@
 <PipelineType>loop auto-rewind stp (delay=0 cycles)</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>7.027</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.408</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>12</Best-caseLatency>
-<Average-caseLatency>12</Average-caseLatency>
-<Worst-caseLatency>12</Worst-caseLatency>
-<Best-caseRealTimeLatency>0.120 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>0.120 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>0.120 us</Worst-caseRealTimeLatency>
+<Best-caseLatency>18</Best-caseLatency>
+<Average-caseLatency>18</Average-caseLatency>
+<Worst-caseLatency>18</Worst-caseLatency>
+<Best-caseRealTimeLatency>59.994 ns</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>59.994 ns</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>59.994 ns</Worst-caseRealTimeLatency>
 <Interval-min>9</Interval-min>
 <Interval-max>9</Interval-max>
 </SummaryOfOverallLatency>
 <SummaryOfLoopLatency>
 <VITIS_LOOP_21_1>
-<Slack>7.30</Slack>
+<Slack>2.43</Slack>
 <TripCount>8</TripCount>
-<Latency>10</Latency>
-<AbsoluteTimeLatency>100</AbsoluteTimeLatency>
+<Latency>16</Latency>
+<AbsoluteTimeLatency>53</AbsoluteTimeLatency>
 <PipelineII>1</PipelineII>
-<PipelineDepth>4</PipelineDepth>
+<PipelineDepth>10</PipelineDepth>
 <InstanceList>
 </InstanceList>
 </VITIS_LOOP_21_1>
@@ -60,18 +60,18 @@
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>0</BRAM_18K>
+<BRAM_18K>8</BRAM_18K>
 <DSP>16</DSP>
-<FF>462</FF>
-<LUT>1523</LUT>
+<FF>1243</FF>
+<LUT>1220</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
-<BRAM_18K>1824</BRAM_18K>
-<DSP>2520</DSP>
-<FF>548160</FF>
-<LUT>274080</LUT>
-<URAM>0</URAM>
+<BRAM_18K>1934</BRAM_18K>
+<DSP>1968</DSP>
+<FF>1799680</FF>
+<LUT>899840</LUT>
+<URAM>463</URAM>
 </AvailableResources>
 </AreaEstimates>
 
@@ -440,8 +440,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>empty_36</name>
-<Object>empty_36</Object>
+<name>empty_33</name>
+<Object>empty_33</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -473,8 +473,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>empty_37</name>
-<Object>empty_37</Object>
+<name>empty_34</name>
+<Object>empty_34</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
@@ -495,8 +495,8 @@
 <Attribute>data</Attribute>
 </RtlPorts>
 <RtlPorts>
-<name>empty_38</name>
-<Object>empty_38</Object>
+<name>empty_35</name>
+<Object>empty_35</Object>
 <Type>scalar</Type>
 <Scope></Scope>
 <IOProtocol>ap_none</IOProtocol>
