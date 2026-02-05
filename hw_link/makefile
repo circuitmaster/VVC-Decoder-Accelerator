@@ -25,8 +25,8 @@ BINARY_CONTAINERS += vvc_decoder.xclbin
 
 BUILD_SUBDIRS += vvc_decoder.build
 vvc_decoder_OBJS += ../Hardware/build/idct2.xo
-vvc_decoder_OBJS += ../Hardware/build/idct8.xo
-vvc_decoder_OBJS += ../Hardware/build/idst7.xo
+#vvc_decoder_OBJS += ../Hardware/build/idct8.xo
+#vvc_decoder_OBJS += ../Hardware/build/idst7.xo
 
 ALL_MESSAGE_FILES = $(subst .xclbin,.mdb,$(BINARY_CONTAINERS))
 
@@ -51,6 +51,6 @@ nothing:
 # binary container: vvc_decoder.xclbin
 #
 
-vvc_decoder.xclbin: $(vvc_decoder_OBJS) vvc_decoder-link.cfg
+vvc_decoder.xsa: $(vvc_decoder_OBJS) vvc_decoder-link.cfg
 	-@echo $(VPP_LINKER) $(VPP_OPTS) --link --config vvc_decoder-link.cfg -o"$@" $(vvc_decoder_OBJS) > vvc_decoder.xclbin.sh
 	$(VPP_LINKER) $(VPP_OPTS) --link --config vvc_decoder-link.cfg -o"$@" $(vvc_decoder_OBJS)
