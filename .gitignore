@@ -40,10 +40,18 @@ hw_link/*.mdb
 # ignore ./hw_link/*.xclbin
 hw_link/*.xclbin
 
+hw_link/*.xsa
+
 # ignore ./hw_link/.Xil/*
 hw_link/.Xil/
 
 hw_link/.ipcache/
+
+hw_link/*.mdb
+
+hw_link/*.link_summary
+
+hw_link/*.ltx
 
 # ignore ./vitis_analyzer*
 vitis_analyzer*
