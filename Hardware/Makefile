@@ -69,3 +69,8 @@ build/idst7.xo: ../src/IDST7.cpp dst7-compile.cfg
 	-@mkdir -p $(@D)
 	-@$(RM) $@
 	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config dst7-compile.cfg -o"$@" "$<"
+
+build/idctcomb.xo: ../src/IDCT_Com.cpp dctcomb-compile.cfg
+	-@mkdir -p $(@D)
+	-@$(RM) $@
+	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config dctcomb-compile.cfg -o"$@" "$<"
