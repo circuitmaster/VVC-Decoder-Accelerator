@@ -164,7 +164,7 @@ void ICOMB4(ap_int<32> src[4], ap_int<32> dst[4], ap_int<32> shift, const ap_int
         dst[1] = CLIP3(oMin, oMax, (55*c[3] - 55*c[1] + c[3] + rnd_factor) >> shift);
         dst[2] = CLIP3(oMin, oMax, (29* (src[0] - src[2] + src[3]) + rnd_factor) >> shift);
         dst[3] = CLIP3(oMin, oMax, (55*c[3] - 29*c[2] - c[3] + rnd_factor) >> shift);
-    //}
+    }
 }
 
 
@@ -202,7 +202,7 @@ void IDCT8B32(ap_int<32> src[32], ap_int<32> dst[32], ap_int<32> shift, ap_int<3
 } */
 
 
-extern "C" void IDCTCom(ap_int<1024>* in, ap_int<1024>* out, ap_int<32> block_size, ap_int<32> sIn, ap_int<32>  size, ap_int<32>  shift, ap_int<32>  oMin, ap_int<32>  oMax, ap_uint<1> selector) {
+extern "C" void IDCTComb(ap_int<1024>* in, ap_int<1024>* out, ap_int<32> block_size, ap_int<32> sIn, ap_int<32>  size, ap_int<32>  shift, ap_int<32>  oMin, ap_int<32>  oMax, ap_uint<1> selector) {
     #pragma HLS INTERFACE m_axi port=in offset=slave bundle=gmem0
     #pragma HLS INTERFACE m_axi port=out offset=slave bundle=gmem1
     #pragma HLS INTERFACE s_axilite port=in bundle=control

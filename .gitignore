@@ -68,3 +68,10 @@ vitis_analyzer*
 *.xclbin
 *.xsa
 *.mdb
+
+#dirs
+
+dct2_dir/
+dctcomb_dir/
+dct8_dir/
+idst7_dir/
