@@ -1,7 +1,7 @@
 {
   "0": {
     "basicblocks": 66,
-    "calls": "10 2 6 7",
+    "calls": "7 6 12 10",
     "file": "IDST7.cpp",
     "fileloc": 244,
     "instructions": 354,
@@ -17,30 +17,6 @@
     "total_instructions": 8888
   },
   "1": {
-    "basicblocks": 1,
-    "calls": "",
-    "file": "transform_coeffs.h",
-    "fileloc": 256,
-    "instructions": 1025,
-    "name": "__cxx_global_var_init.10",
-    "total_instructions": 16385
-  },
-  "10": {
-    "basicblocks": 1,
-    "calls": "11",
-    "file": "IDST7.cpp",
-    "fileloc": 162,
-    "instructions": 14,
-    "loads": {
-      "L": 4
-    },
-    "name": "IDST7B32",
-    "stores": {
-      "L": 4
-    },
-    "total_instructions": 1317
-  },
-  "11": {
     "basicblocks": 15,
     "calls": "4",
     "file": "IDST7.cpp",
@@ -55,85 +31,7 @@
     },
     "total_instructions": 1303
   },
-  "12": {
-    "basicblocks": 15,
-    "calls": "4",
-    "file": "IDST7.cpp",
-    "fileloc": 39,
-    "instructions": 143,
-    "loads": {
-      "L": 4
-    },
-    "name": "INV_MATMUL_16",
-    "stores": {
-      "L": 4
-    },
-    "total_instructions": 1303
-  },
-  "2": {
-    "basicblocks": 1,
-    "calls": "12",
-    "file": "IDST7.cpp",
-    "fileloc": 117,
-    "instructions": 14,
-    "loads": {
-      "L": 4
-    },
-    "name": "IDST7B16",
-    "stores": {
-      "L": 4
-    },
-    "total_instructions": 1317
-  },
-  "3": {
-    "basicblocks": 1,
-    "calls": "9 8 1",
-    "file": "IDST7.pp.0.cpp",
-    "fileloc": 0,
-    "instructions": 4,
-    "name": "",
-    "total_instructions": 21511
-  },
-  "4": {
-    "basicblocks": 6,
-    "calls": "",
-    "file": "IDST7.cpp",
-    "fileloc": 6,
-    "instructions": 22,
-    "name": "CLIP3",
-    "total_instructions": 53
-  },
-  "5": {
-    "basicblocks": 15,
-    "calls": "4",
-    "file": "IDST7.cpp",
-    "fileloc": 13,
-    "instructions": 143,
-    "loads": {
-      "L": 4
-    },
-    "name": "INV_MATMUL_8",
-    "stores": {
-      "L": 4
-    },
-    "total_instructions": 1303
-  },
-  "6": {
-    "basicblocks": 1,
-    "calls": "5",
-    "file": "IDST7.cpp",
-    "fileloc": 113,
-    "instructions": 14,
-    "loads": {
-      "L": 4
-    },
-    "name": "IDST7B8",
-    "stores": {
-      "L": 4
-    },
-    "total_instructions": 1317
-  },
-  "7": {
+  "10": {
     "basicblocks": 1,
     "calls": "4 4 4 4",
     "file": "IDST7.cpp",
@@ -148,22 +46,124 @@
     },
     "total_instructions": 4077
   },
-  "8": {
+  "11": {
     "basicblocks": 1,
     "calls": "",
     "file": "transform_coeffs.h",
-    "fileloc": 236,
+    "fileloc": 235,
     "instructions": 257,
     "name": "__cxx_global_var_init.9",
     "total_instructions": 4097
   },
-  "9": {
+  "12": {
+    "basicblocks": 1,
+    "calls": "8",
+    "file": "IDST7.cpp",
+    "fileloc": 113,
+    "instructions": 14,
+    "loads": {
+      "L": 4
+    },
+    "name": "IDST7B8",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1317
+  },
+  "2": {
     "basicblocks": 1,
     "calls": "",
     "file": "transform_coeffs.h",
-    "fileloc": 223,
+    "fileloc": 222,
     "instructions": 65,
     "name": "__cxx_global_var_init.8",
     "total_instructions": 1025
+  },
+  "3": {
+    "basicblocks": 15,
+    "calls": "4",
+    "file": "IDST7.cpp",
+    "fileloc": 39,
+    "instructions": 143,
+    "loads": {
+      "L": 4
+    },
+    "name": "INV_MATMUL_16",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1303
+  },
+  "4": {
+    "basicblocks": 6,
+    "calls": "",
+    "file": "IDST7.cpp",
+    "fileloc": 6,
+    "instructions": 22,
+    "name": "CLIP3",
+    "total_instructions": 53
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "transform_coeffs.h",
+    "fileloc": 255,
+    "instructions": 1025,
+    "name": "__cxx_global_var_init.10",
+    "total_instructions": 16385
+  },
+  "6": {
+    "basicblocks": 1,
+    "calls": "3",
+    "file": "IDST7.cpp",
+    "fileloc": 117,
+    "instructions": 14,
+    "loads": {
+      "L": 4
+    },
+    "name": "IDST7B16",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1317
+  },
+  "7": {
+    "basicblocks": 1,
+    "calls": "1",
+    "file": "IDST7.cpp",
+    "fileloc": 162,
+    "instructions": 14,
+    "loads": {
+      "L": 4
+    },
+    "name": "IDST7B32",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1317
+  },
+  "8": {
+    "basicblocks": 15,
+    "calls": "4",
+    "file": "IDST7.cpp",
+    "fileloc": 13,
+    "instructions": 143,
+    "loads": {
+      "L": 4
+    },
+    "name": "INV_MATMUL_8",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1303
+  },
+  "9": {
+    "basicblocks": 1,
+    "calls": "2 11 5",
+    "file": "IDST7.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 4,
+    "name": "",
+    "total_instructions": 21511
   }
 }

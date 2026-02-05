@@ -102,12 +102,22 @@ void XIdct2_DisableAutoRestart(XIdct2 *InstancePtr);
 
 void XIdct2_Set_in_r(XIdct2 *InstancePtr, u64 Data);
 u64 XIdct2_Get_in_r(XIdct2 *InstancePtr);
+void XIdct2_Set_in2(XIdct2 *InstancePtr, u64 Data);
+u64 XIdct2_Get_in2(XIdct2 *InstancePtr);
 void XIdct2_Set_out_r(XIdct2 *InstancePtr, u64 Data);
 u64 XIdct2_Get_out_r(XIdct2 *InstancePtr);
+void XIdct2_Set_out2(XIdct2 *InstancePtr, u64 Data);
+u64 XIdct2_Get_out2(XIdct2 *InstancePtr);
 void XIdct2_Set_block_size(XIdct2 *InstancePtr, u32 Data);
 u32 XIdct2_Get_block_size(XIdct2 *InstancePtr);
 void XIdct2_Set_size(XIdct2 *InstancePtr, u32 Data);
 u32 XIdct2_Get_size(XIdct2 *InstancePtr);
+void XIdct2_Set_shift(XIdct2 *InstancePtr, u32 Data);
+u32 XIdct2_Get_shift(XIdct2 *InstancePtr);
+void XIdct2_Set_outputMinimum(XIdct2 *InstancePtr, u32 Data);
+u32 XIdct2_Get_outputMinimum(XIdct2 *InstancePtr);
+void XIdct2_Set_outputMaximum(XIdct2 *InstancePtr, u32 Data);
+u32 XIdct2_Get_outputMaximum(XIdct2 *InstancePtr);
 
 void XIdct2_InterruptGlobalEnable(XIdct2 *InstancePtr);
 void XIdct2_InterruptGlobalDisable(XIdct2 *InstancePtr);

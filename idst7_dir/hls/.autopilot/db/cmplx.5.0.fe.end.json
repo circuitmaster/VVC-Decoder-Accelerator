@@ -5,19 +5,19 @@
         "fileloc": "113",
         "instructions": "28",
         "total_instructions": "147",
-        "calls": "2",
+        "calls": "4",
         "basicblocks": "1"
     },
     "2": {
-        "name": "IDST7B8_Pipeline_VITIS_LOOP_21_1",
+        "name": "IDST7B32_Pipeline_VITIS_LOOP_73_1",
         "file": "src\/IDST7.cpp",
-        "fileloc": "114",
-        "instructions": "119",
-        "total_instructions": "119",
+        "fileloc": "164",
+        "instructions": "361",
+        "total_instructions": "361",
         "calls": "",
-        "basicblocks": "13",
+        "basicblocks": "37",
         "loads": {
-            "G": "8",
+            "G": "32",
             "L": "1"
         },
         "stores": {
@@ -28,24 +28,24 @@
         }
     },
     "3": {
-        "name": "IDST7B16",
+        "name": "IDST7B32",
         "file": "IDST7.cpp",
-        "fileloc": "117",
-        "instructions": "37",
-        "total_instructions": "237",
-        "calls": "5",
+        "fileloc": "162",
+        "instructions": "54",
+        "total_instructions": "415",
+        "calls": "2",
         "basicblocks": "1"
     },
     "4": {
-        "name": "IDST7B32_Pipeline_VITIS_LOOP_73_1",
+        "name": "IDST7B8_Pipeline_VITIS_LOOP_21_1",
         "file": "src\/IDST7.cpp",
-        "fileloc": "164",
-        "instructions": "346",
-        "total_instructions": "346",
+        "fileloc": "114",
+        "instructions": "119",
+        "total_instructions": "119",
         "calls": "",
-        "basicblocks": "37",
+        "basicblocks": "13",
         "loads": {
-            "G": "32",
+            "G": "8",
             "L": "1"
         },
         "stores": {
@@ -79,8 +79,8 @@
         "file": "IDST7.cpp",
         "fileloc": "244",
         "instructions": "369",
-        "total_instructions": "1138",
-        "calls": "6 3 1",
+        "total_instructions": "1168",
+        "calls": "3 6 1",
         "basicblocks": "9",
         "loads": {
             "L": "57"
@@ -93,12 +93,12 @@
         }
     },
     "6": {
-        "name": "IDST7B32",
-        "file": "src\/IDST7.cpp",
-        "fileloc": "162",
-        "instructions": "39",
-        "total_instructions": "385",
-        "calls": "4",
+        "name": "IDST7B16",
+        "file": "IDST7.cpp",
+        "fileloc": "117",
+        "instructions": "37",
+        "total_instructions": "237",
+        "calls": "5",
         "basicblocks": "1"
     }
 }

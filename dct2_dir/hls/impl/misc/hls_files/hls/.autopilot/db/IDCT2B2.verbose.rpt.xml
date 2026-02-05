@@ -1,13 +1,13 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'IDCT2B2'" level="0">
-<item name = "Date">Fri Nov 21 21:48:44 2025
+<item name = "Date">Mon Dec 22 13:39:54 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">dct2_dir</item>
 <item name = "Solution">hls (Vitis Kernel Flow Target)</item>
-<item name = "Product family">zynquplus</item>
-<item name = "Target device">xczu9eg-ffvb1156-2-e</item>
+<item name = "Product family">versalaicore</item>
+<item name = "Target device">xcvc1902-vsva2197-2MP-e-S</item>
 </section>
 
 <section name = "Performance Estimates" level="0">
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 0.955 ns, 2.70 ns</column>
+<column name="ap_clk">3.33 ns, 0.841 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -47,13 +47,13 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 66, -</column>
+<column name="Expression">-, -, 0, 52, -</column>
 <column name="FIFO">-, -, -, -, -</column>
 <column name="Instance">-, -, -, -, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, -, -</column>
 <column name="Register">-, -, -, -, -</column>
-<specialColumn name="Available">1824, 2520, 548160, 274080, 0</specialColumn>
+<specialColumn name="Available">1934, 1968, 1799680, 899840, 463</specialColumn>
 <specialColumn name="Utilization (%)">0, 0, 0, ~0, 0</specialColumn>
 </table>
 </item>
@@ -77,8 +77,8 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln19_fu_30_p2">+, 0, 0, 33, 26, 26</column>
-<column name="diff_fu_24_p2">-, 0, 0, 33, 26, 26</column>
+<column name="add_ln19_fu_30_p2">+, 0, 0, 26, 26, 26</column>
+<column name="diff_fu_24_p2">-, 0, 0, 26, 26, 26</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">

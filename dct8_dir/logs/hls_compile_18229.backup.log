@@ -1,0 +1,24 @@
+  **** HLS Build v2024.2 5238294
+INFO: [HLS 200-2005] Using work_dir /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir 
+INFO: [HLS 200-2006] Changing directory to /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator
+INFO: [HLS 200-1505] Using default flow_target 'vivado'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-1465] Applying ini 'syn.file=../src/IDCT8.cpp' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(19)
+INFO: [HLS 200-10] Adding design file '/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT8.cpp' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.file=../src/transform_coeffs.h' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(20)
+INFO: [HLS 200-10] Adding design file '/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/transform_coeffs.h' to the project
+INFO: [HLS 200-1465] Applying ini 'syn.top=IDCT8' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(21)
+INFO: [HLS 200-1465] Applying ini 'flow_target=vitis' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(16)
+INFO: [HLS 200-1505] Using flow_target 'vitis'
+Resolution: For help on HLS 200-1505 see docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=200-1505.html
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_latency=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_alignment_byte_size=64
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_interface -m_axi_max_widen_bitwidth=512
+INFO: [HLS 200-435] Setting 'open_solution -flow_target vitis' configuration: config_rtl -register_reset_num=3
+INFO: [HLS 200-1465] Applying ini 'part=xcvc1902-vsva2197-2MP-e-s' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(1)
+INFO: [HLS 200-1611] Setting target device to 'xcvc1902-vsva2197-2MP-e-S'
+INFO: [HLS 200-1465] Applying ini 'package.output.format=xo' from /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware/dct8-compile.cfg(17)
+INFO: [HLS 200-111] Finished File checks and directory preparation: CPU user time: 1.98 seconds. CPU system time: 0.2 seconds. Elapsed time: 2.08 seconds; current allocated memory: 909.285 MB.
+INFO: [HLS 200-10] Analyzing design file 'src/IDCT8.cpp' ... 
+INFO: [HLS 200-111] Finished Source Code Analysis and Preprocessing: CPU user time: 3.01 seconds. CPU system time: 0.24 seconds. Elapsed time: 3.24 seconds; current allocated memory: 911.844 MB.
+INFO: [HLS 200-777] Using interface defaults for 'Vitis' flow target.

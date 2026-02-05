@@ -3407,7 +3407,7 @@ window.onload = function () { addSorting(); }
 <center><h1>Design Guidance Report</h1></center><center><table class="header" border="0">
 <tr><td><b>Copyright</b></td><td>Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.</td></tr>
 <tr><td><b>Tool Version</b></td><td>xcd v.2024.2 (lin64) Build 0 </td></tr>
-<tr><td><b>Date</b></td><td>Fri Nov 21 21:48:46 2025</td></tr>
+<tr><td><b>Date</b></td><td>Mon Dec 22 13:40:04 2025</td></tr>
 <tr><td><b>Host</b></td><td>mahir-NucBox-EVO-X2 running 64-bit Ubuntu 25.04</td></tr>
 <tr><td><b>Command</b></td><td>/tools/Xilinx/Vitis/2024.2/bin/unwrapped/lnx64.o/v++  --target hw -c --mode hls --config dct-compile.cfg --work_dir ../dct2_dir/ </td></tr>
 </table></center><br>
@@ -3416,7 +3416,7 @@ window.onload = function () { addSorting(); }
 <tr><td><a href="#VIOLATION DETAILS">2 VIOLATION DETAILS</a></tr></td>
 </table>
 <a name="REPORT SUMMARY"></a><h1>1 REPORT SUMMARY</h1>
-<pre>Violations found: 13
+<pre>Violations found: 14
 </pre>
 <pre>Rule Specs Violated: 3
 </pre>
@@ -3434,13 +3434,35 @@ window.onload = function () { addSorting(); }
 <th align="left" width="380">Resolution</th>
 </tr>
 <tr>
-<td align="left">11</td>
+<td align="left">4</td>
 <td align="left">Interface</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Interface Related</td>
 <td align="left">Accelerator.IDCT2.Interface</td>
-<td align="left">Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+<td align="left">Multiple burst writes of variable length and bit width 1024 in loop 'VITIS_LOOP_329_1'(<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=329">IDCT2.cpp</a>) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=329">IDCT2.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">3</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.IDCT2.Interface</td>
+<td align="left">Multiple burst writes of variable length and bit width 1024 in loop 'VITIS_LOOP_329_1'(<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=329">IDCT2.cpp</a>) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=329">IDCT2.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">14</td>
+<td align="left">Kernel</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.IDCT2.Kernel</td>
+<td align="left">**** Estimated Fmax: 411.00 MHz
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3451,84 +3473,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.IDCT2.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'IDCT2B32'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">13</td>
-<td align="left">Kernel</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.IDCT2.Kernel</td>
-<td align="left">**** Estimated Fmax: 136.99 MHz
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">10</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.IDCT2.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 144, loop 'VITIS_LOOP_324_1'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">3</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.IDCT2.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'IDCT2B2'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">6</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.IDCT2.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'IDCT2B16'
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">9</td>
-<td align="left">Kernel</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.IDCT2.Kernel</td>
-<td align="left">Unable to schedule the whole 71 cycles bus request operation ('empty_173', <a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=324">IDCT2.cpp</a>) on port 'gmem0' (<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=324">IDCT2.cpp</a>) within the first cycle (II = 1). Simulation mismatch may occur if the input data is modified before this operation completes.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">12</td>
-<td align="left">Kernel</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Kernel Related</td>
-<td align="left">Accelerator.IDCT2.Kernel</td>
-<td align="left">**** Loop Constraint Status: All loop constraints were satisfied.
-</td>
-<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
-</tr>
-<tr>
-<td align="left">5</td>
-<td align="left">Throughput</td>
-<td align="left">ADVISORY</td>
-<td align="left"><undefined></td>
-<td align="left">HLS Throughput Related</td>
-<td align="left">Accelerator.IDCT2.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'IDCT2B8'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 4, function 'IDCT2B8'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3539,7 +3484,40 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Interface Related</td>
 <td align="left">Accelerator.IDCT2.Interface</td>
-<td align="left">Multiple burst writes of variable length and bit width 512 in loop 'VITIS_LOOP_324_1'(<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=324">IDCT2.cpp</a>) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=324">IDCT2.cpp</a>)
+<td align="left">Multiple burst reads of variable length and bit width 1024 in loop 'VITIS_LOOP_329_1'(<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=329">IDCT2.cpp</a>) has been inferred on bundle 'gmem1'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=329">IDCT2.cpp</a>)
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">9</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.IDCT2.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 5, function 'IDCT2B32'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">13</td>
+<td align="left">Kernel</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Kernel Related</td>
+<td align="left">Accelerator.IDCT2.Kernel</td>
+<td align="left">**** Loop Constraint Status: All loop constraints were satisfied.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">6</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.IDCT2.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'IDCT2B4'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3550,7 +3528,7 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.IDCT2.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 2, function 'IDCT2B64'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 5, function 'IDCT2B16'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
@@ -3561,18 +3539,51 @@ window.onload = function () { addSorting(); }
 <td align="left"><undefined></td>
 <td align="left">HLS Interface Related</td>
 <td align="left">Accelerator.IDCT2.Interface</td>
-<td align="left">Multiple burst reads of variable length and bit width 512 in loop 'VITIS_LOOP_324_1'(<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=324">IDCT2.cpp</a>) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=324">IDCT2.cpp</a>)
+<td align="left">Multiple burst reads of variable length and bit width 1024 in loop 'VITIS_LOOP_329_1'(<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=329">IDCT2.cpp</a>) has been inferred on bundle 'gmem0'. These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings. (<a href="file:///home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/src/IDCT2.cpp#line=329">IDCT2.cpp</a>)
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>
 <tr>
-<td align="left">4</td>
+<td align="left">12</td>
+<td align="left">Interface</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Interface Related</td>
+<td align="left">Accelerator.IDCT2.Interface</td>
+<td align="left">Design has inferred MAXI bursts and missed bursts, see Vitis HLS GUI synthesis summary report for detailed information.
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">11</td>
 <td align="left">Throughput</td>
 <td align="left">ADVISORY</td>
 <td align="left"><undefined></td>
 <td align="left">HLS Throughput Related</td>
 <td align="left">Accelerator.IDCT2.Throughput</td>
-<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'IDCT2B4'
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 11, loop 'VITIS_LOOP_329_1'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">5</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.IDCT2.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 1, function 'IDCT2B2'
+</td>
+<td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
+</tr>
+<tr>
+<td align="left">10</td>
+<td align="left">Throughput</td>
+<td align="left">ADVISORY</td>
+<td align="left"><undefined></td>
+<td align="left">HLS Throughput Related</td>
+<td align="left">Accelerator.IDCT2.Throughput</td>
+<td align="left">Pipelining result : Target II = 1, Final II = 1, Depth = 6, function 'IDCT2B64'
 </td>
 <td align="left"><a href="http:///docs.xilinx.com/access/sources/dita/map?Doc_Version=2024.2%20English&url=ug1399-vitis-hls">Vitis HLS User Guide (UG1399)</a></td>
 </tr>

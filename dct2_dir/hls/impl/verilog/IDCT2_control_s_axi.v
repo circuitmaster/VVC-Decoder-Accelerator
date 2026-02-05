@@ -8,7 +8,7 @@
 `timescale 1ns/1ps
 module IDCT2_control_s_axi
 #(parameter
-    C_S_AXI_ADDR_WIDTH = 6,
+    C_S_AXI_ADDR_WIDTH = 7,
     C_S_AXI_DATA_WIDTH = 32
 )(
     input  wire                          ACLK,
@@ -33,9 +33,14 @@ module IDCT2_control_s_axi
     input  wire                          RREADY,
     output wire                          interrupt,
     output wire [63:0]                   in_r,
+    output wire [63:0]                   in2,
     output wire [63:0]                   out_r,
+    output wire [63:0]                   out2,
     output wire [31:0]                   block_size,
     output wire [31:0]                   size,
+    output wire [31:0]                   shift,
+    output wire [31:0]                   outputMinimum,
+    output wire [31:0]                   outputMaximum,
     output wire                          ap_start,
     input  wire                          ap_done,
     input  wire                          ap_ready,
@@ -70,43 +75,74 @@ module IDCT2_control_s_axi
 // 0x14 : Data signal of in_r
 //        bit 31~0 - in_r[63:32] (Read/Write)
 // 0x18 : reserved
-// 0x1c : Data signal of out_r
-//        bit 31~0 - out_r[31:0] (Read/Write)
-// 0x20 : Data signal of out_r
-//        bit 31~0 - out_r[63:32] (Read/Write)
+// 0x1c : Data signal of in2
+//        bit 31~0 - in2[31:0] (Read/Write)
+// 0x20 : Data signal of in2
+//        bit 31~0 - in2[63:32] (Read/Write)
 // 0x24 : reserved
-// 0x28 : Data signal of block_size
+// 0x28 : Data signal of out_r
+//        bit 31~0 - out_r[31:0] (Read/Write)
+// 0x2c : Data signal of out_r
+//        bit 31~0 - out_r[63:32] (Read/Write)
+// 0x30 : reserved
+// 0x34 : Data signal of out2
+//        bit 31~0 - out2[31:0] (Read/Write)
+// 0x38 : Data signal of out2
+//        bit 31~0 - out2[63:32] (Read/Write)
+// 0x3c : reserved
+// 0x40 : Data signal of block_size
 //        bit 31~0 - block_size[31:0] (Read/Write)
-// 0x2c : reserved
-// 0x30 : Data signal of size
+// 0x44 : reserved
+// 0x48 : Data signal of size
 //        bit 31~0 - size[31:0] (Read/Write)
-// 0x34 : reserved
+// 0x4c : reserved
+// 0x50 : Data signal of shift
+//        bit 31~0 - shift[31:0] (Read/Write)
+// 0x54 : reserved
+// 0x58 : Data signal of outputMinimum
+//        bit 31~0 - outputMinimum[31:0] (Read/Write)
+// 0x5c : reserved
+// 0x60 : Data signal of outputMaximum
+//        bit 31~0 - outputMaximum[31:0] (Read/Write)
+// 0x64 : reserved
 // (SC = Self Clear, COR = Clear on Read, TOW = Toggle on Write, COH = Clear on Handshake)
 
 //------------------------Parameter----------------------
 localparam
-    ADDR_AP_CTRL           = 6'h00,
-    ADDR_GIE               = 6'h04,
-    ADDR_IER               = 6'h08,
-    ADDR_ISR               = 6'h0c,
-    ADDR_IN_R_DATA_0       = 6'h10,
-    ADDR_IN_R_DATA_1       = 6'h14,
-    ADDR_IN_R_CTRL         = 6'h18,
-    ADDR_OUT_R_DATA_0      = 6'h1c,
-    ADDR_OUT_R_DATA_1      = 6'h20,
-    ADDR_OUT_R_CTRL        = 6'h24,
-    ADDR_BLOCK_SIZE_DATA_0 = 6'h28,
-    ADDR_BLOCK_SIZE_CTRL   = 6'h2c,
-    ADDR_SIZE_DATA_0       = 6'h30,
-    ADDR_SIZE_CTRL         = 6'h34,
-    WRIDLE                 = 2'd0,
-    WRDATA                 = 2'd1,
-    WRRESP                 = 2'd2,
-    WRRESET                = 2'd3,
-    RDIDLE                 = 2'd0,
-    RDDATA                 = 2'd1,
-    RDRESET                = 2'd2,
-    ADDR_BITS                = 6;
+    ADDR_AP_CTRL              = 7'h00,
+    ADDR_GIE                  = 7'h04,
+    ADDR_IER                  = 7'h08,
+    ADDR_ISR                  = 7'h0c,
+    ADDR_IN_R_DATA_0          = 7'h10,
+    ADDR_IN_R_DATA_1          = 7'h14,
+    ADDR_IN_R_CTRL            = 7'h18,
+    ADDR_IN2_DATA_0           = 7'h1c,
+    ADDR_IN2_DATA_1           = 7'h20,
+    ADDR_IN2_CTRL             = 7'h24,
+    ADDR_OUT_R_DATA_0         = 7'h28,
+    ADDR_OUT_R_DATA_1         = 7'h2c,
+    ADDR_OUT_R_CTRL           = 7'h30,
+    ADDR_OUT2_DATA_0          = 7'h34,
+    ADDR_OUT2_DATA_1          = 7'h38,
+    ADDR_OUT2_CTRL            = 7'h3c,
+    ADDR_BLOCK_SIZE_DATA_0    = 7'h40,
+    ADDR_BLOCK_SIZE_CTRL      = 7'h44,
+    ADDR_SIZE_DATA_0          = 7'h48,
+    ADDR_SIZE_CTRL            = 7'h4c,
+    ADDR_SHIFT_DATA_0         = 7'h50,
+    ADDR_SHIFT_CTRL           = 7'h54,
+    ADDR_OUTPUTMINIMUM_DATA_0 = 7'h58,
+    ADDR_OUTPUTMINIMUM_CTRL   = 7'h5c,
+    ADDR_OUTPUTMAXIMUM_DATA_0 = 7'h60,
+    ADDR_OUTPUTMAXIMUM_CTRL   = 7'h64,
+    WRIDLE                    = 2'd0,
+    WRDATA                    = 2'd1,
+    WRRESP                    = 2'd2,
+    WRRESET                   = 2'd3,
+    RDIDLE                    = 2'd0,
+    RDDATA                    = 2'd1,
+    RDRESET                   = 2'd2,
+    ADDR_BITS                = 7;
 
 //------------------------Local signal-------------------
     reg  [1:0]                    wstate = WRRESET;
@@ -137,9 +173,14 @@ localparam
     reg  [1:0]                    int_ier = 2'b0;
     reg  [1:0]                    int_isr = 2'b0;
     reg  [63:0]                   int_in_r = 'b0;
+    reg  [63:0]                   int_in2 = 'b0;
     reg  [63:0]                   int_out_r = 'b0;
+    reg  [63:0]                   int_out2 = 'b0;
     reg  [31:0]                   int_block_size = 'b0;
     reg  [31:0]                   int_size = 'b0;
+    reg  [31:0]                   int_shift = 'b0;
+    reg  [31:0]                   int_outputMinimum = 'b0;
+    reg  [31:0]                   int_outputMaximum = 'b0;
 
 //------------------------Instantiation------------------
 
@@ -256,17 +297,38 @@ always @(posedge ACLK) begin
                 ADDR_IN_R_DATA_1: begin
                     rdata <= int_in_r[63:32];
                 end
+                ADDR_IN2_DATA_0: begin
+                    rdata <= int_in2[31:0];
+                end
+                ADDR_IN2_DATA_1: begin
+                    rdata <= int_in2[63:32];
+                end
                 ADDR_OUT_R_DATA_0: begin
                     rdata <= int_out_r[31:0];
                 end
                 ADDR_OUT_R_DATA_1: begin
                     rdata <= int_out_r[63:32];
                 end
+                ADDR_OUT2_DATA_0: begin
+                    rdata <= int_out2[31:0];
+                end
+                ADDR_OUT2_DATA_1: begin
+                    rdata <= int_out2[63:32];
+                end
                 ADDR_BLOCK_SIZE_DATA_0: begin
                     rdata <= int_block_size[31:0];
                 end
                 ADDR_SIZE_DATA_0: begin
                     rdata <= int_size[31:0];
+                end
+                ADDR_SHIFT_DATA_0: begin
+                    rdata <= int_shift[31:0];
+                end
+                ADDR_OUTPUTMINIMUM_DATA_0: begin
+                    rdata <= int_outputMinimum[31:0];
+                end
+                ADDR_OUTPUTMAXIMUM_DATA_0: begin
+                    rdata <= int_outputMaximum[31:0];
                 end
             endcase
         end
@@ -281,9 +343,14 @@ assign task_ap_done  = (ap_done && !auto_restart_status) || auto_restart_done;
 assign task_ap_ready = ap_ready && !int_auto_restart;
 assign ap_continue   = int_ap_continue || auto_restart_status;
 assign in_r          = int_in_r;
+assign in2           = int_in2;
 assign out_r         = int_out_r;
+assign out2          = int_out2;
 assign block_size    = int_block_size;
 assign size          = int_size;
+assign shift         = int_shift;
+assign outputMinimum = int_outputMinimum;
+assign outputMaximum = int_outputMaximum;
 // int_interrupt
 always @(posedge ACLK) begin
     if (ARESET)
@@ -457,6 +524,26 @@ always @(posedge ACLK) begin
     end
 end
 
+// int_in2[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_in2[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_IN2_DATA_0)
+            int_in2[31:0] <= (WDATA[31:0] & wmask) | (int_in2[31:0] & ~wmask);
+    end
+end
+
+// int_in2[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_in2[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_IN2_DATA_1)
+            int_in2[63:32] <= (WDATA[31:0] & wmask) | (int_in2[63:32] & ~wmask);
+    end
+end
+
 // int_out_r[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
@@ -477,6 +564,26 @@ always @(posedge ACLK) begin
     end
 end
 
+// int_out2[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_out2[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_OUT2_DATA_0)
+            int_out2[31:0] <= (WDATA[31:0] & wmask) | (int_out2[31:0] & ~wmask);
+    end
+end
+
+// int_out2[63:32]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_out2[63:32] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_OUT2_DATA_1)
+            int_out2[63:32] <= (WDATA[31:0] & wmask) | (int_out2[63:32] & ~wmask);
+    end
+end
+
 // int_block_size[31:0]
 always @(posedge ACLK) begin
     if (ARESET)
@@ -494,6 +601,36 @@ always @(posedge ACLK) begin
     else if (ACLK_EN) begin
         if (w_hs && waddr == ADDR_SIZE_DATA_0)
             int_size[31:0] <= (WDATA[31:0] & wmask) | (int_size[31:0] & ~wmask);
+    end
+end
+
+// int_shift[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_shift[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_SHIFT_DATA_0)
+            int_shift[31:0] <= (WDATA[31:0] & wmask) | (int_shift[31:0] & ~wmask);
+    end
+end
+
+// int_outputMinimum[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_outputMinimum[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_OUTPUTMINIMUM_DATA_0)
+            int_outputMinimum[31:0] <= (WDATA[31:0] & wmask) | (int_outputMinimum[31:0] & ~wmask);
+    end
+end
+
+// int_outputMaximum[31:0]
+always @(posedge ACLK) begin
+    if (ARESET)
+        int_outputMaximum[31:0] <= 0;
+    else if (ACLK_EN) begin
+        if (w_hs && waddr == ADDR_OUTPUTMAXIMUM_DATA_0)
+            int_outputMaximum[31:0] <= (WDATA[31:0] & wmask) | (int_outputMaximum[31:0] & ~wmask);
     end
 end
 

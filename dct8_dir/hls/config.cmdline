@@ -1,0 +1,3 @@
+relativeroot=/home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/Hardware
+original_argv=--mode hls --package --config dct8-compile.cfg --work_dir ../dct8_dir/ 
+

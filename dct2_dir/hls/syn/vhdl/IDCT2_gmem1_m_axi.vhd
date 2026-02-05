@@ -114,6 +114,87 @@ end entity IDCT2_gmem1_m_axi;
 architecture behave of IDCT2_gmem1_m_axi is
     --========================Component======================== 
     
+    component IDCT2_gmem1_m_axi_load is
+        generic (
+            C_TARGET_ADDR          : INTEGER := 16#00000000#;
+            NUM_READ_OUTSTANDING   : INTEGER := 2;
+            MAX_READ_BURST_LENGTH  : INTEGER := 16;
+            BUS_ADDR_WIDTH         : INTEGER := 32;
+            BUS_DATA_WIDTH         : INTEGER := 32;
+            USER_DW                : INTEGER := 16;
+            USER_AW                : INTEGER := 32;
+            USER_MAXREQS           : INTEGER := 16;
+            USER_RFIFONUM_WIDTH    : INTEGER := 6;
+            BUFFER_IMPL            : STRING  := "auto");
+        port (
+            ACLK                   : in  STD_LOGIC;
+            ARESET                 : in  STD_LOGIC;
+            ACLK_EN                : in  STD_LOGIC;
+            out_AXI_ARADDR         : out UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
+            out_AXI_ARLEN          : out UNSIGNED(31 downto 0);
+            out_AXI_ARVALID        : out STD_LOGIC;
+            in_AXI_ARREADY         : in  STD_LOGIC;
+            in_AXI_RDATA           : in  UNSIGNED(BUS_DATA_WIDTH-1 downto 0);
+            in_AXI_RLAST           : in  UNSIGNED(1 downto 0);
+            in_AXI_RVALID          : in  STD_LOGIC;
+            out_AXI_RREADY         : out STD_LOGIC;
+            out_AXI_RBURST_READY   : out STD_LOGIC;
+            in_HLS_ARADDR          : in  UNSIGNED(USER_AW-1 downto 0);
+            in_HLS_ARLEN           : in  UNSIGNED(31 downto 0);
+            in_HLS_ARVALID         : in  STD_LOGIC;
+            out_HLS_ARREADY        : out STD_LOGIC;
+            out_HLS_RDATA          : out UNSIGNED(USER_DW-1 downto 0);
+            out_HLS_RVALID         : out STD_LOGIC;
+            in_HLS_RREADY          : in  STD_LOGIC;
+            out_HLS_RFIFONUM       : out UNSIGNED(USER_RFIFONUM_WIDTH-1 downto 0));
+    end component IDCT2_gmem1_m_axi_load;
+
+    component IDCT2_gmem1_m_axi_read is
+        generic (
+            C_M_AXI_ID_WIDTH       : INTEGER := 1;
+            C_M_AXI_ARUSER_WIDTH   : INTEGER := 1;
+            C_M_AXI_RUSER_WIDTH    : INTEGER := 1;
+            C_USER_VALUE           : INTEGER := 0;
+            C_PROT_VALUE           : INTEGER := 0;
+            C_CACHE_VALUE          : INTEGER := 2#0011#;
+            BUS_ADDR_WIDTH         : INTEGER := 32;
+            BUS_DATA_WIDTH         : INTEGER := 32;
+            MAX_READ_BURST_LENGTH  : INTEGER := 1;
+            NUM_READ_OUTSTANDING   : INTEGER := 1);
+        port (
+            ACLK                   : in  STD_LOGIC;
+            ARESET                 : in  STD_LOGIC;
+            ACLK_EN                : in  STD_LOGIC;
+            out_BUS_ARID           : out UNSIGNED(C_M_AXI_ID_WIDTH-1 downto 0);
+            out_BUS_ARADDR         : out UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
+            out_BUS_ARLEN          : out UNSIGNED(7 downto 0);
+            out_BUS_ARSIZE         : out UNSIGNED(2 downto 0);
+            out_BUS_ARBURST        : out UNSIGNED(1 downto 0);
+            out_BUS_ARLOCK         : out UNSIGNED(1 downto 0);
+            out_BUS_ARCACHE        : out UNSIGNED(3 downto 0);
+            out_BUS_ARPROT         : out UNSIGNED(2 downto 0);
+            out_BUS_ARQOS          : out UNSIGNED(3 downto 0);
+            out_BUS_ARREGION       : out UNSIGNED(3 downto 0);
+            out_BUS_ARUSER         : out UNSIGNED(C_M_AXI_ARUSER_WIDTH-1 downto 0);
+            out_BUS_ARVALID        : out STD_LOGIC;
+            in_BUS_ARREADY         : in  STD_LOGIC;
+            in_BUS_RID             : in  UNSIGNED(C_M_AXI_ID_WIDTH-1 downto 0);
+            in_BUS_RDATA           : in  UNSIGNED(BUS_DATA_WIDTH-1 downto 0);
+            in_BUS_RRESP           : in  UNSIGNED(1 downto 0);
+            in_BUS_RLAST           : in  STD_LOGIC;
+            in_BUS_RUSER           : in  UNSIGNED(C_M_AXI_RUSER_WIDTH-1 downto 0);
+            in_BUS_RVALID          : in  STD_LOGIC;
+            out_BUS_RREADY         : out STD_LOGIC;
+            in_HLS_ARVALID         : in  STD_LOGIC;
+            out_HLS_ARREADY        : out STD_LOGIC;
+            in_HLS_ARADDR          : in  UNSIGNED(BUS_ADDR_WIDTH-1 downto 0);
+            in_HLS_ARLEN           : in  UNSIGNED(31 downto 0);
+            out_HLS_RVALID         : out STD_LOGIC;
+            in_HLS_RREADY          : in  STD_LOGIC;
+            in_HLS_RBURST_READY    : in  STD_LOGIC;
+            out_HLS_RLAST          : out UNSIGNED(1 downto 0);
+            out_HLS_RDATA          : out UNSIGNED(BUS_DATA_WIDTH-1 downto 0));
+    end component IDCT2_gmem1_m_axi_read;
     
     component IDCT2_gmem1_m_axi_store is
         generic (
@@ -222,27 +303,19 @@ architecture behave of IDCT2_gmem1_m_axi is
     signal BVALID_Dummy   : STD_LOGIC;
     signal BREADY_Dummy   : STD_LOGIC;
     -- AR/R channel signals 
+    signal ARADDR_Dummy   : UNSIGNED(C_M_AXI_ADDR_WIDTH-1 downto 0);
+    signal ARLEN_Dummy    : UNSIGNED(31 downto 0);
+    signal ARVALID_Dummy  : STD_LOGIC;
+    signal ARREADY_Dummy  : STD_LOGIC;
+    signal RDATA_Dummy    : UNSIGNED(C_M_AXI_DATA_WIDTH-1 downto 0);
+    signal RLAST_Dummy    : UNSIGNED(1 downto 0);
+    signal RVALID_Dummy   : STD_LOGIC;
+    signal RREADY_Dummy   : STD_LOGIC;
+    signal RBURST_READY_Dummy   : STD_LOGIC;
     
 begin
     -- AXI Ports Initialization 
-    ARID     <= (others=>'0');
-    ARADDR   <= (others=>'0');
-    ARLEN    <= (others=>'0');
-    ARSIZE   <= (others=>'0');
-    ARBURST  <= (others=>'0');
-    ARLOCK   <= (others=>'0');
-    ARCACHE  <= (others=>'0');
-    ARPROT   <= (others=>'0');
-    ARQOS    <= (others=>'0');
-    ARREGION <= (others=>'0');
-    ARUSER   <= (others=>'0');
-    ARVALID  <= '0';
-    RREADY   <= '0';
     -- Kernel Ports Initialization 
-    I_CH0_ARREADY   <= '0';
-    I_CH0_RDATA     <= (others=>'0');
-    I_CH0_RVALID    <= '0';
-    I_CH0_RFIFONUM  <= (others=>'0');
     -- flush logic 
     --========================Instantiation========================
     -- ++++++++++++++++++++++ STORE UNITS ++++++++++++++++++++++ 
@@ -284,6 +357,40 @@ begin
         in_HLS_BREADY          => I_CH0_BREADY);
 
     -- ++++++++++++++++++++++ LOAD UNITS ++++++++++++++++++++++ 
+    -- load_unit for channel 0
+    load_unit_0 : IDCT2_gmem1_m_axi_load
+    generic map(
+        C_TARGET_ADDR          => C_TARGET_ADDR,
+        NUM_READ_OUTSTANDING   => NUM_READ_OUTSTANDING,
+        MAX_READ_BURST_LENGTH  => MAX_READ_BURST_LENGTH,
+        BUS_ADDR_WIDTH         => C_M_AXI_ADDR_WIDTH,
+        BUS_DATA_WIDTH         => C_M_AXI_DATA_WIDTH,
+        USER_DW                => CH0_USER_DW,
+        USER_AW                => CH0_USER_AW,
+        USER_MAXREQS           => USER_MAXREQS,
+        USER_RFIFONUM_WIDTH    => CH0_USER_RFIFONUM_WIDTH,
+        BUFFER_IMPL            => MAXI_BUFFER_IMPL)
+    port map(
+        ACLK                   => ACLK,
+        ARESET                 => ARESET,
+        ACLK_EN                => ACLK_EN,
+        out_AXI_ARADDR         => ARADDR_Dummy,
+        out_AXI_ARLEN          => ARLEN_Dummy,
+        out_AXI_ARVALID        => ARVALID_Dummy,
+        in_AXI_ARREADY         => ARREADY_Dummy,
+        in_AXI_RDATA           => RDATA_Dummy,
+        in_AXI_RLAST           => RLAST_Dummy,
+        in_AXI_RVALID          => RVALID_Dummy,
+        out_AXI_RREADY         => RREADY_Dummy,
+        out_AXI_RBURST_READY   => RBURST_READY_Dummy,
+        in_HLS_ARADDR          => UNSIGNED(I_CH0_ARADDR),
+        in_HLS_ARLEN           => UNSIGNED(I_CH0_ARLEN),
+        in_HLS_ARVALID         => I_CH0_ARVALID,
+        out_HLS_ARREADY        => I_CH0_ARREADY,
+        out_HLS_RVALID         => I_CH0_RVALID,
+        in_HLS_RREADY          => I_CH0_RREADY,
+        STD_LOGIC_VECTOR(out_HLS_RDATA)    => I_CH0_RDATA,
+        STD_LOGIC_VECTOR(out_HLS_RFIFONUM) => I_CH0_RFIFONUM);
 
     -- ++++++++++++++++++++++ AXI BUS READ/WRITE ++++++++++++++++++++++ 
     -- IDCT2_gmem1_m_axi_write
@@ -342,6 +449,53 @@ begin
         out_HLS_BVALID                     => BVALID_Dummy,
         in_HLS_BREADY                      => BREADY_Dummy
         );
+    -- IDCT2_gmem1_m_axi_read
+    bus_read : IDCT2_gmem1_m_axi_read
+    generic map (
+        C_M_AXI_ID_WIDTH       => C_M_AXI_ID_WIDTH,
+        C_M_AXI_ARUSER_WIDTH   => C_M_AXI_ARUSER_WIDTH,
+        C_M_AXI_RUSER_WIDTH    => C_M_AXI_RUSER_WIDTH,
+        C_USER_VALUE           => C_USER_VALUE,
+        C_PROT_VALUE           => C_PROT_VALUE,
+        C_CACHE_VALUE          => C_CACHE_VALUE,
+        BUS_ADDR_WIDTH         => C_M_AXI_ADDR_WIDTH,
+        BUS_DATA_WIDTH         => C_M_AXI_DATA_WIDTH,
+        MAX_READ_BURST_LENGTH  => MAX_READ_BURST_LENGTH,
+        NUM_READ_OUTSTANDING   => NUM_READ_OUTSTANDING)
+    port map (
+        ACLK                               => ACLK,
+        ARESET                             => ARESET,
+        ACLK_EN                            => ACLK_EN,
+        STD_LOGIC_VECTOR(out_BUS_ARID)     => ARID,
+        STD_LOGIC_VECTOR(out_BUS_ARADDR)   => ARADDR,
+        STD_LOGIC_VECTOR(out_BUS_ARLEN)    => ARLEN,
+        STD_LOGIC_VECTOR(out_BUS_ARSIZE)   => ARSIZE,
+        STD_LOGIC_VECTOR(out_BUS_ARBURST)  => ARBURST,
+        STD_LOGIC_VECTOR(out_BUS_ARLOCK)   => ARLOCK,
+        STD_LOGIC_VECTOR(out_BUS_ARCACHE)  => ARCACHE,
+        STD_LOGIC_VECTOR(out_BUS_ARPROT)   => ARPROT,
+        STD_LOGIC_VECTOR(out_BUS_ARQOS)    => ARQOS,
+        STD_LOGIC_VECTOR(out_BUS_ARREGION) => ARREGION,
+        STD_LOGIC_VECTOR(out_BUS_ARUSER)   => ARUSER,
+        out_BUS_ARVALID                    => ARVALID ,
+        in_BUS_ARREADY                     => ARREADY,
+        in_BUS_RID                         => UNSIGNED(RID),
+        in_BUS_RDATA                       => UNSIGNED(RDATA),
+        in_BUS_RRESP                       => UNSIGNED(RRESP),
+        in_BUS_RLAST                       => RLAST,
+        in_BUS_RUSER                       => UNSIGNED(RUSER),
+        in_BUS_RVALID                      => RVALID,
+        out_BUS_RREADY                     => RREADY,
+        in_HLS_ARVALID                     => ARVALID_Dummy,
+        out_HLS_ARREADY                    => ARREADY_Dummy,
+        in_HLS_ARADDR                      => ARADDR_Dummy,
+        in_HLS_ARLEN                       => ARLEN_Dummy,
+        out_HLS_RVALID                     => RVALID_Dummy,
+        in_HLS_RREADY                      => RREADY_Dummy,
+        in_HLS_RBURST_READY                => RBURST_READY_Dummy,
+        out_HLS_RLAST                      => RLAST_Dummy,
+        out_HLS_RDATA                      => RDATA_Dummy
+    );
 
     
 end architecture behave;

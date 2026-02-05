@@ -6,7 +6,7 @@ DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_d
 Function:        _GLOBAL__sub_I_IDST7.pp.0.cpp
 Args:            
   - Callee:          __cxx_global_var_init.8
-    DebugLoc:        { File: src/transform_coeffs.h, Line: 224, Column: 0 }
+    DebugLoc:        { File: src/transform_coeffs.h, Line: 223, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          _GLOBAL__sub_I_IDST7.pp.0.cpp
     DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp, 
@@ -21,7 +21,7 @@ DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_d
 Function:        _GLOBAL__sub_I_IDST7.pp.0.cpp
 Args:            
   - Callee:          __cxx_global_var_init.9
-    DebugLoc:        { File: src/transform_coeffs.h, Line: 237, Column: 0 }
+    DebugLoc:        { File: src/transform_coeffs.h, Line: 236, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          _GLOBAL__sub_I_IDST7.pp.0.cpp
     DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp, 
@@ -36,7 +36,7 @@ DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_d
 Function:        _GLOBAL__sub_I_IDST7.pp.0.cpp
 Args:            
   - Callee:          __cxx_global_var_init.10
-    DebugLoc:        { File: src/transform_coeffs.h, Line: 257, Column: 0 }
+    DebugLoc:        { File: src/transform_coeffs.h, Line: 256, Column: 0 }
   - String:          ' not inlined into '
   - Caller:          _GLOBAL__sub_I_IDST7.pp.0.cpp
     DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/idst7_dir/hls/.autopilot/db/IDST7.pp.0.cpp, 
@@ -641,7 +641,7 @@ Args:
   - String:          ' '
   - String:          ' _XLX_SEP_ '
   - OrigAccess:      load
-    DebugLoc:        { File: src/IDST7.cpp, Line: 263, Column: 25 }
+    DebugLoc:        { File: src/IDST7.cpp, Line: 263, Column: 26 }
   - OrigDirection:   read
   - OrigID:          for.body.load.6
 ...
@@ -683,7 +683,7 @@ DebugLoc:        { File: src/IDST7.cpp, Line: 259, Column: 20 }
 Function:        IDST7
 Args:            
   - String:          'Could not widen since type '
-  - Type:            i512
+  - Type:            i1024
   - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
   - Threshold:       '512'
   - String:          ' _XLX_SEP_ '
@@ -710,7 +710,7 @@ DebugLoc:        { File: src/IDST7.cpp, Line: 259, Column: 20 }
 Function:        IDST7
 Args:            
   - String:          'Could not widen since type '
-  - Type:            i512
+  - Type:            i1024
   - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
   - Threshold:       '512'
   - String:          ' _XLX_SEP_ '
@@ -733,7 +733,7 @@ Args:
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoArrayPromotion
-DebugLoc:        { File: src/transform_coeffs.h, Line: 256, Column: 0 }
+DebugLoc:        { File: src/transform_coeffs.h, Line: 255, Column: 0 }
 Function:        _Z8IDST7B32P6ap_intILi32EES1_S0_S0_S0_S0_
 Args:            
   - String:          'Automatically partitioning array '''
@@ -745,7 +745,7 @@ Args:
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoArrayPromotion
-DebugLoc:        { File: src/transform_coeffs.h, Line: 236, Column: 0 }
+DebugLoc:        { File: src/transform_coeffs.h, Line: 235, Column: 0 }
 Function:        _Z8IDST7B16P6ap_intILi32EES1_S0_S0_S0_S0_
 Args:            
   - String:          'Automatically partitioning array '''
@@ -757,7 +757,7 @@ Args:
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoArrayPromotion
-DebugLoc:        { File: src/transform_coeffs.h, Line: 223, Column: 0 }
+DebugLoc:        { File: src/transform_coeffs.h, Line: 222, Column: 0 }
 Function:        _Z7IDST7B8P6ap_intILi32EES1_S0_S0_S0_S0_
 Args:            
   - String:          'Automatically partitioning array '''
@@ -769,7 +769,7 @@ Args:
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoParallelPerformanceDrivenVerbosePassed
-DebugLoc:        { File: src/transform_coeffs.h, Line: 223, Column: 0 }
+DebugLoc:        { File: src/transform_coeffs.h, Line: 222, Column: 0 }
 Function:        IDST7
 Args:            
   - PragmaType:      array_partition
@@ -780,7 +780,7 @@ Args:
   - String:          ' '
   - PragmaFunction:  IDST7
   - String:          ' '
-  - varLoc:          'src/transform_coeffs.h:223:0'
+  - varLoc:          'src/transform_coeffs.h:222:0'
   - String:          ' '
   - PragmaSrcLoc:    'src/IDST7.cpp:23:9'
     DebugLoc:        { File: src/IDST7.cpp, Line: 23, Column: 9 }
@@ -809,7 +809,7 @@ Args:
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoParallelPerformanceDrivenVerbosePassed
-DebugLoc:        { File: src/transform_coeffs.h, Line: 236, Column: 0 }
+DebugLoc:        { File: src/transform_coeffs.h, Line: 235, Column: 0 }
 Function:        IDST7
 Args:            
   - PragmaType:      array_partition
@@ -820,7 +820,7 @@ Args:
   - String:          ' '
   - PragmaFunction:  IDST7
   - String:          ' '
-  - varLoc:          'src/transform_coeffs.h:236:0'
+  - varLoc:          'src/transform_coeffs.h:235:0'
   - String:          ' '
   - PragmaSrcLoc:    'src/IDST7.cpp:49:9'
     DebugLoc:        { File: src/IDST7.cpp, Line: 49, Column: 9 }
@@ -849,7 +849,7 @@ Args:
 --- !Passed
 Pass:            reflow-auto-array-partition
 Name:            AutoParallelPerformanceDrivenVerbosePassed
-DebugLoc:        { File: src/transform_coeffs.h, Line: 256, Column: 0 }
+DebugLoc:        { File: src/transform_coeffs.h, Line: 255, Column: 0 }
 Function:        IDST7
 Args:            
   - PragmaType:      array_partition
@@ -860,7 +860,7 @@ Args:
   - String:          ' '
   - PragmaFunction:  IDST7
   - String:          ' '
-  - varLoc:          'src/transform_coeffs.h:256:0'
+  - varLoc:          'src/transform_coeffs.h:255:0'
   - String:          ' '
   - PragmaSrcLoc:    'src/IDST7.cpp:75:9'
     DebugLoc:        { File: src/IDST7.cpp, Line: 75, Column: 9 }
@@ -889,7 +889,7 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/transform_coeffs.h, Line: 256, Column: 0 }
+DebugLoc:        { File: src/transform_coeffs.h, Line: 255, Column: 0 }
 Function:        IDST7
 Args:            
   - String:          'Applying '
@@ -907,7 +907,7 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/transform_coeffs.h, Line: 236, Column: 0 }
+DebugLoc:        { File: src/transform_coeffs.h, Line: 235, Column: 0 }
 Function:        IDST7
 Args:            
   - String:          'Applying '
@@ -925,7 +925,7 @@ Args:
 --- !Passed
 Pass:            reflow-array-partition
 Name:            ArrayXform
-DebugLoc:        { File: src/transform_coeffs.h, Line: 223, Column: 0 }
+DebugLoc:        { File: src/transform_coeffs.h, Line: 222, Column: 0 }
 Function:        IDST7
 Args:            
   - String:          'Applying '
@@ -951,7 +951,7 @@ Args:
   - String:          ' of '
   - Length:          variable
   - String:          ' length and bit width '
-  - Width:           '512'
+  - Width:           '1024'
   - String:          ' has been inferred.'
   - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
   - String:          ' _XLX_SEP_ '
@@ -979,7 +979,7 @@ Args:
   - String:          ' of '
   - Length:          variable
   - String:          ' length and bit width '
-  - Width:           '512'
+  - Width:           '1024'
   - String:          ' in loop '''
   - LoopName:        VITIS_LOOP_259_1
   - String:          '''('
@@ -1001,7 +1001,7 @@ Args:
   - String:          ' of '
   - Length:          variable
   - String:          ' length and bit width '
-  - Width:           '512'
+  - Width:           '1024'
   - String:          ' has been inferred.'
   - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
   - String:          ' _XLX_SEP_ '
@@ -1029,7 +1029,7 @@ Args:
   - String:          ' of '
   - Length:          variable
   - String:          ' length and bit width '
-  - Width:           '512'
+  - Width:           '1024'
   - String:          ' in loop '''
   - LoopName:        VITIS_LOOP_259_1
   - String:          '''('

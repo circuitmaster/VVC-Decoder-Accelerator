@@ -27,7 +27,7 @@ in_r {
 	offset 16
 	offset_end 27
 }
-out_r { 
+in2 { 
 	dir I
 	width 64
 	depth 1
@@ -35,21 +35,61 @@ out_r {
 	offset 28
 	offset_end 39
 }
+out_r { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 40
+	offset_end 51
+}
+out2 { 
+	dir I
+	width 64
+	depth 1
+	mode ap_none
+	offset 52
+	offset_end 63
+}
 block_size { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 40
-	offset_end 47
+	offset 64
+	offset_end 71
 }
 size { 
 	dir I
 	width 32
 	depth 1
 	mode ap_none
-	offset 48
-	offset_end 55
+	offset 72
+	offset_end 79
+}
+shift { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 80
+	offset_end 87
+}
+outputMinimum { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 88
+	offset_end 95
+}
+outputMaximum { 
+	dir I
+	width 32
+	depth 1
+	mode ap_none
+	offset 96
+	offset_end 103
 }
 ap_start { }
 ap_done { }
@@ -66,7 +106,7 @@ dict set axilite_register_dict control $port_control
 if {${::AESL::PGuard_simmodel_gen}} {
 	if {[info proc ::AESL_LIB_XILADAPTER::s_axilite_gen] == "::AESL_LIB_XILADAPTER::s_axilite_gen"} {
 		eval "::AESL_LIB_XILADAPTER::s_axilite_gen { \
-			id 319 \
+			id 565 \
 			corename IDCT2_control_axilite \
 			name IDCT2_control_s_axi \
 			ports {$port_control} \
@@ -133,27 +173,6 @@ if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_end
     cg_default_interface_gen_bundle_end
     AESL_LIB_XILADAPTER::native_axis_end
-}
-
-
-# flow_control definition:
-set InstName IDCT2_flow_control_loop_pipe_U
-set CompName IDCT2_flow_control_loop_pipe
-set name flow_control_loop_pipe
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control] == "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control { \
-    name ${name} \
-    prefix IDCT2_ \
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_UPC_flow_control, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $CompName BINDTYPE interface TYPE internal_upc_flow_control INSTNAME $InstName
 }
 
 

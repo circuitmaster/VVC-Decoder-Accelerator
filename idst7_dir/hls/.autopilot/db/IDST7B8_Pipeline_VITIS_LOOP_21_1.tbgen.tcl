@@ -37,12 +37,12 @@ set C_modelArgList {
 	{ conv3_i12_i_i int 32 regular  }
 	{ sh_prom_i9_i_i int 32 regular  }
 	{ sh_prom_i_i_i int 32 regular  }
-	{ empty_36 int 1 regular  }
+	{ empty_33 int 1 regular  }
 	{ oMin int 32 regular  }
 	{ oMax int 32 regular  }
-	{ empty_37 int 29 regular  }
+	{ empty_34 int 29 regular  }
 	{ cutoff int 32 regular  }
-	{ empty_38 int 30 regular  }
+	{ empty_35 int 30 regular  }
 	{ empty int 31 regular  }
 }
 set hasAXIMCache 0
@@ -68,12 +68,12 @@ set C_modelArgMapList {[
  	{ "Name" : "conv3_i12_i_i", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "sh_prom_i9_i_i", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "sh_prom_i_i_i", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "empty_36", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY"} , 
+ 	{ "Name" : "empty_33", "interface" : "wire", "bitwidth" : 1, "direction" : "READONLY"} , 
  	{ "Name" : "oMin", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
  	{ "Name" : "oMax", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "empty_37", "interface" : "wire", "bitwidth" : 29, "direction" : "READONLY"} , 
+ 	{ "Name" : "empty_34", "interface" : "wire", "bitwidth" : 29, "direction" : "READONLY"} , 
  	{ "Name" : "cutoff", "interface" : "wire", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "empty_38", "interface" : "wire", "bitwidth" : 30, "direction" : "READONLY"} , 
+ 	{ "Name" : "empty_35", "interface" : "wire", "bitwidth" : 30, "direction" : "READONLY"} , 
  	{ "Name" : "empty", "interface" : "wire", "bitwidth" : 31, "direction" : "READONLY"} ]}
 # RTL Port declarations: 
 set portNum 40
@@ -111,12 +111,12 @@ set portList {
 	{ conv3_i12_i_i sc_in sc_lv 32 signal 16 } 
 	{ sh_prom_i9_i_i sc_in sc_lv 32 signal 17 } 
 	{ sh_prom_i_i_i sc_in sc_lv 32 signal 18 } 
-	{ empty_36 sc_in sc_lv 1 signal 19 } 
+	{ empty_33 sc_in sc_lv 1 signal 19 } 
 	{ oMin sc_in sc_lv 32 signal 20 } 
 	{ oMax sc_in sc_lv 32 signal 21 } 
-	{ empty_37 sc_in sc_lv 29 signal 22 } 
+	{ empty_34 sc_in sc_lv 29 signal 22 } 
 	{ cutoff sc_in sc_lv 32 signal 23 } 
-	{ empty_38 sc_in sc_lv 30 signal 24 } 
+	{ empty_35 sc_in sc_lv 30 signal 24 } 
 	{ empty sc_in sc_lv 31 signal 25 } 
 }
 set NewPortList {[ 
@@ -153,12 +153,12 @@ set NewPortList {[
  	{ "name": "conv3_i12_i_i", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "conv3_i12_i_i", "role": "default" }} , 
  	{ "name": "sh_prom_i9_i_i", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "sh_prom_i9_i_i", "role": "default" }} , 
  	{ "name": "sh_prom_i_i_i", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "sh_prom_i_i_i", "role": "default" }} , 
- 	{ "name": "empty_36", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "empty_36", "role": "default" }} , 
+ 	{ "name": "empty_33", "direction": "in", "datatype": "sc_lv", "bitwidth":1, "type": "signal", "bundle":{"name": "empty_33", "role": "default" }} , 
  	{ "name": "oMin", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "oMin", "role": "default" }} , 
  	{ "name": "oMax", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "oMax", "role": "default" }} , 
- 	{ "name": "empty_37", "direction": "in", "datatype": "sc_lv", "bitwidth":29, "type": "signal", "bundle":{"name": "empty_37", "role": "default" }} , 
+ 	{ "name": "empty_34", "direction": "in", "datatype": "sc_lv", "bitwidth":29, "type": "signal", "bundle":{"name": "empty_34", "role": "default" }} , 
  	{ "name": "cutoff", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "cutoff", "role": "default" }} , 
- 	{ "name": "empty_38", "direction": "in", "datatype": "sc_lv", "bitwidth":30, "type": "signal", "bundle":{"name": "empty_38", "role": "default" }} , 
+ 	{ "name": "empty_35", "direction": "in", "datatype": "sc_lv", "bitwidth":30, "type": "signal", "bundle":{"name": "empty_35", "role": "default" }} , 
  	{ "name": "empty", "direction": "in", "datatype": "sc_lv", "bitwidth":31, "type": "signal", "bundle":{"name": "empty", "role": "default" }}  ]}
 
 set RtlHierarchyInfo {[
@@ -168,7 +168,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1", "real_start" : "0",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "12", "EstimateLatencyMax" : "12",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "18", "EstimateLatencyMax" : "18",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -196,12 +196,12 @@ set RtlHierarchyInfo {[
 			{"Name" : "conv3_i12_i_i", "Type" : "None", "Direction" : "I"},
 			{"Name" : "sh_prom_i9_i_i", "Type" : "None", "Direction" : "I"},
 			{"Name" : "sh_prom_i_i_i", "Type" : "None", "Direction" : "I"},
-			{"Name" : "empty_36", "Type" : "None", "Direction" : "I"},
+			{"Name" : "empty_33", "Type" : "None", "Direction" : "I"},
 			{"Name" : "oMin", "Type" : "None", "Direction" : "I"},
 			{"Name" : "oMax", "Type" : "None", "Direction" : "I"},
-			{"Name" : "empty_37", "Type" : "None", "Direction" : "I"},
+			{"Name" : "empty_34", "Type" : "None", "Direction" : "I"},
 			{"Name" : "cutoff", "Type" : "None", "Direction" : "I"},
-			{"Name" : "empty_38", "Type" : "None", "Direction" : "I"},
+			{"Name" : "empty_35", "Type" : "None", "Direction" : "I"},
 			{"Name" : "empty", "Type" : "None", "Direction" : "I"},
 			{"Name" : "p_ZL7idst7_8_0", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "p_ZL7idst7_8_1", "Type" : "Memory", "Direction" : "I"},
@@ -213,7 +213,7 @@ set RtlHierarchyInfo {[
 			{"Name" : "p_ZL7idst7_8_7", "Type" : "Memory", "Direction" : "I"}],
 		"Loop" : [
 			{"Name" : "VITIS_LOOP_21_1", "PipelineType" : "UPC",
-				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter3", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter3", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
+				"LoopDec" : {"FSMBitwidth" : "1", "FirstState" : "ap_ST_fsm_pp0_stage0", "FirstStateIter" : "ap_enable_reg_pp0_iter0", "FirstStateBlock" : "ap_block_pp0_stage0_subdone", "LastState" : "ap_ST_fsm_pp0_stage0", "LastStateIter" : "ap_enable_reg_pp0_iter9", "LastStateBlock" : "ap_block_pp0_stage0_subdone", "QuitState" : "ap_ST_fsm_pp0_stage0", "QuitStateIter" : "ap_enable_reg_pp0_iter9", "QuitStateBlock" : "ap_block_pp0_stage0_subdone", "OneDepthLoop" : "0", "has_ap_ctrl" : "1", "has_continue" : "0"}}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL7idst7_8_0_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL7idst7_8_1_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL7idst7_8_2_U", "Parent" : "0"},
@@ -222,27 +222,27 @@ set RtlHierarchyInfo {[
 	{"ID" : "6", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL7idst7_8_5_U", "Parent" : "0"},
 	{"ID" : "7", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL7idst7_8_6_U", "Parent" : "0"},
 	{"ID" : "8", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.p_ZL7idst7_8_7_U", "Parent" : "0"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_7ns_32s_32_1_1_U1", "Parent" : "0"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_1_1_U2", "Parent" : "0"},
-	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_1_1_U3", "Parent" : "0"},
-	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_1_1_U4", "Parent" : "0"},
-	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_1_1_U5", "Parent" : "0"},
-	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_1_1_U6", "Parent" : "0"},
-	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_1_1_U7", "Parent" : "0"},
-	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_1_1_U8", "Parent" : "0"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_7ns_32s_32_2_1_U1", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_2_1_U2", "Parent" : "0"},
+	{"ID" : "11", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_2_1_U3", "Parent" : "0"},
+	{"ID" : "12", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_2_1_U4", "Parent" : "0"},
+	{"ID" : "13", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_2_1_U5", "Parent" : "0"},
+	{"ID" : "14", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_2_1_U6", "Parent" : "0"},
+	{"ID" : "15", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_2_1_U7", "Parent" : "0"},
+	{"ID" : "16", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.mul_8s_32s_32_2_1_U8", "Parent" : "0"},
 	{"ID" : "17", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.flow_control_loop_pipe_sequential_init_U", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	IDST7B8_Pipeline_VITIS_LOOP_21_1 {
-		dst_0 {Type O LastRead -1 FirstWrite 3}
-		dst_7 {Type O LastRead -1 FirstWrite 3}
-		dst_6 {Type O LastRead -1 FirstWrite 3}
-		dst_5 {Type O LastRead -1 FirstWrite 3}
-		dst_4 {Type O LastRead -1 FirstWrite 3}
-		dst_3 {Type O LastRead -1 FirstWrite 3}
-		dst_2 {Type O LastRead -1 FirstWrite 3}
-		dst_1 {Type O LastRead -1 FirstWrite 3}
+		dst_0 {Type O LastRead -1 FirstWrite 9}
+		dst_7 {Type O LastRead -1 FirstWrite 9}
+		dst_6 {Type O LastRead -1 FirstWrite 9}
+		dst_5 {Type O LastRead -1 FirstWrite 9}
+		dst_4 {Type O LastRead -1 FirstWrite 9}
+		dst_3 {Type O LastRead -1 FirstWrite 9}
+		dst_2 {Type O LastRead -1 FirstWrite 9}
+		dst_1 {Type O LastRead -1 FirstWrite 9}
 		src_0_val {Type I LastRead 0 FirstWrite -1}
 		src_1_val {Type I LastRead 0 FirstWrite -1}
 		src_2_val {Type I LastRead 0 FirstWrite -1}
@@ -254,12 +254,12 @@ set ArgLastReadFirstWriteLatency {
 		conv3_i12_i_i {Type I LastRead 0 FirstWrite -1}
 		sh_prom_i9_i_i {Type I LastRead 0 FirstWrite -1}
 		sh_prom_i_i_i {Type I LastRead 0 FirstWrite -1}
-		empty_36 {Type I LastRead 0 FirstWrite -1}
+		empty_33 {Type I LastRead 0 FirstWrite -1}
 		oMin {Type I LastRead 0 FirstWrite -1}
 		oMax {Type I LastRead 0 FirstWrite -1}
-		empty_37 {Type I LastRead 0 FirstWrite -1}
+		empty_34 {Type I LastRead 0 FirstWrite -1}
 		cutoff {Type I LastRead 0 FirstWrite -1}
-		empty_38 {Type I LastRead 0 FirstWrite -1}
+		empty_35 {Type I LastRead 0 FirstWrite -1}
 		empty {Type I LastRead 0 FirstWrite -1}
 		p_ZL7idst7_8_0 {Type I LastRead -1 FirstWrite -1}
 		p_ZL7idst7_8_1 {Type I LastRead -1 FirstWrite -1}
@@ -273,8 +273,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "12", "Max" : "12"}
-	, {"Name" : "Interval", "Min" : "12", "Max" : "12"}
+	{"Name" : "Latency", "Min" : "18", "Max" : "18"}
+	, {"Name" : "Interval", "Min" : "18", "Max" : "18"}
 ]}
 
 set PipelineEnableSignalInfo {[
@@ -301,11 +301,11 @@ set Spec2ImplPortList {
 	conv3_i12_i_i { ap_none {  { conv3_i12_i_i in_data 0 32 } } }
 	sh_prom_i9_i_i { ap_none {  { sh_prom_i9_i_i in_data 0 32 } } }
 	sh_prom_i_i_i { ap_none {  { sh_prom_i_i_i in_data 0 32 } } }
-	empty_36 { ap_none {  { empty_36 in_data 0 1 } } }
+	empty_33 { ap_none {  { empty_33 in_data 0 1 } } }
 	oMin { ap_none {  { oMin in_data 0 32 } } }
 	oMax { ap_none {  { oMax in_data 0 32 } } }
-	empty_37 { ap_none {  { empty_37 in_data 0 29 } } }
+	empty_34 { ap_none {  { empty_34 in_data 0 29 } } }
 	cutoff { ap_none {  { cutoff in_data 0 32 } } }
-	empty_38 { ap_none {  { empty_38 in_data 0 30 } } }
+	empty_35 { ap_none {  { empty_35 in_data 0 30 } } }
 	empty { ap_none {  { empty in_data 0 31 } } }
 }

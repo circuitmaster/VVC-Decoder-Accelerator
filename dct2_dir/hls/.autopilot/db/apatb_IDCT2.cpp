@@ -22,12 +22,22 @@ using namespace std;
 // wrapc file define:
 #define AUTOTB_TVIN_in_r "../tv/cdatafile/c.IDCT2.autotvin_in_r.dat"
 #define AUTOTB_TVOUT_in_r "../tv/cdatafile/c.IDCT2.autotvout_in_r.dat"
+#define AUTOTB_TVIN_in2 "../tv/cdatafile/c.IDCT2.autotvin_in2.dat"
+#define AUTOTB_TVOUT_in2 "../tv/cdatafile/c.IDCT2.autotvout_in2.dat"
 #define AUTOTB_TVIN_out_r "../tv/cdatafile/c.IDCT2.autotvin_out_r.dat"
 #define AUTOTB_TVOUT_out_r "../tv/cdatafile/c.IDCT2.autotvout_out_r.dat"
+#define AUTOTB_TVIN_out2 "../tv/cdatafile/c.IDCT2.autotvin_out2.dat"
+#define AUTOTB_TVOUT_out2 "../tv/cdatafile/c.IDCT2.autotvout_out2.dat"
 #define AUTOTB_TVIN_block_size "../tv/cdatafile/c.IDCT2.autotvin_block_size.dat"
 #define AUTOTB_TVOUT_block_size "../tv/cdatafile/c.IDCT2.autotvout_block_size.dat"
 #define AUTOTB_TVIN_size "../tv/cdatafile/c.IDCT2.autotvin_size.dat"
 #define AUTOTB_TVOUT_size "../tv/cdatafile/c.IDCT2.autotvout_size.dat"
+#define AUTOTB_TVIN_shift "../tv/cdatafile/c.IDCT2.autotvin_shift.dat"
+#define AUTOTB_TVOUT_shift "../tv/cdatafile/c.IDCT2.autotvout_shift.dat"
+#define AUTOTB_TVIN_outputMinimum "../tv/cdatafile/c.IDCT2.autotvin_outputMinimum.dat"
+#define AUTOTB_TVOUT_outputMinimum "../tv/cdatafile/c.IDCT2.autotvout_outputMinimum.dat"
+#define AUTOTB_TVIN_outputMaximum "../tv/cdatafile/c.IDCT2.autotvin_outputMaximum.dat"
+#define AUTOTB_TVOUT_outputMaximum "../tv/cdatafile/c.IDCT2.autotvout_outputMaximum.dat"
 #define AUTOTB_TVIN_gmem0 "../tv/cdatafile/c.IDCT2.autotvin_gmem0.dat"
 #define AUTOTB_TVOUT_gmem0 "../tv/cdatafile/c.IDCT2.autotvout_gmem0.dat"
 #define AUTOTB_TVIN_gmem1 "../tv/cdatafile/c.IDCT2.autotvin_gmem1.dat"
@@ -1230,10 +1240,10 @@ namespace hls::sim
 
 
 extern "C"
-void IDCT2_hw_stub_wrapper(void*, void*, hls::sim::Byte<4>, hls::sim::Byte<4>);
+void IDCT2_hw_stub_wrapper(void*, void*, void*, void*, hls::sim::Byte<4>, hls::sim::Byte<4>, hls::sim::Byte<4>, hls::sim::Byte<4>, hls::sim::Byte<4>);
 
 extern "C"
-void apatb_IDCT2_hw(void* __xlx_apatb_param_in_r, void* __xlx_apatb_param_out_r, hls::sim::Byte<4> __xlx_apatb_param_block_size, hls::sim::Byte<4> __xlx_apatb_param_size)
+void apatb_IDCT2_hw(void* __xlx_apatb_param_in_r, void* __xlx_apatb_param_in2, void* __xlx_apatb_param_out_r, void* __xlx_apatb_param_out2, hls::sim::Byte<4> __xlx_apatb_param_block_size, hls::sim::Byte<4> __xlx_apatb_param_size, hls::sim::Byte<4> __xlx_apatb_param_shift, hls::sim::Byte<4> __xlx_apatb_param_outputMinimum, hls::sim::Byte<4> __xlx_apatb_param_outputMaximum)
 {
   hls::sim::Byte<4> __xlx_offset_byte_param_in_r;
   static hls::sim::Register port0 {
@@ -1247,8 +1257,20 @@ void apatb_IDCT2_hw(void* __xlx_apatb_param_in_r, void* __xlx_apatb_param_out_r,
   };
   port0.param = &__xlx_offset_byte_param_in_r;
 
-  hls::sim::Byte<4> __xlx_offset_byte_param_out_r;
+  hls::sim::Byte<4> __xlx_offset_byte_param_in2;
   static hls::sim::Register port1 {
+    .name = "in2",
+    .width = 32,
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_in2),
+#endif
+  };
+  port1.param = &__xlx_offset_byte_param_in2;
+
+  hls::sim::Byte<4> __xlx_offset_byte_param_out_r;
+  static hls::sim::Register port2 {
     .name = "out_r",
     .width = 32,
 #ifdef POST_CHECK
@@ -1257,9 +1279,21 @@ void apatb_IDCT2_hw(void* __xlx_apatb_param_in_r, void* __xlx_apatb_param_out_r,
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_out_r),
 #endif
   };
-  port1.param = &__xlx_offset_byte_param_out_r;
+  port2.param = &__xlx_offset_byte_param_out_r;
 
-  static hls::sim::Register port2 {
+  hls::sim::Byte<4> __xlx_offset_byte_param_out2;
+  static hls::sim::Register port3 {
+    .name = "out2",
+    .width = 32,
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_out2),
+#endif
+  };
+  port3.param = &__xlx_offset_byte_param_out2;
+
+  static hls::sim::Register port4 {
     .name = "block_size",
     .width = 32,
 #ifdef POST_CHECK
@@ -1268,9 +1302,9 @@ void apatb_IDCT2_hw(void* __xlx_apatb_param_in_r, void* __xlx_apatb_param_out_r,
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_block_size),
 #endif
   };
-  port2.param = &__xlx_apatb_param_block_size;
+  port4.param = &__xlx_apatb_param_block_size;
 
-  static hls::sim::Register port3 {
+  static hls::sim::Register port5 {
     .name = "size",
     .width = 32,
 #ifdef POST_CHECK
@@ -1279,69 +1313,124 @@ void apatb_IDCT2_hw(void* __xlx_apatb_param_in_r, void* __xlx_apatb_param_out_r,
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_size),
 #endif
   };
-  port3.param = &__xlx_apatb_param_size;
+  port5.param = &__xlx_apatb_param_size;
 
-#ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port4 {
-#else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port4 {
-#endif
-    .width = 512,
-    .asize = 64,
-    .hbm = false,
-    .name = { "gmem0" },
+  static hls::sim::Register port6 {
+    .name = "shift",
+    .width = 32,
 #ifdef POST_CHECK
 #else
     .owriter = nullptr,
-#ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem0),
-#else
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem0),
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_shift),
 #endif
-#endif
-    .hasWrite = { false },
   };
-  port4.param = { __xlx_apatb_param_in_r };
-  port4.mname = { "in_r" };
-  port4.nbytes = { 0 };
+  port6.param = &__xlx_apatb_param_shift;
+
+  static hls::sim::Register port7 {
+    .name = "outputMinimum",
+    .width = 32,
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_outputMinimum),
+#endif
+  };
+  port7.param = &__xlx_apatb_param_outputMinimum;
+
+  static hls::sim::Register port8 {
+    .name = "outputMaximum",
+    .width = 32,
+#ifdef POST_CHECK
+#else
+    .owriter = nullptr,
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_outputMaximum),
+#endif
+  };
+  port8.param = &__xlx_apatb_param_outputMaximum;
 
 #ifdef USE_BINARY_TV_FILE
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port5 {
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port9 {
 #else
-  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port5 {
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port9 {
 #endif
-    .width = 512,
-    .asize = 64,
+    .width = 1024,
+    .asize = 128,
+    .hbm = false,
+    .name = { "gmem0" },
+#ifdef POST_CHECK
+#ifdef USE_BINARY_TV_FILE
+    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_gmem0),
+#else
+    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_gmem0),
+#endif
+#else
+#ifdef USE_BINARY_TV_FILE
+    .owriter = new hls::sim::Output(AUTOTB_TVOUT_gmem0),
+#else
+    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_gmem0),
+#endif
+#ifdef USE_BINARY_TV_FILE
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_gmem0),
+#else
+    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem0),
+#endif
+#endif
+    .hasWrite = { true, true },
+  };
+  port9.param = { __xlx_apatb_param_in_r, __xlx_apatb_param_out_r };
+  port9.mname = { "in_r", "out_r" };
+  port9.nbytes = { 0, 0 };
+  for (size_t off = 0, i = 0; i < port9.nbytes.size(); ++i) {
+    port9.offset.push_back(off);
+    off += hls::sim::divide_ceil(port9.nbytes[i], port9.asize);
+  }
+  __xlx_offset_byte_param_in_r = port9.offset[0]*128;
+  __xlx_offset_byte_param_out_r = port9.offset[1]*128;
+
+#ifdef USE_BINARY_TV_FILE
+  static hls::sim::Memory<hls::sim::Input, hls::sim::Output> port10 {
+#else
+  static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port10 {
+#endif
+    .width = 1024,
+    .asize = 128,
     .hbm = false,
     .name = { "gmem1" },
 #ifdef POST_CHECK
 #ifdef USE_BINARY_TV_FILE
-    .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_gmem1),
+    .reader = new hls::sim::Input(AUTOTB_TVOUT_PC_gmem1),
 #else
     .reader = new hls::sim::Reader(AUTOTB_TVOUT_PC_gmem1),
 #endif
 #else
 #ifdef USE_BINARY_TV_FILE
-    .owriter = new hls::sim::Writer(AUTOTB_TVOUT_gmem1),
+    .owriter = new hls::sim::Output(AUTOTB_TVOUT_gmem1),
 #else
     .owriter = new hls::sim::Writer(AUTOTB_TVOUT_gmem1),
 #endif
 #ifdef USE_BINARY_TV_FILE
-    .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem1),
+    .iwriter = new hls::sim::Output(AUTOTB_TVIN_gmem1),
 #else
     .iwriter = new hls::sim::Writer(AUTOTB_TVIN_gmem1),
 #endif
 #endif
-    .hasWrite = { true },
+    .hasWrite = { true, true },
   };
-  port5.param = { __xlx_apatb_param_out_r };
-  port5.mname = { "out_r" };
-  port5.nbytes = { 0 };
+  port10.param = { __xlx_apatb_param_in2, __xlx_apatb_param_out2 };
+  port10.mname = { "in2", "out2" };
+  port10.nbytes = { 0, 0 };
+  for (size_t off = 0, i = 0; i < port10.nbytes.size(); ++i) {
+    port10.offset.push_back(off);
+    off += hls::sim::divide_ceil(port10.nbytes[i], port10.asize);
+  }
+  __xlx_offset_byte_param_in2 = port10.offset[0]*128;
+  __xlx_offset_byte_param_out2 = port10.offset[1]*128;
 
   try {
 #ifdef POST_CHECK
     CodeState = ENTER_WRAPC_PC;
-    check(port5);
+    check(port9);
+    check(port10);
 #else
     static hls::sim::RefTCL tcl("../tv/cdatafile/ref.tcl");
     tcl.containsVLA = 0;
@@ -1352,16 +1441,27 @@ void apatb_IDCT2_hw(void* __xlx_apatb_param_in_r, void* __xlx_apatb_param_out_r,
     dump(port3, port3.iwriter, tcl.AESL_transaction);
     dump(port4, port4.iwriter, tcl.AESL_transaction);
     dump(port5, port5.iwriter, tcl.AESL_transaction);
+    dump(port6, port6.iwriter, tcl.AESL_transaction);
+    dump(port7, port7.iwriter, tcl.AESL_transaction);
+    dump(port8, port8.iwriter, tcl.AESL_transaction);
+    dump(port9, port9.iwriter, tcl.AESL_transaction);
+    dump(port10, port10.iwriter, tcl.AESL_transaction);
     port0.doTCL(tcl);
     port1.doTCL(tcl);
     port2.doTCL(tcl);
     port3.doTCL(tcl);
     port4.doTCL(tcl);
     port5.doTCL(tcl);
+    port6.doTCL(tcl);
+    port7.doTCL(tcl);
+    port8.doTCL(tcl);
+    port9.doTCL(tcl);
+    port10.doTCL(tcl);
     CodeState = CALL_C_DUT;
-    IDCT2_hw_stub_wrapper(__xlx_apatb_param_in_r, __xlx_apatb_param_out_r, __xlx_apatb_param_block_size, __xlx_apatb_param_size);
+    IDCT2_hw_stub_wrapper(__xlx_apatb_param_in_r, __xlx_apatb_param_in2, __xlx_apatb_param_out_r, __xlx_apatb_param_out2, __xlx_apatb_param_block_size, __xlx_apatb_param_size, __xlx_apatb_param_shift, __xlx_apatb_param_outputMinimum, __xlx_apatb_param_outputMaximum);
     CodeState = DUMP_OUTPUTS;
-    dump(port5, port5.owriter, tcl.AESL_transaction);
+    dump(port9, port9.owriter, tcl.AESL_transaction);
+    dump(port10, port10.owriter, tcl.AESL_transaction);
     tcl.AESL_transaction++;
 #endif
   } catch (const hls::sim::SimException &e) {

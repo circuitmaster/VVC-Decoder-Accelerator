@@ -1338,8 +1338,8 @@ void apatb_IDST7_hw(void* __xlx_apatb_param_in_r, void* __xlx_apatb_param_out_r,
 #else
   static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port8 {
 #endif
-    .width = 512,
-    .asize = 64,
+    .width = 1024,
+    .asize = 128,
     .hbm = false,
     .name = { "gmem0" },
 #ifdef POST_CHECK
@@ -1362,8 +1362,8 @@ void apatb_IDST7_hw(void* __xlx_apatb_param_in_r, void* __xlx_apatb_param_out_r,
 #else
   static hls::sim::Memory<hls::sim::Reader, hls::sim::Writer> port9 {
 #endif
-    .width = 512,
-    .asize = 64,
+    .width = 1024,
+    .asize = 128,
     .hbm = false,
     .name = { "gmem1" },
 #ifdef POST_CHECK

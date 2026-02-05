@@ -6,11 +6,11 @@
 
 <UserAssignments>
 <unit>ns</unit>
-<ProductFamily>zynquplus</ProductFamily>
-<Part>xczu9eg-ffvb1156-2-e</Part>
+<ProductFamily>versalaicore</ProductFamily>
+<Part>xcvc1902-vsva2197-2MP-e-S</Part>
 <TopModelName>IDCT2B32</TopModelName>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>2.70</ClockUncertainty>
+<TargetClockPeriod>3.33</TargetClockPeriod>
+<ClockUncertainty>0.90</ClockUncertainty>
 <TargetInitiationInterval>1</TargetInitiationInterval>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
@@ -19,18 +19,18 @@
 <PipelineType>yes</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>7.199</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.412</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>1</Best-caseLatency>
-<Average-caseLatency>1</Average-caseLatency>
-<Worst-caseLatency>1</Worst-caseLatency>
-<Best-caseRealTimeLatency>10.000 ns</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>10.000 ns</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>10.000 ns</Worst-caseRealTimeLatency>
+<Best-caseLatency>4</Best-caseLatency>
+<Average-caseLatency>4</Average-caseLatency>
+<Worst-caseLatency>4</Worst-caseLatency>
+<Best-caseRealTimeLatency>13.332 ns</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>13.332 ns</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>13.332 ns</Worst-caseRealTimeLatency>
 <PipelineInitiationInterval>1</PipelineInitiationInterval>
-<PipelineDepth>2</PipelineDepth>
+<PipelineDepth>5</PipelineDepth>
 <Interval-min>1</Interval-min>
 <Interval-max>1</Interval-max>
 </SummaryOfOverallLatency>
@@ -44,17 +44,17 @@
 <AreaEstimates>
 <Resources>
 <DSP>236</DSP>
-<FF>1026</FF>
-<LUT>27903</LUT>
+<FF>19872</FF>
+<LUT>46382</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
-<BRAM_18K>1824</BRAM_18K>
-<DSP>2520</DSP>
-<FF>548160</FF>
-<LUT>274080</LUT>
-<URAM>0</URAM>
+<BRAM_18K>1934</BRAM_18K>
+<DSP>1968</DSP>
+<FF>1799680</FF>
+<LUT>899840</LUT>
+<URAM>463</URAM>
 </AvailableResources>
 </AreaEstimates>
 

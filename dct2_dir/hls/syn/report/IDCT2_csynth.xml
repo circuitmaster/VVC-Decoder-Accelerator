@@ -6,87 +6,52 @@
 
 <UserAssignments>
 <unit>ns</unit>
-<ProductFamily>zynquplus</ProductFamily>
-<Part>xczu9eg-ffvb1156-2-e</Part>
+<ProductFamily>versalaicore</ProductFamily>
+<Part>xcvc1902-vsva2197-2MP-e-S</Part>
 <TopModelName>IDCT2</TopModelName>
-<TargetClockPeriod>10.00</TargetClockPeriod>
-<ClockUncertainty>2.70</ClockUncertainty>
+<TargetClockPeriod>3.33</TargetClockPeriod>
+<ClockUncertainty>0.90</ClockUncertainty>
 <FlowTarget>vitis</FlowTarget>
 </UserAssignments>
 
 <PerformanceEstimates>
-<PipelineType>loop auto-rewind stp (delay=0 cycles)</PipelineType>
+<PipelineType>no</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>7.300</EstimatedClockPeriod>
+<EstimatedClockPeriod>2.433</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
-<Best-caseLatency>145</Best-caseLatency>
-<Average-caseLatency>656</Average-caseLatency>
-<Worst-caseLatency>1168</Worst-caseLatency>
-<Best-caseRealTimeLatency>1.450 us</Best-caseRealTimeLatency>
-<Average-caseRealTimeLatency>6.560 us</Average-caseRealTimeLatency>
-<Worst-caseRealTimeLatency>11.680 us</Worst-caseRealTimeLatency>
-<Interval-min>2</Interval-min>
-<Interval-max>1025</Interval-max>
+<Best-caseLatency>162</Best-caseLatency>
+<Average-caseLatency>673</Average-caseLatency>
+<Worst-caseLatency>1185</Worst-caseLatency>
+<Best-caseRealTimeLatency>0.540 us</Best-caseRealTimeLatency>
+<Average-caseRealTimeLatency>2.243 us</Average-caseRealTimeLatency>
+<Worst-caseRealTimeLatency>3.950 us</Worst-caseRealTimeLatency>
+<Interval-min>163</Interval-min>
+<Interval-max>1186</Interval-max>
 </SummaryOfOverallLatency>
-<SummaryOfLoopLatency>
-<VITIS_LOOP_324_1>
-<Slack>7.30</Slack>
-<TripCount>
-<range>
-<min>1</min>
-<max>1024</max>
-</range>
-</TripCount>
-<Latency>
-<range>
-<min>143</min>
-<max>1166</max>
-</range>
-</Latency>
-<AbsoluteTimeLatency>
-<range>
-<min>1430</min>
-<max>11660</max>
-</range>
-</AbsoluteTimeLatency>
-<PipelineII>1</PipelineII>
-<PipelineDepth>144</PipelineDepth>
-<InstanceList>
-</InstanceList>
-</VITIS_LOOP_324_1>
-</SummaryOfLoopLatency>
 <SummaryOfViolations>
 <IssueType>-</IssueType>
 <ViolationType>-</ViolationType>
 <SourceLocation>src/IDCT2.cpp:315</SourceLocation>
-<SummaryOfLoopViolations>
-<VITIS_LOOP_324_1>
-<Name>VITIS_LOOP_324_1</Name>
-<IssueType>-</IssueType>
-<ViolationType>-</ViolationType>
-<SourceLocation>src/IDCT2.cpp:324</SourceLocation>
-</VITIS_LOOP_324_1>
-</SummaryOfLoopViolations>
 </SummaryOfViolations>
 </PerformanceEstimates>
 
 <AreaEstimates>
 <Resources>
-<BRAM_18K>58</BRAM_18K>
-<DSP>766</DSP>
-<FF>47145</FF>
-<LUT>103142</LUT>
+<BRAM_18K>82</BRAM_18K>
+<DSP>1136</DSP>
+<FF>143958</FF>
+<LUT>275658</LUT>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
-<BRAM_18K>1824</BRAM_18K>
-<DSP>2520</DSP>
-<FF>548160</FF>
-<LUT>274080</LUT>
-<URAM>0</URAM>
+<BRAM_18K>1934</BRAM_18K>
+<DSP>1968</DSP>
+<FF>1799680</FF>
+<LUT>899840</LUT>
+<URAM>463</URAM>
 </AvailableResources>
 </AreaEstimates>
 
@@ -119,7 +84,7 @@
 <Type>scalar</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>6</Bits>
+<Bits>7</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -196,7 +161,7 @@
 <Type>scalar</Type>
 <IOProtocol>s_axi</IOProtocol>
 <Dir>in</Dir>
-<Bits>6</Bits>
+<Bits>7</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 <HasCtrl>1</HasCtrl>
@@ -499,7 +464,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>512</Bits>
+<Bits>1024</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -511,7 +476,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>64</Bits>
+<Bits>128</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -739,7 +704,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>512</Bits>
+<Bits>1024</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -1039,7 +1004,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>512</Bits>
+<Bits>1024</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -1051,7 +1016,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>out</Dir>
-<Bits>64</Bits>
+<Bits>128</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>
@@ -1279,7 +1244,7 @@
 <IOProtocol>m_axi</IOProtocol>
 <IOConfig></IOConfig>
 <Dir>in</Dir>
-<Bits>512</Bits>
+<Bits>1024</Bits>
 <Attribute>unknown</Attribute>
 <CType>int</CType>
 </RtlPorts>

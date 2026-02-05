@@ -3,13 +3,13 @@
 ================================================================
 == Vitis HLS Report for 'IDCT2B2'
 ================================================================
-* Date:           Fri Nov 21 21:48:44 2025
+* Date:           Mon Dec 22 13:39:54 2025
 
 * Version:        2024.2 (Build 5238294 on Nov  8 2024)
 * Project:        dct2_dir
 * Solution:       hls (Vitis Kernel Flow Target)
-* Product family: zynquplus
-* Target device:  xczu9eg-ffvb1156-2-e
+* Product family: versalaicore
+* Target device:  xcvc1902-vsva2197-2MP-e-S
 
 
 ================================================================
@@ -17,11 +17,11 @@
 ================================================================
 + Timing: 
     * Summary: 
-    +--------+----------+----------+------------+
-    |  Clock |  Target  | Estimated| Uncertainty|
-    +--------+----------+----------+------------+
-    |ap_clk  |  10.00 ns|  0.955 ns|     2.70 ns|
-    +--------+----------+----------+------------+
+    +--------+---------+----------+------------+
+    |  Clock |  Target | Estimated| Uncertainty|
+    +--------+---------+----------+------------+
+    |ap_clk  |  3.33 ns|  0.841 ns|     0.90 ns|
+    +--------+---------+----------+------------+
 
 + Latency: 
     * Summary: 
@@ -45,23 +45,23 @@
 == Utilization Estimates
 ================================================================
 * Summary: 
-+-----------------+---------+------+--------+--------+-----+
-|       Name      | BRAM_18K|  DSP |   FF   |   LUT  | URAM|
-+-----------------+---------+------+--------+--------+-----+
-|DSP              |        -|     -|       -|       -|    -|
-|Expression       |        -|     -|       0|      66|    -|
-|FIFO             |        -|     -|       -|       -|    -|
-|Instance         |        -|     -|       -|       -|    -|
-|Memory           |        -|     -|       -|       -|    -|
-|Multiplexer      |        -|     -|       -|       -|    -|
-|Register         |        -|     -|       -|       -|    -|
-+-----------------+---------+------+--------+--------+-----+
-|Total            |        0|     0|       0|      66|    0|
-+-----------------+---------+------+--------+--------+-----+
-|Available        |     1824|  2520|  548160|  274080|    0|
-+-----------------+---------+------+--------+--------+-----+
-|Utilization (%)  |        0|     0|       0|      ~0|    0|
-+-----------------+---------+------+--------+--------+-----+
++-----------------+---------+------+---------+--------+-----+
+|       Name      | BRAM_18K|  DSP |    FF   |   LUT  | URAM|
++-----------------+---------+------+---------+--------+-----+
+|DSP              |        -|     -|        -|       -|    -|
+|Expression       |        -|     -|        0|      52|    -|
+|FIFO             |        -|     -|        -|       -|    -|
+|Instance         |        -|     -|        -|       -|    -|
+|Memory           |        -|     -|        -|       -|    -|
+|Multiplexer      |        -|     -|        -|       -|    -|
+|Register         |        -|     -|        -|       -|    -|
++-----------------+---------+------+---------+--------+-----+
+|Total            |        0|     0|        0|      52|    0|
++-----------------+---------+------+---------+--------+-----+
+|Available        |     1934|  1968|  1799680|  899840|  463|
++-----------------+---------+------+---------+--------+-----+
+|Utilization (%)  |        0|     0|        0|      ~0|    0|
++-----------------+---------+------+---------+--------+-----+
 
 + Detail: 
     * Instance: 
@@ -80,10 +80,10 @@
     +-------------------+----------+----+---+----+------------+------------+
     |   Variable Name   | Operation| DSP| FF| LUT| Bitwidth P0| Bitwidth P1|
     +-------------------+----------+----+---+----+------------+------------+
-    |add_ln19_fu_30_p2  |         +|   0|  0|  33|          26|          26|
-    |diff_fu_24_p2      |         -|   0|  0|  33|          26|          26|
+    |add_ln19_fu_30_p2  |         +|   0|  0|  26|          26|          26|
+    |diff_fu_24_p2      |         -|   0|  0|  26|          26|          26|
     +-------------------+----------+----+---+----+------------+------------+
-    |Total              |          |   0|  0|  66|          52|          52|
+    |Total              |          |   0|  0|  52|          52|          52|
     +-------------------+----------+----+---+----+------------+------------+
 
     * Multiplexer: 
@@ -148,11 +148,11 @@ IsGatedGlobalClock: 0
 
 * FSM state operations: 
 
-State 1 <SV = 0> <Delay = 0.95>
+State 1 <SV = 0> <Delay = 0.84>
 ST_1 : Operation 2 [1/1] (0.00ns)   --->   "%in_1_val_read = read i26 @_ssdm_op_Read.ap_auto.i26, i26 %in_1_val" [src/IDCT2.cpp:20]   --->   Operation 2 'read' 'in_1_val_read' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 3 [1/1] (0.00ns)   --->   "%in_0_val_read = read i26 @_ssdm_op_Read.ap_auto.i26, i26 %in_0_val" [src/IDCT2.cpp:20]   --->   Operation 3 'read' 'in_0_val_read' <Predicate = true> <Delay = 0.00>
-ST_1 : Operation 4 [1/1] (0.95ns)   --->   "%diff = sub i26 %in_0_val_read, i26 %in_1_val_read" [src/IDCT2.cpp:20]   --->   Operation 4 'sub' 'diff' <Predicate = true> <Delay = 0.95> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_1 : Operation 5 [1/1] (0.95ns)   --->   "%add_ln19 = add i26 %in_1_val_read, i26 %in_0_val_read" [src/IDCT2.cpp:19]   --->   Operation 5 'add' 'add_ln19' <Predicate = true> <Delay = 0.95> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.95> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 4 [1/1] (0.84ns)   --->   "%diff = sub i26 %in_0_val_read, i26 %in_1_val_read" [src/IDCT2.cpp:20]   --->   Operation 4 'sub' 'diff' <Predicate = true> <Delay = 0.84> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 5 [1/1] (0.84ns)   --->   "%add_ln19 = add i26 %in_1_val_read, i26 %in_0_val_read" [src/IDCT2.cpp:19]   --->   Operation 5 'add' 'add_ln19' <Predicate = true> <Delay = 0.84> <CoreInst = "Adder">   --->   Core 1 'Adder' <Latency = 0> <II = 1> <Delay = 0.84> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_1 : Operation 6 [1/1] (0.00ns)   --->   "%even = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i26.i6, i26 %add_ln19, i6 0" [src/IDCT2.cpp:19]   --->   Operation 6 'bitconcatenate' 'even' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%odd = bitconcatenate i32 @_ssdm_op_BitConcatenate.i32.i26.i6, i26 %diff, i6 0" [src/IDCT2.cpp:20]   --->   Operation 7 'bitconcatenate' 'odd' <Predicate = true> <Delay = 0.00>
 ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%mrv = insertvalue i64 <undef>, i32 %even" [src/IDCT2.cpp:24]   --->   Operation 8 'insertvalue' 'mrv' <Predicate = true> <Delay = 0.00>
@@ -411,9 +411,9 @@ ret_ln24      (ret           ) [ 00]
 |----------|--------------------------|---------|---------|
 | Operation|      Functional Unit     |    FF   |   LUT   |
 |----------|--------------------------|---------|---------|
-|    sub   |        diff_fu_24        |    0    |    33   |
+|    sub   |        diff_fu_24        |    0    |    26   |
 |----------|--------------------------|---------|---------|
-|    add   |      add_ln19_fu_30      |    0    |    33   |
+|    add   |      add_ln19_fu_30      |    0    |    26   |
 |----------|--------------------------|---------|---------|
 |   read   | in_1_val_read_read_fu_12 |    0    |    0    |
 |          | in_0_val_read_read_fu_18 |    0    |    0    |
@@ -424,7 +424,7 @@ ret_ln24      (ret           ) [ 00]
 |insertvalue|         mrv_fu_52        |    0    |    0    |
 |          |        mrv_1_fu_58       |    0    |    0    |
 |----------|--------------------------|---------|---------|
-|   Total  |                          |    0    |    66   |
+|   Total  |                          |    0    |    52   |
 |----------|--------------------------|---------|---------|
 
 Memories:
@@ -446,10 +446,10 @@ N/A
 +-----------+--------+--------+
 |           |   FF   |   LUT  |
 +-----------+--------+--------+
-|  Function |    0   |   66   |
+|  Function |    0   |   52   |
 |   Memory  |    -   |    -   |
 |Multiplexer|    -   |    -   |
 |  Register |    -   |    -   |
 +-----------+--------+--------+
-|   Total   |    0   |   66   |
+|   Total   |    0   |   52   |
 +-----------+--------+--------+

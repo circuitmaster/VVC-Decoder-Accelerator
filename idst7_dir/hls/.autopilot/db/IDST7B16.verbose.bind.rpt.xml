@@ -1,13 +1,13 @@
 <profile>
 
 <section name = "Vitis HLS Report for 'IDST7B16'" level="0">
-<item name = "Date">Tue Dec  9 15:04:45 2025
+<item name = "Date">Mon Dec 22 13:45:44 2025
 </item>
 <item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
 <item name = "Project">idst7_dir</item>
 <item name = "Solution">hls (Vitis Kernel Flow Target)</item>
-<item name = "Product family">zynquplus</item>
-<item name = "Target device">xczu9eg-ffvb1156-2-e</item>
+<item name = "Product family">versalaicore</item>
+<item name = "Target device">xcvc1902-vsva2197-2MP-e-S</item>
 </section>
 
 <section name = "Performance Estimates" level="0">
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00 ns, 7.027 ns, 2.70 ns</column>
+<column name="ap_clk">3.33 ns, 2.408 ns, 0.90 ns</column>
 </table>
 </item>
 </section>
@@ -24,14 +24,14 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="8">, min, max, min, max, min, max, Type</keys>
-<column name="">23, 23, 0.230 us, 0.230 us, 23, 23, no</column>
+<column name="">33, 33, 0.110 us, 0.110 us, 33, 33, no</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
-<column name="grp_IDST7B16_Pipeline_VITIS_LOOP_47_1_fu_258">IDST7B16_Pipeline_VITIS_LOOP_47_1, 22, 22, 0.220 us, 0.220 us, 17, 17, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_IDST7B16_Pipeline_VITIS_LOOP_47_1_fu_258">IDST7B16_Pipeline_VITIS_LOOP_47_1, 31, 31, 0.103 us, 0.103 us, 17, 17, loop auto-rewind stp (delay=0 clock cycles(s))</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

@@ -1,0 +1,1081 @@
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp, 
+                   Line: 0, Column: 0 }
+Function:        _GLOBAL__sub_I_IDCT8.pp.0.cpp
+Args:            
+  - Callee:          __cxx_global_var_init.5
+    DebugLoc:        { File: src/transform_coeffs.h, Line: 147, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          _GLOBAL__sub_I_IDCT8.pp.0.cpp
+    DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp, 
+                       Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp, 
+                   Line: 0, Column: 0 }
+Function:        _GLOBAL__sub_I_IDCT8.pp.0.cpp
+Args:            
+  - Callee:          __cxx_global_var_init.6
+    DebugLoc:        { File: src/transform_coeffs.h, Line: 161, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          _GLOBAL__sub_I_IDCT8.pp.0.cpp
+    DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp, 
+                       Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp, 
+                   Line: 0, Column: 0 }
+Function:        _GLOBAL__sub_I_IDCT8.pp.0.cpp
+Args:            
+  - Callee:          __cxx_global_var_init.7
+    DebugLoc:        { File: src/transform_coeffs.h, Line: 183, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          _GLOBAL__sub_I_IDCT8.pp.0.cpp
+    DebugLoc:        { File: /home/mahir/Desktop/vvc/VVC-Decoder-Accelerator/dct8_dir/hls/.autopilot/db/IDCT8.pp.0.cpp, 
+                       Line: 0, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 88, Column: 18 }
+Function:        _Z13INV_MATMUL_32PK6ap_intILi32EEPS0_S0_S0_S0_S0_PA32_S1_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'INV_MATMUL_32(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [32])'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 67, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 165, Column: 5 }
+Function:        _Z8IDCT8B32P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'INV_MATMUL_32(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [32])'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 67, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'IDCT8B32(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 163, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 62, Column: 18 }
+Function:        _Z13INV_MATMUL_16PK6ap_intILi32EEPS0_S0_S0_S0_S0_PA16_S1_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'INV_MATMUL_16(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [16])'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 40, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 118, Column: 5 }
+Function:        _Z8IDCT8B16P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'INV_MATMUL_16(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [16])'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 40, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'IDCT8B16(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 117, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 35, Column: 18 }
+Function:        _Z12INV_MATMUL_8PK6ap_intILi32EEPS0_S0_S0_S0_S0_PA8_S1_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'INV_MATMUL_8(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [8])'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 14, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 114, Column: 5 }
+Function:        _Z7IDCT8B8P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'INV_MATMUL_8(ap_int<32> const*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32> const (*) [8])'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 14, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'IDCT8B8(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 113, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            inline
+Name:            AlwaysInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 109, Column: 14 }
+Function:        _Z7IDCT8B4P6ap_intILi32EES1_S0_S0_S0_
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'CLIP3(ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 6, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          'IDCT8B4(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 92, Column: 0 }
+  - String:          ''''
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 337, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B4(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 92, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 317, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B8(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 113, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 298, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B16(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 117, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 278, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B32(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 163, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 25, Column: 26 }
+Function:        _Z7IDCT8B8P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_25_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 52, Column: 26 }
+Function:        _Z8IDCT8B16P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_52_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-infer-unroll
+Name:            ImplicitUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 78, Column: 26 }
+Function:        _Z8IDCT8B32P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Loop '''
+  - LoopName:        VITIS_LOOP_78_2
+  - String:          ''' is marked as complete unroll implied by the pipeline pragma'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_332_8
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:332:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_339_9
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:339:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8
+  - String:          ''' completely with a factor of '
+  - Factor:          '4'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_312_6
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:312:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_319_7
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:319:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_293_4
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:293:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_300_5
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:300:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_273_2
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:273:20'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_280_3
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:280:31'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 113, Column: 0 }
+Function:        _Z7IDCT8B8P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_25_2
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:25:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8B8
+  - String:          ''' completely with a factor of '
+  - Factor:          '8'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 113, Column: 0 }
+Function:        _Z7IDCT8B8P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_25_2
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:25:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8B8
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 117, Column: 0 }
+Function:        _Z8IDCT8B16P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_52_2
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:52:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8B16
+  - String:          ''' completely with a factor of '
+  - Factor:          '16'
+...
+--- !Passed
+Pass:            reflow-pragma-loop-unroll
+Name:            PragmaFullyUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 163, Column: 0 }
+Function:        _Z8IDCT8B32P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Unrolling loop '''
+  - LoopName:        VITIS_LOOP_78_2
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:78:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8B32
+  - String:          ''' completely with a factor of '
+  - Factor:          '32'
+...
+--- !Missed
+Pass:            reflow-pragma-loop-unroll
+Name:            PipelineRemovedByUnroll
+DebugLoc:        { File: src/IDCT8.cpp, Line: 163, Column: 0 }
+Function:        _Z8IDCT8B32P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Pipeline directive for loop '''
+  - LoopName:        VITIS_LOOP_78_2
+  - String:          ''' ('
+  - LoopLoc:         'src/IDCT8.cpp:78:26'
+  - String:          ') '
+  - String:          'in function '''
+  - String:          IDCT8B32
+  - String:          ''' has been removed because the loop is unrolled completely'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 278, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B32(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 163, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 298, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B16(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 117, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 317, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B8(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 113, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 337, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B4(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 92, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+Function:        apatb_IDCT8_ir
+Args:            
+  - Callee:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          apatb_IDCT8_ir
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Passed
+Pass:            reflow-inliner
+Name:            Inline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Inlining function '''
+  - Callee:          'IDCT8B4(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 92, Column: 0 }
+  - String:          ''' into '''
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ''''
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/IDCT8.cpp, Line: 268, Column: 24 }
+Function:        IDCT8
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          in_data
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/IDCT8.cpp, Line: 269, Column: 24 }
+Function:        IDCT8
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          out_data
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/IDCT8.cpp, Line: 288, Column: 24 }
+Function:        IDCT8
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          in_data36
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/IDCT8.cpp, Line: 289, Column: 24 }
+Function:        IDCT8
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          out_data37
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/IDCT8.cpp, Line: 307, Column: 24 }
+Function:        IDCT8
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          in_data79
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/IDCT8.cpp, Line: 308, Column: 24 }
+Function:        IDCT8
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          out_data80
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: src/IDCT8.cpp, Line: 260, Column: 20 }
+Function:        IDCT8
+Args:            
+  - String:          'Sequential '
+  - Direction:       read
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        inseq
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_260_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT8.cpp:260:20'
+  - String:          ' '
+  - Function:        IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      load
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 264, Column: 26 }
+  - OrigDirection:   read
+  - OrigID:          for.body.load.6
+...
+--- !Passed
+Pass:            reflow-burst-inference
+Name:            BurstInferred
+DebugLoc:        { File: src/IDCT8.cpp, Line: 260, Column: 20 }
+Function:        IDCT8
+Args:            
+  - String:          'Sequential '
+  - Direction:       write
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length'
+  - String:          ' has been inferred'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        outseq
+  - ArrayName:       out
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_260_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT8.cpp:260:20'
+  - String:          ' '
+  - Function:        IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' '
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      store
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 346, Column: 16 }
+  - OrigDirection:   write
+  - OrigID:          for.inc166.store.4
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: src/IDCT8.cpp, Line: 260, Column: 20 }
+Function:        IDCT8
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i1024
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '512'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 260, Column: 20 }
+  - OrigDirection:   write
+  - OrigID:          outseq
+  - ArrayName:       out
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_260_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT8.cpp:260:20'
+  - String:          ' '
+  - Function:        IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' '
+...
+--- !Missed
+Pass:            reflow-burst-widen
+Name:            GreaterOrEqualThreshold
+DebugLoc:        { File: src/IDCT8.cpp, Line: 260, Column: 20 }
+Function:        IDCT8
+Args:            
+  - String:          'Could not widen since type '
+  - Type:            i1024
+  - String:          ' size is greater than or equal to the max_widen_bitwidth threshold of '
+  - Threshold:       '512'
+  - String:          ' _XLX_SEP_ '
+  - OrigAccess:      call
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 260, Column: 20 }
+  - OrigDirection:   read
+  - OrigID:          inseq
+  - ArrayName:       in
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_260_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT8.cpp:260:20'
+  - String:          ' '
+  - Function:        IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayPromotion
+DebugLoc:        { File: src/transform_coeffs.h, Line: 181, Column: 0 }
+Function:        _Z8IDCT8B32P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Automatically partitioning array '''
+  - Value:           _ZL8idct8_32
+  - String:          ''' dimension '
+  - Dim:             '1'
+  - String:          ' completely based on constant index.'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayPromotion
+DebugLoc:        { File: src/transform_coeffs.h, Line: 159, Column: 0 }
+Function:        _Z8IDCT8B16P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Automatically partitioning array '''
+  - Value:           _ZL8idct8_16
+  - String:          ''' dimension '
+  - Dim:             '1'
+  - String:          ' completely based on constant index.'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayPromotion
+DebugLoc:        { File: src/transform_coeffs.h, Line: 145, Column: 0 }
+Function:        _Z7IDCT8B8P6ap_intILi32EES1_S0_S0_S0_S0_
+Args:            
+  - String:          'Automatically partitioning array '''
+  - Value:           _ZL7idct8_8
+  - String:          ''' dimension '
+  - Dim:             '1'
+  - String:          ' completely based on constant index.'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: src/transform_coeffs.h, Line: 145, Column: 0 }
+Function:        IDCT8
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZL7idct8_8'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  IDCT8
+  - String:          ' '
+  - varLoc:          'src/transform_coeffs.h:145:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'src/IDCT8.cpp:23:9'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 23, Column: 9 }
+  - VarName:         idct8_8
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: src/IDCT8.cpp, Line: 23, Column: 9 }
+Function:        IDCT8
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            idct8_8
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: src/transform_coeffs.h, Line: 159, Column: 0 }
+Function:        IDCT8
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZL8idct8_16'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  IDCT8
+  - String:          ' '
+  - varLoc:          'src/transform_coeffs.h:159:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'src/IDCT8.cpp:49:9'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 49, Column: 9 }
+  - VarName:         idct8_16
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: src/IDCT8.cpp, Line: 49, Column: 9 }
+Function:        IDCT8
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            idct8_16
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoParallelPerformanceDrivenVerbosePassed
+DebugLoc:        { File: src/transform_coeffs.h, Line: 181, Column: 0 }
+Function:        IDCT8
+Args:            
+  - PragmaType:      array_partition
+  - String:          ' '
+  - PragmaOptions:   'dim=1 type=complete  variable=_ZL8idct8_32'
+  - String:          ' '
+  - PragmaIsAuto:    '1'
+  - String:          ' '
+  - PragmaFunction:  IDCT8
+  - String:          ' '
+  - varLoc:          'src/transform_coeffs.h:181:0'
+  - String:          ' '
+  - PragmaSrcLoc:    'src/IDCT8.cpp:75:9'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 75, Column: 9 }
+  - VarName:         idct8_32
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-auto-array-partition
+Name:            AutoArrayXform
+DebugLoc:        { File: src/IDCT8.cpp, Line: 75, Column: 9 }
+Function:        IDCT8
+Args:            
+  - String:          'Inferring pragma '''
+  - PragmaType:      array_partition
+  - String:          ' type='
+  - Mode:            complete
+  - String:          ' dim='
+  - Dim:             '1'
+  - String:          ''' for array '''
+  - Name:            idct8_32
+  - String:          ''''
+  - String:          ' due to '
+  - String:          pipeline
+  - String:          ' pragma'
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/transform_coeffs.h, Line: 181, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZL8idct8_32
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/transform_coeffs.h, Line: 159, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZL8idct8_16
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-array-partition
+Name:            ArrayXform
+DebugLoc:        { File: src/transform_coeffs.h, Line: 145, Column: 0 }
+Function:        IDCT8
+Args:            
+  - String:          'Applying '
+  - String:          array_partition
+  - String:          ' to '''
+  - UOName:          _ZL7idct8_8
+  - String:          ''':'
+  - String:          ' '
+  - Mode:            Complete
+  - String:          ' partitioning'
+  - String:          ' on dimension '
+  - Dim:             '1'
+  - String:          .
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: src/IDCT8.cpp, Line: 260, Column: 20 }
+Function:        IDCT8
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '1024'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem0
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_260_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT8.cpp:260:20'
+  - String:          ' '
+  - Function:        IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: src/IDCT8.cpp, Line: 260, Column: 20 }
+Function:        IDCT8
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       reads
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '1024'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_260_1
+  - String:          '''('
+  - LoopLoc:         'src/IDCT8.cpp:260:20'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem0
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredVerboseSummary
+DebugLoc:        { File: src/IDCT8.cpp, Line: 260, Column: 20 }
+Function:        IDCT8
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '1024'
+  - String:          ' has been inferred.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+  - String:          ' _XLX_SEP_ '
+  - AccessID:        seq1
+  - ArrayName:       ''
+  - String:          ' '
+  - BundleName:      gmem1
+  - String:          ' '
+  - LoopName:        VITIS_LOOP_260_1
+  - String:          ' '
+  - LoopLoc:         'src/IDCT8.cpp:260:20'
+  - String:          ' '
+  - Function:        IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' '
+...
+--- !Passed
+Pass:            reflow-burst-summary
+Name:            BurstInferredSummary
+DebugLoc:        { File: src/IDCT8.cpp, Line: 260, Column: 20 }
+Function:        IDCT8
+Args:            
+  - String:          'Multiple burst '
+  - Direction:       writes
+  - String:          ' of '
+  - Length:          variable
+  - String:          ' length and bit width '
+  - Width:           '1024'
+  - String:          ' in loop '''
+  - LoopName:        VITIS_LOOP_260_1
+  - String:          '''('
+  - LoopLoc:         'src/IDCT8.cpp:260:20'
+  - String:          ')'
+  - String:          ' has been inferred on bundle '''
+  - BundleName:      gmem1
+  - String:          '''.'
+  - String:          ' These burst requests might be further partitioned into multiple requests during RTL generation, based on max_read_burst_length or max_write_burst_length settings.'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 278, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B32(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 163, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 298, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B16(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 117, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...
+--- !Missed
+Pass:            inline
+Name:            NeverInline
+DebugLoc:        { File: src/IDCT8.cpp, Line: 317, Column: 13 }
+Function:        IDCT8
+Args:            
+  - Callee:          'IDCT8B8(ap_int<32>*, ap_int<32>*, ap_int<32>, ap_int<32>, ap_int<32>, ap_int<32>)'
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 113, Column: 0 }
+  - String:          ' not inlined into '
+  - Caller:          IDCT8
+    DebugLoc:        { File: src/IDCT8.cpp, Line: 245, Column: 0 }
+  - String:          ' because it should never be inlined (cost=never)'
+...

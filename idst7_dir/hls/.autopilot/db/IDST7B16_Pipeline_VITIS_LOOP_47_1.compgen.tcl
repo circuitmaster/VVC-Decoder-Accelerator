@@ -616,14 +616,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 132 \
-    name empty_44 \
+    name empty_41 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_44 \
+    corename dc_empty_41 \
     op interface \
-    ports { empty_44 { I 1 vector } } \
+    ports { empty_41 { I 1 vector } } \
 } "
 }
 
@@ -661,14 +661,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 135 \
-    name empty_45 \
+    name empty_42 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_45 \
+    corename dc_empty_42 \
     op interface \
-    ports { empty_45 { I 28 vector } } \
+    ports { empty_42 { I 28 vector } } \
 } "
 }
 
@@ -691,14 +691,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 137 \
-    name empty_46 \
+    name empty_43 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_46 \
+    corename dc_empty_43 \
     op interface \
-    ports { empty_46 { I 29 vector } } \
+    ports { empty_43 { I 29 vector } } \
 } "
 }
 
@@ -706,14 +706,14 @@ eval "cg_default_interface_gen_dc { \
 if {${::AESL::PGuard_autoexp_gen}} {
 eval "cg_default_interface_gen_dc { \
     id 138 \
-    name empty_47 \
+    name empty_44 \
     type other \
     dir I \
     reset_level 1 \
     sync_rst true \
-    corename dc_empty_47 \
+    corename dc_empty_44 \
     op interface \
-    ports { empty_47 { I 30 vector } } \
+    ports { empty_44 { I 30 vector } } \
 } "
 }
 
