@@ -74,3 +74,9 @@ build/idctcomb.xo: ../src/IDCT_Com.cpp dctcomb-compile.cfg
 	-@mkdir -p $(@D)
 	-@$(RM) $@
 	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config dctcomb-compile.cfg -o"$@" "$<"
+
+build/idctcomb_mahir.xo: ../src/IDCT_Com.cpp dctcomb-compile-mahir.cfg
+	-@mkdir -p $(@D)
+	-@$(RM) $@
+	$(VPP) $(VPP_OPTS) -c --mode hls --config dctcomb-compile-mahir.cfg --work_dir ../dctcomb_dir/
+	vitis-run --mode hls --package --config dctcomb-compile-mahir.cfg --work_dir ../dctcomb_dir/
