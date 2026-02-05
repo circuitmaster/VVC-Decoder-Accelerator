@@ -29,7 +29,6 @@ Wed Jan 21 16:29:41 2026: SERVER: destructor for server bound to port 44195
 Wed Jan 21 16:29:41 2026: XCD main fifo: Good unlink of /tmp/xcdmainef5682bf-45c5-4fd0-8cc5-e71b1a5348e6
 Wed Jan 21 16:29:41 2026: Server exiting with status 0.
 Wed Jan 21 16:29:41 2026: Closing log file.
-<<<<<<< HEAD
 Wed Jan 21 16:39:05 2026: Running xcd server. This server was built by gradle.
 Wed Jan 21 16:39:05 2026: Server was asked to start on port: '42765'
 Wed Jan 21 16:39:05 2026: Server is using token UUID: '2d0046d0-c7e9-4bad-b611-91a8ca8b482e'
@@ -61,5 +60,3 @@ Wed Jan 21 16:39:27 2026: SERVER: destructor for server bound to port 42765
 Wed Jan 21 16:39:27 2026: XCD main fifo: Good unlink of /tmp/xcdmain2d0046d0-c7e9-4bad-b611-91a8ca8b482e
 Wed Jan 21 16:39:27 2026: Server exiting with status 0.
 Wed Jan 21 16:39:27 2026: Closing log file.
-=======
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e

@@ -9,17 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:14 2026",
  "timestampMillis": "1769013554443",
  "buildStep": {
   "cmdId": "212ec26c-c9bd-4853-9a32-0a84db1f1a84",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:28 2026",
- "timestampMillis": "1769012968168",
- "buildStep": {
-  "cmdId": "275f6447-0ed8-4c21-b85f-b3fc9d922faf",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "name": "v++",
   "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/link.steps.log",
   "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --target sw_emu --link --config vvc_decoder-link.cfg -ovvc_decoder.xclbin ../Emulation-SW/build/idct2.xo ../Emulation-SW/build/idct8.xo ../Emulation-SW/build/idst7.xo ",
@@ -47,17 +40,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:14 2026",
  "timestampMillis": "1769013554444",
  "status": {
   "cmdId": "212ec26c-c9bd-4853-9a32-0a84db1f1a84",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:28 2026",
- "timestampMillis": "1769012968168",
- "status": {
-  "cmdId": "275f6447-0ed8-4c21-b85f-b3fc9d922faf",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_RUNNING"
  }
 }
@@ -65,13 +51,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:17 2026",
  "timestampMillis": "1769013557418",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:31 2026",
- "timestampMillis": "1769012971204",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
  "buildSummary": {
   "hardwarePlatform": "xilinx_u2_gen3x4_xdma_gc_2_202110_1.xpfm",
   "hardwareDsa": "hw.xsa",
@@ -156,13 +137,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:17 2026",
  "timestampMillis": "1769013557618",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:31 2026",
- "timestampMillis": "1769012971399",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
  "report": {
   "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/systemDiagramModel.json",
   "name": "",
@@ -175,17 +151,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:17 2026",
  "timestampMillis": "1769013557619",
  "buildStep": {
   "cmdId": "b597f89b-aca1-491d-9a5a-6a882bb0149a",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:31 2026",
- "timestampMillis": "1769012971400",
- "buildStep": {
-  "cmdId": "1eef6db6-aed4-46c5-9d95-574685118585",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "name": "regiongen",
   "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/vvc_decoder_regiongen.log",
   "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/../runtime/bin/regiongen_new -v -m /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/vvc_decoder.xml -r /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/vvc_decoder.rtd -t alg -o xcl_top",
@@ -208,17 +177,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:17 2026",
  "timestampMillis": "1769013557619",
  "status": {
   "cmdId": "b597f89b-aca1-491d-9a5a-6a882bb0149a",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:31 2026",
- "timestampMillis": "1769012971400",
- "status": {
-  "cmdId": "1eef6db6-aed4-46c5-9d95-574685118585",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_RUNNING"
  }
 }
@@ -226,17 +188,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:18 2026",
  "timestampMillis": "1769013558623",
  "status": {
   "cmdId": "b597f89b-aca1-491d-9a5a-6a882bb0149a",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:32 2026",
- "timestampMillis": "1769012972423",
- "status": {
-  "cmdId": "1eef6db6-aed4-46c5-9d95-574685118585",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_PASSED"
  }
 }
@@ -244,17 +199,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:18 2026",
  "timestampMillis": "1769013558626",
  "buildStep": {
   "cmdId": "f0051593-e8ba-4b48-8597-152914224015",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:32 2026",
- "timestampMillis": "1769012972426",
- "buildStep": {
-  "cmdId": "ab7b038d-0a19-4afe-934c-8c12d6369fec",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "name": "gcc",
   "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDST7/IDST7_kernel_gcc.log",
   "commandLine": "/tools/Xilinx/Vivado/2022.2/tps/lnx64/gcc-8.3.0/bin/gcc -I . -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../include -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../lnx64/tools/auto_cc/include -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2022.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2022.2/bin/../data/emulation/include -I /usr/include/x86_64-linux-gnu -std=c++14 -I /home/emre24/Desktop/vvc_proj_kernels/src -fPIC -g -c -DHLS_STREAM_THREAD_SAFE -MD -MT obj/IDST7.o -MP -MF obj/IDST7.Cd /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDST7/IDST7/cpu_sources/IDST7.cpp -o obj/IDST7.o",
@@ -298,17 +246,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:18 2026",
  "timestampMillis": "1769013558626",
  "status": {
   "cmdId": "f0051593-e8ba-4b48-8597-152914224015",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:32 2026",
- "timestampMillis": "1769012972427",
- "status": {
-  "cmdId": "ab7b038d-0a19-4afe-934c-8c12d6369fec",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_RUNNING"
  }
 }
@@ -316,17 +257,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:20 2026",
  "timestampMillis": "1769013560648",
  "status": {
   "cmdId": "f0051593-e8ba-4b48-8597-152914224015",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:34 2026",
- "timestampMillis": "1769012974569",
- "status": {
-  "cmdId": "ab7b038d-0a19-4afe-934c-8c12d6369fec",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_PASSED"
  }
 }
@@ -334,17 +268,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:20 2026",
  "timestampMillis": "1769013560649",
  "buildStep": {
   "cmdId": "aa073bd9-988b-4816-8fb4-3cfcc5e2337a",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:34 2026",
- "timestampMillis": "1769012974570",
- "buildStep": {
-  "cmdId": "ae317bf6-1e0e-4041-baf2-08c9d692ed6f",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "name": "ar",
   "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDST7/IDST7_ar.log",
   "commandLine": "/tools/Xilinx/Vivado/2022.2/tps/lnx64/binutils-2.26/bin/ar -cr /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDST7/IDST7.csim_cu.a /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDST7/obj/IDST7.o",
@@ -361,17 +288,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:20 2026",
  "timestampMillis": "1769013560649",
  "status": {
   "cmdId": "aa073bd9-988b-4816-8fb4-3cfcc5e2337a",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:34 2026",
- "timestampMillis": "1769012974570",
- "status": {
-  "cmdId": "ae317bf6-1e0e-4041-baf2-08c9d692ed6f",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_RUNNING"
  }
 }
@@ -379,17 +299,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:20 2026",
  "timestampMillis": "1769013560669",
  "status": {
   "cmdId": "aa073bd9-988b-4816-8fb4-3cfcc5e2337a",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:34 2026",
- "timestampMillis": "1769012974591",
- "status": {
-  "cmdId": "ae317bf6-1e0e-4041-baf2-08c9d692ed6f",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_PASSED"
  }
 }
@@ -397,17 +310,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:20 2026",
  "timestampMillis": "1769013560672",
  "buildStep": {
   "cmdId": "1ce7880c-96e8-4f50-8831-50d7b588852d",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:34 2026",
- "timestampMillis": "1769012974593",
- "buildStep": {
-  "cmdId": "44dbb9ec-bf1b-4234-a821-6f421b9f4c38",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "name": "gcc",
   "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDCT8/IDCT8_kernel_gcc.log",
   "commandLine": "/tools/Xilinx/Vivado/2022.2/tps/lnx64/gcc-8.3.0/bin/gcc -I . -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../include -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../lnx64/tools/auto_cc/include -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2022.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2022.2/bin/../data/emulation/include -I /usr/include/x86_64-linux-gnu -std=c++14 -I /home/emre24/Desktop/vvc_proj_kernels/src -fPIC -g -c -DHLS_STREAM_THREAD_SAFE -MD -MT obj/IDCT8.o -MP -MF obj/IDCT8.Cd /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT8/IDCT8/cpu_sources/IDCT8.cpp -o obj/IDCT8.o",
@@ -451,17 +357,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:20 2026",
  "timestampMillis": "1769013560672",
  "status": {
   "cmdId": "1ce7880c-96e8-4f50-8831-50d7b588852d",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:34 2026",
- "timestampMillis": "1769012974594",
- "status": {
-  "cmdId": "44dbb9ec-bf1b-4234-a821-6f421b9f4c38",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_RUNNING"
  }
 }
@@ -469,17 +368,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:22 2026",
  "timestampMillis": "1769013562659",
  "status": {
   "cmdId": "1ce7880c-96e8-4f50-8831-50d7b588852d",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:36 2026",
- "timestampMillis": "1769012976614",
- "status": {
-  "cmdId": "44dbb9ec-bf1b-4234-a821-6f421b9f4c38",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_PASSED"
  }
 }
@@ -487,17 +379,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:22 2026",
  "timestampMillis": "1769013562661",
  "buildStep": {
   "cmdId": "662d2cc6-4173-44db-8cd9-74513b161bc4",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:36 2026",
- "timestampMillis": "1769012976615",
- "buildStep": {
-  "cmdId": "d614c018-1440-4adb-9ea5-f622d7202104",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "name": "ar",
   "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDCT8/IDCT8_ar.log",
   "commandLine": "/tools/Xilinx/Vivado/2022.2/tps/lnx64/binutils-2.26/bin/ar -cr /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDCT8/IDCT8.csim_cu.a /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDCT8/obj/IDCT8.o",
@@ -514,17 +399,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:22 2026",
  "timestampMillis": "1769013562661",
  "status": {
   "cmdId": "662d2cc6-4173-44db-8cd9-74513b161bc4",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:36 2026",
- "timestampMillis": "1769012976615",
- "status": {
-  "cmdId": "d614c018-1440-4adb-9ea5-f622d7202104",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_RUNNING"
  }
 }
@@ -532,17 +410,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:22 2026",
  "timestampMillis": "1769013562673",
  "status": {
   "cmdId": "662d2cc6-4173-44db-8cd9-74513b161bc4",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:36 2026",
- "timestampMillis": "1769012976634",
- "status": {
-  "cmdId": "d614c018-1440-4adb-9ea5-f622d7202104",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_PASSED"
  }
 }
@@ -550,17 +421,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:22 2026",
  "timestampMillis": "1769013562676",
  "buildStep": {
   "cmdId": "d4d21857-0cd4-48f5-8098-bd50d0441e2b",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:36 2026",
- "timestampMillis": "1769012976637",
- "buildStep": {
-  "cmdId": "3ccadcb6-31b4-48ba-90f7-ceff8e85a17e",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "name": "gcc",
   "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDCT2/IDCT2_kernel_gcc.log",
   "commandLine": "/tools/Xilinx/Vivado/2022.2/tps/lnx64/gcc-8.3.0/bin/gcc -I . -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../include -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../lnx64/tools/auto_cc/include -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2022.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2022.2/bin/../data/emulation/include -I /usr/include/x86_64-linux-gnu -std=c++14 -I /home/emre24/Desktop/vvc_proj_kernels/src -fPIC -g -c -DHLS_STREAM_THREAD_SAFE -MD -MT obj/IDCT2.o -MP -MF obj/IDCT2.Cd /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/xo/IDCT2/IDCT2/cpu_sources/IDCT2.cpp -o obj/IDCT2.o",
@@ -604,17 +468,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:22 2026",
  "timestampMillis": "1769013562677",
  "status": {
   "cmdId": "d4d21857-0cd4-48f5-8098-bd50d0441e2b",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:36 2026",
- "timestampMillis": "1769012976637",
- "status": {
-  "cmdId": "3ccadcb6-31b4-48ba-90f7-ceff8e85a17e",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_RUNNING"
  }
 }
@@ -622,17 +479,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:26 2026",
  "timestampMillis": "1769013566281",
  "status": {
   "cmdId": "d4d21857-0cd4-48f5-8098-bd50d0441e2b",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:40 2026",
- "timestampMillis": "1769012980274",
- "status": {
-  "cmdId": "3ccadcb6-31b4-48ba-90f7-ceff8e85a17e",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_PASSED"
  }
 }
@@ -640,17 +490,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:26 2026",
  "timestampMillis": "1769013566282",
  "buildStep": {
   "cmdId": "c59f4069-cf4a-4712-85b8-b60844665c7f",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:40 2026",
- "timestampMillis": "1769012980275",
- "buildStep": {
-  "cmdId": "3225bba8-bcbc-428f-acbc-7242e67e14f5",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "name": "ar",
   "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDCT2/IDCT2_ar.log",
   "commandLine": "/tools/Xilinx/Vivado/2022.2/tps/lnx64/binutils-2.26/bin/ar -cr /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDCT2/IDCT2.csim_cu.a /home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/IDCT2/obj/IDCT2.o",
@@ -667,17 +510,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:26 2026",
  "timestampMillis": "1769013566283",
  "status": {
   "cmdId": "c59f4069-cf4a-4712-85b8-b60844665c7f",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:40 2026",
- "timestampMillis": "1769012980275",
- "status": {
-  "cmdId": "3225bba8-bcbc-428f-acbc-7242e67e14f5",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_RUNNING"
  }
 }
@@ -685,17 +521,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:26 2026",
  "timestampMillis": "1769013566321",
  "status": {
   "cmdId": "c59f4069-cf4a-4712-85b8-b60844665c7f",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:40 2026",
- "timestampMillis": "1769012980319",
- "status": {
-  "cmdId": "3225bba8-bcbc-428f-acbc-7242e67e14f5",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_PASSED"
  }
 }
@@ -703,17 +532,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:26 2026",
  "timestampMillis": "1769013566322",
  "buildStep": {
   "cmdId": "e6528f0d-b69b-4ec8-8d45-fbb7e982ae31",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:40 2026",
- "timestampMillis": "1769012980321",
- "buildStep": {
-  "cmdId": "666110b8-fbff-457f-86c3-62dae1e63006",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "name": "g++",
   "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/vvc_decoder_xcl_top_gpp.log",
   "commandLine": "/tools/Xilinx/Vivado/2022.2/tps/lnx64/gcc-8.3.0/bin/g++ -I . -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../include -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2022.2/bin/../common/technology/autopilot/opencl -I /tools/Xilinx/Vitis/2022.2/bin/../data/emulation/include -I /tools/Xilinx/Vitis_HLS/2022.2/bin/../lnx64/tools/auto_cc/include -fPIC -g -DHLS_STREAM_THREAD_SAFE -std=c++14 -fpermissive -c -MD -MT obj/xcl_top.o -MP -MF obj/xcl_top.CXXd xcl_top.cpp -o obj/xcl_top.o",
@@ -754,17 +576,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:26 2026",
  "timestampMillis": "1769013566322",
  "status": {
   "cmdId": "e6528f0d-b69b-4ec8-8d45-fbb7e982ae31",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:40 2026",
- "timestampMillis": "1769012980321",
- "status": {
-  "cmdId": "666110b8-fbff-457f-86c3-62dae1e63006",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_RUNNING"
  }
 }
@@ -772,17 +587,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:27 2026",
  "timestampMillis": "1769013567362",
  "status": {
   "cmdId": "e6528f0d-b69b-4ec8-8d45-fbb7e982ae31",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:41 2026",
- "timestampMillis": "1769012981426",
- "status": {
-  "cmdId": "666110b8-fbff-457f-86c3-62dae1e63006",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_PASSED"
  }
 }
@@ -790,17 +598,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:27 2026",
  "timestampMillis": "1769013567363",
  "buildStep": {
   "cmdId": "818a286c-cdcc-4102-a52c-0d1c55ca0707",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:41 2026",
- "timestampMillis": "1769012981427",
- "buildStep": {
-  "cmdId": "f20d7185-97d5-4973-acd6-65d862326320",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "name": "g++",
   "logFile": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link/int/vvc_decoder_top_gpp.log",
   "commandLine": "/tools/Xilinx/Vivado/2022.2/tps/lnx64/gcc-8.3.0/bin/g++ -fPIC -DHLS_STREAM_THREAD_SAFE -std=c++14 -Wall -shared -Wl,--whole-archive,-soname,vvc_decoder.so -o vvc_decoder.so IDST7/IDST7.csim_cu.a IDCT8/IDCT8.csim_cu.a IDCT2/IDCT2.csim_cu.a obj/xcl_top.o -Wl,--no-whole-archive -Wl,--as-needed -L /tools/Xilinx/Vitis_HLS/2022.2/bin/../lib/lnx64.o -lhlsmathsim -L /tools/Xilinx/Vitis_HLS/2022.2/bin/../lnx64/tools/fpo_v7_1 -lgmp -lmpfr -lIp_floating_point_v7_1_bitacc_cmodel -Wl,-rpath,/tools/Xilinx/Vitis_HLS/2022.2/bin/../lnx64/tools/fpo_v7_1 -L /tools/Xilinx/Vitis_HLS/2022.2/bin/../lnx64/tools/fft_v9_1 -lIp_xfft_v9_1_bitacc_cmodel -L /tools/Xilinx/Vitis_HLS/2022.2/bin/../lnx64/tools/fir_v7_0 -lgmp -lIp_fir_compiler_v7_2_bitacc_cmodel -L /tools/Xilinx/Vitis_HLS/2022.2/bin/../lnx64/lib/csim -lhlsmc++-GCC46 -L /tools/Xilinx/Vivado/2022.2/tps/lnx64/gcc-8.3.0/bin/../lib/gcc/x86_64-pc-linux-gnu/6.2.0/ -lgcov",
@@ -850,17 +651,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:27 2026",
  "timestampMillis": "1769013567364",
  "status": {
   "cmdId": "818a286c-cdcc-4102-a52c-0d1c55ca0707",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:41 2026",
- "timestampMillis": "1769012981427",
- "status": {
-  "cmdId": "f20d7185-97d5-4973-acd6-65d862326320",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_RUNNING"
  }
 }
@@ -868,17 +662,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:27 2026",
  "timestampMillis": "1769013567611",
  "status": {
   "cmdId": "818a286c-cdcc-4102-a52c-0d1c55ca0707",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:41 2026",
- "timestampMillis": "1769012981676",
- "status": {
-  "cmdId": "f20d7185-97d5-4973-acd6-65d862326320",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_FAILED"
  }
 }
@@ -886,13 +673,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:27 2026",
  "timestampMillis": "1769013567613",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:41 2026",
- "timestampMillis": "1769012981678",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
  "report": {
   "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/logs/optraceViewer.html",
   "name": "",
@@ -905,17 +687,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:27 2026",
  "timestampMillis": "1769013567614",
  "status": {
   "cmdId": "212ec26c-c9bd-4853-9a32-0a84db1f1a84",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:41 2026",
- "timestampMillis": "1769012981679",
- "status": {
-  "cmdId": "275f6447-0ed8-4c21-b85f-b3fc9d922faf",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
   "state": "CS_FAILED"
  }
 }
@@ -923,13 +698,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:27 2026",
  "timestampMillis": "1769013567702",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:41 2026",
- "timestampMillis": "1769012981783",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
  "report": {
   "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/reports/link/link_guidance.html",
   "name": "",
@@ -942,13 +712,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
-<<<<<<< HEAD
  "dateTimestamp": "Wed Jan 21 16:39:27 2026",
  "timestampMillis": "1769013567703",
-=======
- "dateTimestamp": "Wed Jan 21 16:29:41 2026",
- "timestampMillis": "1769012981784",
->>>>>>> 82f818827f5e46867aa3c5d0c932fe146a3c124e
  "report": {
   "path": "/home/emre24/Desktop/vvc_proj_kernels/hw_link_emu_sw/vvc_decoder.build/link_guidance.pb3",
   "name": "",
