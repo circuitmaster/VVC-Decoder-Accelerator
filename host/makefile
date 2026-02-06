@@ -4,15 +4,18 @@
 
 # compiler tools
 XILINX_VITIS ?= /tools/Xilinx/Vitis/2022.2
+XILINX_XRT ?= /opt/xilinx/xrt
 
 HOST_CXX ?= g++
-EMCONFIGUTIL = ${XILINX_VITIS}/bin/emconfigutil --od .
 RM = rm -f
 RMDIR = rm -rf
 
+VITIS_PLATFORM = xilinx_u2_gen3x4_xdma_gc_2_202110_1
+VITIS_PLATFORM_PATH = $(VITIS_PLATFORM)
+
 # host compiler global settings
-CXXFLAGS += -std=c++1y -D__USE_XOPEN2K8  -I/tools/Xilinx/Vitis_HLS/2022.2/include/ -O0 -g -Wall -c -fmessage-length=0
-LDFLAGS +=  -lpthread -lstdc++ -Wl,-rpath-link
+CXXFLAGS += -std=c++1y -DVITIS_PLATFORM=$(VITIS_PLATFORM) -D__USE_XOPEN2K8 -I$(XILINX_XRT)/include/ -I/tools/Xilinx/Vitis_HLS/2022.2/include/ -O2 -g -Wall -c -fmessage-length=0
+LDFLAGS += -lxilinxopencl -lxrt_coreutil -lpthread -lrt -lstdc++ -L$(XILINX_XRT)/lib/ -Wl,-rpath-link,$(XILINX_XRT)/lib
 
 #
 # host files
@@ -24,9 +27,6 @@ HOST_OBJECTS += src/host.o
 HOST_EXE = main
 
 BUILD_SUBDIRS += src/
-
-EMCONFIG_FILE = emconfig.json
-
 #
 # primary build targets
 #
