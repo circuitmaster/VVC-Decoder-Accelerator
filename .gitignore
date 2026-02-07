@@ -53,6 +53,9 @@ hw_link/*.link_summary
 
 hw_link/*.ltx
 
+simulation/main
+host/main
+
 # ignore ./vitis_analyzer*
 vitis_analyzer*
 
@@ -63,6 +66,7 @@ vitis_analyzer*
 *.rpx
 *.xutil
 *.backup.log
+*.o
 
 # FPGA outputs
 *.xclbin

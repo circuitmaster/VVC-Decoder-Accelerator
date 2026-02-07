@@ -25,6 +25,7 @@ BINARY_CONTAINERS += vvc_decoder.xclbin
 
 BUILD_SUBDIRS += vvc_decoder.build
 vvc_decoder_OBJS += ../Hardware/build/idct2.xo
+vvc_decoder_OBJS += ../Hardware/build/idctcomb.xo
 #vvc_decoder_OBJS += ../Hardware/build/idct8.xo
 #vvc_decoder_OBJS += ../Hardware/build/idst7.xo
 

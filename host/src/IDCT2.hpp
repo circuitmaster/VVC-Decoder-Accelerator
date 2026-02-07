@@ -83,6 +83,44 @@ void IDCT2B8(ap_int<32> in[8], ap_int<32> out[8]){
     }
 }
 
+void IDCT2B8_eff(ap_int<32> in[8], ap_int<32> out[8]){
+    //#pragma HLS inline off
+
+    ap_int<32> evens[4];
+    ap_int<32> odds[4];
+    //#pragma HLS ARRAY_PARTITION variable=evens complete dim=0
+    //#pragma HLS ARRAY_PARTITION variable=odds complete dim=0
+
+    ap_int<32> inputs[4];
+    //#pragma HLS ARRAY_PARTITION variable=inputs complete dim=0
+    inputs[0] = in[0];
+    inputs[2] = in[4];
+    inputs[1] = in[2];
+    inputs[3] = in[6];
+
+    IDCT2B4(inputs, evens);
+
+    odds[0] = 89*in[1] + 75*in[3] + 50*in[5] + 18*in[7];
+    odds[1] = 75*in[1] - 18*in[3] - 89*in[5] - 50*in[7];
+    odds[2] = 50*in[1] - 89*in[3] + 18*in[5] + 75*in[7];
+    odds[3] = 18*in[1] - 50*in[3] + 75*in[5] - 89*in[7];
+
+    out[0] = evens[0] + odds[0];
+    out[1] = evens[1] + odds[1];
+    out[2] = evens[2] + odds[2];
+    out[3] = evens[3] + odds[3];
+    out[4] = evens[3] - odds[3];
+    out[5] = evens[2] - odds[2];
+    out[6] = evens[1] - odds[1];
+    out[7] = evens[0] - odds[0];
+
+    // print output
+    for(int i=0; i<8; i++){
+        //#pragma HLS UNROLL
+        std::cout << "Output " << i << ": " << out[i] << std::endl;
+    }
+}
+
 void IDCT2B16(ap_int<32> in[16], ap_int<32> out[16]){
     //#pragma HLS inline off
 

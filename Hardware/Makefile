@@ -3,13 +3,13 @@
 #
 
 # compiler tools
-#XILINX_VITIS ?= /tools/Xilinx/Vitis/2022.2
-XILINX_VITIS ?= /tools/Xilinx/Vitis/2024.2
+XILINX_VITIS ?= /tools/Xilinx/Vitis/2022.2
+#XILINX_VITIS ?= /tools/Xilinx/Vitis/2024.2
 XILINX_XRT ?= /opt/xilinx/xrt
-#XILINX_VIVADO ?= /tools/Xilinx/Vivado/2022.2
-XILINX_VIVADO ?= /tools/Xilinx/Vivado/2024.2
-#XILINX_HLS ?= $(XILINX_VITIS)/Vivado_HLS
-XILINX_HLS ?= /tools/Xilinx/Vitis/Vitis_HLS
+XILINX_VIVADO ?= /tools/Xilinx/Vivado/2022.2
+#XILINX_VIVADO ?= /tools/Xilinx/Vivado/2024.2
+XILINX_HLS ?= $(XILINX_VITIS)/Vivado_HLS
+#XILINX_HLS ?= /tools/Xilinx/Vitis/Vitis_HLS
 
 VPP ?= ${XILINX_VITIS}/bin/v++
 RM = rm -f
@@ -70,7 +70,7 @@ build/idst7.xo: ../src/IDST7.cpp dst7-compile.cfg
 	-@$(RM) $@
 	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config dst7-compile.cfg -o"$@" "$<"
 
-build/idctcomb.xo: ../src/IDCT_Com.cpp dctcomb-compile.cfg
+build/idctcomb.xo: ../src/IDCT_Comb.cpp dctcomb-compile.cfg
 	-@mkdir -p $(@D)
 	-@$(RM) $@
 	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config dctcomb-compile.cfg -o"$@" "$<"
