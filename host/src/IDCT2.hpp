@@ -77,10 +77,10 @@ void IDCT2B8(ap_int<32> in[8], ap_int<32> out[8]){
     out[7] = evens[0] - odds[0];
 
     // print output
-    for(int i=0; i<8; i++){
+    /* for(int i=0; i<8; i++){
         //#pragma HLS UNROLL
         std::cout << "Output " << i << ": " << out[i] << std::endl;
-    }
+    } */
 }
 
 void IDCT2B8_eff(ap_int<32> in[8], ap_int<32> out[8]){
@@ -505,7 +505,7 @@ extern "C" void IDCT2(ap_int<1024>* in, ap_int<1024>* in2, ap_int<1024>* out, ap
             for(int j=0; j<8; j++){
                 //#pragma HLS UNROLL
                 in_data[j] = in_block.range((j+1)*32-1, j*32);
-                std::cout << "in_data[" << j << "] = " << in_data[j] << std::endl;
+                //std::cout << "in_data[" << j << "] = " << in_data[j] << std::endl;
             }
 
             IDCT2B8(in_data, out_data);
@@ -575,7 +575,7 @@ extern "C" void IDCT2(ap_int<1024>* in, ap_int<1024>* in2, ap_int<1024>* out, ap
             //#pragma HLS UNROLL
             ap_int<32> tmp1 = CLIP3(((out_data_a[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
             ap_int<32> tmp2 = CLIP3(((out_data_b[j]+add) >> shift), ap_int<32>(outputMinimum), ap_int<32>(outputMaximum));
-            std::cout << "out_data_a[" << j << "] = " << out_data_a[j] << ", tmp1 = " << tmp1 << std::endl;
+            //std::cout << "out_data_a[" << j << "] = " << out_data_a[j] << ", tmp1 = " << tmp1 << std::endl;
             out_block.range((j+1)*32-1, j*32) = tmp1.range(31, 0);
             out_block2.range((j+1)*32-1, j*32) = tmp2.range(31, 0);
         }

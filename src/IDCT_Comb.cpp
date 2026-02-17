@@ -11,7 +11,7 @@ int CLIP3(ap_int<32> outputMinimum, ap_int<32> outputMaximum, ap_int<32> x){
 }
 
 void INV_MATMUL_8(const ap_int<32> src[8], ap_int<32> dst[8], ap_int<32> shift,
-                ap_int<32> skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const ap_int<32> m[8][8]) {
+                ap_int<32> skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const ap_int<8> m[8][8]) {
     #pragma HLS inline off
 
     const ap_int<32> rndFactor = ap_int<32>(1) << (shift - 1);
@@ -37,7 +37,7 @@ void INV_MATMUL_8(const ap_int<32> src[8], ap_int<32> dst[8], ap_int<32> shift,
 }
 
 void INV_MATMUL_16(const ap_int<32> src[16], ap_int<32> dst[16], ap_int<32> shift,
-                ap_int<32> skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const ap_int<32> m[16][16]) {
+                ap_int<32> skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const ap_int<8> m[16][16]) {
     #pragma HLS inline off
 
     const ap_int<32> rndFactor = ap_int<32>(1) << (shift - 1);
@@ -64,7 +64,7 @@ void INV_MATMUL_16(const ap_int<32> src[16], ap_int<32> dst[16], ap_int<32> shif
 }
 
 void INV_MATMUL_32(const ap_int<32> src[32], ap_int<32> dst[32], ap_int<32> shift,
-                ap_int<32> skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const ap_int<32> m[32][32]) {
+                ap_int<32> skipInLines, ap_int<32> outputMinimum, ap_int<32> outputMaximum, const ap_int<8> m[32][32]) {
     #pragma HLS inline off
 
     const ap_int<32> rndFactor = ap_int<32>(1) << (shift - 1);

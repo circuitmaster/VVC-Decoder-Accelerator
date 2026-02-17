@@ -9,10 +9,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sat Feb  7 00:51:14 2026",
- "timestampMillis": "1770425474668",
+ "dateTimestamp": "Sat Feb  7 12:43:44 2026",
+ "timestampMillis": "1770468224924",
  "buildStep": {
-  "cmdId": "53a8c6a3-65ab-4398-a738-94c052d6c982",
+  "cmdId": "653a8917-60c7-4c77-9316-bdfa4e1cfc6d",
   "name": "v++",
   "logFile": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/link.steps.log",
   "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/v++ --xp vivado_param:project.ensureVersalHasCIPS=false --xp vivado_param:bd.enableAutoConnectionsInNoc=1 --xp vivado_param:constr.restoreXDEFConstraintsASTCL=1 --xp vivado_param:ips.enableSLRParameter=4  --vivado.prop \"run.__KERNEL__.{STEPS.SYNTH_DESIGN.ARGS.MORE OPTIONS}={-directive sdx_optimization_effort_high}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_route_design_summary steps {route_design} runs {impl_1} options {-max_paths 10}\" --advanced.misc \"report=type report_timing_summary name impl_report_timing_summary_post_route_phys_opt_design_summary steps {post_route_phys_opt_design} runs {impl_1} options {-max_paths 10}\" --target hw --link --config vvc_decoder-link.cfg -ovvc_decoder.xsa ../Hardware/build/idct2.xo ../Hardware/build/idctcomb.xo ",
@@ -47,10 +47,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 00:51:14 2026",
- "timestampMillis": "1770425474668",
+ "dateTimestamp": "Sat Feb  7 12:43:44 2026",
+ "timestampMillis": "1770468224924",
  "status": {
-  "cmdId": "53a8c6a3-65ab-4398-a738-94c052d6c982",
+  "cmdId": "653a8917-60c7-4c77-9316-bdfa4e1cfc6d",
   "state": "CS_RUNNING"
  }
 }
@@ -58,8 +58,8 @@
 <ENTRY>
 {
  "type": "ET_FlowMetaData",
- "dateTimestamp": "Sat Feb  7 00:51:17 2026",
- "timestampMillis": "1770425477049",
+ "dateTimestamp": "Sat Feb  7 12:43:47 2026",
+ "timestampMillis": "1770468227512",
  "buildSummary": {
   "hardwarePlatform": "xilinx_vck5000_gen4x8_qdma_2_202220_1.xpfm",
   "hardwareDsa": "",
@@ -125,10 +125,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 00:51:17 2026",
- "timestampMillis": "1770425477165",
+ "dateTimestamp": "Sat Feb  7 12:43:47 2026",
+ "timestampMillis": "1770468227633",
  "buildStep": {
-  "cmdId": "460613de-d3c2-49b3-adb1-f45873862e43",
+  "cmdId": "e49f4917-b31d-41db-9e24-124eb786679d",
   "name": "system_link",
   "logFile": "",
   "commandLine": "system_link --xo /home/emre24/Documents/repos/VVC-Decoder-Accelerator/Hardware/build/idct2.xo --xo /home/emre24/Documents/repos/VVC-Decoder-Accelerator/Hardware/build/idctcomb.xo -keep --config /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/syslinkConfig.ini --xpfm /opt/xilinx/platforms/xilinx_vck5000_gen4x8_qdma_2_202220_1/xilinx_vck5000_gen4x8_qdma_2_202220_1.xpfm --target hw --output_dir /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int --temp_dir /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/sys_link",
@@ -162,10 +162,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 00:51:17 2026",
- "timestampMillis": "1770425477166",
+ "dateTimestamp": "Sat Feb  7 12:43:47 2026",
+ "timestampMillis": "1770468227633",
  "status": {
-  "cmdId": "460613de-d3c2-49b3-adb1-f45873862e43",
+  "cmdId": "e49f4917-b31d-41db-9e24-124eb786679d",
   "state": "CS_RUNNING"
  }
 }
@@ -173,10 +173,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 00:51:24 2026",
- "timestampMillis": "1770425484973",
+ "dateTimestamp": "Sat Feb  7 12:43:56 2026",
+ "timestampMillis": "1770468236161",
  "status": {
-  "cmdId": "460613de-d3c2-49b3-adb1-f45873862e43",
+  "cmdId": "e49f4917-b31d-41db-9e24-124eb786679d",
   "state": "CS_PASSED"
  }
 }
@@ -184,10 +184,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 00:51:24 2026",
- "timestampMillis": "1770425484975",
+ "dateTimestamp": "Sat Feb  7 12:43:56 2026",
+ "timestampMillis": "1770468236162",
  "buildStep": {
-  "cmdId": "f6992995-a474-4aec-8e27-33a83adbd027",
+  "cmdId": "547abc32-3301-45fb-84f5-d03d91f3ae41",
   "name": "cf2sw",
   "logFile": "",
   "commandLine": "cf2sw -sdsl /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/sdsl.dat -rtd /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/cf2sw.rtd -nofilter /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/cf2sw_full.rtd -xclbin /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/xclbin_orig.xml -o /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/xclbin_orig.1.xml",
@@ -211,10 +211,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 00:51:24 2026",
- "timestampMillis": "1770425484975",
+ "dateTimestamp": "Sat Feb  7 12:43:56 2026",
+ "timestampMillis": "1770468236163",
  "status": {
-  "cmdId": "f6992995-a474-4aec-8e27-33a83adbd027",
+  "cmdId": "547abc32-3301-45fb-84f5-d03d91f3ae41",
   "state": "CS_RUNNING"
  }
 }
@@ -222,10 +222,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 00:51:26 2026",
- "timestampMillis": "1770425486921",
+ "dateTimestamp": "Sat Feb  7 12:43:58 2026",
+ "timestampMillis": "1770468238245",
  "status": {
-  "cmdId": "f6992995-a474-4aec-8e27-33a83adbd027",
+  "cmdId": "547abc32-3301-45fb-84f5-d03d91f3ae41",
   "state": "CS_PASSED"
  }
 }
@@ -233,10 +233,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 00:51:26 2026",
- "timestampMillis": "1770425486953",
+ "dateTimestamp": "Sat Feb  7 12:43:58 2026",
+ "timestampMillis": "1770468238284",
  "buildStep": {
-  "cmdId": "95baba96-abdb-4dc4-967a-19a5a8d23256",
+  "cmdId": "15c17bbc-7b56-40d7-bbb7-aa079a2a5f2a",
   "name": "rtd2_system_diagram",
   "logFile": "",
   "commandLine": "rtd2SystemDiagram",
@@ -249,10 +249,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 00:51:26 2026",
- "timestampMillis": "1770425486953",
+ "dateTimestamp": "Sat Feb  7 12:43:58 2026",
+ "timestampMillis": "1770468238284",
  "status": {
-  "cmdId": "95baba96-abdb-4dc4-967a-19a5a8d23256",
+  "cmdId": "15c17bbc-7b56-40d7-bbb7-aa079a2a5f2a",
   "state": "CS_RUNNING"
  }
 }
@@ -260,8 +260,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 00:51:27 2026",
- "timestampMillis": "1770425487083",
+ "dateTimestamp": "Sat Feb  7 12:43:58 2026",
+ "timestampMillis": "1770468238440",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/systemDiagramModel.json",
   "name": "",
@@ -274,10 +274,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 00:51:27 2026",
- "timestampMillis": "1770425487084",
+ "dateTimestamp": "Sat Feb  7 12:43:58 2026",
+ "timestampMillis": "1770468238440",
  "status": {
-  "cmdId": "95baba96-abdb-4dc4-967a-19a5a8d23256",
+  "cmdId": "15c17bbc-7b56-40d7-bbb7-aa079a2a5f2a",
   "state": "CS_PASSED"
  }
 }
@@ -285,10 +285,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 00:51:27 2026",
- "timestampMillis": "1770425487085",
+ "dateTimestamp": "Sat Feb  7 12:43:58 2026",
+ "timestampMillis": "1770468238442",
  "buildStep": {
-  "cmdId": "fccabd7c-e787-4c30-9ead-61286c103e88",
+  "cmdId": "9755f700-f332-487a-80cd-71b623babc05",
   "name": "vpl",
   "logFile": "",
   "commandLine": "vpl -t hw -f /opt/xilinx/platforms/xilinx_vck5000_gen4x8_qdma_2_202220_1/xilinx_vck5000_gen4x8_qdma_2_202220_1.xpfm -s --remote_ip_cache /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/.ipcache --output_dir /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int --log_dir /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/logs/link --report_dir /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link --config /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vplConfig.ini -k /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link --no-info --iprepo /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDCTComb_1_0 --iprepo /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDCT2_1_0 --messageDb /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/run_link/vpl.pb /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/dr.bd.tcl",
@@ -336,10 +336,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 00:51:27 2026",
- "timestampMillis": "1770425487086",
+ "dateTimestamp": "Sat Feb  7 12:43:58 2026",
+ "timestampMillis": "1770468238442",
  "status": {
-  "cmdId": "fccabd7c-e787-4c30-9ead-61286c103e88",
+  "cmdId": "9755f700-f332-487a-80cd-71b623babc05",
   "state": "CS_RUNNING"
  }
 }
@@ -347,10 +347,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sat Feb  7 00:51:27 2026",
- "timestampMillis": "1770425487836",
+ "dateTimestamp": "Sat Feb  7 12:43:59 2026",
+ "timestampMillis": "1770468239213",
  "buildStep": {
-  "cmdId": "1ff220dc-eec2-492f-9fc0-b960bed2d3c2",
+  "cmdId": "0c5b118f-8f2d-4270-9813-2a15973fd039",
   "name": "vpl",
   "logFile": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/link.steps.log",
   "commandLine": "/tools/Xilinx/Vitis/2022.2/bin/unwrapped/lnx64.o/vpl -t hw -f /opt/xilinx/platforms/xilinx_vck5000_gen4x8_qdma_2_202220_1/xilinx_vck5000_gen4x8_qdma_2_202220_1.xpfm -s --remote_ip_cache /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/.ipcache --output_dir /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int --log_dir /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/logs/link --report_dir /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link --config /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vplConfig.ini -k /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/kernel_info.dat --webtalk_flag Vitis --temp_dir /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link --no-info --iprepo /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDCTComb_1_0 --iprepo /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/xo/ip_repo/xilinx_com_hls_IDCT2_1_0 --messageDb /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/run_link/vpl.pb /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/dr.bd.tcl ",
@@ -363,10 +363,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 00:51:27 2026",
- "timestampMillis": "1770425487836",
+ "dateTimestamp": "Sat Feb  7 12:43:59 2026",
+ "timestampMillis": "1770468239213",
  "status": {
-  "cmdId": "1ff220dc-eec2-492f-9fc0-b960bed2d3c2",
+  "cmdId": "0c5b118f-8f2d-4270-9813-2a15973fd039",
   "state": "CS_RUNNING"
  }
 }
@@ -374,8 +374,8 @@
 <ENTRY>
 {
  "type": "ET_VivadoProject",
- "dateTimestamp": "Sat Feb  7 00:51:30 2026",
- "timestampMillis": "1770425490843",
+ "dateTimestamp": "Sat Feb  7 12:44:02 2026",
+ "timestampMillis": "1770468242597",
  "vivadoProject": {
   "openDir": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/vivado/vpl",
   "openScript": "openprj.tcl",
@@ -386,10 +386,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 00:51:30 2026",
- "timestampMillis": "1770425490844",
+ "dateTimestamp": "Sat Feb  7 12:44:02 2026",
+ "timestampMillis": "1770468242598",
  "buildStep": {
-  "cmdId": "5de5c3fc-eb86-4963-afb2-ab06a97b1edb",
+  "cmdId": "7aeffa88-2b82-4d64-af07-18733556f7a1",
   "name": "vivado",
   "logFile": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/vivado/vpl/vivado.log",
   "commandLine": "vivado -log vivado.log -applog -m64 -messageDb vivado.pb -mode batch -source vpl.tcl -notrace",
@@ -414,10 +414,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 00:51:30 2026",
- "timestampMillis": "1770425490844",
+ "dateTimestamp": "Sat Feb  7 12:44:02 2026",
+ "timestampMillis": "1770468242598",
  "status": {
-  "cmdId": "5de5c3fc-eb86-4963-afb2-ab06a97b1edb",
+  "cmdId": "7aeffa88-2b82-4d64-af07-18733556f7a1",
   "state": "CS_RUNNING"
  }
 }
@@ -425,8 +425,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 00:51:52 2026",
- "timestampMillis": "1770425512008",
+ "dateTimestamp": "Sat Feb  7 12:44:23 2026",
+ "timestampMillis": "1770468263092",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/debug_ip_layout.rtd",
   "name": "",
@@ -439,8 +439,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 00:51:52 2026",
- "timestampMillis": "1770425512027",
+ "dateTimestamp": "Sat Feb  7 12:44:23 2026",
+ "timestampMillis": "1770468263109",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/automation_summary_update_bd.txt",
   "name": "",
@@ -453,10 +453,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sat Feb  7 01:08:08 2026",
- "timestampMillis": "1770426488962",
+ "dateTimestamp": "Sat Feb  7 13:00:30 2026",
+ "timestampMillis": "1770469230732",
  "buildStep": {
-  "cmdId": "76449ac6-240b-456b-a8d8-5d8bf0dc3b1b",
+  "cmdId": "60047951-d412-4e2d-83f4-ed536d01b466",
   "name": "vivado.impl",
   "logFile": "",
   "commandLine": "",
@@ -469,10 +469,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 01:08:08 2026",
- "timestampMillis": "1770426488963",
+ "dateTimestamp": "Sat Feb  7 13:00:30 2026",
+ "timestampMillis": "1770469230733",
  "status": {
-  "cmdId": "76449ac6-240b-456b-a8d8-5d8bf0dc3b1b",
+  "cmdId": "60047951-d412-4e2d-83f4-ed536d01b466",
   "state": "CS_RUNNING"
  }
 }
@@ -480,10 +480,10 @@
 <ENTRY>
 {
  "type": "ET_CmdStep",
- "dateTimestamp": "Sat Feb  7 01:08:08 2026",
- "timestampMillis": "1770426488963",
+ "dateTimestamp": "Sat Feb  7 13:00:30 2026",
+ "timestampMillis": "1770469230733",
  "buildStep": {
-  "cmdId": "2501beff-7c80-4b9b-bafa-45b88e59e458",
+  "cmdId": "4db116a6-ac39-44d7-9b7f-6dcfeef2cb70",
   "name": "vivado.impl.impl_1",
   "logFile": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/vivado/vpl/prj/prj.runs/impl_1/runme.log",
   "commandLine": "",
@@ -496,10 +496,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 01:08:08 2026",
- "timestampMillis": "1770426488964",
+ "dateTimestamp": "Sat Feb  7 13:00:30 2026",
+ "timestampMillis": "1770469230733",
  "status": {
-  "cmdId": "2501beff-7c80-4b9b-bafa-45b88e59e458",
+  "cmdId": "4db116a6-ac39-44d7-9b7f-6dcfeef2cb70",
   "state": "CS_RUNNING"
  }
 }
@@ -507,8 +507,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:13:10 2026",
- "timestampMillis": "1770430390122",
+ "dateTimestamp": "Sat Feb  7 14:06:10 2026",
+ "timestampMillis": "1770473170917",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/vivado/vpl/prj/prj.runs/impl_1/system_diagram.json",
   "name": "",
@@ -521,8 +521,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:13:51 2026",
- "timestampMillis": "1770430431145",
+ "dateTimestamp": "Sat Feb  7 14:06:53 2026",
+ "timestampMillis": "1770473213896",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/kernel_service.json",
   "name": "",
@@ -535,8 +535,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:13:51 2026",
- "timestampMillis": "1770430431147",
+ "dateTimestamp": "Sat Feb  7 14:06:53 2026",
+ "timestampMillis": "1770473213900",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/kernel_service.pb",
   "name": "",
@@ -549,8 +549,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:15:30 2026",
- "timestampMillis": "1770430530393",
+ "dateTimestamp": "Sat Feb  7 14:08:41 2026",
+ "timestampMillis": "1770473321753",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/vivado/vpl/prj/prj.runs/impl_1/dr_timing_summary.rpt",
   "name": "",
@@ -563,10 +563,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897160",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763036",
  "status": {
-  "cmdId": "5de5c3fc-eb86-4963-afb2-ab06a97b1edb",
+  "cmdId": "7aeffa88-2b82-4d64-af07-18733556f7a1",
   "state": "CS_PASSED"
  }
 }
@@ -574,8 +574,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897194",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763075",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_full_util_synthed.pb",
   "name": "",
@@ -588,8 +588,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897195",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763077",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_full_util_synthed.rpt",
   "name": "",
@@ -602,8 +602,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897196",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763078",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_slr_util_routed.pb",
   "name": "",
@@ -616,8 +616,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897196",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763078",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_kernel_util_synthed.xutil",
   "name": "",
@@ -630,8 +630,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897197",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763079",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_slr_util_placed.pb",
   "name": "",
@@ -644,8 +644,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897197",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763080",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_kernel_util_routed.xutil",
   "name": "",
@@ -658,8 +658,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897197",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763080",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_full_util_routed.rpt",
   "name": "",
@@ -672,8 +672,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897198",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763081",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_full_util_routed.pb",
   "name": "",
@@ -686,8 +686,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897198",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763081",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_kernel_util_routed.rpt",
   "name": "",
@@ -700,8 +700,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897198",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763082",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_slr_util_placed.rpt",
   "name": "",
@@ -714,8 +714,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897199",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763082",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_kernel_util_placed.xutil",
   "name": "",
@@ -728,8 +728,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897199",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763083",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_kernel_util_synthed.rpt",
   "name": "",
@@ -742,8 +742,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897200",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763083",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_slr_util_routed.rpt",
   "name": "",
@@ -756,8 +756,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897200",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763084",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_kernel_util_placed.rpt",
   "name": "",
@@ -770,8 +770,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897209",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763095",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/syn/ulp_inst_0_IDCT2_1_0_synth_1_ulp_inst_0_IDCT2_1_0_utilization_synth.rpt",
   "name": "IDCT2",
@@ -784,66 +784,66 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897210",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763096",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_system_diagram.json",
   "name": "",
   "fileType": "JSON",
   "reportType": "SYSTEM_DIAGRAM_PLUS",
-  "cmdId": "2501beff-7c80-4b9b-bafa-45b88e59e458"
+  "cmdId": "4db116a6-ac39-44d7-9b7f-6dcfeef2cb70"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897212",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763102",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_xilinx_vck5000_gen4x8_qdma_2_202220_1_bb_locked_timing_summary_routed.rpt",
   "name": "",
   "fileType": "TEXT",
   "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
-  "cmdId": "2501beff-7c80-4b9b-bafa-45b88e59e458"
+  "cmdId": "4db116a6-ac39-44d7-9b7f-6dcfeef2cb70"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897213",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763107",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_xilinx_vck5000_gen4x8_qdma_2_202220_1_bb_locked_timing_summary_routed.rpx",
   "name": "",
   "fileType": "BINARY_PROTOBUF",
   "reportType": "GLOBAL_REPORT_TIMING_SUMMARY",
-  "cmdId": "2501beff-7c80-4b9b-bafa-45b88e59e458"
+  "cmdId": "4db116a6-ac39-44d7-9b7f-6dcfeef2cb70"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897213",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763108",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/imp/impl_1_xilinx_vck5000_gen4x8_qdma_2_202220_1_bb_locked_timing_summary_routed.rpv",
   "name": "",
   "fileType": "BINARY_PROTOBUF",
   "reportType": "GLOBAL_REPORT_TIMING_SUMMARY_CONCISE",
-  "cmdId": "2501beff-7c80-4b9b-bafa-45b88e59e458"
+  "cmdId": "4db116a6-ac39-44d7-9b7f-6dcfeef2cb70"
  }
 }
 </ENTRY>
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897272",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763174",
  "status": {
-  "cmdId": "1ff220dc-eec2-492f-9fc0-b960bed2d3c2",
+  "cmdId": "0c5b118f-8f2d-4270-9813-2a15973fd039",
   "state": "CS_PASSED"
  }
 }
@@ -851,10 +851,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897433",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763363",
  "status": {
-  "cmdId": "fccabd7c-e787-4c30-9ead-61286c103e88",
+  "cmdId": "9755f700-f332-487a-80cd-71b623babc05",
   "state": "CS_PASSED"
  }
 }
@@ -862,10 +862,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897479",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763408",
  "buildStep": {
-  "cmdId": "0e603583-8119-4fd7-a17e-399fde377f91",
+  "cmdId": "7282a78d-fe79-4a90-97a7-8cf4d91ece7d",
   "name": "rtdgen",
   "logFile": "",
   "commandLine": "rtdgen",
@@ -878,10 +878,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897480",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763408",
  "status": {
-  "cmdId": "0e603583-8119-4fd7-a17e-399fde377f91",
+  "cmdId": "7282a78d-fe79-4a90-97a7-8cf4d91ece7d",
   "state": "CS_RUNNING"
  }
 }
@@ -889,8 +889,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897522",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763453",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vvc_decoder_xml.rtd",
   "name": "",
@@ -903,10 +903,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897537",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763466",
  "buildStep": {
-  "cmdId": "5d806bfb-7cae-4582-9075-79cad8d917e4",
+  "cmdId": "d037eaa3-a0c1-4f8c-91ab-4b9936a5a55a",
   "name": "cf2sw",
   "logFile": "",
   "commandLine": "cf2sw -a /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/address_map.xml -sdsl /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/sdsl.dat -xclbin /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/xclbin_orig.xml -rtd /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vvc_decoder.rtd -o /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vvc_decoder.xml",
@@ -930,10 +930,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:17 2026",
- "timestampMillis": "1770431897537",
+ "dateTimestamp": "Sat Feb  7 14:32:43 2026",
+ "timestampMillis": "1770474763466",
  "status": {
-  "cmdId": "5d806bfb-7cae-4582-9075-79cad8d917e4",
+  "cmdId": "d037eaa3-a0c1-4f8c-91ab-4b9936a5a55a",
   "state": "CS_RUNNING"
  }
 }
@@ -941,10 +941,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899693",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766022",
  "status": {
-  "cmdId": "5d806bfb-7cae-4582-9075-79cad8d917e4",
+  "cmdId": "d037eaa3-a0c1-4f8c-91ab-4b9936a5a55a",
   "state": "CS_PASSED"
  }
 }
@@ -952,10 +952,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899694",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766023",
  "buildStep": {
-  "cmdId": "189c4084-be45-466a-add5-78238d7041e3",
+  "cmdId": "1472b770-5242-4185-a337-28964e13498f",
   "name": "rtdgen",
   "logFile": "",
   "commandLine": "writeSystemDiagram",
@@ -971,10 +971,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899694",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766023",
  "status": {
-  "cmdId": "189c4084-be45-466a-add5-78238d7041e3",
+  "cmdId": "1472b770-5242-4185-a337-28964e13498f",
   "state": "CS_RUNNING"
  }
 }
@@ -982,8 +982,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899698",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766032",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/systemDiagramModelSlrBaseAddress.json",
   "name": "",
@@ -996,10 +996,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899698",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766032",
  "status": {
-  "cmdId": "189c4084-be45-466a-add5-78238d7041e3",
+  "cmdId": "1472b770-5242-4185-a337-28964e13498f",
   "state": "CS_PASSED"
  }
 }
@@ -1007,10 +1007,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899698",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766033",
  "buildStep": {
-  "cmdId": "6176f703-0f96-46ce-b698-c69862fb9913",
+  "cmdId": "3e1a5195-fdfe-40f9-9771-6c4bed0f570f",
   "name": "rtdgen",
   "logFile": "",
   "commandLine": "writeAutomationSummary",
@@ -1025,10 +1025,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899699",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766033",
  "status": {
-  "cmdId": "6176f703-0f96-46ce-b698-c69862fb9913",
+  "cmdId": "3e1a5195-fdfe-40f9-9771-6c4bed0f570f",
   "state": "CS_RUNNING"
  }
 }
@@ -1036,8 +1036,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899701",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766036",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/automation_summary.txt",
   "name": "",
@@ -1050,10 +1050,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899701",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766037",
  "status": {
-  "cmdId": "6176f703-0f96-46ce-b698-c69862fb9913",
+  "cmdId": "3e1a5195-fdfe-40f9-9771-6c4bed0f570f",
   "state": "CS_PASSED"
  }
 }
@@ -1061,10 +1061,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899702",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766037",
  "status": {
-  "cmdId": "0e603583-8119-4fd7-a17e-399fde377f91",
+  "cmdId": "7282a78d-fe79-4a90-97a7-8cf4d91ece7d",
   "state": "CS_PASSED"
  }
 }
@@ -1072,10 +1072,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899704",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766041",
  "buildStep": {
-  "cmdId": "d9eb27d9-8b2f-45c4-a9d2-28090da3ecda",
+  "cmdId": "1bc9b3d5-15ea-41ed-a912-e4ac6836431c",
   "name": "xclbinutil",
   "logFile": "",
   "commandLine": "xclbinutil --add-section DEBUG_IP_LAYOUT:JSON:/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/debug_ip_layout.rtd --add-section BITSTREAM_PARTIAL_PDI:raw:/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/partial.pdi --force --target hw --key-value SYS:dfx_enable:true --add-section :JSON:/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vvc_decoder.rtd --append-section :JSON:/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/appendSection.rtd --add-section CLOCK_FREQ_TOPOLOGY:JSON:/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vvc_decoder_xml.rtd --add-section BUILD_METADATA:JSON:/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vvc_decoder_build.rtd --add-section EMBEDDED_METADATA:RAW:/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vvc_decoder.xml --add-section SYSTEM_METADATA:RAW:/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/systemDiagramModelSlrBaseAddress.json --key-value SYS:PlatformVBNV:xilinx_vck5000_gen4x8_qdma_2_202220_1 --output /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vvc_decoder.xclbin",
@@ -1114,10 +1114,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899704",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766042",
  "status": {
-  "cmdId": "d9eb27d9-8b2f-45c4-a9d2-28090da3ecda",
+  "cmdId": "1bc9b3d5-15ea-41ed-a912-e4ac6836431c",
   "state": "CS_RUNNING"
  }
 }
@@ -1125,10 +1125,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899827",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766183",
  "status": {
-  "cmdId": "d9eb27d9-8b2f-45c4-a9d2-28090da3ecda",
+  "cmdId": "1bc9b3d5-15ea-41ed-a912-e4ac6836431c",
   "state": "CS_PASSED"
  }
 }
@@ -1136,10 +1136,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899829",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766188",
  "buildStep": {
-  "cmdId": "b2a59e55-4c56-4977-86e1-53eb8df996e5",
+  "cmdId": "15a40e24-631c-491b-85ad-008758b1f4fd",
   "name": "xclbinutilinfo",
   "logFile": "",
   "commandLine": "xclbinutil --quiet --force --info /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vvc_decoder.xclbin.info --input /home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link/int/vvc_decoder.xclbin",
@@ -1159,10 +1159,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899829",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766188",
  "status": {
-  "cmdId": "b2a59e55-4c56-4977-86e1-53eb8df996e5",
+  "cmdId": "15a40e24-631c-491b-85ad-008758b1f4fd",
   "state": "CS_RUNNING"
  }
 }
@@ -1170,10 +1170,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:19 2026",
- "timestampMillis": "1770431899977",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766376",
  "status": {
-  "cmdId": "b2a59e55-4c56-4977-86e1-53eb8df996e5",
+  "cmdId": "15a40e24-631c-491b-85ad-008758b1f4fd",
   "state": "CS_PASSED"
  }
 }
@@ -1181,10 +1181,10 @@
 <ENTRY>
 {
  "type": "ET_SubCmdStep",
- "dateTimestamp": "Sat Feb  7 02:38:20 2026",
- "timestampMillis": "1770431900002",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766402",
  "buildStep": {
-  "cmdId": "7f185fda-8b70-4540-8bd8-8d14068d582f",
+  "cmdId": "0e0495af-6cdc-41a9-b668-ea7d86fe8c1b",
   "name": "generate_sc_driver",
   "logFile": "",
   "commandLine": "",
@@ -1197,10 +1197,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:20 2026",
- "timestampMillis": "1770431900002",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766402",
  "status": {
-  "cmdId": "7f185fda-8b70-4540-8bd8-8d14068d582f",
+  "cmdId": "0e0495af-6cdc-41a9-b668-ea7d86fe8c1b",
   "state": "CS_RUNNING"
  }
 }
@@ -1208,10 +1208,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:20 2026",
- "timestampMillis": "1770431900004",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766405",
  "status": {
-  "cmdId": "7f185fda-8b70-4540-8bd8-8d14068d582f",
+  "cmdId": "0e0495af-6cdc-41a9-b668-ea7d86fe8c1b",
   "state": "CS_PASSED"
  }
 }
@@ -1219,8 +1219,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:20 2026",
- "timestampMillis": "1770431900049",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766463",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/system_estimate_vvc_decoder.xtxt",
   "name": "",
@@ -1233,8 +1233,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:20 2026",
- "timestampMillis": "1770431900375",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766834",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/logs/optraceViewer.html",
   "name": "",
@@ -1247,10 +1247,10 @@
 <ENTRY>
 {
  "type": "ET_Status",
- "dateTimestamp": "Sat Feb  7 02:38:20 2026",
- "timestampMillis": "1770431900376",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766835",
  "status": {
-  "cmdId": "53a8c6a3-65ab-4398-a738-94c052d6c982",
+  "cmdId": "653a8917-60c7-4c77-9316-bdfa4e1cfc6d",
   "state": "CS_PASSED"
  }
 }
@@ -1258,8 +1258,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:20 2026",
- "timestampMillis": "1770431900443",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766914",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/reports/link/link_guidance.html",
   "name": "",
@@ -1272,8 +1272,8 @@
 <ENTRY>
 {
  "type": "ET_Report",
- "dateTimestamp": "Sat Feb  7 02:38:20 2026",
- "timestampMillis": "1770431900443",
+ "dateTimestamp": "Sat Feb  7 14:32:46 2026",
+ "timestampMillis": "1770474766915",
  "report": {
   "path": "/home/emre24/Documents/repos/VVC-Decoder-Accelerator/hw_link/vvc_decoder.build/link_guidance.pb3",
   "name": "",

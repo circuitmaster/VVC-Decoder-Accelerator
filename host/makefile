@@ -23,8 +23,10 @@ LDFLAGS += -lxilinxopencl -lxrt_coreutil -lpthread -lrt -lstdc++ -L$(XILINX_XRT)
 
 
 HOST_OBJECTS += src/host.o
+HOST2_OBJECTS += src/host2.o
 
 HOST_EXE = main
+HOST2_EXE = main2
 
 BUILD_SUBDIRS += src/
 #
@@ -32,10 +34,10 @@ BUILD_SUBDIRS += src/
 #
 
 .PHONY: all clean
-all:  $(HOST_EXE) $(EMCONFIG_FILE)
+all:  $(HOST_EXE) $(HOST2_EXE) $(EMCONFIG_FILE)
 
 clean:
-	-$(RM) $(HOST_EXE) $(HOST_OBJECTS)
+	-$(RM) $(HOST_EXE) $(HOST2_EXE) $(HOST_OBJECTS)
 
 .PHONY: incremental
 incremental: all
@@ -51,5 +53,12 @@ src/host.o: src/host.cpp
 	-@mkdir -p $(@D)
 	$(HOST_CXX) $(CXXFLAGS) -o "$@" "$<"
 
+src/host2.o: src/host2.cpp
+	-@mkdir -p $(@D)
+	$(HOST_CXX) $(CXXFLAGS) -o "$@" "$<"
+
 $(HOST_EXE): $(HOST_OBJECTS)
+	$(HOST_CXX) -o "$@" $(+) $(LDFLAGS)
+
+$(HOST2_EXE): $(HOST2_OBJECTS)
 	$(HOST_CXX) -o "$@" $(+) $(LDFLAGS)

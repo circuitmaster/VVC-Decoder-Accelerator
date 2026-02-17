@@ -9,6 +9,9 @@
 #include <sys/uio.h>
 #include <unistd.h>
 #include <vector>
+//#include <time.h>
+#include <cstdlib>
+#include <chrono>
 
 //#include "ap_fixed.h"
 //#include "ap_int.h"
@@ -39,6 +42,8 @@ static size_t align_to_4096(size_t bytes) {
 }
 
 int main(int argc, char **argv) {
+    // initialize random seed with time
+    std::srand(static_cast<unsigned int>(time(nullptr)));
     if (argc != 7) {
         std::cout << "Usage: " << argv[0]
                   << " <xclbin> <block_size> <size> <shift> <output_min> <output_max>" << std::endl;
@@ -93,7 +98,7 @@ int main(int argc, char **argv) {
             ap_int<1024> blk1 = 0;
             ap_int<1024> blk2 = 0;
             for (size_t i = 0; i < 32; ++i) {
-                ap_uint<32> val = 1;
+                ap_uint<32> val = static_cast<ap_uint<32>>(rand() % 100); // Random 16-bit value
                 blk1.range((i + 1) * 32 - 1, i * 32) = val.range(31, 0);//static_cast<int32_t>(b * 64 + i);
                 blk2.range((i + 1) * 32 - 1, i * 32) = val.range(31, 0);//static_cast<int32_t>(b * 64 + i + 1000);
             }
@@ -103,18 +108,39 @@ int main(int argc, char **argv) {
             input2_ptr[b] = blk2;
         }
 
+        // warm up run
+        auto run_warmup = kernel(input1_bo, input2_bo, output1_bo, output2_bo,
+                          block_size, static_cast<int>(blocks), shift, output_min, output_max);
+        run_warmup.wait();
+
+        // measure total time for data transfer + kernel execution + data transfer back
+        auto start = std::chrono::high_resolution_clock::now();
+
         input1_bo.sync(XCL_BO_SYNC_BO_TO_DEVICE);
-        input2_bo.sync(XCL_BO_SYNC_BO_TO_DEVICE);
+        if(block_size == 64) input2_bo.sync(XCL_BO_SYNC_BO_TO_DEVICE);
         
-        std::cout << "test4" << std::endl;
+        auto end_input = std::chrono::high_resolution_clock::now();
 
         // Launch kernel
         auto run = kernel(input1_bo, input2_bo, output1_bo, output2_bo,
                           block_size, static_cast<int>(blocks), shift, output_min, output_max);
         run.wait();
-        std::cout << "run finished" << std::endl;
+
+        auto end_kernel = std::chrono::high_resolution_clock::now();
+
+        //std::cout << "run finished" << std::endl;
         output1_bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
-        output2_bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
+        if(block_size == 64) output2_bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
+
+        auto end = std::chrono::high_resolution_clock::now();
+        std::chrono::duration<double> elapsed = end - start;
+        std::chrono::duration<double> input_time = end_input - start;
+        std::chrono::duration<double> kernel_time = end_kernel - end_input;
+        std::chrono::duration<double> output_time = end - end_kernel;
+        std::cout << "Total execution time (including data transfer): " << elapsed.count() << " seconds" << std::endl;
+        std::cout << "Input data transfer time: " << input_time.count() << " seconds" << std::endl;
+        std::cout << "Kernel execution time: " << kernel_time.count() << " seconds" << std::endl;
+        std::cout << "Output data transfer time: " << output_time.count() << " seconds" << std::endl;
 
         // Golden model execution
         std::vector<ap_int<1024>> golden_out1(blocks);
@@ -137,11 +163,11 @@ int main(int argc, char **argv) {
                               << " golden=" << golden1 << " hw=" << hw1 << std::endl;
                     mismatch = true;
                 }
-                /* if (static_cast<int64_t>(golden2) != static_cast<int64_t>(hw2)) {
+                if (block_size == 64 && static_cast<int64_t>(golden2) != static_cast<int64_t>(hw2)) {
                     std::cout << "Mismatch out2 block " << b << " elem " << i
                               << " golden=" << golden2 << " hw=" << hw2 << std::endl;
                     mismatch = true;
-                } */
+                }
             }
         }
 
@@ -152,7 +178,7 @@ int main(int argc, char **argv) {
         // Optional print of first block for quick inspection
         if (blocks > 0) {
             std::cout << "First block HW out1 values:" << std::endl;
-            for (size_t i = 0; i < 8; ++i) {
+            for (size_t i = 0; i < 32; ++i) {
                 uint32_t value = output1_ptr[0].range((i + 1) * 32 - 1, i * 32);
                 std::cout << "Value " << i << ": " << value << std::endl;
             }
