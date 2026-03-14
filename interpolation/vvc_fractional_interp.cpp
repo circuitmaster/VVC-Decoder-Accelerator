@@ -29,7 +29,7 @@ static acc_t fir_8tap(
     const coeff_t coeffs[NTAPS]
 ) {
 #pragma HLS INLINE
-#pragma HLS PIPELINE II=1
+//#pragma HLS PIPELINE II=1
 
     acc_t sum = 0;
 
@@ -50,76 +50,6 @@ static acc_t fir_8tap(
 // Corresponds to 8 parallel reconfigurable datapaths processing
 // one row in one clock cycle (paper Section III)
 // ============================================================
-static void filter_row_horizontal(
-    pixel_t row_in[REF_BLOCK_W],
-    acc_t   row_out[BLOCK_SIZE],
-    frac_t  frac_pos
-) {
-#pragma HLS INLINE off
-#pragma HLS PIPELINE II=1
-
-    coeff_t coeffs[NTAPS];
-#pragma HLS ARRAY_PARTITION variable=coeffs complete
-
-    // Load filter coefficients for this fractional position
-    LOAD_COEFF:
-    for (int t = 0; t < NTAPS; t++) {
-#pragma HLS UNROLL
-        coeffs[t] = LUMA_FILTER[frac_pos][t];
-    }
-
-    // Apply 8-tap filter at each of the 8 output positions
-    // This corresponds to the 8 parallel datapaths in Fig. 2
-    HFILT_COL:
-    for (int col = 0; col < BLOCK_SIZE; col++) {
-#pragma HLS UNROLL
-        pixel_t samples[NTAPS];
-#pragma HLS ARRAY_PARTITION variable=samples complete
-
-        // Gather 8 consecutive input samples starting at position col
-        GATHER_SAMPLES:
-        for (int t = 0; t < NTAPS; t++) {
-#pragma HLS UNROLL
-            samples[t] = row_in[col + t];
-        }
-
-        row_out[col] = fir_8tap(samples, coeffs);
-    }
-}
-
-// ============================================================
-// Vertical filtering of one column
-// Produces BLOCK_SIZE output pixels from (BLOCK_SIZE + NTAPS - 1) input values
-// ============================================================
-static void filter_col_vertical(
-    acc_t   col_in[REF_BLOCK_H],
-    acc_t   col_out[BLOCK_SIZE],
-    frac_t  frac_pos
-) {
-#pragma HLS INLINE off
-#pragma HLS PIPELINE II=1
-
-    coeff_t coeffs[NTAPS];
-#pragma HLS ARRAY_PARTITION variable=coeffs complete
-
-    LOAD_COEFF_V:
-    for (int t = 0; t < NTAPS; t++) {
-#pragma HLS UNROLL
-        coeffs[t] = LUMA_FILTER[frac_pos][t];
-    }
-
-    VFILT_ROW:
-    for (int row = 0; row < BLOCK_SIZE; row++) {
-#pragma HLS UNROLL
-        acc_t sum = 0;
-        VFILT_TAP:
-        for (int t = 0; t < NTAPS; t++) {
-#pragma HLS UNROLL
-            sum += col_in[row + t] * (acc_t)coeffs[t];
-        }
-        col_out[row] = sum;
-    }
-}
 
 // ============================================================
 // CASE 1: Integer position (frac_x == 0 && frac_y == 0)
