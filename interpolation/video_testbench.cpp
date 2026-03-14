@@ -1,43 +1,21 @@
 /**
  * ============================================================
  * VVC Fractional Interpolation — Real Video Testbench
+ * With Latency Instrumentation (µs) + YUV Output + Total Timer
  * ============================================================
  *
- * This testbench replicates the paper's testing methodology:
- *   - Reads real YUV 4:2:0 video frames (Tennis, Kimono, etc.)
- *   - Extracts 15x15 reference windows for each 8x8 block
- *   - Applies fractional interpolation with various MV fractions
- *   - Compares HLS output against software reference
- *   - Reports per-frame and overall pass/fail
+ * New in this version:
+ *   1. Writes interpolated frames to <input>_interp.yuv
+ *      Play: ffplay -f rawvideo -pix_fmt yuv420p -s WxH output.yuv
+ *         or: ffmpeg -f rawvideo -pix_fmt yuv420p -s WxH -r 25 -i out.yuv out.mp4
  *
- * The paper used:
- *   - Tennis (1920x1080) — JCT-VC Class B test sequence
- *   - Kimono (1920x1080) — JCT-VC Class B test sequence
- *   Reference: F. Bossen, "Common test conditions and software
- *              reference configurations", JCTVC-I1100, May 2012.
+ *   2. Total operation timer wraps everything (I/O + HLS + SW ref + write)
+ *      Reported in µs, ms, and seconds with per-frame and per-block averages.
  *
- * These are raw YUV 4:2:0 planar files. Only the Y (luma)
- * plane is used since the paper's hardware targets luma
- * interpolation with 8-tap filters.
- *
- * HOW TO GET TEST SEQUENCES:
- *   The standard JCTVC/JVET test sequences can be obtained from:
- *   - https://media.xiph.org/video/derf/  (some sequences)
- *   - Contact JVET/MPEG for official test sequences
- *   - Or use any raw YUV 4:2:0 file (e.g., from ffmpeg conversion)
- *
- *   To convert any video to raw YUV for testing:
- *     ffmpeg -i input.mp4 -pix_fmt yuv420p -frames:v 3 test.yuv
- *
- * USAGE:
- *   Compile: g++ -o tb vvc_fractional_interp.cpp video_testbench.cpp -I.
- *   Run:     ./tb <yuv_file> <width> <height> [num_frames]
- *
- *   Examples:
- *     ./tb Tennis_1920x1080.yuv    1920 1080 3
- *     ./tb Kimono_1920x1080.yuv   1920 1080 3
- *     ./tb BQTerrace_1920x1080.yuv 1920 1080 1
- *     ./tb foreman_352x288.yuv     352  288  5
+ * Latency levels:
+ *   - Per-block  : min / max / avg (HLS call only)
+ *   - Per-case   : integer / H-only / V-only / quarter-pel
+ *   - Per-frame  : totals and averages
  */
 
 #include <stdio.h>
@@ -47,16 +25,46 @@
 #include <time.h>
 #include "vvc_fractional_interp.h"
 
-// ============================================================
-// Configuration
-// ============================================================
-#define MARGIN           3     // Filter margin (NTAPS/2 - 1)
-#define MAX_WIDTH     3840     // Support up to 4K
-#define MAX_HEIGHT    2160
+#define MARGIN       3
+#define MAX_WIDTH  3840
+#define MAX_HEIGHT 2160
 
 // ============================================================
-// Software Reference (golden model)
-// Replicates InterpolationFilter::filter<8,...>() exactly
+// Timer (µs)
+// ============================================================
+static inline double now_us(void) {
+    struct timespec ts;
+    clock_gettime(CLOCK_MONOTONIC, &ts);
+    return (double)ts.tv_sec * 1e6 + (double)ts.tv_nsec / 1e3;
+}
+
+// ============================================================
+// Latency accumulator
+// ============================================================
+typedef struct {
+    double min_us, max_us, sum_us;
+    long   count;
+} LatencyStats;
+
+static void lat_init(LatencyStats *s) {
+    s->min_us = 1e18; s->max_us = 0.0; s->sum_us = 0.0; s->count = 0;
+}
+static void lat_record(LatencyStats *s, double us) {
+    if (us < s->min_us) s->min_us = us;
+    if (us > s->max_us) s->max_us = us;
+    s->sum_us += us; s->count++;
+}
+static double lat_avg(const LatencyStats *s) {
+    return s->count > 0 ? s->sum_us / s->count : 0.0;
+}
+static void lat_print(const char *label, const LatencyStats *s) {
+    if (s->count == 0) { printf("  %-22s  (no blocks)\n", label); return; }
+    printf("  %-22s  count=%7ld   min=%7.3f µs   avg=%7.3f µs   max=%7.3f µs\n",
+           label, s->count, s->min_us, lat_avg(s), s->max_us);
+}
+
+// ============================================================
+// Software Reference
 // ============================================================
 static const int SW_FILTER[NUM_FRAC_POS][NTAPS] = {
     {  0,  0,   0, 64,  0,   0,  0,  0 },
@@ -77,44 +85,10 @@ static const int SW_FILTER[NUM_FRAC_POS][NTAPS] = {
     {  0,  1,  -2,  4, 63,  -3,  1,  0 },
 };
 
-static inline int clip_sw(int val, int lo, int hi) {
-    return (val < lo) ? lo : (val > hi) ? hi : val;
+static inline int clip_sw(int v, int lo, int hi) {
+    return v < lo ? lo : v > hi ? hi : v;
 }
 
-/**
- * Software single-pass filter (horizontal or vertical)
- */
-static void sw_filter_1d(
-    unsigned char *frame, int stride,
-    int start_row, int start_col,
-    int out[BLOCK_SIZE],
-    int frac, int is_vertical
-) {
-    int samples[NTAPS];
-    for (int t = 0; t < NTAPS; t++) {
-        int r, c;
-        if (is_vertical) {
-            r = start_row + t - MARGIN;
-            c = start_col;
-        } else {
-            r = start_row;
-            c = start_col + t - MARGIN;
-        }
-        samples[t] = (int)frame[r * stride + c];
-    }
-
-    int sum = 0;
-    for (int t = 0; t < NTAPS; t++)
-        sum += samples[t] * SW_FILTER[frac][t];
-
-    int val = (sum + (1 << (FILTER_PREC - 1))) >> FILTER_PREC;
-    out[0] = clip_sw(val, 0, 255);
-}
-
-/**
- * Software reference: complete block interpolation
- * Matches the behavior of the HLS top function
- */
 static void sw_interp_block(
     unsigned char *frame, int stride,
     int block_row, int block_col,
@@ -122,457 +96,353 @@ static void sw_interp_block(
     int frac_x, int frac_y
 ) {
     if (frac_x == 0 && frac_y == 0) {
-        // Integer: direct copy
         for (int r = 0; r < BLOCK_SIZE; r++)
             for (int c = 0; c < BLOCK_SIZE; c++)
-                sw_out[r][c] = (int)frame[(block_row + r) * stride + (block_col + c)];
-    }
-    else if (frac_y == 0) {
-        // Horizontal only
-        for (int r = 0; r < BLOCK_SIZE; r++) {
+                sw_out[r][c] = frame[(block_row+r)*stride + (block_col+c)];
+    } else if (frac_y == 0) {
+        for (int r = 0; r < BLOCK_SIZE; r++)
             for (int c = 0; c < BLOCK_SIZE; c++) {
-                int samples[NTAPS];
-                for (int t = 0; t < NTAPS; t++)
-                    samples[t] = (int)frame[(block_row + r) * stride + (block_col + c + t - MARGIN)];
                 int sum = 0;
                 for (int t = 0; t < NTAPS; t++)
-                    sum += samples[t] * SW_FILTER[frac_x][t];
-                int val = (sum + (1 << (FILTER_PREC - 1))) >> FILTER_PREC;
-                sw_out[r][c] = clip_sw(val, 0, 255);
+                    sum += frame[(block_row+r)*stride+(block_col+c+t-MARGIN)]
+                           * SW_FILTER[frac_x][t];
+                sw_out[r][c] = clip_sw((sum+(1<<(FILTER_PREC-1)))>>FILTER_PREC,0,255);
             }
-        }
-    }
-    else if (frac_x == 0) {
-        // Vertical only
-        for (int r = 0; r < BLOCK_SIZE; r++) {
+    } else if (frac_x == 0) {
+        for (int r = 0; r < BLOCK_SIZE; r++)
             for (int c = 0; c < BLOCK_SIZE; c++) {
-                int samples[NTAPS];
-                for (int t = 0; t < NTAPS; t++)
-                    samples[t] = (int)frame[(block_row + r + t - MARGIN) * stride + (block_col + c)];
                 int sum = 0;
                 for (int t = 0; t < NTAPS; t++)
-                    sum += samples[t] * SW_FILTER[frac_y][t];
-                int val = (sum + (1 << (FILTER_PREC - 1))) >> FILTER_PREC;
-                sw_out[r][c] = clip_sw(val, 0, 255);
+                    sum += frame[(block_row+r+t-MARGIN)*stride+(block_col+c)]
+                           * SW_FILTER[frac_y][t];
+                sw_out[r][c] = clip_sw((sum+(1<<(FILTER_PREC-1)))>>FILTER_PREC,0,255);
             }
-        }
-    }
-    else {
-        // Quarter-pixel: two-pass
+    } else {
         const int headroom = INTERNAL_PREC - BIT_DEPTH;
-        const int shift1 = FILTER_PREC - headroom;
-        const int offset1 = (shift1 > 0) ? (1 << (shift1 - 1)) : 0;
-        const int shift2 = FILTER_PREC + headroom;
-        const int offset2 = (1 << (shift2 - 1));
-
-        // Pass 1: horizontal → intermediate (15 rows x 8 cols)
-        int intermediate[REF_BLOCK_H][BLOCK_SIZE];
-        for (int r = 0; r < REF_BLOCK_H; r++) {
-            for (int c = 0; c < BLOCK_SIZE; c++) {
-                int samples[NTAPS];
-                for (int t = 0; t < NTAPS; t++)
-                    samples[t] = (int)frame[(block_row + r - MARGIN) * stride
-                                            + (block_col + c + t - MARGIN)];
-                int sum = 0;
-                for (int t = 0; t < NTAPS; t++)
-                    sum += samples[t] * SW_FILTER[frac_x][t];
-                if (shift1 >= 0)
-                    intermediate[r][c] = (sum + offset1) >> shift1;
-                else
-                    intermediate[r][c] = sum << (-shift1);
-            }
-        }
-
-        // Pass 2: vertical → output (8 rows x 8 cols)
-        for (int r = 0; r < BLOCK_SIZE; r++) {
+        const int shift1   = FILTER_PREC - headroom;
+        const int offset1  = shift1 > 0 ? (1<<(shift1-1)) : 0;
+        const int shift2   = FILTER_PREC + headroom;
+        const int offset2  = 1 << (shift2-1);
+        int mid[REF_BLOCK_H][BLOCK_SIZE];
+        for (int r = 0; r < REF_BLOCK_H; r++)
             for (int c = 0; c < BLOCK_SIZE; c++) {
                 int sum = 0;
                 for (int t = 0; t < NTAPS; t++)
-                    sum += intermediate[r + t][c] * SW_FILTER[frac_y][t];
-                int val = (sum + offset2) >> shift2;
-                sw_out[r][c] = clip_sw(val, 0, 255);
+                    sum += frame[(block_row+r-MARGIN)*stride+(block_col+c+t-MARGIN)]
+                           * SW_FILTER[frac_x][t];
+                mid[r][c] = shift1>=0 ? (sum+offset1)>>shift1 : sum<<(-shift1);
             }
-        }
+        for (int r = 0; r < BLOCK_SIZE; r++)
+            for (int c = 0; c < BLOCK_SIZE; c++) {
+                int sum = 0;
+                for (int t = 0; t < NTAPS; t++)
+                    sum += mid[r+t][c] * SW_FILTER[frac_y][t];
+                sw_out[r][c] = clip_sw((sum+offset2)>>shift2, 0, 255);
+            }
     }
 }
 
-/**
- * Extract the 15x15 reference window from the frame for HLS input.
- * The window is centered at (block_row, block_col) with MARGIN=3
- * pixels of border on each side for the 8-tap filter.
- */
 static void extract_ref_window(
     unsigned char *frame, int stride,
     int block_row, int block_col,
     pixel_t ref_block[REF_BLOCK_H][REF_BLOCK_W]
 ) {
-    for (int r = 0; r < REF_BLOCK_H; r++) {
-        for (int c = 0; c < REF_BLOCK_W; c++) {
-            int fr = block_row + r - MARGIN;
-            int fc = block_col + c - MARGIN;
-            ref_block[r][c] = (pixel_t)frame[fr * stride + fc];
-        }
-    }
+    for (int r = 0; r < REF_BLOCK_H; r++)
+        for (int c = 0; c < REF_BLOCK_W; c++)
+            ref_block[r][c] = frame[(block_row+r-MARGIN)*stride+(block_col+c-MARGIN)];
 }
 
 // ============================================================
 // Motion vector generation
-// Simulates realistic motion vectors for testing.
-// In real VVC, MVs come from the encoder's ME stage.
 // ============================================================
-typedef struct {
-    int int_x;    // Integer part of MV (horizontal)
-    int int_y;    // Integer part of MV (vertical)
-    int frac_x;   // Fractional part 0-15
-    int frac_y;   // Fractional part 0-15
-} motion_vector_t;
 
-/**
- * Generate a pseudo-random but deterministic motion vector
- * for block at position (bx, by) in frame f
- */
-static motion_vector_t generate_mv(int bx, int by, int frame_idx, int width, int height) {
+typedef struct { int int_x, int_y, frac_x, frac_y; } motion_vector_t;
+
+static motion_vector_t generate_mv(int bx, int by, int fi, int w, int h) {
     motion_vector_t mv;
-    // Use a simple hash for deterministic but varied MVs
-    unsigned int seed = (bx * 31 + by * 97 + frame_idx * 173);
-
-    // Integer MV: small range [-16, +16] pixels (typical for 1080p)
-    mv.int_x = ((int)(seed % 33)) - 16;
-    mv.int_y = ((int)((seed >> 5) % 33)) - 16;
-
-    // Fractional MV: 0-15 (1/16 pel accuracy)
-    mv.frac_x = (seed >> 10) % 16;
-    mv.frac_y = (seed >> 14) % 16;
-
-    // Clamp so the reference window stays within frame bounds
-    int ref_col = bx * BLOCK_SIZE + mv.int_x;
-    int ref_row = by * BLOCK_SIZE + mv.int_y;
-
-    // Ensure 15x15 window fits: need MARGIN pixels on each side
-    if (ref_col - MARGIN < 0 || ref_col + BLOCK_SIZE + MARGIN > width ||
-        ref_row - MARGIN < 0 || ref_row + BLOCK_SIZE + MARGIN > height) {
-        // Fall back to zero MV if out of bounds
-        mv.int_x = 0;
-        mv.int_y = 0;
-    }
-
+    unsigned int seed = bx*31 + by*97 + fi*173;
+    mv.int_x  = (int)(seed%33)-16;
+    mv.int_y  = (int)((seed>>5)%33)-16;
+    mv.frac_x = (seed>>10)%16;
+    mv.frac_y = (seed>>14)%16;
+    int rc = bx*BLOCK_SIZE+mv.int_x, rr = by*BLOCK_SIZE+mv.int_y;
+    if (rc-MARGIN<0||rc+BLOCK_SIZE+MARGIN>w||rr-MARGIN<0||rr+BLOCK_SIZE+MARGIN>h)
+        mv.int_x = mv.int_y = 0;
     return mv;
 }
 
-// ============================================================
-// Read one YUV 4:2:0 frame (luma plane only)
-// YUV 4:2:0 layout: Y plane (w*h), U plane (w/2 * h/2), V plane (w/2 * h/2)
-// ============================================================
-static int read_yuv_frame(
-    FILE *fp,
-    unsigned char *y_plane,
-    int width, int height,
-    int frame_idx
-) {
-    // Frame size in bytes for YUV 4:2:0
-    long frame_size = (long)width * height * 3 / 2;
-    long y_size = (long)width * height;
-
-    // Seek to the target frame
-    if (fseek(fp, frame_idx * frame_size, SEEK_SET) != 0) {
-        printf("ERROR: Cannot seek to frame %d\n", frame_idx);
-        return -1;
-    }
-
-    // Read only Y plane
-    size_t read = fread(y_plane, 1, y_size, fp);
-    if ((long)read != y_size) {
-        printf("ERROR: Could not read frame %d (got %zu of %ld bytes)\n",
-               frame_idx, read, y_size);
-        return -1;
-    }
-
+static int read_yuv_frame(FILE *fp, unsigned char *y, int w, int h, int fi) {
+    long fsz = (long)w*h*3/2, ysz = (long)w*h;
+    if (fseek(fp, fi*fsz, SEEK_SET)) { printf("ERROR: seek frame %d\n",fi); return -1; }
+    if ((long)fread(y,1,ysz,fp)!=ysz) { printf("ERROR: read frame %d\n",fi); return -1; }
     return 0;
 }
 
 // ============================================================
-// Print usage
+// Write one interpolated frame to output YUV.
+// Y plane = hw_out pixels; chroma copied from source unchanged.
 // ============================================================
-static void print_usage(const char *prog) {
-    printf("Usage: %s <yuv_file> <width> <height> [num_frames] [mode]\n\n", prog);
-    printf("Arguments:\n");
-    printf("  yuv_file    : Raw YUV 4:2:0 video file\n");
-    printf("  width       : Frame width in pixels\n");
-    printf("  height      : Frame height in pixels\n");
-    printf("  num_frames  : Number of frames to process (default: 1)\n");
-    printf("  mode        : Test mode (default: random)\n");
-    printf("                'random'   - Random MVs per block\n");
-    printf("                'sweep'    - Sweep all 16 frac positions\n");
-    printf("                'halfpel'  - Only half-pel positions (8,8)\n");
-    printf("\nExamples:\n");
-    printf("  %s Tennis_1920x1080.yuv 1920 1080 3\n", prog);
-    printf("  %s Kimono_1920x1080.yuv 1920 1080 1 sweep\n", prog);
-    printf("  %s foreman_352x288.yuv 352 288 5 random\n", prog);
-    printf("\nTo create a test YUV file from any video:\n");
-    printf("  ffmpeg -i input.mp4 -pix_fmt yuv420p -frames:v 3 test.yuv\n");
+static void write_yuv_frame(
+    FILE *out_fp, unsigned char *y_out,
+    FILE *in_fp,  int width, int height, int fi
+) {
+    fwrite(y_out, 1, (size_t)width*height, out_fp);
+
+    long chroma_sz    = (long)(width/2)*(height/2);
+    long chroma_start = (long)fi*(long)width*height*3/2 + (long)width*height;
+    unsigned char *buf = (unsigned char *)malloc(chroma_sz*2);
+    if (!buf) {
+        unsigned char grey = 128;
+        for (long i = 0; i < chroma_sz*2; i++) fwrite(&grey,1,1,out_fp);
+        return;
+    }
+    fseek(in_fp, chroma_start, SEEK_SET);
+    size_t got = fread(buf, 1, chroma_sz*2, in_fp);
+    if ((long)got != chroma_sz*2) memset(buf, 128, chroma_sz*2);
+    fwrite(buf, 1, chroma_sz*2, out_fp);
+    free(buf);
 }
 
 // ============================================================
-// Main testbench
+// Main
 // ============================================================
 int main(int argc, char *argv[]) {
 
-    // --------------------------------------------------------
-    // Parse arguments
-    // --------------------------------------------------------
     if (argc < 4) {
-        print_usage(argv[0]);
-        return 1;
+        printf("Usage: %s <yuv> <width> <height> [frames] [mode]\n", argv[0]);
+        printf("  mode: random|sweep|halfpel\n"); return 1;
     }
 
     const char *yuv_file = argv[1];
-    int width  = atoi(argv[2]);
-    int height = atoi(argv[3]);
-    int num_frames = (argc >= 5) ? atoi(argv[4]) : 1;
-    const char *mode = (argc >= 6) ? argv[5] : "random";
+    int width   = atoi(argv[2]);
+    int height  = atoi(argv[3]);
+    int nframes = argc>=5 ? atoi(argv[4]) : 1;
+    const char *mode = argc>=6 ? argv[5] : "random";
 
-    if (width <= 0 || height <= 0 || width > MAX_WIDTH || height > MAX_HEIGHT) {
-        printf("ERROR: Invalid resolution %dx%d\n", width, height);
-        return 1;
-    }
+    // Build output filename
+    char out_file[512];
+    const char *dot = strrchr(yuv_file, '.');
+    if (dot) snprintf(out_file,sizeof(out_file),"%.*s_interp%s",(int)(dot-yuv_file),yuv_file,dot);
+    else     snprintf(out_file,sizeof(out_file),"%s_interp.yuv",yuv_file);
 
     printf("============================================================\n");
-    printf("VVC Fractional Interpolation — Real Video Testbench\n");
+    printf("VVC Fractional Interpolation Testbench\n");
+    printf("Latency (µs)  |  YUV Output  |  Total Operation Timer\n");
     printf("============================================================\n");
-    printf("File:       %s\n", yuv_file);
-    printf("Resolution: %dx%d\n", width, height);
-    printf("Frames:     %d\n", num_frames);
-    printf("Mode:       %s\n", mode);
+    printf("Input:      %s\n", yuv_file);
+    printf("Output:     %s\n", out_file);
+    printf("Resolution: %dx%d  |  Frames: %d  |  Mode: %s\n",
+           width, height, nframes, mode);
     printf("============================================================\n\n");
 
-    // --------------------------------------------------------
-    // Open YUV file
-    // --------------------------------------------------------
-    FILE *fp = fopen(yuv_file, "rb");
-    if (!fp) {
-        printf("ERROR: Cannot open '%s'\n", yuv_file);
-        printf("\nTo create a test file:\n");
-        printf("  ffmpeg -i any_video.mp4 -pix_fmt yuv420p -frames:v %d %s\n",
-               num_frames, yuv_file);
-        return 1;
-    }
+    FILE *fp = fopen(yuv_file,"rb");
+    if (!fp) { printf("ERROR: cannot open %s\n",yuv_file); return 1; }
 
-    // Check file size to determine available frames
-    fseek(fp, 0, SEEK_END);
-    long file_size = ftell(fp);
-    fseek(fp, 0, SEEK_SET);
-    long frame_size = (long)width * height * 3 / 2;
-    int available_frames = (int)(file_size / frame_size);
-    printf("File size: %ld bytes, available frames: %d\n", file_size, available_frames);
+    FILE *out_fp = fopen(out_file,"wb");
+    if (!out_fp) { printf("ERROR: cannot create %s\n",out_file); fclose(fp); return 1; }
 
-    if (available_frames < num_frames) {
-        printf("WARNING: Only %d frames available, adjusting.\n", available_frames);
-        num_frames = available_frames;
-    }
+    fseek(fp,0,SEEK_END);
+    long file_size = ftell(fp); fseek(fp,0,SEEK_SET);
+    long fsz = (long)width*height*3/2;
+    int avail = (int)(file_size/fsz);
+    printf("Available frames: %d\n", avail);
+    if (avail < nframes) { printf("Adjusting to %d frames.\n",avail); nframes=avail; }
+    if (nframes<=0) { printf("ERROR: no frames.\n"); fclose(fp); fclose(out_fp); return 1; }
 
-    if (num_frames <= 0) {
-        printf("ERROR: No frames available. Check file and resolution.\n");
-        fclose(fp);
-        return 1;
-    }
+    long ysz = (long)width*height;
+    unsigned char *y_plane = (unsigned char *)malloc(ysz);
+    unsigned char *y_out   = (unsigned char *)malloc(ysz);
+    if (!y_plane||!y_out) { printf("ERROR: alloc\n"); return 1; }
 
-    // --------------------------------------------------------
-    // Allocate frame buffer
-    // --------------------------------------------------------
-    long y_size = (long)width * height;
-    unsigned char *y_plane = (unsigned char *)malloc(y_size);
-    if (!y_plane) {
-        printf("ERROR: Cannot allocate %ld bytes for frame\n", y_size);
-        fclose(fp);
-        return 1;
-    }
+    int nbx = (width  - 2*MARGIN - BLOCK_SIZE + 1) / BLOCK_SIZE;
+    int nby = (height - 2*MARGIN - BLOCK_SIZE + 1) / BLOCK_SIZE;
+    if (nbx<=0) nbx=1; if (nby<=0) nby=1;
+    printf("Block grid: %d x %d = %d blocks/frame\n\n", nbx, nby, nbx*nby);
 
-    // --------------------------------------------------------
-    // Block grid dimensions
-    // Only process blocks where a full 15x15 window fits
-    // --------------------------------------------------------
-    int num_blocks_x = (width  - 2 * MARGIN - BLOCK_SIZE + 1) / BLOCK_SIZE;
-    int num_blocks_y = (height - 2 * MARGIN - BLOCK_SIZE + 1) / BLOCK_SIZE;
-    // Limit to valid range
-    if (num_blocks_x <= 0) num_blocks_x = 1;
-    if (num_blocks_y <= 0) num_blocks_y = 1;
+    // Counters
+    int total_blocks=0, total_errors=0, total_pixels=0;
+    double max_err=0, sum_sq=0;
+    int ci=0,ch=0,cv=0,cq=0, ei=0,eh=0,ev=0,eq=0;
 
-    int blocks_per_frame = num_blocks_x * num_blocks_y;
-    printf("Block grid:  %d x %d = %d blocks per frame\n\n",
-           num_blocks_x, num_blocks_y, blocks_per_frame);
+    LatencyStats lat_all, lat_i, lat_h, lat_v, lat_q;
+    lat_init(&lat_all); lat_init(&lat_i); lat_init(&lat_h);
+    lat_init(&lat_v);   lat_init(&lat_q);
 
-    // --------------------------------------------------------
-    // Statistics
-    // --------------------------------------------------------
-    int total_blocks = 0;
-    int total_errors = 0;
-    int total_pixels_tested = 0;
-    double max_abs_error = 0;
-    double sum_sq_error = 0;
+    LatencyStats *lf = (LatencyStats*)malloc(nframes*sizeof(LatencyStats));
+    for (int f=0;f<nframes;f++) lat_init(&lf[f]);
 
-    // Per-case counters
-    int count_integer = 0, count_honly = 0, count_vonly = 0, count_quarter = 0;
-    int errors_integer = 0, errors_honly = 0, errors_vonly = 0, errors_quarter = 0;
+    // ===========================================================
+    //  TOTAL OPERATION TIMER START
+    //  Covers: all frame reads, HLS calls, SW checks, file writes
+    // ===========================================================
+    double total_start = now_us();
 
-    clock_t start_time = clock();
+    for (int f = 0; f < nframes; f++) {
+        printf("--- Frame %d/%d ---\n", f+1, nframes);
+        if (read_yuv_frame(fp, y_plane, width, height, f)) break;
 
-    // --------------------------------------------------------
-    // Process each frame
-    // --------------------------------------------------------
-    for (int f = 0; f < num_frames; f++) {
-        printf("--- Frame %d/%d ---\n", f + 1, num_frames);
+        // Seed output with source so uncovered border pixels are valid
+        memcpy(y_out, y_plane, ysz);
 
-        if (read_yuv_frame(fp, y_plane, width, height, f) != 0) {
-            printf("ERROR: Failed to read frame %d\n", f);
-            break;
-        }
+        int ferr=0, fblk=0;
+        double fstart = now_us();
 
-        int frame_errors = 0;
-        int frame_blocks = 0;
+        for (int by=0; by<nby; by++) {
+            for (int bx=0; bx<nbx; bx++) {
 
-        // --------------------------------------------------------
-        // Process each 8x8 block in the frame
-        // --------------------------------------------------------
-        for (int by = 0; by < num_blocks_y; by++) {
-            for (int bx = 0; bx < num_blocks_x; bx++) {
-                // Block top-left corner in frame (with margin offset)
-                int block_row = MARGIN + by * BLOCK_SIZE;
-                int block_col = MARGIN + bx * BLOCK_SIZE;
+                int br = MARGIN + by*BLOCK_SIZE;
+                int bc = MARGIN + bx*BLOCK_SIZE;
+                int fx, fy;
 
-                // Determine fractional positions based on test mode
-                int frac_x, frac_y;
-
-                if (strcmp(mode, "sweep") == 0) {
-                    // Systematically sweep through all fractional positions
-                    int block_idx = by * num_blocks_x + bx;
-                    frac_x = block_idx % 16;
-                    frac_y = (block_idx / 16) % 16;
+                if (!strcmp(mode,"sweep")) {
+                    int idx = by*nbx+bx; fx=idx%16; fy=(idx/16)%16;
+                } else if (!strcmp(mode,"halfpel")) {
+                    fx=8; fy=8;
+                } else {
+                    motion_vector_t mv = generate_mv(bx,by,f,width,height);
+                    fx=mv.frac_x; fy=mv.frac_y;
+                    int rr=br+mv.int_y, rc=bc+mv.int_x;
+                    if (rr-MARGIN<0||rr+BLOCK_SIZE+MARGIN>height||
+                        rc-MARGIN<0||rc+BLOCK_SIZE+MARGIN>width) continue;
+                    br=rr; bc=rc;
                 }
-                else if (strcmp(mode, "halfpel") == 0) {
-                    // Test only half-pel (position 8), worst case for filter
-                    frac_x = 8;
-                    frac_y = 8;
-                }
-                else {
-                    // Random mode: generate pseudo-random MV
-                    motion_vector_t mv = generate_mv(bx, by, f, width, height);
-                    frac_x = mv.frac_x;
-                    frac_y = mv.frac_y;
+                if (br-MARGIN<0||br+BLOCK_SIZE+MARGIN>height||
+                    bc-MARGIN<0||bc+BLOCK_SIZE+MARGIN>width) continue;
 
-                    // For random mode, apply integer MV offset to block position
-                    int ref_row = block_row + mv.int_y;
-                    int ref_col = block_col + mv.int_x;
+                int ii=(fx==0&&fy==0), ih=(fy==0&&fx!=0),
+                    iv=(fx==0&&fy!=0), iq=(fx!=0&&fy!=0);
+                if (ii) ci++; else if (ih) ch++; else if (iv) cv++; else cq++;
 
-                    // Bounds check for the 15x15 window
-                    if (ref_row - MARGIN < 0 || ref_row + BLOCK_SIZE + MARGIN > height ||
-                        ref_col - MARGIN < 0 || ref_col + BLOCK_SIZE + MARGIN > width) {
-                        continue;  // Skip out-of-bounds blocks
+                pixel_t ref[REF_BLOCK_H][REF_BLOCK_W];
+                extract_ref_window(y_plane, width, br, bc, ref);
+
+                // ---- TIME HLS call only ----
+                pel_t hw[BLOCK_SIZE][BLOCK_SIZE];
+                double t0 = now_us();
+                vvc_fractional_interp(ref, hw, (frac_t)fx, (frac_t)fy);
+                double elapsed = now_us() - t0;
+                // ----------------------------
+
+                lat_record(&lat_all,elapsed); lat_record(&lf[f],elapsed);
+                if (ii) lat_record(&lat_i,elapsed);
+                else if (ih) lat_record(&lat_h,elapsed);
+                else if (iv) lat_record(&lat_v,elapsed);
+                else         lat_record(&lat_q,elapsed);
+
+                // Write HLS pixels into output Y plane
+                for (int r=0;r<BLOCK_SIZE;r++)
+                    for (int c=0;c<BLOCK_SIZE;c++)
+                        y_out[(br+r)*width+(bc+c)] = (unsigned char)hw[r][c];
+
+                // SW reference check
+                int sw[BLOCK_SIZE][BLOCK_SIZE];
+                sw_interp_block(y_plane,width,br,bc,sw,fx,fy);
+                int berr=0;
+                for (int r=0;r<BLOCK_SIZE;r++)
+                    for (int c=0;c<BLOCK_SIZE;c++) {
+                        int d=(int)hw[r][c]-sw[r][c];
+                        if (d) { berr++; double ad=fabs((double)d);
+                            if(ad>max_err) max_err=ad; sum_sq+=d*d; }
+                        total_pixels++;
                     }
-
-                    block_row = ref_row;
-                    block_col = ref_col;
+                if (berr) {
+                    ferr+=berr;
+                    if (ferr<=5)
+                        printf("  MISMATCH block(%d,%d) frac(%d,%d): %d err\n",
+                               bx,by,fx,fy,berr);
+                    if (ii) ei+=berr; else if (ih) eh+=berr;
+                    else if (iv) ev+=berr; else eq+=berr;
                 }
-
-                // Bounds check
-                if (block_row - MARGIN < 0 || block_row + BLOCK_SIZE + MARGIN > height ||
-                    block_col - MARGIN < 0 || block_col + BLOCK_SIZE + MARGIN > width) {
-                    continue;
-                }
-
-                // Track case type
-                if (frac_x == 0 && frac_y == 0)      count_integer++;
-                else if (frac_y == 0)                  count_honly++;
-                else if (frac_x == 0)                  count_vonly++;
-                else                                   count_quarter++;
-
-                // ----- Extract 15x15 reference window for HLS -----
-                pixel_t ref_block[REF_BLOCK_H][REF_BLOCK_W];
-                extract_ref_window(y_plane, width, block_row, block_col, ref_block);
-
-                // ----- Run HLS function -----
-                pel_t hw_out[BLOCK_SIZE][BLOCK_SIZE];
-                vvc_fractional_interp(ref_block, hw_out, (frac_t)frac_x, (frac_t)frac_y);
-
-                // ----- Run software reference -----
-                int sw_out[BLOCK_SIZE][BLOCK_SIZE];
-                sw_interp_block(y_plane, width, block_row, block_col, sw_out, frac_x, frac_y);
-
-                // ----- Compare -----
-                int block_err = 0;
-                for (int r = 0; r < BLOCK_SIZE; r++) {
-                    for (int c = 0; c < BLOCK_SIZE; c++) {
-                        int diff = (int)hw_out[r][c] - sw_out[r][c];
-                        if (diff != 0) {
-                            block_err++;
-                            double abs_diff = fabs((double)diff);
-                            if (abs_diff > max_abs_error) max_abs_error = abs_diff;
-                            sum_sq_error += (double)diff * diff;
-                        }
-                        total_pixels_tested++;
-                    }
-                }
-
-                if (block_err > 0) {
-                    frame_errors += block_err;
-                    if (frame_errors <= 5) {  // Print first few errors per frame
-                        printf("  MISMATCH at block (%3d,%3d) frac=(%2d,%2d): %d pixel errors\n",
-                               bx, by, frac_x, frac_y, block_err);
-                    }
-
-                    if (frac_x == 0 && frac_y == 0)      errors_integer += block_err;
-                    else if (frac_y == 0)                  errors_honly += block_err;
-                    else if (frac_x == 0)                  errors_vonly += block_err;
-                    else                                   errors_quarter += block_err;
-                }
-
-                total_blocks++;
-                frame_blocks++;
+                total_blocks++; fblk++;
             }
         }
 
-        total_errors += frame_errors;
-        printf("  Frame %d: %d blocks tested, %d pixel errors\n",
-               f, frame_blocks, frame_errors);
+        // Write frame to output file
+        write_yuv_frame(out_fp, y_out, fp, width, height, f);
+
+        double fms = (now_us()-fstart)/1000.0;
+        total_errors += ferr;
+        printf("  Frame %d: %d blocks | %d errors | "
+               "HLS avg=%.3f µs | HLS total=%.2f ms | wall=%.2f ms\n",
+               f, fblk, ferr, lat_avg(&lf[f]), lf[f].sum_us/1000.0, fms);
     }
 
-    clock_t end_time = clock();
-    double elapsed = (double)(end_time - start_time) / CLOCKS_PER_SEC;
+    // ===========================================================
+    //  TOTAL OPERATION TIMER END
+    // ===========================================================
+    double total_end = now_us();
+    double total_us  = total_end - total_start;
+    double total_ms  = total_us  / 1000.0;
+    double total_sec = total_us  / 1e6;
 
-    // --------------------------------------------------------
-    // Print summary report
-    // --------------------------------------------------------
+    fclose(out_fp);
+
+    // ---- Correctness ----
     printf("\n============================================================\n");
-    printf("                    TEST SUMMARY\n");
+    printf("                    CORRECTNESS SUMMARY\n");
     printf("============================================================\n");
-    printf("Frames processed:     %d\n", num_frames);
-    printf("Blocks tested:        %d\n", total_blocks);
-    printf("Pixels tested:        %d\n", total_pixels_tested);
-    printf("Total pixel errors:   %d\n", total_errors);
-    printf("Max absolute error:   %.0f\n", max_abs_error);
-    if (total_pixels_tested > 0 && total_errors > 0) {
-        printf("PSNR (error):         %.2f dB\n",
-               10.0 * log10(255.0 * 255.0 / (sum_sq_error / total_pixels_tested)));
-    }
-    printf("Execution time:       %.3f sec\n", elapsed);
-    if (elapsed > 0) {
-        printf("Throughput:           %.0f blocks/sec\n", total_blocks / elapsed);
-    }
+    printf("Frames: %d  |  Blocks: %d  |  Pixels: %d\n",
+           nframes, total_blocks, total_pixels);
+    printf("Total errors: %d  |  Max error: %.0f\n", total_errors, max_err);
+    if (total_pixels>0 && total_errors>0)
+        printf("PSNR: %.2f dB\n",
+               10.0*log10(255.0*255.0/(sum_sq/total_pixels)));
+    printf("  Integer  (0,0):  %6d blocks, %d errors\n",ci,ei);
+    printf("  Horiz only:      %6d blocks, %d errors\n",ch,eh);
+    printf("  Vert  only:      %6d blocks, %d errors\n",cv,ev);
+    printf("  Quarter-pixel:   %6d blocks, %d errors\n",cq,eq);
 
-    printf("\n--- Breakdown by interpolation case ---\n");
-    printf("  Integer (0,0):      %6d blocks, %d errors\n", count_integer, errors_integer);
-    printf("  Horizontal only:    %6d blocks, %d errors\n", count_honly, errors_honly);
-    printf("  Vertical only:      %6d blocks, %d errors\n", count_vonly, errors_vonly);
-    printf("  Quarter-pixel:      %6d blocks, %d errors\n", count_quarter, errors_quarter);
+    // ---- Latency ----
+    printf("\n============================================================\n");
+    printf("                 LATENCY SUMMARY (µs) — HLS call only\n");
+    printf("============================================================\n");
+    printf("  %-22s  count        min          avg          max\n","Category");
+    printf("  %s\n","----------------------------------------------------------------------");
+    lat_print("ALL blocks",     &lat_all);
+    printf("\n");
+    lat_print("Integer (0,0)",  &lat_i);
+    lat_print("Horizontal only",&lat_h);
+    lat_print("Vertical only",  &lat_v);
+    lat_print("Quarter-pixel",  &lat_q);
+
+    printf("\n  %-8s  %-8s  %-12s  %-12s  %-12s  %-12s\n",
+           "Frame","Blocks","min(µs)","avg(µs)","max(µs)","total(ms)");
+    printf("  %s\n","--------------------------------------------------------------------");
+    for (int f=0;f<nframes;f++)
+        printf("  %-8d  %-8ld  %-12.3f  %-12.3f  %-12.3f  %-12.3f\n",
+               f, lf[f].count,
+               lf[f].min_us, lat_avg(&lf[f]), lf[f].max_us,
+               lf[f].sum_us/1000.0);
+
+    // ---- Total operation time ----
+    printf("\n============================================================\n");
+    printf("              TOTAL OPERATION TIME\n");
+    printf("  (file I/O + HLS calls + SW reference check + YUV write)\n");
+    printf("============================================================\n");
+    printf("  Total:              %.3f µs\n",  total_us);
+    printf("  Total:              %.3f ms\n",  total_ms);
+    printf("  Total:              %.6f sec\n", total_sec);
+    if (nframes>0)
+        printf("  Per-frame avg:      %.3f ms\n",  total_ms/nframes);
+    if (total_sec>0) {
+        printf("  Frame throughput:   %.1f fps\n",   nframes/total_sec);
+        printf("  Block throughput:   %.0f blk/sec\n", total_blocks/total_sec);
+    }
 
     printf("\n============================================================\n");
-    printf("RESULT: %s\n", (total_errors == 0) ? "ALL PASSED ✓" : "FAILED ✗");
+    printf("RESULT: %s\n", total_errors==0 ? "ALL PASSED ✓" : "FAILED ✗");
     printf("============================================================\n");
 
-    // --------------------------------------------------------
-    // Cleanup
-    // --------------------------------------------------------
-    free(y_plane);
+    printf("\nOutput written to: %s\n\n", out_file);
+    printf("View (real-time):\n");
+    printf("  ffplay -f rawvideo -pix_fmt yuv420p -s %dx%d %s\n\n",
+           width, height, out_file);
+    printf("Convert to MP4:\n");
+    printf("  ffmpeg -f rawvideo -pix_fmt yuv420p -s %dx%d -r 25 \\\n",
+           width, height);
+    printf("         -i %s -c:v libx264 -crf 18 output.mp4\n", out_file);
+
+    free(y_plane); free(y_out); free(lf);
     fclose(fp);
-
-    return (total_errors == 0) ? 0 : 1;
+    return total_errors==0 ? 0 : 1;
 }

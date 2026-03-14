@@ -29,7 +29,7 @@ static acc_t fir_8tap(
     const coeff_t coeffs[NTAPS]
 ) {
 #pragma HLS INLINE
-#pragma HLS PIPELINE II=1
+//#pragma HLS PIPELINE II=1
 
     acc_t sum = 0;
 
