@@ -75,6 +75,16 @@ build/idctcomb.xo: ../src/IDCT_Comb.cpp dctcomb-compile.cfg
 	-@$(RM) $@
 	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config dctcomb-compile.cfg -o"$@" "$<"
 
+build/interpolation.xo: ../interpolation/vvc_fractional_interp.cpp interpolation-compile.cfg
+	-@mkdir -p $(@D)
+	-@$(RM) $@
+	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config interpolation-compile.cfg -o"$@" "$<"
+
+build/interpolation_frame.xo: ../interpolation/vvc_fractional_interp_frame.cpp interpolation-compile.cfg
+	-@mkdir -p $(@D)
+	-@$(RM) $@
+	$(VPP) $(VPP_OPTS) --compile -I"$(<D)" --config interpolation-compile.cfg -o"$@" "$<"
+
 build/idctcomb_mahir.xo: ../src/IDCT_Comb.cpp dctcomb-compile-mahir.cfg
 	-@mkdir -p $(@D)
 	-@$(RM) $@

@@ -285,18 +285,20 @@ static void interp_quarter(
 // ============================================================
 void vvc_fractional_interp(
     ap_uint<256>* ref_block,//pixel_t ref_block[REF_BLOCK_H][REF_BLOCK_W],
-    pel_t   out_block[BLOCK_SIZE][BLOCK_SIZE],
+    ap_uint<128>* out_block,
     frac_t  frac_x,
-    frac_t  frac_y
+    frac_t  frac_y,
+    int block_count
 ) {
     // --------------------------------------------------------
     // Interface pragmas
     // --------------------------------------------------------
     // Use AXI interfaces for block data transfer (matching paper's AXI-4 bus in Fig. 4)
-#pragma HLS INTERFACE m_axi port=ref_block offset=slave bundle=INPUT  depth=225
-#pragma HLS INTERFACE m_axi port=out_block offset=slave bundle=OUTPUT depth=64
+#pragma HLS INTERFACE m_axi port=ref_block offset=slave bundle=gmem1
+#pragma HLS INTERFACE m_axi port=out_block offset=slave bundle=gmem2
 #pragma HLS INTERFACE s_axilite port=frac_x
 #pragma HLS INTERFACE s_axilite port=frac_y
+#pragma HLS INTERFACE s_axilite port=block_count
 #pragma HLS INTERFACE s_axilite port=return
 
     // --------------------------------------------------------
@@ -308,55 +310,62 @@ void vvc_fractional_interp(
     pel_t out_local[BLOCK_SIZE][BLOCK_SIZE];
 #pragma HLS ARRAY_PARTITION variable=out_local complete dim=0
 
-    // --------------------------------------------------------
-    // Burst read reference block into local memory
-    // --------------------------------------------------------
-    LOAD_REF_ROW:
-    for (int r = 0; r < REF_BLOCK_H; r++) {
-#pragma HLS PIPELINE II=1
-        LOAD_REF_COL:
-        /* for (int c = 0; c < REF_BLOCK_W; c++) {
-            ref_local[r][c] = ref_block[r][c];
-        } */
-       // Read REF_BLOCK_W pixels (15) in one burst (15 * 16 bits = 240 bits < 256-bit AXI width)
-        ap_uint<256> data = ref_block[r];
-        for (int c = 0; c < REF_BLOCK_W; c++) {
-#pragma HLS UNROLL
-            ref_local[r][c] = data.range((c+1)*16-1, c*16);
-        }
-    }
 
-    // --------------------------------------------------------
-    // Dispatch based on fractional position
-    // Paper Section II: "If either x fraction or y fraction is zero,
-    // only necessary half-pixels are interpolated."
-    // --------------------------------------------------------
-    if (frac_x == 0 && frac_y == 0) {
-        // Integer position: direct copy
-        interp_integer(ref_local, out_local);
-    }
-    else if (frac_y == 0) {
-        // Horizontal half-pixel only
-        interp_horizontal(ref_local, out_local, frac_x);
-    }
-    else if (frac_x == 0) {
-        // Vertical half-pixel only
-        interp_vertical(ref_local, out_local, frac_y);
-    }
-    else {
-        // Quarter-pixel: two-pass (horizontal then vertical)
-        interp_quarter(ref_local, out_local, frac_x, frac_y);
-    }
-
-    // --------------------------------------------------------
-    // Burst write output block
-    // --------------------------------------------------------
-    STORE_OUT_ROW:
-    for (int r = 0; r < BLOCK_SIZE; r++) {
-#pragma HLS PIPELINE II=1
-        STORE_OUT_COL:
-        for (int c = 0; c < BLOCK_SIZE; c++) {
-            out_block[r][c] = out_local[r][c];
+    for(int i=0; i<block_count; i++) {
+        #pragma HLS loop_tripcount min=1000 max=10000
+        // --------------------------------------------------------
+        // Burst read reference block into local memory
+        // --------------------------------------------------------
+        LOAD_REF_ROW:
+        for (int r = 0; r < REF_BLOCK_H; r++) {
+    #pragma HLS PIPELINE II=1
+            LOAD_REF_COL:
+            /* for (int c = 0; c < REF_BLOCK_W; c++) {
+                ref_local[r][c] = ref_block[r][c];
+            } */
+        // Read REF_BLOCK_W pixels (15) in one burst (15 * 16 bits = 240 bits < 256-bit AXI width)
+            ap_uint<256> data = ref_block[i * REF_BLOCK_H + r];
+            for (int c = 0; c < REF_BLOCK_W; c++) {
+    #pragma HLS UNROLL
+                ref_local[r][c] = data.range((c+1)*16-1, c*16);
+            }
         }
+
+        // --------------------------------------------------------
+        // Dispatch based on fractional position
+        // Paper Section II: "If either x fraction or y fraction is zero,
+        // only necessary half-pixels are interpolated."
+        // --------------------------------------------------------
+        if (frac_x == 0 && frac_y == 0) {
+            // Integer position: direct copy
+            interp_integer(ref_local, out_local);
+        }
+        else if (frac_y == 0) {
+            // Horizontal half-pixel only
+            interp_horizontal(ref_local, out_local, frac_x);
+        }
+        else if (frac_x == 0) {
+            // Vertical half-pixel only
+            interp_vertical(ref_local, out_local, frac_y);
+        }
+        else {
+            // Quarter-pixel: two-pass (horizontal then vertical)
+            interp_quarter(ref_local, out_local, frac_x, frac_y);
+        }
+
+        // --------------------------------------------------------
+        // Burst write output block
+        // --------------------------------------------------------
+        STORE_OUT_ROW:
+        for (int r = 0; r < BLOCK_SIZE; r++) {
+    #pragma HLS PIPELINE II=1
+        ap_uint<128> data_out = 0;
+            STORE_OUT_COL:
+            for (int c = 0; c < BLOCK_SIZE; c++) {
+                data_out.range((c+1)*16-1, c*16) = out_local[r][c];
+            }
+            out_block[i * BLOCK_SIZE + r] = data_out;
+        }
+
     }
 }

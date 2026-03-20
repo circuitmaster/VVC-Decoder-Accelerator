@@ -24,9 +24,13 @@ LDFLAGS += -lxilinxopencl -lxrt_coreutil -lpthread -lrt -lstdc++ -L$(XILINX_XRT)
 
 HOST_OBJECTS += src/host.o
 HOST2_OBJECTS += src/host2.o
+HOST3_OBJECTS += src/host3.o
+HOST4_OBJECTS += src/host4.o
 
 HOST_EXE = main
 HOST2_EXE = main2
+HOST3_EXE = main3
+HOST4_EXE = main4
 
 BUILD_SUBDIRS += src/
 #
@@ -34,10 +38,10 @@ BUILD_SUBDIRS += src/
 #
 
 .PHONY: all clean
-all:  $(HOST_EXE) $(HOST2_EXE) $(EMCONFIG_FILE)
+all:  $(HOST_EXE) $(HOST2_EXE) $(HOST3_EXE) $(HOST4_EXE) $(EMCONFIG_FILE)
 
 clean:
-	-$(RM) $(HOST_EXE) $(HOST2_EXE) $(HOST_OBJECTS)
+	-$(RM) $(HOST_EXE) $(HOST2_EXE) $(HOST3_EXE) $(HOST4_EXE) $(HOST_OBJECTS) $(HOST2_OBJECTS) $(HOST3_OBJECTS) $(HOST4_OBJECTS)
 
 .PHONY: incremental
 incremental: all
@@ -57,8 +61,22 @@ src/host2.o: src/host2.cpp
 	-@mkdir -p $(@D)
 	$(HOST_CXX) $(CXXFLAGS) -o "$@" "$<"
 
+src/host3.o: src/host3.cpp
+	-@mkdir -p $(@D)
+	$(HOST_CXX) $(CXXFLAGS) -o "$@" "$<"
+
+src/host4.o: src/host4.cpp
+	-@mkdir -p $(@D)
+	$(HOST_CXX) $(CXXFLAGS) -o "$@" "$<"
+
 $(HOST_EXE): $(HOST_OBJECTS)
 	$(HOST_CXX) -o "$@" $(+) $(LDFLAGS)
 
 $(HOST2_EXE): $(HOST2_OBJECTS)
+	$(HOST_CXX) -o "$@" $(+) $(LDFLAGS)
+
+$(HOST3_EXE): $(HOST3_OBJECTS)
+	$(HOST_CXX) -o "$@" $(+) $(LDFLAGS)
+
+$(HOST4_EXE): $(HOST4_OBJECTS)
 	$(HOST_CXX) -o "$@" $(+) $(LDFLAGS)

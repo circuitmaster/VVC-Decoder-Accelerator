@@ -29,6 +29,11 @@ vvc_decoder_OBJS += ../Hardware/build/idctcomb.xo
 #vvc_decoder_OBJS += ../Hardware/build/idct8.xo
 #vvc_decoder_OBJS += ../Hardware/build/idst7.xo
 
+BUILD_SUBDIRS += interpolation.build
+vvc_fractional_interp_OBJS += ../Hardware/build/interpolation.xo
+
+vvc_fractional_interp_frame_OBJS += ../Hardware/build/interpolation_frame.xo
+
 ALL_MESSAGE_FILES = $(subst .xclbin,.mdb,$(BINARY_CONTAINERS))
 
 #
@@ -55,3 +60,11 @@ nothing:
 vvc_decoder.xsa: $(vvc_decoder_OBJS) vvc_decoder-link.cfg
 	-@echo $(VPP_LINKER) $(VPP_OPTS) --link --config vvc_decoder-link.cfg -o"$@" $(vvc_decoder_OBJS) > vvc_decoder.xclbin.sh
 	$(VPP_LINKER) $(VPP_OPTS) --link --config vvc_decoder-link.cfg -o"$@" $(vvc_decoder_OBJS)
+
+vvc_interp.xsa: $(vvc_fractional_interp_OBJS) interpolation-link.cfg
+	-@echo $(VPP_LINKER) $(VPP_OPTS) --link --config interpolation-link.cfg -o"$@" $(vvc_fractional_interp_OBJS) > vvc_interp.xclbin.sh
+	$(VPP_LINKER) $(VPP_OPTS) --link --config interpolation-link.cfg -o"$@" $(vvc_fractional_interp_OBJS)
+
+vvc_interp_frame.xsa: $(vvc_fractional_interp_frame_OBJS) interpolation-link.cfg
+	-@echo $(VPP_LINKER) $(VPP_OPTS) --link --config interpolation-link.cfg -o"$@" $(vvc_fractional_interp_frame_OBJS) > vvc_interp_frame.xclbin.sh
+	$(VPP_LINKER) $(VPP_OPTS) --link --config interpolation-link.cfg -o"$@" $(vvc_fractional_interp_frame_OBJS)
