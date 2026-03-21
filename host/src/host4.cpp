@@ -17,6 +17,21 @@
 #include "xrt/xrt_device.h"
 #include "xrt/xrt_kernel.h"
 
+
+#include <memory>
+#include "indicators.hpp"
+
+static indicators::BlockProgressBar make_progress_bar(const std::string& label, int total) {
+    using namespace indicators;
+    return BlockProgressBar{
+        option::BarWidth{40},
+        option::PrefixText{label},
+        option::MaxProgress{static_cast<size_t>(total)},
+        option::ShowElapsedTime{true},
+        option::ShowRemainingTime{true},
+        option::ForegroundColor{Color::cyan},
+    };
+}
 namespace {
 
 constexpr int REF_BLOCK_H = 15;
@@ -138,6 +153,130 @@ static void fill_random_frame_input(
             }
             frame_input[static_cast<size_t>(b) * REF_BLOCK_H + r] = row;
         }
+    }
+}
+
+static void fill_gradient_frame_input(
+    std::vector<input_word_t>& frame_input,
+    int block_count,
+    int exec_iteration
+) {
+    const size_t words_per_frame = static_cast<size_t>(block_count) * REF_BLOCK_H;
+    frame_input.resize(words_per_frame);
+    for (int b = 0; b < block_count; ++b) {
+        for (int r = 0; r < REF_BLOCK_H; ++r) {
+            input_word_t row = 0;
+            for (int c = 0; c < REF_BLOCK_W; ++c) {
+                row.range((c + 1) * 16 - 1, c * 16) =
+                    static_cast<uint16_t>((exec_iteration + r + c) % 256);
+            }
+            frame_input[static_cast<size_t>(b) * REF_BLOCK_H + r] = row;
+        }
+    }
+}
+
+static void fill_video_frame_input(
+    std::vector<input_word_t>& frame_input,
+    int block_count,
+    int exec_iteration,
+    const YuvFrameStore& store,
+    int blocks_w
+) {
+    const size_t words_per_frame = static_cast<size_t>(block_count) * REF_BLOCK_H;
+    frame_input.resize(words_per_frame);
+    const int fi = exec_iteration % store.frame_count;
+    const std::vector<uint16_t>& luma = store.frames[static_cast<size_t>(fi)];
+    const int W = store.frame_width;
+    for (int b = 0; b < block_count; ++b) {
+        const int origin_x = (b % blocks_w) * REF_BLOCK_W;
+        const int origin_y = (b / blocks_w) * REF_BLOCK_H;
+        for (int r = 0; r < REF_BLOCK_H; ++r) {
+            input_word_t row = 0;
+            for (int c = 0; c < REF_BLOCK_W; ++c) {
+                const int px = (origin_y + r) * W + (origin_x + c);
+                row.range((c + 1) * 16 - 1, c * 16) =
+                    (px < static_cast<int>(luma.size()))
+                    ? luma[static_cast<size_t>(px)]
+                    : uint16_t{0};
+            }
+            frame_input[static_cast<size_t>(b) * REF_BLOCK_H + r] = row;
+        }
+    }
+}
+
+enum class InputMode { Random, Gradient, Video };
+
+struct InputConfig {
+    InputMode   mode;
+    std::string video_path;
+};
+
+static InputConfig parse_input_config(const std::string& arg) {
+    if (arg == "random")   return { InputMode::Random,   {} };
+    if (arg == "gradient") return { InputMode::Gradient, {} };
+    const std::string prefix = "video:";
+    if (arg.size() > prefix.size() && arg.substr(0, prefix.size()) == prefix)
+        return { InputMode::Video, arg.substr(prefix.size()) };
+    throw std::runtime_error("input must be: random | gradient | video:/path/to/file.yuv");
+}
+
+struct YuvFrameStore {
+    int frame_width  = 0;
+    int frame_height = 0;
+    int frame_count  = 0;
+    std::vector<std::vector<uint16_t>> frames;
+};
+
+static YuvFrameStore load_yuv_file(const std::string& path, int width, int height) {
+    const size_t luma_pixels   = static_cast<size_t>(width) * height;
+    const size_t chroma_pixels = luma_pixels / 2;
+    const size_t frame_bytes   = luma_pixels + chroma_pixels;
+    std::ifstream f(path, std::ios::binary | std::ios::ate);
+    if (!f) throw std::runtime_error("Cannot open YUV file: " + path);
+    const auto file_size = static_cast<size_t>(f.tellg());
+    if (file_size < frame_bytes)
+        throw std::runtime_error("YUV file too small for one frame at this resolution");
+    f.seekg(0, std::ios::beg);
+    const int n_frames = static_cast<int>(file_size / frame_bytes);
+    std::vector<uint8_t> buf(luma_pixels);
+    YuvFrameStore store;
+    store.frame_width  = width;
+    store.frame_height = height;
+    store.frame_count  = n_frames;
+    store.frames.resize(static_cast<size_t>(n_frames));
+    for (int fi = 0; fi < n_frames; ++fi) {
+        f.read(reinterpret_cast<char*>(buf.data()),
+               static_cast<std::streamsize>(luma_pixels));
+        auto& frame = store.frames[static_cast<size_t>(fi)];
+        frame.resize(luma_pixels);
+        for (size_t px = 0; px < luma_pixels; ++px)
+            frame[px] = static_cast<uint16_t>(buf[px]);
+        f.seekg(static_cast<std::streamoff>(chroma_pixels), std::ios::cur);
+    }
+    std::cout << "Loaded " << n_frames << " YUV frame(s) from " << path
+              << " (" << width << "x" << height << ")" << std::endl;
+    return store;
+}
+
+static void fill_frame_input(
+    std::vector<input_word_t>& frame_input,
+    int block_count,
+    const InputConfig& input_cfg,
+    int exec_iteration,
+    const YuvFrameStore* yuv_store = nullptr,
+    int blocks_w = 0
+) {
+    switch (input_cfg.mode) {
+        case InputMode::Random:
+            fill_random_frame_input(frame_input, block_count);
+            break;
+        case InputMode::Gradient:
+            fill_gradient_frame_input(frame_input, block_count, exec_iteration);
+            break;
+        case InputMode::Video:
+            fill_video_frame_input(frame_input, block_count, exec_iteration,
+                                   *yuv_store, blocks_w);
+            break;
     }
 }
 
@@ -316,7 +455,9 @@ static void run_scenario_1(
     input_word_t* input_ptr,
     output_word_t* output_ptr,
     const FrameConfig& cfg,
-    const RunConfig& run_cfg
+    const RunConfig& run_cfg,
+    const InputConfig& input_cfg,      // new
+    const YuvFrameStore* yuv_ptr       // new
 ) {
     std::cout << "\n[Scenario 1] Fixed batched input, random binary frac_x/frac_y per execution" << std::endl;
 
@@ -324,8 +465,11 @@ static void run_scenario_1(
     std::vector<uint8_t> frac_x_bank(static_cast<size_t>(run_cfg.exec_count));
     std::vector<uint8_t> frac_y_bank(static_cast<size_t>(run_cfg.exec_count));
 
-    fill_random_frame_input(fixed_exec_input, run_cfg.blocks_per_exec);
+    //fill_random_frame_input(fixed_exec_input, run_cfg.blocks_per_exec);
+    fill_frame_input(fixed_exec_input, run_cfg.blocks_per_exec, input_cfg, 0, yuv_ptr, cfg.blocks_w);
     fill_binary_frac_bank(frac_x_bank, frac_y_bank, run_cfg.exec_count);
+    auto bar = make_progress_bar("[Scenario 1] ", run_cfg.exec_count);
+    indicators::show_console_cursor(false);
 
     std::copy(fixed_exec_input.begin(), fixed_exec_input.end(), input_ptr);
     input_bo.sync(XCL_BO_SYNC_BO_TO_DEVICE);
@@ -339,10 +483,13 @@ static void run_scenario_1(
         output_bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
         // checksum disabled to avoid affecting timing
         (void)output_ptr;
+        bar.tick();
     }
 
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
+    bar.mark_as_completed();
+    indicators::show_console_cursor(true);
 
     std::cout << "Frames processed: " << run_cfg.total_frames << std::endl;
     std::cout << "Frames per execution: " << run_cfg.frames_per_exec << std::endl;
@@ -361,7 +508,9 @@ static void run_scenario_2(
     input_word_t* input_ptr,
     output_word_t* output_ptr,
     const FrameConfig& cfg,
-    const RunConfig& run_cfg
+    const RunConfig& run_cfg,
+    const InputConfig& input_cfg,      // new
+    const YuvFrameStore* yuv_ptr       // new   
 ) {
     std::cout << "\n[Scenario 2] Prefilled random frame bank, per-frame copy+sync+run+sync" << std::endl;
 
@@ -372,14 +521,18 @@ static void run_scenario_2(
     std::vector<uint8_t> frac_x_bank(static_cast<size_t>(run_cfg.exec_count));
     std::vector<uint8_t> frac_y_bank(static_cast<size_t>(run_cfg.exec_count));
     std::vector<output_word_t> output_bank(static_cast<size_t>(run_cfg.exec_count) * out_words_per_exec);
-
+    auto bar = make_progress_bar("[Scenario 2] ", run_cfg.exec_count);    
+    indicators::show_console_cursor(false);
     for (int it = 0; it < run_cfg.exec_count; ++it) {
         std::vector<input_word_t> tmp;
-        fill_random_frame_input(tmp, run_cfg.blocks_per_exec);
+        //fill_random_frame_input(tmp, run_cfg.blocks_per_exec);
+        fill_frame_input(tmp, run_cfg.blocks_per_exec, input_cfg, it, yuv_ptr, cfg.blocks_w);
         std::copy(tmp.begin(), tmp.end(), frame_bank.begin() + static_cast<size_t>(it) * words_per_exec);
+        bar.tick();
     }
     fill_binary_frac_bank(frac_x_bank, frac_y_bank, run_cfg.exec_count);
-
+    bar.mark_as_completed();
+    indicators::show_console_cursor(true);
     auto start = std::chrono::high_resolution_clock::now();
 
     for (int it = 0; it < run_cfg.exec_count; ++it) {
@@ -416,7 +569,10 @@ static void run_scenario_3(
     int g_in,
     int g_out,
     const FrameConfig& cfg,
-    const RunConfig& run_cfg
+    const RunConfig& run_cfg,
+    const InputConfig& input_cfg,      // new
+    const YuvFrameStore* yuv_ptr       // new
+
 ) {
     std::cout << "\n[Scenario 3] Double-buffer frame ping-pong" << std::endl;
 
@@ -427,12 +583,17 @@ static void run_scenario_3(
     std::vector<uint8_t> frac_x_bank(static_cast<size_t>(run_cfg.exec_count));
     std::vector<uint8_t> frac_y_bank(static_cast<size_t>(run_cfg.exec_count));
     std::vector<output_word_t> output_bank(static_cast<size_t>(run_cfg.exec_count) * out_words_per_exec);
-
+    auto bar = make_progress_bar("[Scenario 3] ", run_cfg.exec_count);
+    indicators::show_console_cursor(false);
     for (int it = 0; it < run_cfg.exec_count; ++it) {
         std::vector<input_word_t> tmp;
-        fill_random_frame_input(tmp, run_cfg.blocks_per_exec);
+        //fill_random_frame_input(tmp, run_cfg.blocks_per_exec);
+        fill_frame_input(tmp, run_cfg.blocks_per_exec, input_cfg, it, yuv_ptr, cfg.blocks_w);
         std::copy(tmp.begin(), tmp.end(), frame_bank.begin() + static_cast<size_t>(it) * words_per_exec);
+        bar.tick();
     }
+    bar.mark_as_completed();
+    indicators::show_console_cursor(true);
     fill_binary_frac_bank(frac_x_bank, frac_y_bank, run_cfg.exec_count);
 
     const size_t input_bytes = align_to_4096(words_per_exec * sizeof(input_word_t));
@@ -508,7 +669,9 @@ static bool run_golden_verification(
     input_word_t* input_ptr,
     output_word_t* output_ptr,
     const FrameConfig& cfg,
-    const RunConfig& run_cfg
+    const RunConfig& run_cfg,
+    const InputConfig& input_cfg,      // new
+    const YuvFrameStore* yuv_ptr       // new
 ) {
     std::cout << "\n[Golden Check] Hardware vs software model (frame mode)" << std::endl;
 
@@ -575,15 +738,24 @@ static bool run_golden_verification(
 int main(int argc, char** argv) {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
-    if (argc != 5) {
-        std::cout << "Usage: " << argv[0] << " <xclbin> <iterations(total_frames)> <resolution:fhd|4k> <frames_per_exec>" << std::endl;
+    if (argc != 6) {
+    std::cout << "Usage: " << argv[0]
+              << " <xclbin> <total_frames> <resolution:fhd|4k> <frames_per_exec>"
+                 " <input:random|gradient|video:/path/to/file.yuv>" << std::endl;
         return EXIT_FAILURE;
     }
-
     const std::string xclbin_path = argv[1];
     const int iterations = std::stoi(argv[2]);
     const std::string resolution = argv[3];
     const int frames_per_exec = std::stoi(argv[4]);
+    const std::string input_arg = argv[5];
+    const InputConfig input_cfg = parse_input_config(input_arg);
+
+    std::unique_ptr<YuvFrameStore> yuv_store;
+    if (input_cfg.mode == InputMode::Video)
+        yuv_store = std::make_unique<YuvFrameStore>(
+            load_yuv_file(input_arg.substr(6), cfg.width, cfg.height));
+    const YuvFrameStore* yuv_ptr = yuv_store.get();
 
     if (iterations <= 0) {
         std::cerr << "Iterations must be > 0." << std::endl;
@@ -640,10 +812,10 @@ int main(int argc, char** argv) {
 
         run_kernel_warmup(kernel, input_bo, output_bo, input_ptr, run_cfg.blocks_per_exec);
 
-        run_scenario_1(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg);
-        run_scenario_2(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg);
-        run_scenario_3(kernel, device, g_in, g_out, cfg, run_cfg);
-        run_golden_verification(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg);
+        run_scenario_1(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg, input_cfg, yuv_ptr);
+        run_scenario_2(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg , input_cfg, yuv_ptr);
+        run_scenario_3(kernel, device, g_in, g_out, cfg, run_cfg , input_cfg, yuv_ptr);
+        run_golden_verification(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg  , input_cfg, yuv_ptr);
 
     } catch (const std::exception& ex) {
         std::cerr << "Exception: " << ex.what() << std::endl;
