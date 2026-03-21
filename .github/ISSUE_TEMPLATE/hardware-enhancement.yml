@@ -1,0 +1,135 @@
+name: "Hardware — Enhancement"
+description: "Improve an existing hardware/test/host code"
+title: "[Enhancement] <short title>"
+labels: ["enhancement"]
+
+body:
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      options:
+        - IDCT2
+        - IDCT8
+        - IDST7
+        - Interpolation Filter
+        - Host Codes
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0 (Critical)
+        - P1 (High)
+        - P2 (Medium)
+        - P3 (Low)
+    validations:
+      required: true
+
+  - type: input
+    id: current_behaviour
+    attributes:
+      label: Current behaviour
+      placeholder: "Describe briefly what is current behaviour of the code or code block that will be improved"
+    validations:
+      required: true
+
+  - type: textarea
+    id: pain
+    attributes:
+      label: Pain points / evidence
+      placeholder: |
+        Why this is a problem (metrics, logs, performance issues, etc.)
+    validations:
+      required: true
+
+  - type: textarea
+    id: desired_behavior
+    attributes:
+      label: Desired behavior
+      placeholder: |
+        What should change?
+        What should remain the same (non-goals)?
+    validations:
+      required: true
+
+  - type: textarea
+    id: api_scope
+    attributes:
+      label: Affected Hardware/Host Code/Testbench Parts
+      placeholder: |
+        Module:
+        Function:
+        Method(s):
+        Example:
+        Interpolation Filter/filter_quarter(ap_uint<32>*in, ap_uint<32>*out);
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed_changes
+    attributes:
+      label: Proposed changes
+      placeholder: |
+        Examples:
+        - Add new filtering parameter
+        - Improve validation
+        - Optimize processing performance
+        - Add caching
+        - Improve error handling
+    validations:
+      required: true
+      
+      
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Backward compatibility
+      placeholder: |
+        Will this change break existing modules?
+        - No breaking change
+        - Some infterface changes
+    validations:
+      required: true
+
+  - type: textarea
+    id: observability
+    attributes:
+      label: Observability / monitoring
+      placeholder: |
+        Metrics to monitor:
+        Logs to add/update:
+        Tracing considerations:
+    validations:
+      required: true
+
+  - type: textarea
+    id: risks
+    attributes:
+      label: Risks / migration considerations
+      placeholder: |
+        Possible risks:
+        - Assumtion violation
+        - Performance regression
+        - Energy efficiency
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        Example:
+
+        Given an XRT kernel run request
+        When the kernel is called
+        Then the hardware returns the improved output
+
+        Given existing requests
+        Then the hardware remains backward compatible
+    validations:
+      required: true

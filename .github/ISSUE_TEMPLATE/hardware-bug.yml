@@ -1,0 +1,112 @@
+name: "Hardware — Bug"
+description: "Something is broken or behaving incorrectly in the Hardware"
+title: "[Bug] <short title>"
+labels: ["bug"]
+
+body:
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      description: "Impact level of the issue"
+      options:
+        - P0 (Outage / data loss / security)
+        - P1 (Major - core flow broken)
+        - P2 (Moderate - workaround exists)
+        - P3 (Minor - cosmetic / edge case)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: Frequency
+      options:
+        - Always
+        - Often
+        - Sometimes
+        - Rare
+        - Unknown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: platforms
+    attributes:
+      label: Platform(s)
+      description: "Which client platforms are affected"
+      multiple: true
+      options:
+        - VCK5000
+        - VCK190
+        - VEK280
+        - SmartSSD
+        - Hardware Emulation
+        - Software Emulation
+    validations:
+      required: true
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: What happened?
+      description: "Concise description of the issue and current behavior."
+      placeholder: |
+        Example:
+        When any 64x64 block is given as input to hardware, output is always 0.
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Compile kernel using > make -j20 build/idct2.xo
+        2. Link hardware using > make vvc_decoder.xclbin
+        3. Compile host code > make host
+        4. Run host code > ./host
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      placeholder: |
+        Example:
+        The hardware should return correct IDCT2 output and match the CPU result.
+    validations:
+      required: true
+
+  - type: textarea
+    id: module
+    attributes:
+      label: Affected Hardware Module
+      placeholder: |
+        Method: idct2();
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: "Logs, screenshots, recordings, timestamps, etc."
+      placeholder: |
+        Request ID:
+        Timestamp:
+        Logs:
+    validations:
+      required: true
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes for engineering
+      placeholder: |
+        Related feature/flow:
+        Suspected cause (if any):
+        Related issues/PRs:
+    validations:
+      required: true

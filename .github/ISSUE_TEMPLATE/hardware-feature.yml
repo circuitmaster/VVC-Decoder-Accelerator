@@ -1,0 +1,97 @@
+name: "Hardware — Feature"
+description: "New hardware capability"
+title: "[Feature] <short title>"
+labels: ["feature"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Outcome-focused. Include links to docs and images.
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - P0 (Critical)
+        - P1 (High)
+        - P2 (Medium)
+        - P3 (Low)
+    validations:
+      required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / opportunity
+      placeholder: |
+        What should happen?
+        Why is it a problem/opportunity?
+        Who is affected and how often?
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution (product)
+      placeholder: |
+        Desired hardware behaviour:
+        Non-goals:
+        Assumptions:
+    validations:
+      required: true
+
+  - type: textarea
+    id: hardware_design
+    attributes:
+      label: Proposed Kernel design
+      placeholder: |
+        Service:
+        Endpoint(s):
+        Method(s):
+
+        Example:
+        void vector_add(ap_uint<32>*in, ap_uint<32>*out);
+
+        Description:
+        Creates a new hardware that solves an existing problem.
+    validations:
+      required: true
+
+  - type: textarea
+    id: Test
+    attributes:
+      label: Test / validation
+      placeholder: |
+        Examples:
+        - There should be unit tests covering the new hardware kernel
+        - Runtime/fps/bandwidth results must be reported
+    validations:
+      required: true
+
+  - type: textarea
+    id: compatibility
+    attributes:
+      label: Backward compatibility
+      placeholder: |
+        Will this change break existing kernels?
+        - No breaking change
+        - Additive response fields
+        - New kernel version required
+    validations:
+      required: true
+
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Acceptance criteria
+      placeholder: |
+        Example:
+
+        Given a XRT kernel execution request
+        When the request is sent
+        Then the kernel returns the same values as the software golden result
+    validations:
+      required: true
