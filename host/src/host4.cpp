@@ -21,16 +21,16 @@
 #include <memory>
 #include "indicators.hpp"
 
-static indicators::BlockProgressBar make_progress_bar(const std::string& label, int total) {
+static std::unique_ptr<indicators::BlockProgressBar> make_progress_bar(const std::string& label, int total) {
     using namespace indicators;
-    return BlockProgressBar{
+    return std::make_unique<BlockProgressBar>(
         option::BarWidth{40},
         option::PrefixText{label},
         option::MaxProgress{static_cast<size_t>(total)},
         option::ShowElapsedTime{true},
         option::ShowRemainingTime{true},
-        option::ForegroundColor{Color::cyan},
-    };
+        option::ForegroundColor{Color::cyan}
+    );
 }
 namespace {
 
@@ -79,6 +79,13 @@ struct RunConfig {
     int frames_per_exec;
     int exec_count;
     int blocks_per_exec;
+};
+
+struct YuvFrameStore {
+    int frame_width  = 0;
+    int frame_height = 0;
+    int frame_count  = 0;
+    std::vector<std::vector<uint16_t>> frames;
 };
 
 static std::vector<char> load_xclbin(const std::string& xclbin_path) {
@@ -220,12 +227,6 @@ static InputConfig parse_input_config(const std::string& arg) {
     throw std::runtime_error("input must be: random | gradient | video:/path/to/file.yuv");
 }
 
-struct YuvFrameStore {
-    int frame_width  = 0;
-    int frame_height = 0;
-    int frame_count  = 0;
-    std::vector<std::vector<uint16_t>> frames;
-};
 
 static YuvFrameStore load_yuv_file(const std::string& path, int width, int height) {
     const size_t luma_pixels   = static_cast<size_t>(width) * height;
@@ -483,12 +484,12 @@ static void run_scenario_1(
         output_bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
         // checksum disabled to avoid affecting timing
         (void)output_ptr;
-        bar.tick();
+        bar->tick();
     }
 
     auto end = std::chrono::high_resolution_clock::now();
     std::chrono::duration<double> elapsed = end - start;
-    bar.mark_as_completed();
+    bar->mark_as_completed();
     indicators::show_console_cursor(true);
 
     std::cout << "Frames processed: " << run_cfg.total_frames << std::endl;
@@ -528,10 +529,10 @@ static void run_scenario_2(
         //fill_random_frame_input(tmp, run_cfg.blocks_per_exec);
         fill_frame_input(tmp, run_cfg.blocks_per_exec, input_cfg, it, yuv_ptr, cfg.blocks_w);
         std::copy(tmp.begin(), tmp.end(), frame_bank.begin() + static_cast<size_t>(it) * words_per_exec);
-        bar.tick();
+        bar->tick();
     }
     fill_binary_frac_bank(frac_x_bank, frac_y_bank, run_cfg.exec_count);
-    bar.mark_as_completed();
+    bar->mark_as_completed();
     indicators::show_console_cursor(true);
     auto start = std::chrono::high_resolution_clock::now();
 
@@ -590,9 +591,9 @@ static void run_scenario_3(
         //fill_random_frame_input(tmp, run_cfg.blocks_per_exec);
         fill_frame_input(tmp, run_cfg.blocks_per_exec, input_cfg, it, yuv_ptr, cfg.blocks_w);
         std::copy(tmp.begin(), tmp.end(), frame_bank.begin() + static_cast<size_t>(it) * words_per_exec);
-        bar.tick();
+        bar->tick();
     }
-    bar.mark_as_completed();
+    bar->mark_as_completed();
     indicators::show_console_cursor(true);
     fill_binary_frac_bank(frac_x_bank, frac_y_bank, run_cfg.exec_count);
 
@@ -751,7 +752,6 @@ int main(int argc, char** argv) {
     const std::string input_arg = argv[5];
     const InputConfig input_cfg = parse_input_config(input_arg);
 
-    std::unique_ptr<YuvFrameStore> yuv_store;
     if (input_cfg.mode == InputMode::Video)
         yuv_store = std::make_unique<YuvFrameStore>(
             load_yuv_file(input_arg.substr(6), cfg.width, cfg.height));
@@ -772,6 +772,8 @@ int main(int argc, char** argv) {
 
     try {
         const FrameConfig cfg = make_frame_config(resolution);
+        std::unique_ptr<YuvFrameStore> yuv_store;
+
         const RunConfig run_cfg = {
             iterations,
             frames_per_exec,
