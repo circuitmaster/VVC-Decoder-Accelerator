@@ -740,22 +740,17 @@ int main(int argc, char** argv) {
     std::srand(static_cast<unsigned int>(std::time(nullptr)));
 
     if (argc != 6) {
-    std::cout << "Usage: " << argv[0]
-              << " <xclbin> <total_frames> <resolution:fhd|4k> <frames_per_exec>"
-                 " <input:random|gradient|video:/path/to/file.yuv>" << std::endl;
+        std::cout << "Usage: " << argv[0]
+                  << " <xclbin> <total_frames> <resolution:fhd|4k> <frames_per_exec>"
+                     " <input:random|gradient|video:/path/to/file.yuv>" << std::endl;
         return EXIT_FAILURE;
     }
-    const std::string xclbin_path = argv[1];
-    const int iterations = std::stoi(argv[2]);
-    const std::string resolution = argv[3];
-    const int frames_per_exec = std::stoi(argv[4]);
-    const std::string input_arg = argv[5];
-    const InputConfig input_cfg = parse_input_config(input_arg);
 
-    if (input_cfg.mode == InputMode::Video)
-        yuv_store = std::make_unique<YuvFrameStore>(
-            load_yuv_file(input_arg.substr(6), cfg.width, cfg.height));
-    const YuvFrameStore* yuv_ptr = yuv_store.get();
+    const std::string xclbin_path    = argv[1];
+    const int         iterations     = std::stoi(argv[2]);
+    const std::string resolution     = argv[3];
+    const int         frames_per_exec = std::stoi(argv[4]);
+    const std::string input_arg      = argv[5];
 
     if (iterations <= 0) {
         std::cerr << "Iterations must be > 0." << std::endl;
@@ -771,8 +766,15 @@ int main(int argc, char** argv) {
     }
 
     try {
-        const FrameConfig cfg = make_frame_config(resolution);
+        const InputConfig input_cfg = parse_input_config(input_arg);
+        const FrameConfig cfg       = make_frame_config(resolution);
+
+        // yuv_store and cfg are now both alive at the same point
         std::unique_ptr<YuvFrameStore> yuv_store;
+        if (input_cfg.mode == InputMode::Video)
+            yuv_store = std::make_unique<YuvFrameStore>(
+                load_yuv_file(input_cfg.video_path, cfg.width, cfg.height));
+        const YuvFrameStore* yuv_ptr = yuv_store.get();
 
         const RunConfig run_cfg = {
             iterations,
@@ -790,34 +792,33 @@ int main(int argc, char** argv) {
                   << ", exec_count=" << run_cfg.exec_count
                   << ", blocks_per_exec=" << run_cfg.blocks_per_exec << std::endl;
 
-        auto device = xrt::device(0);
+        auto device      = xrt::device(0);
         auto xclbin_data = load_xclbin(xclbin_path);
-        auto xclbin = xrt::xclbin(xclbin_data);
-        auto uuid = device.load_xclbin(xclbin);
-
-        auto kernel = xrt::kernel(device, uuid, "vvc_fractional_interp");
+        auto xclbin      = xrt::xclbin(xclbin_data);
+        auto uuid        = device.load_xclbin(xclbin);
+        auto kernel      = xrt::kernel(device, uuid, "vvc_fractional_interp");
         std::cout << "xclbin load successful" << std::endl;
 
-        const size_t input_words = static_cast<size_t>(run_cfg.blocks_per_exec) * REF_BLOCK_H;
+        const size_t input_words  = static_cast<size_t>(run_cfg.blocks_per_exec) * REF_BLOCK_H;
         const size_t output_words = static_cast<size_t>(run_cfg.blocks_per_exec) * OUT_ROWS_PER_BLOCK;
-        const size_t input_bytes = align_to_4096(input_words * sizeof(input_word_t));
+        const size_t input_bytes  = align_to_4096(input_words  * sizeof(input_word_t));
         const size_t output_bytes = align_to_4096(output_words * sizeof(output_word_t));
 
-        auto g_in = kernel.group_id(0);
+        auto g_in  = kernel.group_id(0);
         auto g_out = kernel.group_id(1);
 
-        xrt::bo input_bo(device, input_bytes, xrt::bo::flags::normal, g_in);
+        xrt::bo input_bo (device, input_bytes,  xrt::bo::flags::normal, g_in);
         xrt::bo output_bo(device, output_bytes, xrt::bo::flags::normal, g_out);
 
-        input_word_t* input_ptr = input_bo.map<input_word_t*>();
+        input_word_t*  input_ptr  = input_bo.map<input_word_t*>();
         output_word_t* output_ptr = output_bo.map<output_word_t*>();
 
         run_kernel_warmup(kernel, input_bo, output_bo, input_ptr, run_cfg.blocks_per_exec);
 
         run_scenario_1(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg, input_cfg, yuv_ptr);
-        run_scenario_2(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg , input_cfg, yuv_ptr);
-        run_scenario_3(kernel, device, g_in, g_out, cfg, run_cfg , input_cfg, yuv_ptr);
-        run_golden_verification(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg  , input_cfg, yuv_ptr);
+        run_scenario_2(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg, input_cfg, yuv_ptr);
+        run_scenario_3(kernel, device, g_in, g_out,                        cfg, run_cfg, input_cfg, yuv_ptr);
+        run_golden_verification(kernel, input_bo, output_bo, input_ptr, output_ptr, cfg, run_cfg, input_cfg, yuv_ptr);
 
     } catch (const std::exception& ex) {
         std::cerr << "Exception: " << ex.what() << std::endl;
