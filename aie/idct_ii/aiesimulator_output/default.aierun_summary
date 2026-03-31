@@ -1,0 +1,1165 @@
+<ENTRY>
+{
+ "thisFile": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/default.aierun_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:19:49 2026",
+ "timestampMillis": "1774639189806",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/Work",
+  "name": "",
+  "fileType": "DIR",
+  "reportType": "AIE_COMPILER_WORKDIR",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "Fri Mar 27 19:19:49 2026",
+ "timestampMillis": "1774639189806",
+ "buildStep": {
+  "cmdId": "b3c436ae-9c66-4da9-825f-a2d7ccc733bf",
+  "name": "aiesim",
+  "logFile": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/AIESimulator.log",
+  "commandLine": "aiesimulator --pkg-dir ./Work --profile --dump-vcd trace ",
+  "args": [
+   "aiesimulator",
+   "--pkg-dir ./Work",
+   "--profile",
+   "--dump-vcd trace"
+  ],
+  "iniFiles": [],
+  "cwd": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Mar 27 19:19:49 2026",
+ "timestampMillis": "1774639189806",
+ "status": {
+  "cmdId": "b3c436ae-9c66-4da9-825f-a2d7ccc733bf",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "Fri Mar 27 19:19:49 2026",
+ "timestampMillis": "1774639189806",
+ "buildSummary": {
+  "hardwarePlatform": "xcve2802-vsvh1760-2MP-e-S",
+  "hardwareDsa": "VC2802",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_COMPILE",
+  "target": "TT_AIESIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "",
+     "file": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/Work/temp/aiesim_graph_2d.json",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/src/aiesim_graph_2d.cpp"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "AIE",
+    "frequency": 1250,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2025.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:19:49 2026",
+ "timestampMillis": "1774639189806",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/throughput_info.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_THROUGHPUT",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:19:49 2026",
+ "timestampMillis": "1774639189806",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/AIESim_FIFO_Guidance.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SIM_FIFO_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:19:49 2026",
+ "timestampMillis": "1774639189807",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/AIESim_Guidance.json",
+  "name": "",
+  "fileType": "JSON",
+  "reportType": "AIE_SIM_MEMORY_ACCESS_VIOLATION_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:19:53 2026",
+ "timestampMillis": "1774639193215",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/trace.vcd",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "VARIABLE_CHANGE_DUMP",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304261",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_6_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304261",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_8_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304262",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_10_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304262",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_1_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304262",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_16_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304262",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_13_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304262",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_15_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304263",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_9_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304263",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_4_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304263",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_10_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304263",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_3_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304263",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_15_1.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304263",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_1_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304263",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_9_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304264",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_16_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304264",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_0_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304264",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_12_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304264",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_11_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304264",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_5_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304264",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_2_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304264",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_8_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304265",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_14_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304265",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_3_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304265",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_1_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304265",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_13_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304265",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_11_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304265",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_11_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304265",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_10_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304265",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_5_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304266",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_9_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304266",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_16_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304266",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_8_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304266",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_6_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304266",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_0_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304266",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_10_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304266",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_15_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304266",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_9_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304267",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_5_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304267",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_7_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304267",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_7_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304267",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_4_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304267",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_7_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304267",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_16_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304267",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_0_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304268",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_3_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304268",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_12_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304268",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_14_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304268",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_15_1.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304268",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_13_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304268",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_4_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304268",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_0_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304268",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_15_1.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304269",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_7_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304269",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_2_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304269",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_1_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304269",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_11_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304269",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_12_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304269",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_2_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304269",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_8_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304270",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_15_1.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304270",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_4_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304270",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_15_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304270",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_13_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304270",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_12_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304270",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_14_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304270",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_15_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304270",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_6_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304271",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_instr_5_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_INSTR_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304271",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_3_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304271",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_2_0.txt",
+  "name": "",
+  "fileType": "TEXT",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304271",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_6_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304271",
+ "report": {
+  "path": "/home/zheyu/SparseAttention/aie_flashattention/dct/idct_ii/aiesimulator_output/profile_funct_14_0.xml",
+  "name": "",
+  "fileType": "XML",
+  "reportType": "AIE_FUNCT_PROFILE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "Fri Mar 27 19:21:44 2026",
+ "timestampMillis": "1774639304271",
+ "status": {
+  "cmdId": "b3c436ae-9c66-4da9-825f-a2d7ccc733bf",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
