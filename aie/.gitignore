@@ -1,0 +1,16 @@
+Work/
+  aiesimulator_output/
+  _x/
+  .Xil/
+  *.a
+  *.xsa
+  *.xclbin
+  *.vcd
+  *.exe
+  *.o
+  *.db
+  sol.db
+  pl_sample_counts
+  ISS_RPC_SERVER_PORT
+  .AIE_SIM_CMD_LINE_OPTIONS
+  Map_Report.csv
