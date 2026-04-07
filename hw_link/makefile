@@ -34,6 +34,8 @@ vvc_fractional_interp_OBJS += ../Hardware/build/interpolation.xo
 
 vvc_fractional_interp_frame_OBJS += ../Hardware/build/interpolation_frame.xo
 
+idct2_OBJS += ../Hardware/build/idct2.xo
+
 ALL_MESSAGE_FILES = $(subst .xclbin,.mdb,$(BINARY_CONTAINERS))
 
 #
@@ -68,3 +70,7 @@ vvc_interp.xsa: $(vvc_fractional_interp_OBJS) interpolation-link.cfg
 vvc_interp_frame.xsa: $(vvc_fractional_interp_frame_OBJS) interpolation-link.cfg
 	-@echo $(VPP_LINKER) $(VPP_OPTS) --link --config interpolation-link.cfg -o"$@" $(vvc_fractional_interp_frame_OBJS) > vvc_interp_frame.xclbin.sh
 	$(VPP_LINKER) $(VPP_OPTS) --link --config interpolation-link.cfg -o"$@" $(vvc_fractional_interp_frame_OBJS)
+
+idct2.xsa: $(idct2_OBJS) idct2-link.cfg
+	-@echo $(VPP_LINKER) $(VPP_OPTS) --link --config idct2-link.cfg -o"$@" $(idct2_OBJS) > idct2.xclbin.sh
+	$(VPP_LINKER) $(VPP_OPTS) --link --config idct2-link.cfg -o"$@" $(idct2_OBJS)
