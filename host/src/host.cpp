@@ -11,6 +11,7 @@
 #include <vector>
 //#include <time.h>
 #include <cstdlib>
+#include <ctime>
 #include <chrono>
 
 //#include "ap_fixed.h"
@@ -71,45 +72,28 @@ int main(int argc, char **argv) {
 
         // Allocate buffers on appropriate banks
         auto g_in1 = kernel.group_id(0);
-        auto g_in2 = kernel.group_id(1);
-        auto g_out1= kernel.group_id(2);
-        auto g_out2 = kernel.group_id(3);
-	
-	    std::cout << "test1" << std::endl;
+        auto g_out1 = kernel.group_id(1);
 
         xrt::bo input1_bo(device, input_bytes, xrt::bo::flags::normal, g_in1);
-        xrt::bo input2_bo(device, input_bytes, xrt::bo::flags::normal, g_in2);
         xrt::bo output1_bo(device, output_bytes, xrt::bo::flags::normal, g_out1);
-        xrt::bo output2_bo(device, output_bytes, xrt::bo::flags::normal, g_out2);
-	
-	    std::cout << "test2" << std::endl;
 
         ap_uint<1024> *input1_ptr = input1_bo.map<ap_uint<1024> *>();
-        ap_uint<1024> *input2_ptr = input2_bo.map<ap_uint<1024> *>();
         ap_uint<1024> *output1_ptr = output1_bo.map<ap_uint<1024> *>();
-        ap_uint<1024> *output2_ptr = output2_bo.map<ap_uint<1024> *>();
-	
-        std::cout << "test3" << std::endl;
 
         // Prepare host-side inputs
-        std::vector<ap_int<1024>> host_in1(blocks);
-        std::vector<ap_int<1024>> host_in2(blocks);
+        std::vector<ap_uint<1024>> host_in1(blocks);
         for (size_t b = 0; b < blocks; ++b) {
-            ap_int<1024> blk1 = 0;
-            ap_int<1024> blk2 = 0;
-            for (size_t i = 0; i < 32; ++i) {
-                ap_uint<32> val = static_cast<ap_uint<32>>(rand() % 100); // Random 16-bit value
-                blk1.range((i + 1) * 32 - 1, i * 32) = val.range(31, 0);//static_cast<int32_t>(b * 64 + i);
-                blk2.range((i + 1) * 32 - 1, i * 32) = val.range(31, 0);//static_cast<int32_t>(b * 64 + i + 1000);
+            ap_uint<1024> blk1 = 0;
+            for (size_t i = 0; i < 64; ++i) {
+                ap_int<16> val = static_cast<ap_int<16>>((rand() % 256) - 128);
+                blk1.range((i + 1) * 16 - 1, i * 16) = val.range(15, 0);//static_cast<ap_uint<16>>(val);
             }
             host_in1[b] = blk1;
-            host_in2[b] = blk2;
             input1_ptr[b] = blk1;
-            input2_ptr[b] = blk2;
         }
 
         // warm up run
-        auto run_warmup = kernel(input1_bo, input2_bo, output1_bo, output2_bo,
+        auto run_warmup = kernel(input1_bo, output1_bo,
                           block_size, static_cast<int>(blocks), shift, output_min, output_max);
         run_warmup.wait();
 
@@ -117,12 +101,11 @@ int main(int argc, char **argv) {
         auto start = std::chrono::high_resolution_clock::now();
 
         input1_bo.sync(XCL_BO_SYNC_BO_TO_DEVICE);
-        if(block_size == 64) input2_bo.sync(XCL_BO_SYNC_BO_TO_DEVICE);
         
         auto end_input = std::chrono::high_resolution_clock::now();
 
         // Launch kernel
-        auto run = kernel(input1_bo, input2_bo, output1_bo, output2_bo,
+        auto run = kernel(input1_bo, output1_bo,
                           block_size, static_cast<int>(blocks), shift, output_min, output_max);
         run.wait();
 
@@ -130,7 +113,6 @@ int main(int argc, char **argv) {
 
         //std::cout << "run finished" << std::endl;
         output1_bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
-        if(block_size == 64) output2_bo.sync(XCL_BO_SYNC_BO_FROM_DEVICE);
 
         auto end = std::chrono::high_resolution_clock::now();
         std::chrono::duration<double> elapsed = end - start;
@@ -143,29 +125,25 @@ int main(int argc, char **argv) {
         std::cout << "Output data transfer time: " << output_time.count() << " seconds" << std::endl;
 
         // Golden model execution
-        std::vector<ap_int<1024>> golden_out1(blocks);
-        std::vector<ap_int<1024>> golden_out2(blocks);
-        IDCT2(host_in1.data(), host_in2.data(), golden_out1.data(), golden_out2.data(),
-              block_size, static_cast<int>(blocks), shift, output_min, output_max);
+        std::vector<ap_uint<1024>> golden_out1(blocks);
+        /* std::vector<ap_int<1024>> golden_in2_dummy(blocks, 0);
+        std::vector<ap_int<1024>> golden_out2_dummy(blocks, 0); */
+        IDCT2(host_in1.data(), golden_out1.data(), block_size, static_cast<int>(blocks), shift, output_min, output_max);
 
         // Compare results
         bool mismatch = false;
         for (size_t b = 0; b < blocks; ++b) {
             ap_uint<1024> hw_out1 = output1_ptr[b];
-            ap_uint<1024> hw_out2 = output2_ptr[b];
-            for (size_t i = 0; i < 32; ++i) {
-                int32_t golden1 = golden_out1[b].range((i + 1) * 32 - 1, i * 32);
-                int32_t golden2 = golden_out2[b].range((i + 1) * 32 - 1, i * 32);
-                uint32_t hw1 = hw_out1.range((i + 1) * 32 - 1, i * 32);
-                uint32_t hw2 = hw_out2.range((i + 1) * 32 - 1, i * 32);
-                if (static_cast<int64_t>(golden1) != static_cast<int64_t>(hw1)) {
+            for (size_t i = 0; i < 64; ++i) {
+                ap_uint<16> golden_signed = 0;
+                golden_signed.range(15, 0) = golden_out1[b].range((i + 1) * 16 - 1, i * 16);
+                int16_t golden1 = golden_signed;
+                ap_uint<16> hw_signed = 0;
+                hw_signed.range(15, 0) = hw_out1.range((i + 1) * 16 - 1, i * 16);
+                int16_t hw1 = hw_signed;//static_cast<int16_t>(hw1_u);
+                if (golden1 != hw1) {
                     std::cout << "Mismatch out1 block " << b << " elem " << i
                               << " golden=" << golden1 << " hw=" << hw1 << std::endl;
-                    mismatch = true;
-                }
-                if (block_size == 64 && static_cast<int64_t>(golden2) != static_cast<int64_t>(hw2)) {
-                    std::cout << "Mismatch out2 block " << b << " elem " << i
-                              << " golden=" << golden2 << " hw=" << hw2 << std::endl;
                     mismatch = true;
                 }
             }
@@ -178,8 +156,9 @@ int main(int argc, char **argv) {
         // Optional print of first block for quick inspection
         if (blocks > 0) {
             std::cout << "First block HW out1 values:" << std::endl;
-            for (size_t i = 0; i < 32; ++i) {
-                uint32_t value = output1_ptr[0].range((i + 1) * 32 - 1, i * 32);
+            for (size_t i = 0; i < 64; ++i) {
+                int16_t value = static_cast<int16_t>(
+                    static_cast<uint16_t>(output1_ptr[0].range((i + 1) * 16 - 1, i * 16)));
                 std::cout << "Value " << i << ": " << value << std::endl;
             }
         }

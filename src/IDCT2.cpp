@@ -6,8 +6,8 @@
 #define USE_SHIFT_ADD_64
 #define USE_SHIFT_ADD_32
 #define USE_SHIFT_ADD_16
-#define USE_SHIFT_ADD_8
-#define USE_SHIFT_ADD_4
+//#define USE_SHIFT_ADD_8
+//#define USE_SHIFT_ADD_4
 
 #define IN_TYPE ap_int<16>
 #define OUT_TYPE ap_int<32>
@@ -22,8 +22,8 @@ ap_int<16> CLIP3(ap_int<32> x, ap_int<16> outputMinimum, ap_int<16> outputMaximu
 void IDCT2B2(IN_TYPE in[2], OUT_TYPE out[2]){
     #pragma HLS inline off
 
-    ap_int<32> sum = in[0] + in[1];
-    ap_int<32> diff = in[0] - in[1];
+    ap_int<32> sum = (ap_int<32>)in[0] + (ap_int<32>)in[1];
+    ap_int<32> diff = (ap_int<32>)in[0] - (ap_int<32>)in[1];
 
     ap_int<32> even = sum << 6;
     ap_int<32> odd = diff << 6;
@@ -37,6 +37,7 @@ void IDCT2B4(IN_TYPE in[4], OUT_TYPE out[4]){
 
     ap_int<32> evens[2];
     ap_int<32> odds[2];
+    ap_int<32> odds2[2];
     #pragma HLS ARRAY_PARTITION variable=evens complete dim=0
     #pragma HLS ARRAY_PARTITION variable=odds complete dim=0
 
@@ -49,21 +50,21 @@ void IDCT2B4(IN_TYPE in[4], OUT_TYPE out[4]){
 
     #ifdef USE_SHIFT_ADD_4
 
-    ap_int<32> in1_a = in[1] << 6;
-    ap_int<32> in1_b = in[1] << 5;
-    ap_int<32> in1_c = in[1] << 4;
-    ap_int<32> in1_d = in[1] << 3;
-    ap_int<32> in1_e = in[1] << 2;
-    ap_int<32> in1_f = in[1] << 1;
-    ap_int<32> in1_g = in[1];
+    ap_int<32> in1_a = (ap_int<32>)in[1] << 6;
+    ap_int<32> in1_b = (ap_int<32>)in[1] << 5;
+    ap_int<32> in1_c = (ap_int<32>)in[1] << 4;
+    ap_int<32> in1_d = (ap_int<32>)in[1] << 3;
+    ap_int<32> in1_e = (ap_int<32>)in[1] << 2;
+    ap_int<32> in1_f = (ap_int<32>)in[1] << 1;
+    ap_int<32> in1_g = (ap_int<32>)in[1];
 
-    ap_int<32> in3_a = in[3] << 6;
-    ap_int<32> in3_b = in[3] << 5;
-    ap_int<32> in3_c = in[3] << 4;
-    ap_int<32> in3_d = in[3] << 3;
-    ap_int<32> in3_e = in[3] << 2;
-    ap_int<32> in3_f = in[3] << 1;
-    ap_int<32> in3_g = in[3];
+    ap_int<32> in3_a = (ap_int<32>)in[3] << 6;
+    ap_int<32> in3_b = (ap_int<32>)in[3] << 5;
+    ap_int<32> in3_c = (ap_int<32>)in[3] << 4;
+    ap_int<32> in3_d = (ap_int<32>)in[3] << 3;
+    ap_int<32> in3_e = (ap_int<32>)in[3] << 2;
+    ap_int<32> in3_f = (ap_int<32>)in[3] << 1;
+    ap_int<32> in3_g = (ap_int<32>)in[3];
 
     ap_int<32> in1s[2];
     #pragma HLS ARRAY_PARTITION variable=in1s complete dim=0
@@ -74,8 +75,8 @@ void IDCT2B4(IN_TYPE in[4], OUT_TYPE out[4]){
     ap_int<32> in3s[2];
     #pragma HLS ARRAY_PARTITION variable=in3s complete dim=0
 
-    in3s[0] = in1_b + in1_e; // *36
-    in3s[1] = -(in1_a + in1_c + in1_f + in1_g); // *83
+    in3s[0] = in3_b + in3_e; // *36
+    in3s[1] = -(in3_a + in3_c + in3_f + in3_g); // *83
 
     odds[0] = in1s[0] + in3s[0];
     odds[1] = in1s[1] + in3s[1];
@@ -110,21 +111,37 @@ void IDCT2B8(IN_TYPE in[8], OUT_TYPE out[8]){
 
     #ifdef USE_SHIFT_ADD_8
 
-    ap_int<32> in1_a = in[1] << 6;
-    ap_int<32> in1_b = in[1] << 5;
-    ap_int<32> in1_c = in[1] << 4;
-    ap_int<32> in1_d = in[1] << 3;
-    ap_int<32> in1_e = in[1] << 2;
-    ap_int<32> in1_f = in[1] << 1;
-    ap_int<32> in1_g = in[1];
+    ap_int<32> in1_a = (ap_int<32>)in[1] << 6;
+    ap_int<32> in1_b = (ap_int<32>)in[1] << 5;
+    ap_int<32> in1_c = (ap_int<32>)in[1] << 4;
+    ap_int<32> in1_d = (ap_int<32>)in[1] << 3;
+    ap_int<32> in1_e = (ap_int<32>)in[1] << 2;
+    ap_int<32> in1_f = (ap_int<32>)in[1] << 1;
+    ap_int<32> in1_g = (ap_int<32>)in[1];
 
-    ap_int<32> in3_a = in[3] << 6;
-    ap_int<32> in3_b = in[3] << 5;
-    ap_int<32> in3_c = in[3] << 4;
-    ap_int<32> in3_d = in[3] << 3;
-    ap_int<32> in3_e = in[3] << 2;
-    ap_int<32> in3_f = in[3] << 1;
-    ap_int<32> in3_g = in[3];
+    ap_int<32> in3_a = (ap_int<32>)in[3] << 6;
+    ap_int<32> in3_b = (ap_int<32>)in[3] << 5;
+    ap_int<32> in3_c = (ap_int<32>)in[3] << 4;
+    ap_int<32> in3_d = (ap_int<32>)in[3] << 3;
+    ap_int<32> in3_e = (ap_int<32>)in[3] << 2;
+    ap_int<32> in3_f = (ap_int<32>)in[3] << 1;
+    ap_int<32> in3_g = (ap_int<32>)in[3];
+
+    ap_int<32> in5_a = (ap_int<32>)in[5] << 6;
+    ap_int<32> in5_b = (ap_int<32>)in[5] << 5;
+    ap_int<32> in5_c = (ap_int<32>)in[5] << 4;
+    ap_int<32> in5_d = (ap_int<32>)in[5] << 3;
+    ap_int<32> in5_e = (ap_int<32>)in[5] << 2;
+    ap_int<32> in5_f = (ap_int<32>)in[5] << 1;
+    ap_int<32> in5_g = (ap_int<32>)in[5];
+
+    ap_int<32> in7_a = (ap_int<32>)in[7] << 6;
+    ap_int<32> in7_b = (ap_int<32>)in[7] << 5;
+    ap_int<32> in7_c = (ap_int<32>)in[7] << 4;
+    ap_int<32> in7_d = (ap_int<32>)in[7] << 3;
+    ap_int<32> in7_e = (ap_int<32>)in[7] << 2;
+    ap_int<32> in7_f = (ap_int<32>)in[7] << 1;
+    ap_int<32> in7_g = (ap_int<32>)in[7];
 
     ap_int<32> in1s[4];
     #pragma HLS ARRAY_PARTITION variable=in1s complete dim=0
@@ -138,25 +155,25 @@ void IDCT2B8(IN_TYPE in[8], OUT_TYPE out[8]){
     #pragma HLS ARRAY_PARTITION variable=in3s complete dim=0
 
     in3s[0] = in3_a + in3_d + in3_f + in3_g; // *75
-    in3s[1] = - (in1_c + in1_f); // *18
-    in3s[2] = - (in1_a + in1_c + in1_d + in1_g); // *89
-    in3s[3] = - (in1_b + in1_c + in1_f); // *50
+    in3s[1] = - (in3_c + in3_f); // *18
+    in3s[2] = - (in3_a + in3_c + in3_d + in3_g); // *89
+    in3s[3] = - (in3_b + in3_c + in3_f); // *50
 
     ap_int<32> in5s[4];
     #pragma HLS ARRAY_PARTITION variable=in5s complete dim=0
 
-    in5s[0] = in1_b + in1_c + in1_f; // *50
-    in5s[1] = - (in1_a + in1_c + in1_d + in1_g); // *89
-    in5s[2] = in1_c + in1_f; // *18
-    in5s[3] = in1_a + in1_d + in1_f + in1_g; // *75
+    in5s[0] = in5_b + in5_c + in5_f; // *50
+    in5s[1] = - (in5_a + in5_c + in5_d + in5_g); // *89
+    in5s[2] = in5_c + in5_f; // *18
+    in5s[3] = in5_a + in5_d + in5_f + in5_g; // *75
 
     ap_int<32> in7s[4];
     #pragma HLS ARRAY_PARTITION variable=in7s complete dim=0
 
-    in7s[0] = in1_c + in1_f; // *18
-    in7s[1] = - (in1_b + in1_c + in1_f); // *50
-    in7s[2] = in1_a + in1_d + in1_f + in1_g; // *75
-    in7s[3] = - (in1_a + in1_c + in1_d + in1_g); // *89
+    in7s[0] = in7_c + in7_f; // *18
+    in7s[1] = - (in7_b + in7_c + in7_f); // *50
+    in7s[2] = in7_a + in7_d + in7_f + in7_g; // *75
+    in7s[3] = - (in7_a + in7_c + in7_d + in7_g); // *89
 
     for(int i=0; i<4; i++){
         #pragma HLS UNROLL
@@ -205,69 +222,69 @@ void IDCT2B16(IN_TYPE in[16], OUT_TYPE out[16]){
 
     #ifdef USE_SHIFT_ADD_16
 
-    ap_int<32> in1_a = in[1] << 6;
-    ap_int<32> in1_b = in[1] << 5;
-    ap_int<32> in1_c = in[1] << 4;
-    ap_int<32> in1_d = in[1] << 3;
-    ap_int<32> in1_e = in[1] << 2;
-    ap_int<32> in1_f = in[1] << 1;
-    ap_int<32> in1_g = in[1];
+    ap_int<32> in1_a = (ap_int<32>)in[1] << 6;
+    ap_int<32> in1_b = (ap_int<32>)in[1] << 5;
+    ap_int<32> in1_c = (ap_int<32>)in[1] << 4;
+    ap_int<32> in1_d = (ap_int<32>)in[1] << 3;
+    ap_int<32> in1_e = (ap_int<32>)in[1] << 2;
+    ap_int<32> in1_f = (ap_int<32>)in[1] << 1;
+    ap_int<32> in1_g = (ap_int<32>)in[1];
 
-    ap_int<32> in3_a = in[3] << 6;
-    ap_int<32> in3_b = in[3] << 5;
-    ap_int<32> in3_c = in[3] << 4;
-    ap_int<32> in3_d = in[3] << 3;
-    ap_int<32> in3_e = in[3] << 2;
-    ap_int<32> in3_f = in[3] << 1;
-    ap_int<32> in3_g = in[3];
+    ap_int<32> in3_a = (ap_int<32>)in[3] << 6;
+    ap_int<32> in3_b = (ap_int<32>)in[3] << 5;
+    ap_int<32> in3_c = (ap_int<32>)in[3] << 4;
+    ap_int<32> in3_d = (ap_int<32>)in[3] << 3;
+    ap_int<32> in3_e = (ap_int<32>)in[3] << 2;
+    ap_int<32> in3_f = (ap_int<32>)in[3] << 1;
+    ap_int<32> in3_g = (ap_int<32>)in[3];
 
-    ap_int<32> in5_a = in[5] << 6;
-    ap_int<32> in5_b = in[5] << 5;
-    ap_int<32> in5_c = in[5] << 4;
-    ap_int<32> in5_d = in[5] << 3;
-    ap_int<32> in5_e = in[5] << 2;
-    ap_int<32> in5_f = in[5] << 1;
-    ap_int<32> in5_g = in[5];
+    ap_int<32> in5_a = (ap_int<32>)in[5] << 6;
+    ap_int<32> in5_b = (ap_int<32>)in[5] << 5;
+    ap_int<32> in5_c = (ap_int<32>)in[5] << 4;
+    ap_int<32> in5_d = (ap_int<32>)in[5] << 3;
+    ap_int<32> in5_e = (ap_int<32>)in[5] << 2;
+    ap_int<32> in5_f = (ap_int<32>)in[5] << 1;
+    ap_int<32> in5_g = (ap_int<32>)in[5];
 
-    ap_int<32> in7_a = in[7] << 6;
-    ap_int<32> in7_b = in[7] << 5;
-    ap_int<32> in7_c = in[7] << 4;
-    ap_int<32> in7_d = in[7] << 3;
-    ap_int<32> in7_e = in[7] << 2;
-    ap_int<32> in7_f = in[7] << 1;
-    ap_int<32> in7_g = in[7];
+    ap_int<32> in7_a = (ap_int<32>)in[7] << 6;
+    ap_int<32> in7_b = (ap_int<32>)in[7] << 5;
+    ap_int<32> in7_c = (ap_int<32>)in[7] << 4;
+    ap_int<32> in7_d = (ap_int<32>)in[7] << 3;
+    ap_int<32> in7_e = (ap_int<32>)in[7] << 2;
+    ap_int<32> in7_f = (ap_int<32>)in[7] << 1;
+    ap_int<32> in7_g = (ap_int<32>)in[7];
 
-    ap_int<32> in9_a = in[9] << 6;
-    ap_int<32> in9_b = in[9] << 5;
-    ap_int<32> in9_c = in[9] << 4;
-    ap_int<32> in9_d = in[9] << 3;
-    ap_int<32> in9_e = in[9] << 2;
-    ap_int<32> in9_f = in[9] << 1;
-    ap_int<32> in9_g = in[9];
+    ap_int<32> in9_a = (ap_int<32>)in[9] << 6;
+    ap_int<32> in9_b = (ap_int<32>)in[9] << 5;
+    ap_int<32> in9_c = (ap_int<32>)in[9] << 4;
+    ap_int<32> in9_d = (ap_int<32>)in[9] << 3;
+    ap_int<32> in9_e = (ap_int<32>)in[9] << 2;
+    ap_int<32> in9_f = (ap_int<32>)in[9] << 1;
+    ap_int<32> in9_g = (ap_int<32>)in[9];
 
-    ap_int<32> in11_a = in[11] << 6;
-    ap_int<32> in11_b = in[11] << 5;
-    ap_int<32> in11_c = in[11] << 4;
-    ap_int<32> in11_d = in[11] << 3;
-    ap_int<32> in11_e = in[11] << 2;
-    ap_int<32> in11_f = in[11] << 1;
-    ap_int<32> in11_g = in[11];
+    ap_int<32> in11_a = (ap_int<32>)in[11] << 6;
+    ap_int<32> in11_b = (ap_int<32>)in[11] << 5;
+    ap_int<32> in11_c = (ap_int<32>)in[11] << 4;
+    ap_int<32> in11_d = (ap_int<32>)in[11] << 3;
+    ap_int<32> in11_e = (ap_int<32>)in[11] << 2;
+    ap_int<32> in11_f = (ap_int<32>)in[11] << 1;
+    ap_int<32> in11_g = (ap_int<32>)in[11];
 
-    ap_int<32> in13_a = in[13] << 6;
-    ap_int<32> in13_b = in[13] << 5;
-    ap_int<32> in13_c = in[13] << 4;
-    ap_int<32> in13_d = in[13] << 3;
-    ap_int<32> in13_e = in[13] << 2;
-    ap_int<32> in13_f = in[13] << 1;
-    ap_int<32> in13_g = in[13];
+    ap_int<32> in13_a = (ap_int<32>)in[13] << 6;
+    ap_int<32> in13_b = (ap_int<32>)in[13] << 5;
+    ap_int<32> in13_c = (ap_int<32>)in[13] << 4;
+    ap_int<32> in13_d = (ap_int<32>)in[13] << 3;
+    ap_int<32> in13_e = (ap_int<32>)in[13] << 2;
+    ap_int<32> in13_f = (ap_int<32>)in[13] << 1;
+    ap_int<32> in13_g = (ap_int<32>)in[13];
 
-    ap_int<32> in15_a = in[15] << 6;
-    ap_int<32> in15_b = in[15] << 5;
-    ap_int<32> in15_c = in[15] << 4;
-    ap_int<32> in15_d = in[15] << 3;
-    ap_int<32> in15_e = in[15] << 2;
-    ap_int<32> in15_f = in[15] << 1;
-    ap_int<32> in15_g = in[15];
+    ap_int<32> in15_a = (ap_int<32>)in[15] << 6;
+    ap_int<32> in15_b = (ap_int<32>)in[15] << 5;
+    ap_int<32> in15_c = (ap_int<32>)in[15] << 4;
+    ap_int<32> in15_d = (ap_int<32>)in[15] << 3;
+    ap_int<32> in15_e = (ap_int<32>)in[15] << 2;
+    ap_int<32> in15_f = (ap_int<32>)in[15] << 1;
+    ap_int<32> in15_g = (ap_int<32>)in[15];
 
     ap_int<32> in1s[8];
     #pragma HLS ARRAY_PARTITION variable=in1s complete dim=0
@@ -429,133 +446,133 @@ void IDCT2B32(IN_TYPE in[32], OUT_TYPE out[32]){
 
     #ifdef USE_SHIFT_ADD_32
 
-    ap_int<32> in1_a = in[1] << 6;
-    ap_int<32> in1_b = in[1] << 5;
-    ap_int<32> in1_c = in[1] << 4;
-    ap_int<32> in1_d = in[1] << 3;
-    ap_int<32> in1_e = in[1] << 2;
-    ap_int<32> in1_f = in[1] << 1;
-    ap_int<32> in1_g = in[1];
+    ap_int<32> in1_a = (ap_int<32>)in[1] << 6;
+    ap_int<32> in1_b = (ap_int<32>)in[1] << 5;
+    ap_int<32> in1_c = (ap_int<32>)in[1] << 4;
+    ap_int<32> in1_d = (ap_int<32>)in[1] << 3;
+    ap_int<32> in1_e = (ap_int<32>)in[1] << 2;
+    ap_int<32> in1_f = (ap_int<32>)in[1] << 1;
+    ap_int<32> in1_g = (ap_int<32>)in[1];
 
-    ap_int<32> in3_a = in[3] << 6;
-    ap_int<32> in3_b = in[3] << 5;
-    ap_int<32> in3_c = in[3] << 4;
-    ap_int<32> in3_d = in[3] << 3;
-    ap_int<32> in3_e = in[3] << 2;
-    ap_int<32> in3_f = in[3] << 1;
-    ap_int<32> in3_g = in[3];
+    ap_int<32> in3_a = (ap_int<32>)in[3] << 6;
+    ap_int<32> in3_b = (ap_int<32>)in[3] << 5;
+    ap_int<32> in3_c = (ap_int<32>)in[3] << 4;
+    ap_int<32> in3_d = (ap_int<32>)in[3] << 3;
+    ap_int<32> in3_e = (ap_int<32>)in[3] << 2;
+    ap_int<32> in3_f = (ap_int<32>)in[3] << 1;
+    ap_int<32> in3_g = (ap_int<32>)in[3];
 
-    ap_int<32> in5_a = in[5] << 6;
-    ap_int<32> in5_b = in[5] << 5;
-    ap_int<32> in5_c = in[5] << 4;
-    ap_int<32> in5_d = in[5] << 3;
-    ap_int<32> in5_e = in[5] << 2;
-    ap_int<32> in5_f = in[5] << 1;
-    ap_int<32> in5_g = in[5];
+    ap_int<32> in5_a = (ap_int<32>)in[5] << 6;
+    ap_int<32> in5_b = (ap_int<32>)in[5] << 5;
+    ap_int<32> in5_c = (ap_int<32>)in[5] << 4;
+    ap_int<32> in5_d = (ap_int<32>)in[5] << 3;
+    ap_int<32> in5_e = (ap_int<32>)in[5] << 2;
+    ap_int<32> in5_f = (ap_int<32>)in[5] << 1;
+    ap_int<32> in5_g = (ap_int<32>)in[5];
 
-    ap_int<32> in7_a = in[7] << 6;
-    ap_int<32> in7_b = in[7] << 5;
-    ap_int<32> in7_c = in[7] << 4;
-    ap_int<32> in7_d = in[7] << 3;
-    ap_int<32> in7_e = in[7] << 2;
-    ap_int<32> in7_f = in[7] << 1;
-    ap_int<32> in7_g = in[7];
+    ap_int<32> in7_a = (ap_int<32>)in[7] << 6;
+    ap_int<32> in7_b = (ap_int<32>)in[7] << 5;
+    ap_int<32> in7_c = (ap_int<32>)in[7] << 4;
+    ap_int<32> in7_d = (ap_int<32>)in[7] << 3;
+    ap_int<32> in7_e = (ap_int<32>)in[7] << 2;
+    ap_int<32> in7_f = (ap_int<32>)in[7] << 1;
+    ap_int<32> in7_g = (ap_int<32>)in[7];
 
-    ap_int<32> in9_a = in[9] << 6;
-    ap_int<32> in9_b = in[9] << 5;
-    ap_int<32> in9_c = in[9] << 4;
-    ap_int<32> in9_d = in[9] << 3;
-    ap_int<32> in9_e = in[9] << 2;
-    ap_int<32> in9_f = in[9] << 1;
-    ap_int<32> in9_g = in[9];
+    ap_int<32> in9_a = (ap_int<32>)in[9] << 6;
+    ap_int<32> in9_b = (ap_int<32>)in[9] << 5;
+    ap_int<32> in9_c = (ap_int<32>)in[9] << 4;
+    ap_int<32> in9_d = (ap_int<32>)in[9] << 3;
+    ap_int<32> in9_e = (ap_int<32>)in[9] << 2;
+    ap_int<32> in9_f = (ap_int<32>)in[9] << 1;
+    ap_int<32> in9_g = (ap_int<32>)in[9];
 
-    ap_int<32> in11_a = in[11] << 6;
-    ap_int<32> in11_b = in[11] << 5;
-    ap_int<32> in11_c = in[11] << 4;
-    ap_int<32> in11_d = in[11] << 3;
-    ap_int<32> in11_e = in[11] << 2;
-    ap_int<32> in11_f = in[11] << 1;
-    ap_int<32> in11_g = in[11];
+    ap_int<32> in11_a = (ap_int<32>)in[11] << 6;
+    ap_int<32> in11_b = (ap_int<32>)in[11] << 5;
+    ap_int<32> in11_c = (ap_int<32>)in[11] << 4;
+    ap_int<32> in11_d = (ap_int<32>)in[11] << 3;
+    ap_int<32> in11_e = (ap_int<32>)in[11] << 2;
+    ap_int<32> in11_f = (ap_int<32>)in[11] << 1;
+    ap_int<32> in11_g = (ap_int<32>)in[11];
 
-    ap_int<32> in13_a = in[13] << 6;
-    ap_int<32> in13_b = in[13] << 5;
-    ap_int<32> in13_c = in[13] << 4;
-    ap_int<32> in13_d = in[13] << 3;
-    ap_int<32> in13_e = in[13] << 2;
-    ap_int<32> in13_f = in[13] << 1;
-    ap_int<32> in13_g = in[13];
+    ap_int<32> in13_a = (ap_int<32>)in[13] << 6;
+    ap_int<32> in13_b = (ap_int<32>)in[13] << 5;
+    ap_int<32> in13_c = (ap_int<32>)in[13] << 4;
+    ap_int<32> in13_d = (ap_int<32>)in[13] << 3;
+    ap_int<32> in13_e = (ap_int<32>)in[13] << 2;
+    ap_int<32> in13_f = (ap_int<32>)in[13] << 1;
+    ap_int<32> in13_g = (ap_int<32>)in[13];
 
-    ap_int<32> in15_a = in[15] << 6;
-    ap_int<32> in15_b = in[15] << 5;
-    ap_int<32> in15_c = in[15] << 4;
-    ap_int<32> in15_d = in[15] << 3;
-    ap_int<32> in15_e = in[15] << 2;
-    ap_int<32> in15_f = in[15] << 1;
-    ap_int<32> in15_g = in[15];
+    ap_int<32> in15_a = (ap_int<32>)in[15] << 6;
+    ap_int<32> in15_b = (ap_int<32>)in[15] << 5;
+    ap_int<32> in15_c = (ap_int<32>)in[15] << 4;
+    ap_int<32> in15_d = (ap_int<32>)in[15] << 3;
+    ap_int<32> in15_e = (ap_int<32>)in[15] << 2;
+    ap_int<32> in15_f = (ap_int<32>)in[15] << 1;
+    ap_int<32> in15_g = (ap_int<32>)in[15];
 
-    ap_int<32> in17_a = in[17] << 6;
-    ap_int<32> in17_b = in[17] << 5;
-    ap_int<32> in17_c = in[17] << 4;
-    ap_int<32> in17_d = in[17] << 3;
-    ap_int<32> in17_e = in[17] << 2;
-    ap_int<32> in17_f = in[17] << 1;
-    ap_int<32> in17_g = in[17];
+    ap_int<32> in17_a = (ap_int<32>)in[17] << 6;
+    ap_int<32> in17_b = (ap_int<32>)in[17] << 5;
+    ap_int<32> in17_c = (ap_int<32>)in[17] << 4;
+    ap_int<32> in17_d = (ap_int<32>)in[17] << 3;
+    ap_int<32> in17_e = (ap_int<32>)in[17] << 2;
+    ap_int<32> in17_f = (ap_int<32>)in[17] << 1;
+    ap_int<32> in17_g = (ap_int<32>)in[17];
 
-    ap_int<32> in19_a = in[19] << 6;
-    ap_int<32> in19_b = in[19] << 5;
-    ap_int<32> in19_c = in[19] << 4;
-    ap_int<32> in19_d = in[19] << 3;
-    ap_int<32> in19_e = in[19] << 2;
-    ap_int<32> in19_f = in[19] << 1;
-    ap_int<32> in19_g = in[19];
+    ap_int<32> in19_a = (ap_int<32>)in[19] << 6;
+    ap_int<32> in19_b = (ap_int<32>)in[19] << 5;
+    ap_int<32> in19_c = (ap_int<32>)in[19] << 4;
+    ap_int<32> in19_d = (ap_int<32>)in[19] << 3;
+    ap_int<32> in19_e = (ap_int<32>)in[19] << 2;
+    ap_int<32> in19_f = (ap_int<32>)in[19] << 1;
+    ap_int<32> in19_g = (ap_int<32>)in[19];
 
-    ap_int<32> in21_a = in[21] << 6;
-    ap_int<32> in21_b = in[21] << 5;
-    ap_int<32> in21_c = in[21] << 4;
-    ap_int<32> in21_d = in[21] << 3;
-    ap_int<32> in21_e = in[21] << 2;
-    ap_int<32> in21_f = in[21] << 1;
-    ap_int<32> in21_g = in[21];
+    ap_int<32> in21_a = (ap_int<32>)in[21] << 6;
+    ap_int<32> in21_b = (ap_int<32>)in[21] << 5;
+    ap_int<32> in21_c = (ap_int<32>)in[21] << 4;
+    ap_int<32> in21_d = (ap_int<32>)in[21] << 3;
+    ap_int<32> in21_e = (ap_int<32>)in[21] << 2;
+    ap_int<32> in21_f = (ap_int<32>)in[21] << 1;
+    ap_int<32> in21_g = (ap_int<32>)in[21];
 
-    ap_int<32> in23_a = in[23] << 6;
-    ap_int<32> in23_b = in[23] << 5;
-    ap_int<32> in23_c = in[23] << 4;
-    ap_int<32> in23_d = in[23] << 3;
-    ap_int<32> in23_e = in[23] << 2;
-    ap_int<32> in23_f = in[23] << 1;
-    ap_int<32> in23_g = in[23];
+    ap_int<32> in23_a = (ap_int<32>)in[23] << 6;
+    ap_int<32> in23_b = (ap_int<32>)in[23] << 5;
+    ap_int<32> in23_c = (ap_int<32>)in[23] << 4;
+    ap_int<32> in23_d = (ap_int<32>)in[23] << 3;
+    ap_int<32> in23_e = (ap_int<32>)in[23] << 2;
+    ap_int<32> in23_f = (ap_int<32>)in[23] << 1;
+    ap_int<32> in23_g = (ap_int<32>)in[23];
 
-    ap_int<32> in25_a = in[25] << 6;
-    ap_int<32> in25_b = in[25] << 5;
-    ap_int<32> in25_c = in[25] << 4;
-    ap_int<32> in25_d = in[25] << 3;
-    ap_int<32> in25_e = in[25] << 2;
-    ap_int<32> in25_f = in[25] << 1;
-    ap_int<32> in25_g = in[25];
+    ap_int<32> in25_a = (ap_int<32>)in[25] << 6;
+    ap_int<32> in25_b = (ap_int<32>)in[25] << 5;
+    ap_int<32> in25_c = (ap_int<32>)in[25] << 4;
+    ap_int<32> in25_d = (ap_int<32>)in[25] << 3;
+    ap_int<32> in25_e = (ap_int<32>)in[25] << 2;
+    ap_int<32> in25_f = (ap_int<32>)in[25] << 1;
+    ap_int<32> in25_g = (ap_int<32>)in[25];
 
-    ap_int<32> in27_a = in[27] << 6;
-    ap_int<32> in27_b = in[27] << 5;
-    ap_int<32> in27_c = in[27] << 4;
-    ap_int<32> in27_d = in[27] << 3;
-    ap_int<32> in27_e = in[27] << 2;
-    ap_int<32> in27_f = in[27] << 1;
-    ap_int<32> in27_g = in[27];
+    ap_int<32> in27_a = (ap_int<32>)in[27] << 6;
+    ap_int<32> in27_b = (ap_int<32>)in[27] << 5;
+    ap_int<32> in27_c = (ap_int<32>)in[27] << 4;
+    ap_int<32> in27_d = (ap_int<32>)in[27] << 3;
+    ap_int<32> in27_e = (ap_int<32>)in[27] << 2;
+    ap_int<32> in27_f = (ap_int<32>)in[27] << 1;
+    ap_int<32> in27_g = (ap_int<32>)in[27];
 
-    ap_int<32> in29_a = in[29] << 6;
-    ap_int<32> in29_b = in[29] << 5;
-    ap_int<32> in29_c = in[29] << 4;
-    ap_int<32> in29_d = in[29] << 3;
-    ap_int<32> in29_e = in[29] << 2;
-    ap_int<32> in29_f = in[29] << 1;
-    ap_int<32> in29_g = in[29];
+    ap_int<32> in29_a = (ap_int<32>)in[29] << 6;
+    ap_int<32> in29_b = (ap_int<32>)in[29] << 5;
+    ap_int<32> in29_c = (ap_int<32>)in[29] << 4;
+    ap_int<32> in29_d = (ap_int<32>)in[29] << 3;
+    ap_int<32> in29_e = (ap_int<32>)in[29] << 2;
+    ap_int<32> in29_f = (ap_int<32>)in[29] << 1;
+    ap_int<32> in29_g = (ap_int<32>)in[29];
 
-    ap_int<32> in31_a = in[31] << 6;
-    ap_int<32> in31_b = in[31] << 5;
-    ap_int<32> in31_c = in[31] << 4;
-    ap_int<32> in31_d = in[31] << 3;
-    ap_int<32> in31_e = in[31] << 2;
-    ap_int<32> in31_f = in[31] << 1;
-    ap_int<32> in31_g = in[31];
+    ap_int<32> in31_a = (ap_int<32>)in[31] << 6;
+    ap_int<32> in31_b = (ap_int<32>)in[31] << 5;
+    ap_int<32> in31_c = (ap_int<32>)in[31] << 4;
+    ap_int<32> in31_d = (ap_int<32>)in[31] << 3;
+    ap_int<32> in31_e = (ap_int<32>)in[31] << 2;
+    ap_int<32> in31_f = (ap_int<32>)in[31] << 1;
+    ap_int<32> in31_g = (ap_int<32>)in[31];
 
     ap_int<32> in1s[16];
     #pragma HLS ARRAY_PARTITION variable=in1s complete dim=0
@@ -563,7 +580,7 @@ void IDCT2B32(IN_TYPE in[32], OUT_TYPE out[32]){
     in1s[0] = in1_a + in1_c + in1_d + in1_f; // *90
     in1s[1] = in1_a + in1_c + in1_d + in1_f; // *90 
     in1s[2] = in1_a + in1_c + in1_d; // *88
-    in1s[3] = in1_a + in1_c + in1_e + in1_f; // *85
+    in1s[3] = in1_a + in1_c + in1_e + in1_g; // *85
     in1s[4] = in1_a + in1_c + in1_f; // *82
     in1s[5] = in1_a + in1_d + in1_e + in1_f; // *78
     in1s[6] = in1_a + in1_d + in1_g; // *73
@@ -571,7 +588,7 @@ void IDCT2B32(IN_TYPE in[32], OUT_TYPE out[32]){
     in1s[8] = in1_b + in1_c + in1_d + in1_e + in1_g; // *61
     in1s[9] = in1_b + in1_c + in1_e + in1_f; // *54
     in1s[10] = in1_b + in1_d + in1_e + in1_f; // *46
-    in1s[11] = in1_b + in1_d + in1_e; // *38
+    in1s[11] = in1_b + in1_e + in1_f; // *38
     in1s[12] = in1_c + in1_d + in1_e + in1_f + in1_g; // *31
     in1s[13] = in1_c + in1_e + in1_f; // *24
     in1s[14] = in1_d + in1_e + in1_g; // *13
@@ -976,261 +993,261 @@ void IDCT2B64(IN_TYPE in[64], OUT_TYPE out[64]){
 
     #ifdef USE_SHIFT_ADD_64
 
-    ap_int<32> in1_a = in[1] << 6;
-    ap_int<32> in1_b = in[1] << 5;
-    ap_int<32> in1_c = in[1] << 4;
-    ap_int<32> in1_d = in[1] << 3;
-    ap_int<32> in1_e = in[1] << 2;
-    ap_int<32> in1_f = in[1] << 1;
-    ap_int<32> in1_g = in[1];
+    ap_int<32> in1_a = (ap_int<32>)in[1] << 6;
+    ap_int<32> in1_b = (ap_int<32>)in[1] << 5;
+    ap_int<32> in1_c = (ap_int<32>)in[1] << 4;
+    ap_int<32> in1_d = (ap_int<32>)in[1] << 3;
+    ap_int<32> in1_e = (ap_int<32>)in[1] << 2;
+    ap_int<32> in1_f = (ap_int<32>)in[1] << 1;
+    ap_int<32> in1_g = (ap_int<32>)in[1];
 
-    ap_int<32> in3_a = in[3] << 6;
-    ap_int<32> in3_b = in[3] << 5;
-    ap_int<32> in3_c = in[3] << 4;
-    ap_int<32> in3_d = in[3] << 3;
-    ap_int<32> in3_e = in[3] << 2;
-    ap_int<32> in3_f = in[3] << 1;
-    ap_int<32> in3_g = in[3];
+    ap_int<32> in3_a = (ap_int<32>)in[3] << 6;
+    ap_int<32> in3_b = (ap_int<32>)in[3] << 5;
+    ap_int<32> in3_c = (ap_int<32>)in[3] << 4;
+    ap_int<32> in3_d = (ap_int<32>)in[3] << 3;
+    ap_int<32> in3_e = (ap_int<32>)in[3] << 2;
+    ap_int<32> in3_f = (ap_int<32>)in[3] << 1;
+    ap_int<32> in3_g = (ap_int<32>)in[3];
 
-    ap_int<32> in5_a = in[5] << 6;
-    ap_int<32> in5_b = in[5] << 5;
-    ap_int<32> in5_c = in[5] << 4;
-    ap_int<32> in5_d = in[5] << 3;
-    ap_int<32> in5_e = in[5] << 2;
-    ap_int<32> in5_f = in[5] << 1;
-    ap_int<32> in5_g = in[5];
+    ap_int<32> in5_a = (ap_int<32>)in[5] << 6;
+    ap_int<32> in5_b = (ap_int<32>)in[5] << 5;
+    ap_int<32> in5_c = (ap_int<32>)in[5] << 4;
+    ap_int<32> in5_d = (ap_int<32>)in[5] << 3;
+    ap_int<32> in5_e = (ap_int<32>)in[5] << 2;
+    ap_int<32> in5_f = (ap_int<32>)in[5] << 1;
+    ap_int<32> in5_g = (ap_int<32>)in[5];
 
-    ap_int<32> in7_a = in[7] << 6;
-    ap_int<32> in7_b = in[7] << 5;
-    ap_int<32> in7_c = in[7] << 4;
-    ap_int<32> in7_d = in[7] << 3;
-    ap_int<32> in7_e = in[7] << 2;
-    ap_int<32> in7_f = in[7] << 1;
-    ap_int<32> in7_g = in[7];
+    ap_int<32> in7_a = (ap_int<32>)in[7] << 6;
+    ap_int<32> in7_b = (ap_int<32>)in[7] << 5;
+    ap_int<32> in7_c = (ap_int<32>)in[7] << 4;
+    ap_int<32> in7_d = (ap_int<32>)in[7] << 3;
+    ap_int<32> in7_e = (ap_int<32>)in[7] << 2;
+    ap_int<32> in7_f = (ap_int<32>)in[7] << 1;
+    ap_int<32> in7_g = (ap_int<32>)in[7];
 
-    ap_int<32> in9_a = in[9] << 6;
-    ap_int<32> in9_b = in[9] << 5;
-    ap_int<32> in9_c = in[9] << 4;
-    ap_int<32> in9_d = in[9] << 3;
-    ap_int<32> in9_e = in[9] << 2;
-    ap_int<32> in9_f = in[9] << 1;
-    ap_int<32> in9_g = in[9];
+    ap_int<32> in9_a = (ap_int<32>)in[9] << 6;
+    ap_int<32> in9_b = (ap_int<32>)in[9] << 5;
+    ap_int<32> in9_c = (ap_int<32>)in[9] << 4;
+    ap_int<32> in9_d = (ap_int<32>)in[9] << 3;
+    ap_int<32> in9_e = (ap_int<32>)in[9] << 2;
+    ap_int<32> in9_f = (ap_int<32>)in[9] << 1;
+    ap_int<32> in9_g = (ap_int<32>)in[9];
 
-    ap_int<32> in11_a = in[11] << 6;
-    ap_int<32> in11_b = in[11] << 5;
-    ap_int<32> in11_c = in[11] << 4;
-    ap_int<32> in11_d = in[11] << 3;
-    ap_int<32> in11_e = in[11] << 2;
-    ap_int<32> in11_f = in[11] << 1;
-    ap_int<32> in11_g = in[11];
+    ap_int<32> in11_a = (ap_int<32>)in[11] << 6;
+    ap_int<32> in11_b = (ap_int<32>)in[11] << 5;
+    ap_int<32> in11_c = (ap_int<32>)in[11] << 4;
+    ap_int<32> in11_d = (ap_int<32>)in[11] << 3;
+    ap_int<32> in11_e = (ap_int<32>)in[11] << 2;
+    ap_int<32> in11_f = (ap_int<32>)in[11] << 1;
+    ap_int<32> in11_g = (ap_int<32>)in[11];
 
-    ap_int<32> in13_a = in[13] << 6;
-    ap_int<32> in13_b = in[13] << 5;
-    ap_int<32> in13_c = in[13] << 4;
-    ap_int<32> in13_d = in[13] << 3;
-    ap_int<32> in13_e = in[13] << 2;
-    ap_int<32> in13_f = in[13] << 1;
-    ap_int<32> in13_g = in[13];
+    ap_int<32> in13_a = (ap_int<32>)in[13] << 6;
+    ap_int<32> in13_b = (ap_int<32>)in[13] << 5;
+    ap_int<32> in13_c = (ap_int<32>)in[13] << 4;
+    ap_int<32> in13_d = (ap_int<32>)in[13] << 3;
+    ap_int<32> in13_e = (ap_int<32>)in[13] << 2;
+    ap_int<32> in13_f = (ap_int<32>)in[13] << 1;
+    ap_int<32> in13_g = (ap_int<32>)in[13];
 
-    ap_int<32> in15_a = in[15] << 6;
-    ap_int<32> in15_b = in[15] << 5;
-    ap_int<32> in15_c = in[15] << 4;
-    ap_int<32> in15_d = in[15] << 3;
-    ap_int<32> in15_e = in[15] << 2;
-    ap_int<32> in15_f = in[15] << 1;
-    ap_int<32> in15_g = in[15];
+    ap_int<32> in15_a = (ap_int<32>)in[15] << 6;
+    ap_int<32> in15_b = (ap_int<32>)in[15] << 5;
+    ap_int<32> in15_c = (ap_int<32>)in[15] << 4;
+    ap_int<32> in15_d = (ap_int<32>)in[15] << 3;
+    ap_int<32> in15_e = (ap_int<32>)in[15] << 2;
+    ap_int<32> in15_f = (ap_int<32>)in[15] << 1;
+    ap_int<32> in15_g = (ap_int<32>)in[15];
 
-    ap_int<32> in17_a = in[17] << 6;
-    ap_int<32> in17_b = in[17] << 5;
-    ap_int<32> in17_c = in[17] << 4;
-    ap_int<32> in17_d = in[17] << 3;
-    ap_int<32> in17_e = in[17] << 2;
-    ap_int<32> in17_f = in[17] << 1;
-    ap_int<32> in17_g = in[17];
+    ap_int<32> in17_a = (ap_int<32>)in[17] << 6;
+    ap_int<32> in17_b = (ap_int<32>)in[17] << 5;
+    ap_int<32> in17_c = (ap_int<32>)in[17] << 4;
+    ap_int<32> in17_d = (ap_int<32>)in[17] << 3;
+    ap_int<32> in17_e = (ap_int<32>)in[17] << 2;
+    ap_int<32> in17_f = (ap_int<32>)in[17] << 1;
+    ap_int<32> in17_g = (ap_int<32>)in[17];
 
-    ap_int<32> in19_a = in[19] << 6;
-    ap_int<32> in19_b = in[19] << 5;
-    ap_int<32> in19_c = in[19] << 4;
-    ap_int<32> in19_d = in[19] << 3;
-    ap_int<32> in19_e = in[19] << 2;
-    ap_int<32> in19_f = in[19] << 1;
-    ap_int<32> in19_g = in[19];
+    ap_int<32> in19_a = (ap_int<32>)in[19] << 6;
+    ap_int<32> in19_b = (ap_int<32>)in[19] << 5;
+    ap_int<32> in19_c = (ap_int<32>)in[19] << 4;
+    ap_int<32> in19_d = (ap_int<32>)in[19] << 3;
+    ap_int<32> in19_e = (ap_int<32>)in[19] << 2;
+    ap_int<32> in19_f = (ap_int<32>)in[19] << 1;
+    ap_int<32> in19_g = (ap_int<32>)in[19];
 
-    ap_int<32> in21_a = in[21] << 6;
-    ap_int<32> in21_b = in[21] << 5;
-    ap_int<32> in21_c = in[21] << 4;
-    ap_int<32> in21_d = in[21] << 3;
-    ap_int<32> in21_e = in[21] << 2;
-    ap_int<32> in21_f = in[21] << 1;
-    ap_int<32> in21_g = in[21];
+    ap_int<32> in21_a = (ap_int<32>)in[21] << 6;
+    ap_int<32> in21_b = (ap_int<32>)in[21] << 5;
+    ap_int<32> in21_c = (ap_int<32>)in[21] << 4;
+    ap_int<32> in21_d = (ap_int<32>)in[21] << 3;
+    ap_int<32> in21_e = (ap_int<32>)in[21] << 2;
+    ap_int<32> in21_f = (ap_int<32>)in[21] << 1;
+    ap_int<32> in21_g = (ap_int<32>)in[21];
 
-    ap_int<32> in23_a = in[23] << 6;
-    ap_int<32> in23_b = in[23] << 5;
-    ap_int<32> in23_c = in[23] << 4;
-    ap_int<32> in23_d = in[23] << 3;
-    ap_int<32> in23_e = in[23] << 2;
-    ap_int<32> in23_f = in[23] << 1;
-    ap_int<32> in23_g = in[23];
+    ap_int<32> in23_a = (ap_int<32>)in[23] << 6;
+    ap_int<32> in23_b = (ap_int<32>)in[23] << 5;
+    ap_int<32> in23_c = (ap_int<32>)in[23] << 4;
+    ap_int<32> in23_d = (ap_int<32>)in[23] << 3;
+    ap_int<32> in23_e = (ap_int<32>)in[23] << 2;
+    ap_int<32> in23_f = (ap_int<32>)in[23] << 1;
+    ap_int<32> in23_g = (ap_int<32>)in[23];
 
-    ap_int<32> in25_a = in[25] << 6;
-    ap_int<32> in25_b = in[25] << 5;
-    ap_int<32> in25_c = in[25] << 4;
-    ap_int<32> in25_d = in[25] << 3;
-    ap_int<32> in25_e = in[25] << 2;
-    ap_int<32> in25_f = in[25] << 1;
-    ap_int<32> in25_g = in[25];
+    ap_int<32> in25_a = (ap_int<32>)in[25] << 6;
+    ap_int<32> in25_b = (ap_int<32>)in[25] << 5;
+    ap_int<32> in25_c = (ap_int<32>)in[25] << 4;
+    ap_int<32> in25_d = (ap_int<32>)in[25] << 3;
+    ap_int<32> in25_e = (ap_int<32>)in[25] << 2;
+    ap_int<32> in25_f = (ap_int<32>)in[25] << 1;
+    ap_int<32> in25_g = (ap_int<32>)in[25];
 
-    ap_int<32> in27_a = in[27] << 6;
-    ap_int<32> in27_b = in[27] << 5;
-    ap_int<32> in27_c = in[27] << 4;
-    ap_int<32> in27_d = in[27] << 3;
-    ap_int<32> in27_e = in[27] << 2;
-    ap_int<32> in27_f = in[27] << 1;
-    ap_int<32> in27_g = in[27];
+    ap_int<32> in27_a = (ap_int<32>)in[27] << 6;
+    ap_int<32> in27_b = (ap_int<32>)in[27] << 5;
+    ap_int<32> in27_c = (ap_int<32>)in[27] << 4;
+    ap_int<32> in27_d = (ap_int<32>)in[27] << 3;
+    ap_int<32> in27_e = (ap_int<32>)in[27] << 2;
+    ap_int<32> in27_f = (ap_int<32>)in[27] << 1;
+    ap_int<32> in27_g = (ap_int<32>)in[27];
 
-    ap_int<32> in29_a = in[29] << 6;
-    ap_int<32> in29_b = in[29] << 5;
-    ap_int<32> in29_c = in[29] << 4;
-    ap_int<32> in29_d = in[29] << 3;
-    ap_int<32> in29_e = in[29] << 2;
-    ap_int<32> in29_f = in[29] << 1;
-    ap_int<32> in29_g = in[29];
+    ap_int<32> in29_a = (ap_int<32>)in[29] << 6;
+    ap_int<32> in29_b = (ap_int<32>)in[29] << 5;
+    ap_int<32> in29_c = (ap_int<32>)in[29] << 4;
+    ap_int<32> in29_d = (ap_int<32>)in[29] << 3;
+    ap_int<32> in29_e = (ap_int<32>)in[29] << 2;
+    ap_int<32> in29_f = (ap_int<32>)in[29] << 1;
+    ap_int<32> in29_g = (ap_int<32>)in[29];
 
-    ap_int<32> in31_a = in[31] << 6;
-    ap_int<32> in31_b = in[31] << 5;
-    ap_int<32> in31_c = in[31] << 4;
-    ap_int<32> in31_d = in[31] << 3;
-    ap_int<32> in31_e = in[31] << 2;
-    ap_int<32> in31_f = in[31] << 1;
-    ap_int<32> in31_g = in[31];
+    ap_int<32> in31_a = (ap_int<32>)in[31] << 6;
+    ap_int<32> in31_b = (ap_int<32>)in[31] << 5;
+    ap_int<32> in31_c = (ap_int<32>)in[31] << 4;
+    ap_int<32> in31_d = (ap_int<32>)in[31] << 3;
+    ap_int<32> in31_e = (ap_int<32>)in[31] << 2;
+    ap_int<32> in31_f = (ap_int<32>)in[31] << 1;
+    ap_int<32> in31_g = (ap_int<32>)in[31];
 
-    ap_int<32> in1_a_2 = in[33] << 6;
-    ap_int<32> in1_b_2 = in[33] << 5;
-    ap_int<32> in1_c_2 = in[33] << 4;
-    ap_int<32> in1_d_2 = in[33] << 3;
-    ap_int<32> in1_e_2 = in[33] << 2;
-    ap_int<32> in1_f_2 = in[33] << 1;
-    ap_int<32> in1_g_2 = in[33];
+    ap_int<32> in1_a_2 = (ap_int<32>)in[33] << 6;
+    ap_int<32> in1_b_2 = (ap_int<32>)in[33] << 5;
+    ap_int<32> in1_c_2 = (ap_int<32>)in[33] << 4;
+    ap_int<32> in1_d_2 = (ap_int<32>)in[33] << 3;
+    ap_int<32> in1_e_2 = (ap_int<32>)in[33] << 2;
+    ap_int<32> in1_f_2 = (ap_int<32>)in[33] << 1;
+    ap_int<32> in1_g_2 = (ap_int<32>)in[33];
 
-    ap_int<32> in3_a_2 = in[35] << 6;
-    ap_int<32> in3_b_2 = in[35] << 5;
-    ap_int<32> in3_c_2 = in[35] << 4;
-    ap_int<32> in3_d_2 = in[35] << 3;
-    ap_int<32> in3_e_2 = in[35] << 2;
-    ap_int<32> in3_f_2 = in[35] << 1;
-    ap_int<32> in3_g_2 = in[35];
+    ap_int<32> in3_a_2 = (ap_int<32>)in[35] << 6;
+    ap_int<32> in3_b_2 = (ap_int<32>)in[35] << 5;
+    ap_int<32> in3_c_2 = (ap_int<32>)in[35] << 4;
+    ap_int<32> in3_d_2 = (ap_int<32>)in[35] << 3;
+    ap_int<32> in3_e_2 = (ap_int<32>)in[35] << 2;
+    ap_int<32> in3_f_2 = (ap_int<32>)in[35] << 1;
+    ap_int<32> in3_g_2 = (ap_int<32>)in[35];
 
-    ap_int<32> in5_a_2 = in[37] << 6;
-    ap_int<32> in5_b_2 = in[37] << 5;
-    ap_int<32> in5_c_2 = in[37] << 4;
-    ap_int<32> in5_d_2 = in[37] << 3;
-    ap_int<32> in5_e_2 = in[37] << 2;
-    ap_int<32> in5_f_2 = in[37] << 1;
-    ap_int<32> in5_g_2 = in[37];
+    ap_int<32> in5_a_2 = (ap_int<32>)in[37] << 6;
+    ap_int<32> in5_b_2 = (ap_int<32>)in[37] << 5;
+    ap_int<32> in5_c_2 = (ap_int<32>)in[37] << 4;
+    ap_int<32> in5_d_2 = (ap_int<32>)in[37] << 3;
+    ap_int<32> in5_e_2 = (ap_int<32>)in[37] << 2;
+    ap_int<32> in5_f_2 = (ap_int<32>)in[37] << 1;
+    ap_int<32> in5_g_2 = (ap_int<32>)in[37];
 
-    ap_int<32> in7_a_2 = in[39] << 6;
-    ap_int<32> in7_b_2 = in[39] << 5;
-    ap_int<32> in7_c_2 = in[39] << 4;
-    ap_int<32> in7_d_2 = in[39] << 3;
-    ap_int<32> in7_e_2 = in[39] << 2;
-    ap_int<32> in7_f_2 = in[39] << 1;
-    ap_int<32> in7_g_2 = in[39];
+    ap_int<32> in7_a_2 = (ap_int<32>)in[39] << 6;
+    ap_int<32> in7_b_2 = (ap_int<32>)in[39] << 5;
+    ap_int<32> in7_c_2 = (ap_int<32>)in[39] << 4;
+    ap_int<32> in7_d_2 = (ap_int<32>)in[39] << 3;
+    ap_int<32> in7_e_2 = (ap_int<32>)in[39] << 2;
+    ap_int<32> in7_f_2 = (ap_int<32>)in[39] << 1;
+    ap_int<32> in7_g_2 = (ap_int<32>)in[39];
 
-    ap_int<32> in9_a_2 = in[41] << 6;
-    ap_int<32> in9_b_2 = in[41] << 5;
-    ap_int<32> in9_c_2 = in[41] << 4;
-    ap_int<32> in9_d_2 = in[41] << 3;
-    ap_int<32> in9_e_2 = in[41] << 2;
-    ap_int<32> in9_f_2 = in[41] << 1;
-    ap_int<32> in9_g_2 = in[41];
+    ap_int<32> in9_a_2 = (ap_int<32>)in[41] << 6;
+    ap_int<32> in9_b_2 = (ap_int<32>)in[41] << 5;
+    ap_int<32> in9_c_2 = (ap_int<32>)in[41] << 4;
+    ap_int<32> in9_d_2 = (ap_int<32>)in[41] << 3;
+    ap_int<32> in9_e_2 = (ap_int<32>)in[41] << 2;
+    ap_int<32> in9_f_2 = (ap_int<32>)in[41] << 1;
+    ap_int<32> in9_g_2 = (ap_int<32>)in[41];
 
-    ap_int<32> in11_a_2 = in[43] << 6;
-    ap_int<32> in11_b_2 = in[43] << 5;
-    ap_int<32> in11_c_2 = in[43] << 4;
-    ap_int<32> in11_d_2 = in[43] << 3;
-    ap_int<32> in11_e_2 = in[43] << 2;
-    ap_int<32> in11_f_2 = in[43] << 1;
-    ap_int<32> in11_g_2 = in[43];
+    ap_int<32> in11_a_2 = (ap_int<32>)in[43] << 6;
+    ap_int<32> in11_b_2 = (ap_int<32>)in[43] << 5;
+    ap_int<32> in11_c_2 = (ap_int<32>)in[43] << 4;
+    ap_int<32> in11_d_2 = (ap_int<32>)in[43] << 3;
+    ap_int<32> in11_e_2 = (ap_int<32>)in[43] << 2;
+    ap_int<32> in11_f_2 = (ap_int<32>)in[43] << 1;
+    ap_int<32> in11_g_2 = (ap_int<32>)in[43];
 
-    ap_int<32> in13_a_2 = in[45] << 6;
-    ap_int<32> in13_b_2 = in[45] << 5;
-    ap_int<32> in13_c_2 = in[45] << 4;
-    ap_int<32> in13_d_2 = in[45] << 3;
-    ap_int<32> in13_e_2 = in[45] << 2;
-    ap_int<32> in13_f_2 = in[45] << 1;
-    ap_int<32> in13_g_2 = in[45];
+    ap_int<32> in13_a_2 = (ap_int<32>)in[45] << 6;
+    ap_int<32> in13_b_2 = (ap_int<32>)in[45] << 5;
+    ap_int<32> in13_c_2 = (ap_int<32>)in[45] << 4;
+    ap_int<32> in13_d_2 = (ap_int<32>)in[45] << 3;
+    ap_int<32> in13_e_2 = (ap_int<32>)in[45] << 2;
+    ap_int<32> in13_f_2 = (ap_int<32>)in[45] << 1;
+    ap_int<32> in13_g_2 = (ap_int<32>)in[45];
 
-    ap_int<32> in15_a_2 = in[47] << 6;
-    ap_int<32> in15_b_2 = in[47] << 5;
-    ap_int<32> in15_c_2 = in[47] << 4;
-    ap_int<32> in15_d_2 = in[47] << 3;
-    ap_int<32> in15_e_2 = in[47] << 2;
-    ap_int<32> in15_f_2 = in[47] << 1;
-    ap_int<32> in15_g_2 = in[47];
+    ap_int<32> in15_a_2 = (ap_int<32>)in[47] << 6;
+    ap_int<32> in15_b_2 = (ap_int<32>)in[47] << 5;
+    ap_int<32> in15_c_2 = (ap_int<32>)in[47] << 4;
+    ap_int<32> in15_d_2 = (ap_int<32>)in[47] << 3;
+    ap_int<32> in15_e_2 = (ap_int<32>)in[47] << 2;
+    ap_int<32> in15_f_2 = (ap_int<32>)in[47] << 1;
+    ap_int<32> in15_g_2 = (ap_int<32>)in[47];
 
-    ap_int<32> in17_a_2 = in[49] << 6;
-    ap_int<32> in17_b_2 = in[49] << 5;
-    ap_int<32> in17_c_2 = in[49] << 4;
-    ap_int<32> in17_d_2 = in[49] << 3;
-    ap_int<32> in17_e_2 = in[49] << 2;
-    ap_int<32> in17_f_2 = in[49] << 1;
-    ap_int<32> in17_g_2 = in[49];
+    ap_int<32> in17_a_2 = (ap_int<32>)in[49] << 6;
+    ap_int<32> in17_b_2 = (ap_int<32>)in[49] << 5;
+    ap_int<32> in17_c_2 = (ap_int<32>)in[49] << 4;
+    ap_int<32> in17_d_2 = (ap_int<32>)in[49] << 3;
+    ap_int<32> in17_e_2 = (ap_int<32>)in[49] << 2;
+    ap_int<32> in17_f_2 = (ap_int<32>)in[49] << 1;
+    ap_int<32> in17_g_2 = (ap_int<32>)in[49];
 
-    ap_int<32> in19_a_2 = in[51] << 6;
-    ap_int<32> in19_b_2 = in[51] << 5;
-    ap_int<32> in19_c_2 = in[51] << 4;
-    ap_int<32> in19_d_2 = in[51] << 3;
-    ap_int<32> in19_e_2 = in[51] << 2;
-    ap_int<32> in19_f_2 = in[51] << 1;
-    ap_int<32> in19_g_2 = in[51];
+    ap_int<32> in19_a_2 = (ap_int<32>)in[51] << 6;
+    ap_int<32> in19_b_2 = (ap_int<32>)in[51] << 5;
+    ap_int<32> in19_c_2 = (ap_int<32>)in[51] << 4;
+    ap_int<32> in19_d_2 = (ap_int<32>)in[51] << 3;
+    ap_int<32> in19_e_2 = (ap_int<32>)in[51] << 2;
+    ap_int<32> in19_f_2 = (ap_int<32>)in[51] << 1;
+    ap_int<32> in19_g_2 = (ap_int<32>)in[51];
 
-    ap_int<32> in21_a_2 = in[53] << 6;
-    ap_int<32> in21_b_2 = in[53] << 5;
-    ap_int<32> in21_c_2 = in[53] << 4;
-    ap_int<32> in21_d_2 = in[53] << 3;
-    ap_int<32> in21_e_2 = in[53] << 2;
-    ap_int<32> in21_f_2 = in[53] << 1;
-    ap_int<32> in21_g_2 = in[53];
+    ap_int<32> in21_a_2 = (ap_int<32>)in[53] << 6;
+    ap_int<32> in21_b_2 = (ap_int<32>)in[53] << 5;
+    ap_int<32> in21_c_2 = (ap_int<32>)in[53] << 4;
+    ap_int<32> in21_d_2 = (ap_int<32>)in[53] << 3;
+    ap_int<32> in21_e_2 = (ap_int<32>)in[53] << 2;
+    ap_int<32> in21_f_2 = (ap_int<32>)in[53] << 1;
+    ap_int<32> in21_g_2 = (ap_int<32>)in[53];
 
-    ap_int<32> in23_a_2 = in[55] << 6;
-    ap_int<32> in23_b_2 = in[55] << 5;
-    ap_int<32> in23_c_2 = in[55] << 4;
-    ap_int<32> in23_d_2 = in[55] << 3;
-    ap_int<32> in23_e_2 = in[55] << 2;
-    ap_int<32> in23_f_2 = in[55] << 1;
-    ap_int<32> in23_g_2 = in[55];
+    ap_int<32> in23_a_2 = (ap_int<32>)in[55] << 6;
+    ap_int<32> in23_b_2 = (ap_int<32>)in[55] << 5;
+    ap_int<32> in23_c_2 = (ap_int<32>)in[55] << 4;
+    ap_int<32> in23_d_2 = (ap_int<32>)in[55] << 3;
+    ap_int<32> in23_e_2 = (ap_int<32>)in[55] << 2;
+    ap_int<32> in23_f_2 = (ap_int<32>)in[55] << 1;
+    ap_int<32> in23_g_2 = (ap_int<32>)in[55];
 
-    ap_int<32> in25_a_2 = in[57] << 6;
-    ap_int<32> in25_b_2 = in[57] << 5;
-    ap_int<32> in25_c_2 = in[57] << 4;
-    ap_int<32> in25_d_2 = in[57] << 3;
-    ap_int<32> in25_e_2 = in[57] << 2;
-    ap_int<32> in25_f_2 = in[57] << 1;
-    ap_int<32> in25_g_2 = in[57];
+    ap_int<32> in25_a_2 = (ap_int<32>)in[57] << 6;
+    ap_int<32> in25_b_2 = (ap_int<32>)in[57] << 5;
+    ap_int<32> in25_c_2 = (ap_int<32>)in[57] << 4;
+    ap_int<32> in25_d_2 = (ap_int<32>)in[57] << 3;
+    ap_int<32> in25_e_2 = (ap_int<32>)in[57] << 2;
+    ap_int<32> in25_f_2 = (ap_int<32>)in[57] << 1;
+    ap_int<32> in25_g_2 = (ap_int<32>)in[57];
 
-    ap_int<32> in27_a_2 = in[59] << 6;
-    ap_int<32> in27_b_2 = in[59] << 5;
-    ap_int<32> in27_c_2 = in[59] << 4;
-    ap_int<32> in27_d_2 = in[59] << 3;
-    ap_int<32> in27_e_2 = in[59] << 2;
-    ap_int<32> in27_f_2 = in[59] << 1;
-    ap_int<32> in27_g_2 = in[59];
+    ap_int<32> in27_a_2 = (ap_int<32>)in[59] << 6;
+    ap_int<32> in27_b_2 = (ap_int<32>)in[59] << 5;
+    ap_int<32> in27_c_2 = (ap_int<32>)in[59] << 4;
+    ap_int<32> in27_d_2 = (ap_int<32>)in[59] << 3;
+    ap_int<32> in27_e_2 = (ap_int<32>)in[59] << 2;
+    ap_int<32> in27_f_2 = (ap_int<32>)in[59] << 1;
+    ap_int<32> in27_g_2 = (ap_int<32>)in[59];
 
-    ap_int<32> in29_a_2 = in[61] << 6;
-    ap_int<32> in29_b_2 = in[61] << 5;
-    ap_int<32> in29_c_2 = in[61] << 4;
-    ap_int<32> in29_d_2 = in[61] << 3;
-    ap_int<32> in29_e_2 = in[61] << 2;
-    ap_int<32> in29_f_2 = in[61] << 1;
-    ap_int<32> in29_g_2 = in[61];
+    ap_int<32> in29_a_2 = (ap_int<32>)in[61] << 6;
+    ap_int<32> in29_b_2 = (ap_int<32>)in[61] << 5;
+    ap_int<32> in29_c_2 = (ap_int<32>)in[61] << 4;
+    ap_int<32> in29_d_2 = (ap_int<32>)in[61] << 3;
+    ap_int<32> in29_e_2 = (ap_int<32>)in[61] << 2;
+    ap_int<32> in29_f_2 = (ap_int<32>)in[61] << 1;
+    ap_int<32> in29_g_2 = (ap_int<32>)in[61];
 
-    ap_int<32> in31_a_2 = in[63] << 6;
-    ap_int<32> in31_b_2 = in[63] << 5;
-    ap_int<32> in31_c_2 = in[63] << 4;
-    ap_int<32> in31_d_2 = in[63] << 3;
-    ap_int<32> in31_e_2 = in[63] << 2;
-    ap_int<32> in31_f_2 = in[63] << 1;
-    ap_int<32> in31_g_2 = in[63];
+    ap_int<32> in31_a_2 = (ap_int<32>)in[63] << 6;
+    ap_int<32> in31_b_2 = (ap_int<32>)in[63] << 5;
+    ap_int<32> in31_c_2 = (ap_int<32>)in[63] << 4;
+    ap_int<32> in31_d_2 = (ap_int<32>)in[63] << 3;
+    ap_int<32> in31_e_2 = (ap_int<32>)in[63] << 2;
+    ap_int<32> in31_f_2 = (ap_int<32>)in[63] << 1;
+    ap_int<32> in31_g_2 = (ap_int<32>)in[63];
 
     ap_int<32> in1s[32];
     #pragma HLS ARRAY_PARTITION variable=in1s complete dim=0
