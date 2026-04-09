@@ -6,6 +6,14 @@ This project focuses on the design and performance comparison of the inverse tra
 
 ---
 
+## AI Engine Implementation
+
+For the AIE-ML native implementation of the 2D IDCT-II (64x64 block transform)
+on the VEK280 platform, including simulation and hardware flow instructions,
+see [`AI_Engine_Impl/idct_ii/README.md`](AI_Engine_Impl/idct_ii/README.md).
+
+---
+
 ## Requirements
 
 | Platform | Vitis Version |
